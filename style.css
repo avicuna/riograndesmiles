@@ -191,6 +191,12 @@ h2 { color: #007BFF; }
   font-weight: bold;
 }
 
+#location {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
 footer { background: #333; color: white; text-align: center; padding: 10px; }
 
 footer h2 { margin-top: 0; }
