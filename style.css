@@ -63,6 +63,86 @@ p {
   transform: scale(1.1); /* Slightly enlarge on hover */
 }
 
+#about-doctor {
+  padding: 40px 20px;
+  background-color: #f9f9f9; /* Light background for contrast */
+  text-align: center;
+}
+
+.doctor-profile {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  justify-content: center; /* Center content horizontally */
+  max-width: 800px; /* Limit width for better readability */
+  margin: 0 auto; /* Center the profile */
+  border: 1px solid #ddd; /* Border around the profile */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding around content */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.doctor-headshot {
+  width: 300px; /* Fixed width for headshot */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 50%; /* Circular headshot */
+  margin-right: 20px; /* Space between image and text */
+}
+
+.doctor-info h3 {
+  margin: 10px 0; /* Space above and below name */
+}
+
+.doctor-info p {
+  margin: 5px 0; /* Space between paragraphs */
+}
+
+#services {
+  padding: 40px 20px;
+  background-color: #f9f9f9; /* Light background for contrast */
+  text-align: center;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between service items */
+  margin-top: 20px;
+}
+
+.service-item {
+  border: 1px solid #ddd; /* Border around each service item */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding inside each item */
+  background-color: white; /* White background for service items */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s; /* Smooth scaling effect */
+}
+
+.service-item:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.service-logo {
+  width: 80px; /* Fixed width for logos */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 15px; /* Space below logo */
+}
+
+.service-description {
+  display: none; /* Hide description by default */
+  margin-top: 10px; /* Space above description */
+}
+
+h3 {
+  margin: 10px 0; /* Space above and below service title */
+}
+
+/*p {*/
+/*  margin: 5px 0; !* Space between paragraphs *!*/
+/*}*/
+
+
+
 section { padding: 20px; }
 
 h2 { color: #007BFF; }
