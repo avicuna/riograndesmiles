@@ -133,15 +133,33 @@ p {
   margin-top: 10px; /* Space above description */
 }
 
+#downloadable-forms {
+  padding: 40px 20px;
+  background-color: #f9f9f9; /* Light background for contrast */
+  text-align: center;
+}
+
+.forms-list {
+  display: flex;
+  flex-direction: column; /* Stack form items vertically */
+  align-items: center; /* Center items */
+  margin-top: 20px;
+}
+
+.form-item {
+  background-color: white; /* White background for form items */
+  border: 1px solid #ddd; /* Border around each form item */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding inside each item */
+  margin: 15px 0; /* Space between form items */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  width: 100%; /* Full width for mobile responsiveness */
+  max-width: 500px; /* Limit max width for larger screens */
+}
+
 h3 {
   margin: 10px 0; /* Space above and below service title */
 }
-
-/*p {*/
-/*  margin: 5px 0; !* Space between paragraphs *!*/
-/*}*/
-
-
 
 section { padding: 20px; }
 
