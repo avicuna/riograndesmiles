@@ -1,4 +1,9 @@
-body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; }
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
 
 header {
   background-image: url('img/albuquerque-skyline.jpg'); /* Replace with your desired background image */
@@ -9,13 +14,6 @@ header {
   padding: 100px 20px; /* Adjust padding as needed */
 }
 
-.header-content {
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better text readability */
-  padding: 50px; /* Space around the text */
-  border-radius: 10px; /* Rounded corners */
-  display: inline-block; /* Center content */
-}
-
 h1 {
   font-size: 2.5em; /* Adjust size as needed */
   margin-bottom: 20px; /* Space below title */
@@ -24,6 +22,25 @@ h1 {
 p {
   font-size: 1.2em; /* Adjust size as needed */
   margin-bottom: 30px; /* Space below paragraph */
+}
+
+h3 {
+  margin: 10px 0; /* Space above and below service title */
+}
+
+section { padding: 20px; }
+
+h2 { color: #007BFF; }
+
+footer { background: #333; color: white; text-align: center; padding: 10px; }
+
+footer h2 { margin-top: 0; }
+
+.header-content {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better text readability */
+  padding: 50px; /* Space around the text */
+  border-radius: 10px; /* Rounded corners */
+  display: inline-block; /* Center content */
 }
 
 .btn {
@@ -47,15 +64,16 @@ p {
 
 .providers-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+  grid-template-columns: repeat(3, 1fr); /* Fixed number of columns */
   gap: 20px; /* Space between logos */
   margin-top: 20px;
+  justify-content: center; /* Center logos on the last row */
+  justify-items: center; /* Center items within their grid cells */
 }
 
 .providers-grid img {
-  max-width: 100%; /* Ensure logos don't exceed their container */
+  max-width: 75%; /* Ensure logos don't exceed their container */
   height: auto;
-  /*filter: brightness(0) invert(1); !* Optional: Make logos white on dark backgrounds *!*/
   transition: transform 0.3s; /* Smooth scaling effect */
 }
 
@@ -71,8 +89,8 @@ p {
 
 .doctor-profile {
   display: flex;
+  flex-direction: column; /* Stack content vertically */
   align-items: center; /* Align items vertically */
-  justify-content: center; /* Center content horizontally */
   max-width: 800px; /* Limit width for better readability */
   margin: 0 auto; /* Center the profile */
   border: 1px solid #ddd; /* Border around the profile */
@@ -82,7 +100,8 @@ p {
 }
 
 .doctor-headshot {
-  width: 300px; /* Fixed width for headshot */
+  width: 100%; /* Fixed width for headshot */
+  max-width: 300px; /* Limit max width for larger screens */
   height: auto; /* Maintain aspect ratio */
   border-radius: 50%; /* Circular headshot */
   margin-right: 20px; /* Space between image and text */
@@ -157,14 +176,6 @@ p {
   max-width: 500px; /* Limit max width for larger screens */
 }
 
-h3 {
-  margin: 10px 0; /* Space above and below service title */
-}
-
-section { padding: 20px; }
-
-h2 { color: #007BFF; }
-
 .faq-item {
   border: 1px solid #ddd;
   margin: 10px 0;
@@ -197,6 +208,28 @@ h2 { color: #007BFF; }
   text-align: center;
 }
 
-footer { background: #333; color: white; text-align: center; padding: 10px; }
+/* Media queries for smaller screens */
+@media (min-width: 768px) {
+  .doctor-profile {
+    flex-direction: row;
+  }
 
-footer h2 { margin-top: 0; }
+  .doctor-headshot {
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .providers-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .providers-grid {
+    grid-template-columns: 1fr; /* 1 column for extra small screens */
+  }
+}
+
+
