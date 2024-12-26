@@ -2,7 +2,6 @@ const resources = {
   en: {
     translation: {
       "header": {
-        "title": "Rio Grande Smiles",
         "location": "Albuquerque, New Mexico",
         "description": "Dr. Vicuña and his team provide exceptional dental care to keep your smile healthy and strong for life. For over 20 years we have established trusting relationships with our patients where we can contribute to the overall well-being of all our patients. Using proven techniques for general, cosmetic, and restorative dentistry, we’ll personalize a treatment plan that meets your unique goals. From checkups, to aesthetic enhancements, to comprehensive restorations, Dr. Vicuna will perform your dental work with skill and precision."
       },
@@ -101,7 +100,6 @@ const resources = {
   es: {
     translation: {
       "header": {
-        "title": "Sonrisas del Río Grande",
         "location": "Albuquerque, Nuevo México",
         "description": "El Dr. Vicuña y su equipo brindan atención dental excepcional para mantener su sonrisa saludable y fuerte de por vida. Durante más de 20 años hemos establecido relaciones de confianza con nuestros pacientes donde podemos contribuir al bienestar general de todos nuestros pacientes. Usando técnicas probadas para la odontología general, estética y restaurativa, personalizaremos un plan de tratamiento que se adapte a sus objetivos únicos. Desde chequeos hasta mejoras estéticas y restauraciones integrales, el Dr. Vicuna realizará su trabajo dental con habilidad y precisión."
       },
