@@ -202,6 +202,69 @@ footer h2 { margin-top: 0; }
   font-weight: bold;
 }
 
+.carousel {
+  position: relative;
+  width: 80%;
+  max-width: 600px; /* Limit width for better appearance */
+  margin: auto;
+  overflow: hidden;
+  border: 1px solid #ccc; /* Add border for aesthetics */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+#reviews {
+  padding: 40px 20px;
+  background-color: #f9f9f9; /* Light background for contrast */
+  text-align: center;
+}
+
+.review {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 20px; /* Add padding for readability */
+  text-align: center; /* Center align text */
+  background-color: #f9f9f9; /* Light background color */
+}
+
+.review p {
+  font-style: italic; /* Italicize review text */
+}
+
+.review h4 {
+  margin-top: 10px; /* Space between text and author */
+  color: #555; /* Darker color for author name */
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  cursor: pointer;
+  padding: 10px; /* Add padding for buttons */
+  border-radius: 5px; /* Rounded button corners */
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(255, 255, 255, 1); /* Change color on hover */
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+
 #location {
   padding: 40px 20px;
   background-color: #f9f9f9;

@@ -92,6 +92,9 @@ const resources = {
         "learnMore": "Learn More",
         "downloadForm": "Download Form",
         "showLess": "Show Less"
+      },
+      "reviews": {
+        "title": "Patient Reviews"
       }
     }
   },
@@ -188,6 +191,9 @@ const resources = {
         "learnMore": "Aprende Más",
         "downloadForm": "Descargar Formulario",
         "showLess": "Mostrar Menos"
+      },
+      "reviews": {
+        "title": "Reseñas de Pacientes"
       }
     }
   }
@@ -246,3 +252,23 @@ document.querySelectorAll('.btn').forEach(button => {
     }
   });
 });
+
+let currentSlide = 0;
+
+function moveSlide(direction) {
+  const slides = document.querySelectorAll('.carousel-inner .review');
+  currentSlide = (currentSlide + direction + slides.length) % slides.length;
+  const offset = -currentSlide * 100;
+  document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
+}
+
+// Optional: Automatic sliding functionality
+setInterval(() => {
+  moveSlide(1);
+}, 5000); // Change slide every 5 seconds
+
+// Initialize the carousel on page load
+document.addEventListener('DOMContentLoaded', () => {
+  // You can call any initial functions here if needed
+});
+
