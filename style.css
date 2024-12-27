@@ -327,6 +327,15 @@ footer {
   line-height: 0.5;
 }
 
+.footer-item a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-item a:hover {
+  text-decoration: underline;
+}
+
 /* Media queries for smaller screens */
 @media (min-width: 768px) {
   .doctor-profile {
