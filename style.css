@@ -5,23 +5,31 @@ body {
   padding: 0;
 }
 
+i {
+  margin-right: 8px;
+}
+
 header {
-  background-image: url('img/albuquerque-skyline.jpg'); /* Replace with your desired background image */
+  background-image: url('img/albuquerque-skyline.jpg');
   background-size: cover;
   background-position: center;
   color: white;
   text-align: center;
-  padding: 100px 20px; /* Adjust padding as needed */
+  padding: 100px 20px;
 }
 
 h1 {
-  font-size: 2.5em; /* Adjust size as needed */
-  margin-bottom: 20px; /* Space below title */
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #007BFF;
+  font-size: 2em; /* Adjust size as needed */
 }
 
 p {
-  font-size: 1.2em; /* Adjust size as needed */
-  margin-bottom: 30px; /* Space below paragraph */
+  font-size: 1.3em; /* Adjust size as needed */
 }
 
 h3 {
@@ -30,11 +38,12 @@ h3 {
 
 section { padding: 20px; }
 
-h2 { color: #007BFF; }
-
-footer { background: #333; color: white; text-align: center; padding: 10px; }
-
-footer h2 { margin-top: 0; }
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
 
 /* Add styles for the navbar */
 .navbar {
@@ -68,10 +77,6 @@ footer h2 { margin-top: 0; }
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
-}
-
-.navbar-buttons .btn i {
-  margin-right: 8px;
 }
 
 .navbar-buttons .btn:hover {
@@ -311,6 +316,15 @@ footer h2 { margin-top: 0; }
   padding: 40px 20px;
   background-color: #f9f9f9;
   text-align: center;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+}
+
+.footer-item {
+  line-height: 0.5;
 }
 
 /* Media queries for smaller screens */

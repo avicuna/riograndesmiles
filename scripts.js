@@ -84,11 +84,14 @@ const resources = {
         "title": "Find Us Here"
       },
       "footer": {
-        "title": "Contact Us",
-        "address": "Address: 1010 Bridge Blvd SW, Suite F Albuquerque, NM",
+        "contact": "Contact Us",
+        "address": "Address",
         "phone": "Phone: (505) 877-1113",
         "email": "Email: emersonvicunadds@gmail.com",
-        "hours": "Hours: Mon-Thurs 9am - 5pm"
+        "hours": {
+          "title": "Hours",
+          "description": "Mon-Thu 9am - 5pm"
+        }
       },
       "button": {
         "learnMore": "Learn More",
@@ -185,11 +188,14 @@ const resources = {
         "title": "Encuéntranos Aquí"
       },
       "footer": {
-        "title": "Contáctanos",
-        "address": "Dirección: 1010 Bridge Blvd SW, Suite F Albuquerque, NM",
+        "contact": "Contáctanos",
+        "address": "Dirección",
         "phone": "Teléfono: (505) 877-1113",
         "email": "Correo electrónico: emersonvicunadds@gmail.com",
-        "hours": "Horas: Lun-Jue 9am - 5pm"
+        "hours": {
+          "title": "Horario",
+          "description": "Lun-Jue 9am - 5pm"
+        }
       },
       "button": {
         "learnMore": "Aprende Más",

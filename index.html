@@ -180,11 +180,23 @@
 </section>
 
 <footer>
-  <h2 data-i18n="footer.title">Contact Us</h2>
-  <p data-i18n="footer.address">Address: 1010 Bridge Blvd SW, Suite F Albuquerque, NM</p>
-  <p data-i18n="footer.phone">Phone: (505) 877-1113</p>
-  <p data-i18n="footer.email">Email: emersonvicunadds@gmail.com</p>
-  <p data-i18n="footer.hours">Hours: Mon-Thurs 9am - 5pm</p>
+  <div class="footer-grid">
+    <div class="footer-item">
+      <h2 data-i18n="footer.hours.title">Hours</h2>
+      <p data-i18n="footer.hours.description">Mon-Thurs 9am - 5pm</p>
+    </div>
+    <div class="footer-item">
+      <h2 data-i18n="footer.contact">Contact Us</h2>
+      <p onclick="location.href='tel:+5058771113'"><i class="fa-solid fa-phone"></i>(505) 877-1113</p>
+      <p><i class="fa-solid fa-envelope"></i>emersonvicunadds@gmail.com</p>
+    </div>
+    <div class="footer-item">
+      <h2 data-i18n="footer.address">Address</h2>
+      <p>1010 Bridge Blvd SW, Suite F</p>
+      <p>Albuquerque, NM</p>
+      <p>United States</p>
+    </div>
+  </div>
 </footer>
 
 <script src="scripts.js"></script>
