@@ -6,15 +6,27 @@
   <title>Rio Grande Smiles</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/21.6.2/i18next.min.js"></script>
+  <script src="https://kit.fontawesome.com/15fcdb8a56.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<nav class="navbar">
+  <div class="navbar-content">
+    <h1 class="navbar-title">Rio Grande Smiles</h1>
+    <div class="navbar-buttons">
+      <button class="btn" onclick="location.href='tel:+5058771113'">
+        <i class="fa-solid fa-phone"></i><span data-i18n="navbar.book">Book an Appointment</span>
+      </button>
+      <button id="change-language" class="btn" onclick="changeLanguage()">Español</button>
+    </div>
+  </div>
+</nav>
+
 <header>
   <div class="header-content">
     <h1>Rio Grande Smiles</h1>
     <h3 data-i18n="header.location">Albuquerque, New Mexico</h3>
     <p data-i18n="header.description">Dr. Vicuña and his team provide exceptional dental care to keep your smile healthy and strong for life. For over 20 years we have established trusting relationships with our patients where we can contribute to the overall well-being of all our patients. Using proven techniques for general, cosmetic, and restorative dentistry, we’ll personalize a treatment plan that meets your unique goals. From checkups, to aesthetic enhancements, to comprehensive restorations, Dr. Vicuna will perform your dental work with skill and precision.</p>
   </div>
-  <button id="change-language" class="btn" onclick="changeLanguage()">Español</button>
 </header>
 
 <section id="insurance-providers">
@@ -51,73 +63,73 @@
     <div class="service-item">
       <img src="img/services/extraction-logo.png" alt="Extractions" class="service-logo" />
       <h3 data-i18n="services.extractions.title">Extractions</h3>
-      <button data-i18n="button.learnMore" class="btn">Learn More</button>
+      <button data-i18n="button.learnMore" class="btn service-button">Learn More</button>
       <p class="service-description" data-i18n="services.extractions.description">Extractions involve the removal of a tooth from its socket in the bone.</p>
     </div>
     <div class="service-item">
       <img src="img/services/fillings-logo.png" alt="Fillings" class="service-logo" />
       <h3 data-i18n="services.fillings.title">Fillings</h3>
-      <button data-i18n="button.learnMore" class="btn">Learn More</button>
+      <button data-i18n="button.learnMore" class="btn service-button">Learn More</button>
       <p class="service-description" data-i18n="services.fillings.description">Fillings are used to restore a tooth damaged by decay.</p>
     </div>
     <div class="service-item">
       <img src="img/services/bleaching-logo.png" alt="Bleaching" class="service-logo" />
       <h3 data-i18n="services.bleaching.title">Bleaching</h3>
-      <button data-i18n="button.learnMore" class="btn">Learn More</button>
+      <button data-i18n="button.learnMore" class="btn service-button">Learn More</button>
       <p class="service-description" data-i18n="services.bleaching.description">Teeth whitening or bleaching is a cosmetic procedure that brightens teeth using safe bleaching agents to enhance your smile.</p>
     </div>
     <div class="service-item">
       <img src="img/services/denture-logo.png" alt="Dentures" class="service-logo" />
       <h3 data-i18n="services.dentures.title">Dentures</h3>
-      <button data-i18n="button.learnMore" class="btn">Learn More</button>
+      <button data-i18n="button.learnMore" class="btn service-button">Learn More</button>
       <p class="service-description" data-i18n="services.dentures.description">Dentures are removable replacements for missing teeth and surrounding tissues, available as complete or partial dentures.</p>
     </div>
     <div class="service-item">
       <img src="img/services/partial-logo.jpeg" alt="Partials" class="service-logo" />
       <h3 data-i18n="services.partials.title">Partials</h3>
-      <button data-i18n="button.learnMore" class="btn">Learn More</button>
+      <button data-i18n="button.learnMore" class="btn service-button">Learn More</button>
       <p class="service-description" data-i18n="services.partials.description">Partial dentures are used when some natural teeth remain.</p>
     </div>
     <div class="service-item">
       <img src="img/services/denture-repair-logo.png" alt="Denture Repair" class="service-logo" />
       <h3 data-i18n="services.dentureRepair.title">Denture Repair</h3>
-      <button data-i18n="button.learnMore" class="btn">Learn More</button>
+      <button data-i18n="button.learnMore" class="btn service-button">Learn More</button>
       <p class="service-description" data-i18n="services.dentureRepair.description">Denture repair services fix broken or damaged dentures, restoring functionality and appearance for comfortable use.</p>
     </div>
     <div class="service-item">
       <img src="img/services/bridges-logo.png" alt="Bridges" class="service-logo" />
       <h3 data-i18n="services.bridges.title">Bridges</h3>
-      <button data-i18n="button.learnMore" class="btn">Learn More</button>
+      <button data-i18n="button.learnMore" class="btn service-button">Learn More</button>
       <p class="service-description" data-i18n="services.bridges.description">A dental bridge is used to replace one or more missing teeth by anchoring them to adjacent teeth for support.</p>
     </div>
     <div class="service-item">
       <img src="img/services/veneers-logo.png" alt="Veneers" class="service-logo" />
       <h3 data-i18n="services.veneers.title">Veneers</h3>
-      <button data-i18n="button.learnMore" class="btn">Learn More</button>
+      <button data-i18n="button.learnMore" class="btn service-button">Learn More</button>
       <p class="service-description" data-i18n="services.veneers.description">Veneers are thin shells of porcelain or composite resin that cover the front surface of teeth to improve their appearance.</p>
     </div>
     <div class="service-item">
       <img src="img/services/implants-logo.png" alt="Implants" class="service-logo" />
       <h3 data-i18n="services.implants.title">Implants</h3>
-      <button data-i18n="button.learnMore" class="btn">Learn More</button>
+      <button data-i18n="button.learnMore" class="btn service-button">Learn More</button>
       <p class="service-description" data-i18n="services.implants.description">Dental implants are artificial tooth roots placed into the jawbone to support replacement teeth, providing a permanent solution for missing teeth.</p>
     </div>
     <div class="service-item">
       <img src="img/services/root-canal-logo.png" alt="Root Canals" class="service-logo" />
       <h3 data-i18n="services.rootCanals.title">Root Canals</h3>
-      <button data-i18n="button.learnMore" class="btn">Learn More</button>
+      <button data-i18n="button.learnMore" class="btn service-button">Learn More</button>
       <p class="service-description" data-i18n="services.rootCanals.description">A root canal is a treatment used to repair and save a tooth that is badly decayed or infected.</p>
     </div>
     <div class="service-item">
       <img src="img/services/wisdom-teeth-logo.png" alt="Wisdom Teeth" class="service-logo" />
       <h3 data-i18n="services.wisdomTeeth.title">Wisdom Teeth</h3>
-      <button data-i18n="button.learnMore" class="btn">Learn More</button>
+      <button data-i18n="button.learnMore" class="btn service-button">Learn More</button>
       <p class="service-description" data-i18n="services.wisdomTeeth.description">Wisdom teeth extraction is a common procedure to remove one or more of the four third molars.</p>
     </div>
     <div class="service-item">
       <img src="img/services/crown-logo.png" alt="Crowns" class="service-logo" />
       <h3 data-i18n="services.crowns.title">Crowns</h3>
-      <button data-i18n="button.learnMore" class="btn">Learn More</button>
+      <button data-i18n="button.learnMore" class="btn service-button">Learn More</button>
       <p class="service-description" data-i18n="services.crowns.description">Crowns are custom-made caps placed over damaged teeth to restore their shape, size, and strength.</p>
     </div>
   </div>
