@@ -223,6 +223,12 @@ footer {
   max-width: 500px; /* Limit max width for larger screens */
 }
 
+#faq {
+  padding: 40px 20px;
+  background-color: #f9f9f9; /* Light background for contrast */
+  text-align: center;
+}
+
 .faq-item {
   border: 1px solid #ddd;
   margin: 10px 0;
