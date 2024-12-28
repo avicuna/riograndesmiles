@@ -14,7 +14,6 @@ const resources = {
       },
       "doctor": {
         "title": "About the Doctor",
-        "name": "Dr. Emerson Vicuna",
         "description": "With over 20 years of experience, Dr. Emerson Vicuña, DDS is a general dentist that loves helping people who are in need of his dental expertise. His patients adore his friendly personality, work ethic, and outstanding results. Hailing from Lima, Peru, Dr. Vicuña earned his Doctor of Dental Surgery degree from The Ohio State University after receiving his BS in Biology and Chemistry from the University of New Mexico. He is also a member of the American Dental Association and Academy of General Dentistry. Since starting his own practice in 2005, Dr. Vicuña has been the only dentist at his practice, which allows patients to get to know him personally and receive personalized care."
       },
       "services": {
@@ -118,7 +117,6 @@ const resources = {
       },
       "doctor": {
         "title": "Acerca del Doctor",
-        "name": "Dr. Emerson Vicuna",
         "description": "Con más de 20 años de experiencia, el Dr. Emerson Vicuña, DDS es un dentista general que ama ayudar a las personas que necesitan su experiencia dental. Sus pacientes adoran su personalidad amigable, ética de trabajo y resultados sobresalientes. Originario de Lima, Perú, el Dr. Vicuña obtuvo su título de Doctor en Cirugía Dental de la Universidad Estatal de Ohio después de recibir su licenciatura en Biología y Química de la Universidad de Nuevo México. También es miembro de la Asociación Dental Americana y de la Academia de Odontología General. Desde que comenzó su propia práctica en 2005, el Dr. Vicuña ha sido el único dentista en su práctica, lo que permite a los pacientes conocerlo personalmente y recibir atención personalizada."
       },
       "services": {
