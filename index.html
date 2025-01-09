@@ -6,15 +6,27 @@
   <title>Rio Grande Smiles</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/21.6.2/i18next.min.js"></script>
+  <script src="https://kit.fontawesome.com/15fcdb8a56.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<nav class="navbar">
+  <div class="navbar-content">
+    <h1 class="navbar-title">Rio Grande Smiles</h1>
+    <div class="navbar-buttons">
+      <button class="btn" onclick="location.href='tel:+5058771113'">
+        <i class="fa-solid fa-phone"></i><span data-i18n="navbar.book">Book an Appointment</span>
+      </button>
+      <button id="change-language" class="btn" onclick="changeLanguage()">Español</button>
+    </div>
+  </div>
+</nav>
+
 <header>
   <div class="header-content">
     <h1>Rio Grande Smiles</h1>
     <h3 data-i18n="header.location">Albuquerque, New Mexico</h3>
     <p data-i18n="header.description">Dr. Vicuña and his team provide exceptional dental care to keep your smile healthy and strong for life. For over 20 years we have established trusting relationships with our patients where we can contribute to the overall well-being of all our patients. Using proven techniques for general, cosmetic, and restorative dentistry, we’ll personalize a treatment plan that meets your unique goals. From checkups, to aesthetic enhancements, to comprehensive restorations, Dr. Vicuna will perform your dental work with skill and precision.</p>
   </div>
-  <button id="change-language" class="btn" onclick="changeLanguage()">Español</button>
 </header>
 
 <section id="insurance-providers">
@@ -35,11 +47,10 @@
 
 <section id="about-doctor">
   <h2 data-i18n="doctor.title">About the Doctor</h2>
-  <img src="img/doctor-headshot.png" alt="Dr. Vicuna" class="doctor-headshot" />
+  <img src="img/doctor-headshot.png" alt="Dr. Vicuña" class="doctor-headshot" />
   <div class="doctor-profile">
     <div class="doctor-info">
-      <h3 data-i18n="doctor.name">Dr. Emerson Vicuna</h3>
-      <p>DDS</p>
+      <h3>Emerson Vicuña, DDS</h3>
       <p data-i18n="doctor.description">With over 20 years of experience, Dr. Emerson Vicuña, DDS is a general dentist that loves helping people who are in need of his dental expertise. His patients adore his friendly personality, work ethic, and outstanding results. Hailing from Lima, Peru, Dr. Vicuña earned his Doctor of Dental Surgery degree from The Ohio State University after receiving his BS in Biology and Chemistry from the University of New Mexico. He is also a member of the American Dental Association and Academy of General Dentistry. Since starting his own practice in 2005, Dr. Vicuña has been the only dentist at his practice, which allows patients to get to know him personally and receive personalized care.</p>
     </div>
   </div>
@@ -51,73 +62,73 @@
     <div class="service-item">
       <img src="img/services/extraction-logo.png" alt="Extractions" class="service-logo" />
       <h3 data-i18n="services.extractions.title">Extractions</h3>
-      <button data-i18n="button.learnMore" class="btn">Learn More</button>
+      <button data-i18n="button.learnMore" class="btn service-button">Learn More</button>
       <p class="service-description" data-i18n="services.extractions.description">Extractions involve the removal of a tooth from its socket in the bone.</p>
     </div>
     <div class="service-item">
       <img src="img/services/fillings-logo.png" alt="Fillings" class="service-logo" />
       <h3 data-i18n="services.fillings.title">Fillings</h3>
-      <button data-i18n="button.learnMore" class="btn">Learn More</button>
+      <button data-i18n="button.learnMore" class="btn service-button">Learn More</button>
       <p class="service-description" data-i18n="services.fillings.description">Fillings are used to restore a tooth damaged by decay.</p>
     </div>
     <div class="service-item">
       <img src="img/services/bleaching-logo.png" alt="Bleaching" class="service-logo" />
       <h3 data-i18n="services.bleaching.title">Bleaching</h3>
-      <button data-i18n="button.learnMore" class="btn">Learn More</button>
+      <button data-i18n="button.learnMore" class="btn service-button">Learn More</button>
       <p class="service-description" data-i18n="services.bleaching.description">Teeth whitening or bleaching is a cosmetic procedure that brightens teeth using safe bleaching agents to enhance your smile.</p>
     </div>
     <div class="service-item">
       <img src="img/services/denture-logo.png" alt="Dentures" class="service-logo" />
       <h3 data-i18n="services.dentures.title">Dentures</h3>
-      <button data-i18n="button.learnMore" class="btn">Learn More</button>
+      <button data-i18n="button.learnMore" class="btn service-button">Learn More</button>
       <p class="service-description" data-i18n="services.dentures.description">Dentures are removable replacements for missing teeth and surrounding tissues, available as complete or partial dentures.</p>
     </div>
     <div class="service-item">
       <img src="img/services/partial-logo.jpeg" alt="Partials" class="service-logo" />
       <h3 data-i18n="services.partials.title">Partials</h3>
-      <button data-i18n="button.learnMore" class="btn">Learn More</button>
+      <button data-i18n="button.learnMore" class="btn service-button">Learn More</button>
       <p class="service-description" data-i18n="services.partials.description">Partial dentures are used when some natural teeth remain.</p>
     </div>
     <div class="service-item">
       <img src="img/services/denture-repair-logo.png" alt="Denture Repair" class="service-logo" />
       <h3 data-i18n="services.dentureRepair.title">Denture Repair</h3>
-      <button data-i18n="button.learnMore" class="btn">Learn More</button>
+      <button data-i18n="button.learnMore" class="btn service-button">Learn More</button>
       <p class="service-description" data-i18n="services.dentureRepair.description">Denture repair services fix broken or damaged dentures, restoring functionality and appearance for comfortable use.</p>
     </div>
     <div class="service-item">
       <img src="img/services/bridges-logo.png" alt="Bridges" class="service-logo" />
       <h3 data-i18n="services.bridges.title">Bridges</h3>
-      <button data-i18n="button.learnMore" class="btn">Learn More</button>
+      <button data-i18n="button.learnMore" class="btn service-button">Learn More</button>
       <p class="service-description" data-i18n="services.bridges.description">A dental bridge is used to replace one or more missing teeth by anchoring them to adjacent teeth for support.</p>
     </div>
     <div class="service-item">
       <img src="img/services/veneers-logo.png" alt="Veneers" class="service-logo" />
       <h3 data-i18n="services.veneers.title">Veneers</h3>
-      <button data-i18n="button.learnMore" class="btn">Learn More</button>
+      <button data-i18n="button.learnMore" class="btn service-button">Learn More</button>
       <p class="service-description" data-i18n="services.veneers.description">Veneers are thin shells of porcelain or composite resin that cover the front surface of teeth to improve their appearance.</p>
     </div>
     <div class="service-item">
       <img src="img/services/implants-logo.png" alt="Implants" class="service-logo" />
       <h3 data-i18n="services.implants.title">Implants</h3>
-      <button data-i18n="button.learnMore" class="btn">Learn More</button>
+      <button data-i18n="button.learnMore" class="btn service-button">Learn More</button>
       <p class="service-description" data-i18n="services.implants.description">Dental implants are artificial tooth roots placed into the jawbone to support replacement teeth, providing a permanent solution for missing teeth.</p>
     </div>
     <div class="service-item">
       <img src="img/services/root-canal-logo.png" alt="Root Canals" class="service-logo" />
       <h3 data-i18n="services.rootCanals.title">Root Canals</h3>
-      <button data-i18n="button.learnMore" class="btn">Learn More</button>
+      <button data-i18n="button.learnMore" class="btn service-button">Learn More</button>
       <p class="service-description" data-i18n="services.rootCanals.description">A root canal is a treatment used to repair and save a tooth that is badly decayed or infected.</p>
     </div>
     <div class="service-item">
       <img src="img/services/wisdom-teeth-logo.png" alt="Wisdom Teeth" class="service-logo" />
       <h3 data-i18n="services.wisdomTeeth.title">Wisdom Teeth</h3>
-      <button data-i18n="button.learnMore" class="btn">Learn More</button>
+      <button data-i18n="button.learnMore" class="btn service-button">Learn More</button>
       <p class="service-description" data-i18n="services.wisdomTeeth.description">Wisdom teeth extraction is a common procedure to remove one or more of the four third molars.</p>
     </div>
     <div class="service-item">
       <img src="img/services/crown-logo.png" alt="Crowns" class="service-logo" />
       <h3 data-i18n="services.crowns.title">Crowns</h3>
-      <button data-i18n="button.learnMore" class="btn">Learn More</button>
+      <button data-i18n="button.learnMore" class="btn service-button">Learn More</button>
       <p class="service-description" data-i18n="services.crowns.description">Crowns are custom-made caps placed over damaged teeth to restore their shape, size, and strength.</p>
     </div>
   </div>
@@ -136,6 +147,84 @@
       <h3 data-i18n="forms.patientRegistration.title">Patient Registration Form</h3>
       <p data-i18n="forms.patientRegistration.description">This form is essential for us to set up your account and manage your appointments.</p>
       <a data-i18n="button.downloadForm" href="https://firebasestorage.googleapis.com/v0/b/emersonvicunadds-1.appspot.com/o/patientregistration.pdf?alt=media&token=69911c8b-bb1e-4765-a841-fc7adc15cac6" class="btn" target="_blank">Download Form</a>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <h2 data-i18n="faq.title">Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <h3 class="faq-question" data-i18n="faq.firstAppointment.title">First Appointment</h3>
+    <div class="faq-content">
+      <p><span class="bold" data-i18n="faq.firstAppointment.arriveEarly">Do I need to arrive early for my first appointment?</span></p>
+      <p data-i18n="faq.firstAppointment.arriveEarlyAnswer">If you haven't filled out our online downloadable medical history and patient registration forms, please arrive 10-15 minutes early to do so. Download our forms by going to the forms page.</p>
+      <p><span class="bold" data-i18n="faq.firstAppointment.preMedication">What should I do if I require pre-medication?</span></p>
+      <p data-i18n="faq.firstAppointment.preMedicationAnswer">Please be sure to request a prescription prior to your appointment, or if you are unsure, contact us and we can help.</p>
+      <p><span class="bold" data-i18n="faq.firstAppointment.bring">What should I bring to my first appointment?</span></p>
+      <p data-i18n="faq.firstAppointment.bringAnswer">Please bring the following items with you to your appointment:</p>
+      <ul>
+        <li data-i18n="faq.firstAppointment.bringItem1">Medical History Form</li>
+        <li data-i18n="faq.firstAppointment.bringItem2">Patient Registration Form</li>
+        <li data-i18n="faq.firstAppointment.bringItem3">Dental Insurance Card (if applicable)</li>
+        <li data-i18n="faq.firstAppointment.bringItem4">Identification such as Driver's License, Military ID or State ID</li>
+      </ul>
+      <p><span class="bold" data-i18n="faq.firstAppointment.duration">How long will my first appointment last?</span></p>
+      <p data-i18n="faq.firstAppointment.durationAnswer">It varies, but please plan on spending 30 minutes to an hour for your first visit. We make it a point to clearly explain the benefits and fees for each treatment beforehand during our initial meeting.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <h3 class="faq-question" data-i18n="faq.preventiveDentistry.title">Preventive Dentistry</h3>
+    <div class="faq-content">
+      <p><span class="bold" data-i18n="faq.preventiveDentistry.healthyTeeth">What can I do to keep my teeth healthy?</span></p>
+      <p data-i18n="faq.preventiveDentistry.healthyTeethAnswer">Regular dental check-ups and cleanings, a balanced diet, and proper oral hygiene practices are essential.</p>
+      <p><span class="bold" data-i18n="faq.preventiveDentistry.toothpaste">What toothpaste should I use?</span></p>
+      <p data-i18n="faq.preventiveDentistry.toothpasteAnswer">The most important ingredient to look for when choosing toothpaste is fluoride, which helps protect your teeth from decay.</p>
+      <p><span class="bold" data-i18n="faq.preventiveDentistry.flossing">Why should I floss? Isn't brushing enough?</span></p>
+      <p data-i18n="faq.preventiveDentistry.flossingAnswer">Flossing removes plaque from between your teeth where a toothbrush can't reach, helping prevent gum disease and cavities.</p>
+      <p><span class="bold" data-i18n="faq.preventiveDentistry.preventCavities">How can I prevent cavities?</span></p>
+      <ul>
+        <li data-i18n="faq.preventiveDentistry.preventCavitiesItem1">Brush your teeth twice a day for at least two minutes.</li>
+        <li data-i18n="faq.preventiveDentistry.preventCavitiesItem2">Limit sugary foods and drinks.</li>
+        <li data-i18n="faq.preventiveDentistry.preventCavitiesItem3">Visit your dentist regularly for cleanings and check-ups.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="faq-item">
+    <h3 class="faq-question" data-i18n="faq.generalDentistry.title">General Dentistry</h3>
+    <div class="faq-content">
+      <p><span class="bold" data-i18n="faq.generalDentistry.visitFrequency">How often do I need to visit the dentist?</span></p>
+      <p data-i18n="faq.generalDentistry.visitFrequencyAnswer">Most people should see their dentist twice a year, but those with specific dental concerns may need more frequent visits.</p>
+      <p><span class="bold" data-i18n="faq.generalDentistry.xraySafety">How safe are dental x-rays?</span></p>
+      <p data-i18n="faq.generalDentistry.xraySafetyAnswer">Dental x-rays are very safe and expose you to very low levels of radiation.</p>
+      <p><span class="bold" data-i18n="faq.generalDentistry.sensitiveTeeth">What can I do about sensitive teeth?</span></p>
+      <p data-i18n="faq.generalDentistry.sensitiveTeethAnswer">Use sensitivity toothpaste and avoid highly acidic foods. If sensitivity persists, consult your dentist for tailored advice.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <h3 class="faq-question" data-i18n="faq.familyDentistry.title">Family Dentistry</h3>
+    <div class="faq-content">
+      <p><span class="bold" data-i18n="faq.familyDentistry.firstCheckup">When should I take my child to the dentist for their first check-up?</span></p>
+      <p data-i18n="faq.familyDentistry.firstCheckupAnswer">Your child should see a pediatric dentist between 6-9 months or no later than their first birthday.</p>
+      <p><span class="bold" data-i18n="faq.familyDentistry.pregnancy">What happens if a woman has a dental problem when she is pregnant?</span></p>
+      <p data-i18n="faq.familyDentistry.pregnancyAnswer">Preventive dental cleanings during pregnancy are safe and recommended to avoid complications.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <h3 class="faq-question" data-i18n="faq.cosmeticDentistry.title">Cosmetic Dentistry</h3>
+    <div class="faq-content">
+      <p><span class="bold" data-i18n="faq.cosmeticDentistry.changeShape">I'm interested in changing the shape of my teeth. What options are available?</span></p>
+      <p data-i18n="faq.cosmeticDentistry.changeShapeAnswer">Options include bonding, crowns, veneers, and re-contouring.</p>
+      <p><span class="bold" data-i18n="faq.cosmeticDentistry.whitening">What are my options for whitening my teeth?</span></p>
+      <p data-i18n="faq.cosmeticDentistry.whiteningAnswer">Consider whitening toothpastes or in-office bleaching after consulting with your dentist.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <h3 class="faq-question" data-i18n="faq.emergencies.title">Emergencies</h3>
+    <div class="faq-content">
+      <p><span class="bold" data-i18n="faq.emergencies.knockedOut">What if my tooth gets knocked out in an accident?</span></p>
+      <p data-i18n="faq.emergencies.knockedOutAnswer">Locate the tooth and rinse it gently. Place it in milk or saliva and seek dental care immediately.</p>
+      <p><span class="bold" data-i18n="faq.emergencies.dentalEmergency">What should I do if I have a dental emergency and can't get a hold of my dentist?</span></p>
+      <p data-i18n="faq.emergencies.dentalEmergencyAnswer">If unable to reach your dentist, visit the nearest urgent care or emergency room for assistance.</p>
     </div>
   </div>
 </section>
@@ -168,11 +257,23 @@
 </section>
 
 <footer>
-  <h2 data-i18n="footer.title">Contact Us</h2>
-  <p data-i18n="footer.address">Address: 1010 Bridge Blvd SW, Suite F Albuquerque, NM</p>
-  <p data-i18n="footer.phone">Phone: (505) 877-1113</p>
-  <p data-i18n="footer.email">Email: emersonvicunadds@gmail.com</p>
-  <p data-i18n="footer.hours">Hours: Mon-Thurs 9am - 5pm</p>
+  <div class="footer-grid">
+    <div class="footer-item">
+      <h2 data-i18n="footer.hours.title">Hours</h2>
+      <p data-i18n="footer.hours.description">Mon-Thurs 9am - 5pm</p>
+    </div>
+    <div class="footer-item">
+      <h2 data-i18n="footer.contact">Contact Us</h2>
+      <p><a href='tel:+5058771113'><i class="fa-solid fa-phone"></i>(505) 877-1113</a></p>
+      <p><a href="mailto:emersonvicunadds@gmail.com"><i class="fa-solid fa-envelope"></i>emersonvicunadds@gmail.com</a></p>
+    </div>
+    <div class="footer-item">
+      <h2 data-i18n="footer.address">Address</h2>
+      <p>1010 Bridge Blvd SW, Suite F</p>
+      <p>Albuquerque, NM</p>
+      <p>United States</p>
+    </div>
+  </div>
 </footer>
 
 <script src="scripts.js"></script>
