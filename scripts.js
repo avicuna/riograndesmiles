@@ -356,49 +356,70 @@ function changeLanguage() {
 
 document.querySelectorAll('.faq-question').forEach(item => {
   item.addEventListener('click', () => {
-    const content = item.nextElementSibling;
+    const faqItem = item.parentElement;
+    const isActive = faqItem.classList.contains('active');
 
-    // Close other open items
-    document.querySelectorAll('.faq-content').forEach(content => {
-      if (content !== item.nextElementSibling) {
-        content.style.display = 'none';
+    // Close all other FAQ items
+    document.querySelectorAll('.faq-item').forEach(otherItem => {
+      if (otherItem !== faqItem) {
+        otherItem.classList.remove('active');
       }
     });
 
     // Toggle current item
-    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    if (isActive) {
+      faqItem.classList.remove('active');
+    } else {
+      faqItem.classList.add('active');
+    }
   });
 });
 
 document.querySelectorAll('.service-button').forEach(button => {
   button.addEventListener('click', () => {
     const description = button.nextElementSibling; // Get the description element
-    if (description.style.display === 'block') {
-      description.style.display = 'none'; // Hide if currently visible
+    const isExpanded = description.classList.contains('show');
+    
+    if (isExpanded) {
+      // Collapse
+      description.classList.remove('show');
+      button.classList.remove('expanded');
       button.textContent = i18next.t('button.learnMore'); // Change button text back
     } else {
-      description.style.display = 'block'; // Show description
+      // Expand
+      description.classList.add('show');
+      button.classList.add('expanded');
       button.textContent = i18next.t('button.showLess'); // Change button text
     }
   });
 });
 
 let currentSlide = 0;
+let autoSlideInterval;
 
 function moveSlide(direction) {
   const slides = document.querySelectorAll('.carousel-inner .review');
   currentSlide = (currentSlide + direction + slides.length) % slides.length;
   const offset = -currentSlide * 100;
   document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
+  
+  // Reset auto-slide timer when user manually navigates
+  resetAutoSlide();
 }
 
-// Optional: Automatic sliding functionality
-setInterval(() => {
-  moveSlide(1);
-}, 5000); // Change slide every 5 seconds
+function startAutoSlide() {
+  autoSlideInterval = setInterval(() => {
+    moveSlide(1);
+  }, 8000); // Change slide every 8 seconds (increased from 5 for better readability)
+}
+
+function resetAutoSlide() {
+  clearInterval(autoSlideInterval);
+  startAutoSlide();
+}
 
 // Initialize the carousel on page load
 document.addEventListener('DOMContentLoaded', () => {
-  // You can call any initial functions here if needed
+  startAutoSlide();
 });
 
