@@ -582,7 +582,7 @@ footer h2 {
 .review {
   min-width: 100%;
   box-sizing: border-box;
-  padding: 40px 30px; /* Add padding for readability */
+  padding: 40px 70px; /* Add padding for readability and space for nav buttons */
   text-align: center; /* Center align text */
   background-color: white; /* White background */
 }
@@ -646,7 +646,7 @@ footer h2 {
   }
   
   .review {
-    padding: 30px 20px;
+    padding: 30px 60px; /* Maintain space for navigation buttons on mobile */
   }
   
   .review p {
