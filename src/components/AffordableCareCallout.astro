@@ -44,7 +44,7 @@ const checks = [
 
     {/* CTA */}
     <a
-      href="#"
+      href={locale === 'es' ? '/es/insurance/' : '/insurance/'}
       class="inline-flex items-center bg-white text-primary-700 font-semibold rounded-lg px-6 py-3 hover:bg-neutral-100 transition-colors shadow-lg"
     >
       {t('affordableCare.cta')}

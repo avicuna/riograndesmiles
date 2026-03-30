@@ -10,21 +10,22 @@ const { locale } = Astro.props;
 const t = useTranslations(locale);
 const alternatePath = getAlternatePath(Astro.url.pathname, locale);
 
+const prefix = locale === 'es' ? '/es' : '';
 const serviceLinks = [
-  { label: t('footer.generalDentistry'), href: '#' },
-  { label: t('footer.cosmetic'), href: '#' },
-  { label: t('footer.implants'), href: '#' },
-  { label: t('footer.rootCanals'), href: '#' },
-  { label: t('footer.crownsBridges'), href: '#' },
-  { label: t('footer.allServices'), href: '#' },
+  { label: t('footer.generalDentistry'), href: `${prefix}/services/extractions/` },
+  { label: t('footer.cosmetic'), href: `${prefix}/services/bleaching/` },
+  { label: t('footer.implants'), href: `${prefix}/services/implants/` },
+  { label: t('footer.rootCanals'), href: `${prefix}/services/root-canals/` },
+  { label: t('footer.crownsBridges'), href: `${prefix}/services/crowns/` },
+  { label: t('footer.allServices'), href: `${prefix}/services/` },
 ];
 
 const patientLinks = [
-  { label: t('footer.newPatient'), href: '#' },
-  { label: t('footer.insurancePlans'), href: '#' },
-  { label: t('footer.affordableCare'), href: '#' },
-  { label: t('footer.forms'), href: '#' },
-  { label: t('footer.faq'), href: '#' },
+  { label: t('footer.newPatient'), href: `${prefix}/new-patients/` },
+  { label: t('footer.insurancePlans'), href: `${prefix}/insurance/` },
+  { label: t('footer.affordableCare'), href: `${prefix}/affordable-care/` },
+  { label: t('footer.forms'), href: `${prefix}/new-patients/` },
+  { label: t('footer.faq'), href: `${prefix}/faq/` },
 ];
 ---
 

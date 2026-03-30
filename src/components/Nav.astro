@@ -11,12 +11,13 @@ const t = useTranslations(locale);
 const homePath = locale === 'es' ? '/es/' : '/';
 const alternatePath = getAlternatePath(Astro.url.pathname, locale);
 
+const prefix = locale === 'es' ? '/es' : '';
 const navLinks = [
-  { label: t('navbar.services'), href: '#' },
-  { label: t('navbar.about'), href: '#' },
-  { label: t('navbar.reviews'), href: '#' },
-  { label: t('navbar.insurance'), href: '#' },
-  { label: t('navbar.contact'), href: '#' },
+  { label: t('navbar.services'), href: `${prefix}/services/` },
+  { label: t('navbar.about'), href: `${prefix}/about/` },
+  { label: t('navbar.reviews'), href: `${prefix}/reviews/` },
+  { label: t('navbar.insurance'), href: `${prefix}/insurance/` },
+  { label: t('navbar.contact'), href: `${prefix}/contact/` },
 ];
 ---
 
