@@ -14,6 +14,59 @@ import FinalCta from '../../components/FinalCta.astro';
 ---
 
 <BaseLayout title="Rio Grande Smiles | Dentista en Albuquerque, NM" description="Cuidado dental excepcional en Albuquerque, NM. El Dr. Emerson Vicuña ofrece odontología general, cosmética y restaurativa." locale="es" canonicalPath="/es/">
+  {/* Dentist JSON-LD structured data */}
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "Rio Grande Smiles",
+    "description": "Cuidado dental excepcional en Albuquerque, NM. El Dr. Emerson Vicuña ofrece odontología general, cosmética y restaurativa.",
+    "url": "https://riograndesmiles.com",
+    "telephone": "+15058771113",
+    "email": "emersonvicunadds@gmail.com",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "6701 Fortuna Rd NW #100",
+      "addressLocality": "Albuquerque",
+      "addressRegion": "NM",
+      "postalCode": "87121",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "35.1389",
+      "longitude": "-106.6810"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Friday",
+        "opens": "08:00",
+        "closes": "13:00"
+      }
+    ],
+    "acceptedPaymentMethod": [
+      {
+        "@type": "PaymentMethod",
+        "name": "Cash"
+      },
+      {
+        "@type": "PaymentMethod",
+        "name": "Credit Card"
+      },
+      {
+        "@type": "PaymentMethod",
+        "name": "Insurance"
+      }
+    ]
+  })} />
+
   <Hero locale="es" />
   <TrustBar locale="es" />
   <InsuranceGrid locale="es" />
