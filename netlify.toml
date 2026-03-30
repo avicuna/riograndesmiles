@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[context.production.environment]
+  PUBLIC_ENABLE_SCHEDULING = "false"
+
+[context.deploy-preview.environment]
+  PUBLIC_ENABLE_SCHEDULING = "true"
+
+[context.branch-deploy.environment]
+  PUBLIC_ENABLE_SCHEDULING = "true"
