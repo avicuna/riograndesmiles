@@ -1,0 +1,36 @@
+---
+import type { Locale } from '../i18n/utils';
+import GoogleMap from './GoogleMap';
+import HoursCard from './HoursCard.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<section class="py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    {/* Section header */}
+    <div class="text-center mb-12">
+      <p class="text-sm font-semibold text-primary-600 uppercase tracking-wider mb-3">
+        {locale === 'en' ? 'Visit Us' : 'Visítenos'}
+      </p>
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-neutral-900">
+        {locale === 'en' ? 'Find Us in Albuquerque' : 'Encuéntrenos en Albuquerque'}
+      </h2>
+    </div>
+
+    {/* Map + Hours grid */}
+    <div class="grid md:grid-cols-[1fr_380px] gap-0 rounded-xl border border-neutral-200 overflow-hidden shadow-lg">
+      {/* Map */}
+      <div class="w-full h-[400px] md:h-auto">
+        <GoogleMap client:visible />
+      </div>
+
+      {/* Hours card */}
+      <HoursCard locale={locale} />
+    </div>
+  </div>
+</section>
