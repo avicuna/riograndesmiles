@@ -13,9 +13,101 @@
     "location": "Albuquerque, Nuevo México",
     "description": "El Dr. Vicuña y su equipo brindan atención dental excepcional para mantener su sonrisa saludable y fuerte de por vida. Durante más de 20 años hemos establecido relaciones de confianza con nuestros pacientes donde podemos contribuir al bienestar general de todos nuestros pacientes. Usando técnicas probadas para la odontología general, estética y restaurativa, personalizaremos un plan de tratamiento que se adapte a sus objetivos únicos. Desde chequeos hasta mejoras estéticas y restauraciones integrales, el Dr. Vicuna realizará su trabajo dental con habilidad y precisión."
   },
+  "hero": {
+    "badge": "Aceptando Nuevos Pacientes",
+    "heading": "Cuidado Dental Excepcional para Toda su Familia",
+    "subtitle": "Aceptando nuevos pacientes · Medicaid bienvenido · Se habla español",
+    "bookCta": "Reserve su Cita",
+    "callCta": "Llame al (505) 877-1113"
+  },
+  "trustBar": {
+    "medicaid": "Medicaid Bienvenido",
+    "spanish": "Se Habla Español",
+    "experience": "20+ Años de Experiencia",
+    "ada": "Miembro de ADA"
+  },
   "insurance": {
-    "title": "Proveedores de Seguros",
-    "description": "Aceptamos una variedad de proveedores de seguros para hacer que su atención dental sea más accesible."
+    "title": "Proveedores de Seguros Aceptados",
+    "description": "Aceptamos una variedad de planes de seguros para hacer que su atención dental sea más accesible y económica."
+  },
+  "servicesOverview": {
+    "label": "Nuestros Servicios",
+    "heading": "Cuidado Dental Integral",
+    "checkups": {
+      "title": "Chequeos Generales",
+      "description": "Exámenes y limpiezas de rutina para mantener su sonrisa saludable y detectar problemas a tiempo."
+    },
+    "cosmetic": {
+      "title": "Odontología Cosmética",
+      "description": "Mejore y realce su sonrisa con blanqueamiento, carillas y más."
+    },
+    "implants": {
+      "title": "Implantes Dentales",
+      "description": "Reemplazos permanentes y de aspecto natural para dientes perdidos."
+    },
+    "rootCanals": {
+      "title": "Tratamientos de Conducto",
+      "description": "Alivie el dolor y salve su diente natural con terapia experta de conducto."
+    },
+    "crowns": {
+      "title": "Coronas y Puentes",
+      "description": "Restaure dientes dañados o perdidos con coronas y puentes hechos a medida."
+    },
+    "emergency": {
+      "title": "Atención de Emergencia",
+      "description": "Atención dental urgente cuando más lo necesita — llámenos de inmediato."
+    },
+    "learnMore": "Más información"
+  },
+  "doctorProfile": {
+    "label": "Conozca a su Dentista",
+    "name": "Emerson Vicuña, DDS",
+    "credentials": "Doctor en Cirugía Dental · Universidad Estatal de Ohio",
+    "bio": "Con más de 20 años de experiencia, el Dr. Emerson Vicuña es un dentista general que ama ayudar a las personas que necesitan atención dental. Sus pacientes adoran su personalidad amigable, ética de trabajo y resultados sobresalientes. Originario de Lima, Perú, el Dr. Vicuña obtuvo su título de Doctor en Cirugía Dental de la Universidad Estatal de Ohio después de completar su licenciatura en Biología y Química en la Universidad de Nuevo México. Es miembro orgulloso de la Asociación Dental Americana y la Academia de Odontología General. Desde que abrió su propia práctica en 2005, el Dr. Vicuña ha sido el único dentista, lo que permite a los pacientes construir una relación personal y recibir atención verdaderamente individualizada.",
+    "badge1": "Miembro de ADA",
+    "badge2": "Academia de Odontología General",
+    "badge3": "Practicando desde 2005"
+  },
+  "journey": {
+    "label": "Nuevos Pacientes",
+    "heading": "Comenzar Es Fácil",
+    "step1": {
+      "title": "Reserve en Línea",
+      "description": "Programe su visita en segundos usando nuestro sencillo sistema de reservas en línea."
+    },
+    "step2": {
+      "title": "Prepárese para su Visita",
+      "description": "Descargue y complete sus formularios con anticipación para estar listo."
+    },
+    "step3": {
+      "title": "Sonría con Confianza",
+      "description": "Reciba atención personalizada del Dr. Vicuña y salga con una sonrisa más saludable."
+    }
+  },
+  "affordableCare": {
+    "heading": "Todos Merecen una Sonrisa Saludable",
+    "body": "Creemos que la atención dental debe ser accesible para todos. Nuestra oficina trabaja con una amplia gama de proveedores de seguros y ofrece precios transparentes para que pueda concentrarse en su salud, no en costos ocultos.",
+    "check1": "Medicaid Aceptado",
+    "check2": "Mayoría de Seguros Aceptados",
+    "check3": "Precios Transparentes",
+    "cta": "Ver Información de Seguros"
+  },
+  "finalCta": {
+    "heading": "¿Listo para Comenzar?",
+    "subtitle": "Reserve su cita hoy — los nuevos pacientes siempre son bienvenidos.",
+    "bookCta": "Reserve su Cita",
+    "callCta": "Llame al (505) 877-1113"
+  },
+  "insuranceProviders": {
+    "unitedHealthcare": "United Healthcare",
+    "deltaDental": "Delta Dental",
+    "metlife": "MetLife",
+    "guardian": "Guardian",
+    "ameritas": "Ameritas",
+    "cigna": "Cigna",
+    "medicaid": "Medicaid",
+    "principal": "Principal",
+    "unitedConcordia": "United Concordia"
   },
   "doctor": {
     "title": "Acerca del Doctor",

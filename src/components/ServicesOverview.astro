@@ -1,0 +1,61 @@
+---
+import type { Locale } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const services = [
+  { key: 'checkups', icon: '🦷', slug: 'general-checkups' },
+  { key: 'cosmetic', icon: '✨', slug: 'cosmetic-dentistry' },
+  { key: 'implants', icon: '🔩', slug: 'dental-implants' },
+  { key: 'rootCanals', icon: '🩺', slug: 'root-canals' },
+  { key: 'crowns', icon: '👑', slug: 'crowns-bridges' },
+  { key: 'emergency', icon: '🚨', slug: 'emergency-care' },
+];
+---
+
+<section class="bg-white py-16 md:py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {/* Header */}
+    <div class="text-center mb-12">
+      <span class="uppercase tracking-wider text-primary-500 text-xs font-semibold">
+        {t('servicesOverview.label')}
+      </span>
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-neutral-900 mt-2">
+        {t('servicesOverview.heading')}
+      </h2>
+    </div>
+
+    {/* Grid */}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {services.map((service) => (
+        <a
+          href="#"
+          class="group bg-white border border-neutral-200 rounded-xl p-8 text-center hover:-translate-y-1 hover:shadow-lg transition-all duration-200"
+        >
+          {/* Icon */}
+          <div class="inline-flex items-center justify-center w-14 h-14 bg-primary-50 rounded-xl mb-4 text-2xl">
+            {service.icon}
+          </div>
+          {/* Title */}
+          <h3 class="font-display text-lg font-semibold text-neutral-900 mb-2">
+            {t(`servicesOverview.${service.key}.title`)}
+          </h3>
+          {/* Description */}
+          <p class="text-sm text-neutral-400 mb-4">
+            {t(`servicesOverview.${service.key}.description`)}
+          </p>
+          {/* Link */}
+          <span class="text-sm font-medium text-primary-500 group-hover:text-primary-600 transition-colors">
+            {t('servicesOverview.learnMore')} &rarr;
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

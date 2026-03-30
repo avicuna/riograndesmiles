@@ -13,9 +13,101 @@
     "location": "Albuquerque, New Mexico",
     "description": "Dr. Vicuña and his team provide exceptional dental care to keep your smile healthy and strong for life. For over 20 years we have established trusting relationships with our patients where we can contribute to the overall well-being of all our patients. Using proven techniques for general, cosmetic, and restorative dentistry, we'll personalize a treatment plan that meets your unique goals. From checkups, to aesthetic enhancements, to comprehensive restorations, Dr. Vicuna will perform your dental work with skill and precision."
   },
+  "hero": {
+    "badge": "Now Accepting New Patients",
+    "heading": "Exceptional Dental Care for Your Whole Family",
+    "subtitle": "Accepting new patients · Medicaid welcome · Se habla español",
+    "bookCta": "Book Your Visit",
+    "callCta": "Call (505) 877-1113"
+  },
+  "trustBar": {
+    "medicaid": "Medicaid Welcome",
+    "spanish": "Se Habla Español",
+    "experience": "20+ Years Experience",
+    "ada": "ADA Member"
+  },
   "insurance": {
-    "title": "Insurance Providers",
-    "description": "We accept a variety of insurance providers to make your dental care more accessible."
+    "title": "Accepted Insurance Providers",
+    "description": "We accept a variety of insurance plans to make your dental care more accessible and affordable."
+  },
+  "servicesOverview": {
+    "label": "Our Services",
+    "heading": "Comprehensive Dental Care",
+    "checkups": {
+      "title": "General Checkups",
+      "description": "Routine exams and cleanings to keep your smile healthy and catch issues early."
+    },
+    "cosmetic": {
+      "title": "Cosmetic Dentistry",
+      "description": "Brighten and enhance your smile with whitening, veneers, and more."
+    },
+    "implants": {
+      "title": "Dental Implants",
+      "description": "Permanent, natural-looking replacements for missing teeth."
+    },
+    "rootCanals": {
+      "title": "Root Canals",
+      "description": "Relieve pain and save your natural tooth with expert root canal therapy."
+    },
+    "crowns": {
+      "title": "Crowns & Bridges",
+      "description": "Restore damaged or missing teeth with custom-crafted crowns and bridges."
+    },
+    "emergency": {
+      "title": "Emergency Care",
+      "description": "Urgent dental care when you need it most — call us right away."
+    },
+    "learnMore": "Learn more"
+  },
+  "doctorProfile": {
+    "label": "Meet Your Dentist",
+    "name": "Emerson Vicuña, DDS",
+    "credentials": "Doctor of Dental Surgery · Ohio State University",
+    "bio": "With over 20 years of experience, Dr. Emerson Vicuña is a general dentist who loves helping people in need of dental care. His patients adore his friendly personality, work ethic, and outstanding results. Originally from Lima, Peru, Dr. Vicuña earned his Doctor of Dental Surgery degree from The Ohio State University after completing his BS in Biology and Chemistry at the University of New Mexico. He is a proud member of the American Dental Association and Academy of General Dentistry. Since opening his own practice in 2005, Dr. Vicuña has been the sole dentist, allowing patients to build a personal relationship and receive truly individualized care.",
+    "badge1": "ADA Member",
+    "badge2": "Academy of General Dentistry",
+    "badge3": "Practicing since 2005"
+  },
+  "journey": {
+    "label": "New Patients",
+    "heading": "Getting Started Is Easy",
+    "step1": {
+      "title": "Book Online",
+      "description": "Schedule your visit in seconds using our simple online booking system."
+    },
+    "step2": {
+      "title": "Prepare for Your Visit",
+      "description": "Download and complete your forms ahead of time so you're ready to go."
+    },
+    "step3": {
+      "title": "Smile with Confidence",
+      "description": "Get personalized care from Dr. Vicuña and leave with a healthier smile."
+    }
+  },
+  "affordableCare": {
+    "heading": "Everyone Deserves a Healthy Smile",
+    "body": "We believe dental care should be accessible to everyone. Our office works with a wide range of insurance providers and offers transparent pricing so you can focus on your health, not hidden costs.",
+    "check1": "Medicaid Accepted",
+    "check2": "Most Insurance Accepted",
+    "check3": "Transparent Pricing",
+    "cta": "View Insurance Info"
+  },
+  "finalCta": {
+    "heading": "Ready to Get Started?",
+    "subtitle": "Book your appointment today — new patients are always welcome.",
+    "bookCta": "Book Your Visit",
+    "callCta": "Call (505) 877-1113"
+  },
+  "insuranceProviders": {
+    "unitedHealthcare": "United Healthcare",
+    "deltaDental": "Delta Dental",
+    "metlife": "MetLife",
+    "guardian": "Guardian",
+    "ameritas": "Ameritas",
+    "cigna": "Cigna",
+    "medicaid": "Medicaid",
+    "principal": "Principal",
+    "unitedConcordia": "United Concordia"
   },
   "doctor": {
     "title": "About the Doctor",
