@@ -6,8 +6,14 @@
     "reviews": "Reseñas",
     "insurance": "Seguros",
     "contact": "Contacto",
+    "forms": "Formularios",
     "langSwitch": "English",
     "call": "Llamar"
+  },
+  "formsCallout": {
+    "heading": "Descargue Sus Formularios",
+    "body": "Ahorre tiempo en su visita — descargue y complete sus formularios antes de llegar.",
+    "cta": "Ver Formularios"
   },
   "header": {
     "location": "Albuquerque, Nuevo México",
@@ -373,7 +379,9 @@
       "Tarjeta de seguro (frente y reverso)",
       "Identificación con foto",
       "Formularios de paciente completados"
-    ]
+    ],
+    "formsReminder": "No Olvide Sus Formularios",
+    "formsReminderBody": "Descargue y complete sus formularios de paciente antes de su visita para ahorrar tiempo en el registro."
   },
   "affordableCarePage": {
     "title": "Atención Dental Accesible",

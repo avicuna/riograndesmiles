@@ -6,8 +6,14 @@
     "reviews": "Reviews",
     "insurance": "Insurance",
     "contact": "Contact",
+    "forms": "Forms",
     "langSwitch": "Español",
     "call": "Call"
+  },
+  "formsCallout": {
+    "heading": "Download Your Patient Forms",
+    "body": "Save time at your visit — download and complete your forms before you arrive.",
+    "cta": "Get Forms"
   },
   "header": {
     "location": "Albuquerque, New Mexico",
@@ -373,7 +379,9 @@
       "Insurance card (front & back)",
       "Photo ID",
       "Completed patient forms"
-    ]
+    ],
+    "formsReminder": "Don't Forget Your Forms",
+    "formsReminderBody": "Download and complete your patient forms before your visit to save time at check-in."
   },
   "affordableCarePage": {
     "title": "Affordable Dental Care",
