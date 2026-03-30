@@ -18,7 +18,7 @@ const sorted = services.sort((a, b) => a.data.order - b.data.order);
       <h1 class="font-display text-3xl md:text-4xl font-bold text-neutral-900">
         Nuestros Servicios
       </h1>
-      <p class="text-neutral-400 mt-2 text-lg">Atención dental integral en Albuquerque, NM</p>
+      <p class="text-neutral-600 mt-2 text-lg">Atención dental integral en Albuquerque, NM</p>
     </div>
   </section>
 
@@ -27,7 +27,7 @@ const sorted = services.sort((a, b) => a.data.order - b.data.order);
       {sorted.map((service) => (
         <a
           href={`/es/services/${service.data.serviceSlug}`}
-          class="group bg-white border border-neutral-200 rounded-xl p-8 text-center hover:-translate-y-1 hover:shadow-lg transition-all duration-200"
+          class="group bg-white border border-neutral-200 rounded-xl p-8 text-center motion-safe:hover:-translate-y-1 hover:shadow-lg transition-all duration-200"
         >
           <div class="inline-flex items-center justify-center w-14 h-14 bg-primary-50 rounded-xl mb-4 text-2xl">
             {service.data.icon}
@@ -35,7 +35,7 @@ const sorted = services.sort((a, b) => a.data.order - b.data.order);
           <h2 class="font-display text-lg font-semibold text-neutral-900 mb-2">
             {service.data.titleEs}
           </h2>
-          <p class="text-sm text-neutral-400 mb-4">
+          <p class="text-sm text-neutral-600 mb-4">
             {service.data.descriptionEs}
           </p>
           <span class="text-sm font-medium text-primary-500 group-hover:text-primary-600 transition-colors">
