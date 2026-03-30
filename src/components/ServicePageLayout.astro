@@ -1,0 +1,85 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { Locale } from '../i18n/utils';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BookingSection from './BookingSection.astro';
+
+interface Props {
+  service: CollectionEntry<'services'>;
+  locale: Locale;
+}
+
+const { service, locale } = Astro.props;
+const { Content } = await service.render();
+
+const title = locale === 'es' ? service.data.titleEs : service.data.titleEn;
+const description = locale === 'es' ? service.data.descriptionEs : service.data.descriptionEn;
+const seoTitle = `${title} Dentist in Albuquerque, NM | Rio Grande Smiles`;
+const basePath = locale === 'es' ? `/es/services/${service.data.serviceSlug}` : `/services/${service.data.serviceSlug}`;
+const servicesPath = locale === 'es' ? '/es/services/' : '/services/';
+const insurancePath = locale === 'es' ? '/es/insurance/' : '/insurance/';
+
+const backLabel = locale === 'es' ? 'Volver a Todos los Servicios' : 'Back to All Services';
+const insuranceText = locale === 'es'
+  ? 'Aceptamos la mayoría de los principales proveedores de seguros, incluyendo Medicaid'
+  : 'We accept most major insurance providers including Medicaid';
+const insuranceLinkText = locale === 'es' ? 'Ver Información de Seguros' : 'View Insurance Info';
+const subtitleText = locale === 'es' ? 'en Albuquerque, NM' : 'in Albuquerque, NM';
+---
+
+<BaseLayout
+  title={seoTitle}
+  description={description}
+  locale={locale}
+  canonicalPath={basePath}
+>
+  {/* Hero Header */}
+  <section class="bg-primary-50 py-12 text-center">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="inline-flex items-center justify-center w-20 h-20 bg-primary-100 rounded-full mb-4 text-5xl">
+        {service.data.icon}
+      </div>
+      <h1 class="font-display text-3xl md:text-4xl font-bold text-neutral-900">
+        {title}
+      </h1>
+      <p class="text-neutral-400 mt-2 text-lg">{subtitleText}</p>
+    </div>
+  </section>
+
+  {/* Main Content */}
+  <section class="max-w-3xl mx-auto px-6 py-12">
+    {/* Description */}
+    <p class="text-lg leading-relaxed text-neutral-700 mb-10">
+      {description}
+    </p>
+
+    {/* Rendered Markdown Body */}
+    <div class="prose prose-lg max-w-none mb-12">
+      <Content />
+    </div>
+
+    {/* Insurance Callout */}
+    <div class="bg-neutral-50 border border-neutral-200 rounded-xl p-6 text-center mb-12">
+      <p class="text-neutral-700 mb-3">{insuranceText}</p>
+      <a
+        href={insurancePath}
+        class="text-primary-500 hover:text-primary-600 font-medium transition-colors"
+      >
+        {insuranceLinkText} &rarr;
+      </a>
+    </div>
+  </section>
+
+  {/* Booking CTA */}
+  <BookingSection locale={locale} />
+
+  {/* Back Link */}
+  <div class="text-center py-8">
+    <a
+      href={servicesPath}
+      class="text-primary-500 hover:text-primary-600 font-medium transition-colors"
+    >
+      &larr; {backLabel}
+    </a>
+  </div>
+</BaseLayout>

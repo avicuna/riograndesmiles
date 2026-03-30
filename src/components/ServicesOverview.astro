@@ -10,13 +10,15 @@ const { locale } = Astro.props;
 const t = useTranslations(locale);
 
 const services = [
-  { key: 'checkups', icon: '🦷', slug: 'general-checkups' },
-  { key: 'cosmetic', icon: '✨', slug: 'cosmetic-dentistry' },
-  { key: 'implants', icon: '🔩', slug: 'dental-implants' },
+  { key: 'checkups', icon: '🦷', slug: 'extractions' },
+  { key: 'cosmetic', icon: '✨', slug: 'bleaching' },
+  { key: 'implants', icon: '🔩', slug: 'implants' },
   { key: 'rootCanals', icon: '🩺', slug: 'root-canals' },
-  { key: 'crowns', icon: '👑', slug: 'crowns-bridges' },
-  { key: 'emergency', icon: '🚨', slug: 'emergency-care' },
+  { key: 'crowns', icon: '👑', slug: 'crowns' },
+  { key: 'emergency', icon: '🔨', slug: 'denture-repair' },
 ];
+
+const prefix = locale === 'es' ? '/es' : '';
 ---
 
 <section class="bg-white py-16 md:py-20">
@@ -35,7 +37,7 @@ const services = [
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {services.map((service) => (
         <a
-          href="#"
+          href={`${prefix}/services/${service.slug}`}
           class="group bg-white border border-neutral-200 rounded-xl p-8 text-center hover:-translate-y-1 hover:shadow-lg transition-all duration-200"
         >
           {/* Icon */}
@@ -56,6 +58,16 @@ const services = [
           </span>
         </a>
       ))}
+    </div>
+
+    {/* View All Services Link */}
+    <div class="text-center mt-10">
+      <a
+        href={`${prefix}/services/`}
+        class="inline-flex items-center text-primary-500 hover:text-primary-600 font-medium transition-colors"
+      >
+        {locale === 'es' ? 'Ver Todos los Servicios' : 'View All Services'} &rarr;
+      </a>
     </div>
   </div>
 </section>
