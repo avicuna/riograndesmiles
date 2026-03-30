@@ -297,5 +297,74 @@
     "practiceHeading": "Our Practice",
     "practiceDescription": "Dr. Vicuña opened his own dental practice in 2005 with a vision to provide exceptional, personalized dental care to his community. As the sole dentist in his practice, he brings a personal touch to every patient interaction. His commitment to continuous learning, combined with his genuine passion for dentistry, ensures that each patient receives the highest standard of care. Over the years, he has built lasting relationships with hundreds of families in Albuquerque who trust him with their smiles.",
     "readyHeading": "Ready to meet Dr. Vicuña?"
+  },
+  "insurancePage": {
+    "title": "Insurance & Plans",
+    "howItWorksHeading": "How Dental Insurance Works",
+    "howItWorksIntro": "Dental insurance can be confusing. We're here to help you understand your benefits so you can make informed decisions about your care.",
+    "deductible": {
+      "title": "What's a Deductible?",
+      "description": "A deductible is the amount you pay out-of-pocket before your insurance starts covering costs. For example, if your deductible is $50, you pay the first $50 of covered services each year."
+    },
+    "copay": {
+      "title": "What's a Co-Pay?",
+      "description": "A co-pay is a fixed amount you pay for a covered service. For example, you might pay $20 for a routine cleaning, and your insurance covers the rest."
+    },
+    "coverage": {
+      "title": "What Does 'Covered at 80%' Mean?",
+      "description": "This means your insurance pays 80% of the cost for that service, and you pay the remaining 20%. For a $100 service covered at 80%, you'd pay $20."
+    },
+    "notSureHeading": "Not Sure About Your Coverage?",
+    "notSureDescription": "Contact us and we'll help verify your benefits before your visit.",
+    "whatToBringHeading": "What to Bring",
+    "whatToBringItems": [
+      "Insurance card (front & back)",
+      "Photo ID",
+      "Completed patient forms"
+    ]
+  },
+  "affordableCarePage": {
+    "title": "Affordable Dental Care",
+    "welcomeHeading": "Everyone Deserves a Healthy Smile",
+    "welcomeMessage": "We believe quality dental care should be accessible to everyone in our community.",
+    "medicaidBadge": "Medicaid Welcome",
+    "howWeHelpHeading": "How We Keep Care Affordable",
+    "insurance": {
+      "title": "Insurance",
+      "description": "We accept 9+ insurance providers including Medicaid"
+    },
+    "transparent": {
+      "title": "Transparent Pricing",
+      "description": "We discuss all costs before beginning treatment so there are no surprises"
+    },
+    "selfPay": {
+      "title": "Self-Pay Options",
+      "description": "Competitive self-pay rates for patients without insurance"
+    },
+    "resourcesHeading": "Community Resources",
+    "resourcesIntro": "If you need help accessing dental coverage, these resources may help:",
+    "resource1Title": "New Mexico Human Services Department",
+    "resource1Description": "Information about Medicaid enrollment and eligibility",
+    "resource2Title": "Healthcare.gov",
+    "resource2Description": "Marketplace insurance enrollment and assistance"
+  },
+  "financialPolicyPage": {
+    "title": "Financial Policy",
+    "policyHeading": "Our Policy",
+    "policyIntro": "Payment is due at the time of your visit. This policy allows us to keep our costs low and focus on providing the best care for all our patients.",
+    "paymentMethodsHeading": "Accepted Payment Methods",
+    "paymentMethods": [
+      "Cash",
+      "Credit and debit cards",
+      "Checks"
+    ],
+    "insuranceBillingHeading": "Insurance Billing",
+    "insuranceBillingP1": "We file insurance claims on your behalf as a courtesy. Your estimated patient portion is due at the time of service.",
+    "insuranceBillingP2": "If you have questions about your coverage, please contact us before your appointment.",
+    "cancellationHeading": "Cancellation & No-Show Policy",
+    "cancellationP1": "We kindly ask for 24 hours' notice if you need to cancel or reschedule your appointment.",
+    "cancellationP2": "Your appointment time is reserved just for you. When appointments go unused, other patients miss the opportunity to be seen.",
+    "questionsHeading": "Questions?",
+    "questionsDescription": "We're here to help. Contact us if you have any questions about our financial policy or your specific situation."
   }
 }

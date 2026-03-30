@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { useTranslations } from '../i18n/utils';
+import InsuranceGrid from '../components/InsuranceGrid.astro';
+import BookingSection from '../components/BookingSection.astro';
+
+const t = useTranslations('en');
+---
+
+<BaseLayout
+  title="Insurance & Plans | Rio Grande Smiles"
+  description="We accept a variety of insurance plans including Medicaid, United Healthcare, Delta Dental, and more. Learn how dental insurance works and what to bring to your appointment."
+  locale="en"
+  canonicalPath="/insurance"
+>
+  {/* Hero Section */}
+  <section class="bg-primary-50 py-12">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="font-display text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+        {t('insurancePage.title')}
+      </h1>
+    </div>
+  </section>
+
+  {/* How Dental Insurance Works */}
+  <section class="py-16">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-neutral-900 text-center mb-6">
+        {t('insurancePage.howItWorksHeading')}
+      </h2>
+      <p class="text-lg text-neutral-600 text-center mb-12">
+        {t('insurancePage.howItWorksIntro')}
+      </p>
+
+      {/* Info Cards */}
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        {/* Deductible Card */}
+        <div class="bg-white border border-neutral-200 rounded-xl p-6 shadow-sm">
+          <h3 class="font-semibold text-lg text-neutral-900 mb-3">
+            {t('insurancePage.deductible.title')}
+          </h3>
+          <p class="text-neutral-600 text-sm">
+            {t('insurancePage.deductible.description')}
+          </p>
+        </div>
+
+        {/* Co-Pay Card */}
+        <div class="bg-white border border-neutral-200 rounded-xl p-6 shadow-sm">
+          <h3 class="font-semibold text-lg text-neutral-900 mb-3">
+            {t('insurancePage.copay.title')}
+          </h3>
+          <p class="text-neutral-600 text-sm">
+            {t('insurancePage.copay.description')}
+          </p>
+        </div>
+
+        {/* Coverage Card */}
+        <div class="bg-white border border-neutral-200 rounded-xl p-6 shadow-sm">
+          <h3 class="font-semibold text-lg text-neutral-900 mb-3">
+            {t('insurancePage.coverage.title')}
+          </h3>
+          <p class="text-neutral-600 text-sm">
+            {t('insurancePage.coverage.description')}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Insurance Grid */}
+  <InsuranceGrid locale="en" />
+
+  {/* Not Sure About Coverage */}
+  <section class="py-16">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="bg-primary-50 rounded-xl p-8 text-center">
+        <h2 class="font-display text-2xl font-bold text-neutral-900 mb-4">
+          {t('insurancePage.notSureHeading')}
+        </h2>
+        <p class="text-neutral-700 mb-6">
+          {t('insurancePage.notSureDescription')}
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="tel:+5058771113"
+            class="inline-flex items-center bg-primary-500 text-white font-semibold rounded-lg px-6 py-3 hover:bg-primary-600 transition-colors"
+          >
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+            </svg>
+            (505) 877-1113
+          </a>
+          <a
+            href="mailto:emersonvicunadds@gmail.com"
+            class="inline-flex items-center border-2 border-primary-500 text-primary-700 font-semibold rounded-lg px-6 py-3 hover:bg-primary-100 transition-colors"
+          >
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+            </svg>
+            Email Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* What to Bring */}
+  <section class="py-16 bg-neutral-50">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-neutral-900 text-center mb-8">
+        {t('insurancePage.whatToBringHeading')}
+      </h2>
+      <div class="space-y-4">
+        {t('insurancePage.whatToBringItems').map((item: string) => (
+          <div class="flex items-start gap-4 bg-white border border-neutral-200 rounded-lg p-4">
+            <svg class="w-6 h-6 text-primary-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <p class="text-neutral-700 font-medium">{item}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* Booking Section */}
+  <section class="py-16">
+    <div class="max-w-3xl mx-auto px-6">
+      <BookingSection locale="en" />
+    </div>
+  </section>
+</BaseLayout>

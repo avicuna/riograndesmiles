@@ -297,5 +297,74 @@
     "practiceHeading": "Nuestra Práctica",
     "practiceDescription": "El Dr. Vicuña abrió su propia práctica dental en 2005 con la visión de proporcionar atención dental excepcional y personalizada a su comunidad. Como el único dentista en su práctica, aporta un toque personal a cada interacción con el paciente. Su compromiso con el aprendizaje continuo, combinado con su pasión genuina por la odontología, garantiza que cada paciente reciba el más alto nivel de atención. A lo largo de los años, ha construido relaciones duraderas con cientos de familias en Albuquerque que confían en él con sus sonrisas.",
     "readyHeading": "¿Listo para conocer al Dr. Vicuña?"
+  },
+  "insurancePage": {
+    "title": "Seguros y Planes",
+    "howItWorksHeading": "Cómo Funciona el Seguro Dental",
+    "howItWorksIntro": "El seguro dental puede ser confuso. Estamos aquí para ayudarle a entender sus beneficios para que pueda tomar decisiones informadas sobre su atención.",
+    "deductible": {
+      "title": "¿Qué es un Deducible?",
+      "description": "Un deducible es la cantidad que paga de su bolsillo antes de que su seguro comience a cubrir los costos. Por ejemplo, si su deducible es de $50, usted paga los primeros $50 de servicios cubiertos cada año."
+    },
+    "copay": {
+      "title": "¿Qué es un Co-Pago?",
+      "description": "Un co-pago es una cantidad fija que paga por un servicio cubierto. Por ejemplo, podría pagar $20 por una limpieza de rutina, y su seguro cubre el resto."
+    },
+    "coverage": {
+      "title": "¿Qué Significa 'Cubierto al 80%'?",
+      "description": "Esto significa que su seguro paga el 80% del costo de ese servicio, y usted paga el 20% restante. Para un servicio de $100 cubierto al 80%, usted pagaría $20."
+    },
+    "notSureHeading": "¿No Está Seguro de Su Cobertura?",
+    "notSureDescription": "Contáctenos y le ayudaremos a verificar sus beneficios antes de su visita.",
+    "whatToBringHeading": "Qué Traer",
+    "whatToBringItems": [
+      "Tarjeta de seguro (frente y reverso)",
+      "Identificación con foto",
+      "Formularios de paciente completados"
+    ]
+  },
+  "affordableCarePage": {
+    "title": "Atención Dental Accesible",
+    "welcomeHeading": "Todos Merecen una Sonrisa Saludable",
+    "welcomeMessage": "Creemos que la atención dental de calidad debe ser accesible para todos en nuestra comunidad.",
+    "medicaidBadge": "Medicaid Bienvenido",
+    "howWeHelpHeading": "Cómo Mantenemos la Atención Accesible",
+    "insurance": {
+      "title": "Seguros",
+      "description": "Aceptamos más de 9 proveedores de seguros incluyendo Medicaid"
+    },
+    "transparent": {
+      "title": "Precios Transparentes",
+      "description": "Discutimos todos los costos antes de comenzar el tratamiento para que no haya sorpresas"
+    },
+    "selfPay": {
+      "title": "Opciones de Pago Directo",
+      "description": "Tarifas competitivas de pago directo para pacientes sin seguro"
+    },
+    "resourcesHeading": "Recursos Comunitarios",
+    "resourcesIntro": "Si necesita ayuda para acceder a cobertura dental, estos recursos pueden ayudar:",
+    "resource1Title": "Departamento de Servicios Humanos de Nuevo México",
+    "resource1Description": "Información sobre inscripción y elegibilidad para Medicaid",
+    "resource2Title": "Healthcare.gov",
+    "resource2Description": "Inscripción y asistencia en el mercado de seguros"
+  },
+  "financialPolicyPage": {
+    "title": "Política Financiera",
+    "policyHeading": "Nuestra Política",
+    "policyIntro": "El pago se debe en el momento de su visita. Esta política nos permite mantener nuestros costos bajos y enfocarnos en brindar la mejor atención para todos nuestros pacientes.",
+    "paymentMethodsHeading": "Métodos de Pago Aceptados",
+    "paymentMethods": [
+      "Efectivo",
+      "Tarjetas de crédito y débito",
+      "Cheques"
+    ],
+    "insuranceBillingHeading": "Facturación de Seguros",
+    "insuranceBillingP1": "Presentamos reclamos de seguros en su nombre como cortesía. Su porción estimada del paciente se debe en el momento del servicio.",
+    "insuranceBillingP2": "Si tiene preguntas sobre su cobertura, por favor contáctenos antes de su cita.",
+    "cancellationHeading": "Política de Cancelación y No Presentación",
+    "cancellationP1": "Le pedimos amablemente un aviso de 24 horas si necesita cancelar o reprogramar su cita.",
+    "cancellationP2": "Su tiempo de cita está reservado solo para usted. Cuando las citas no se utilizan, otros pacientes pierden la oportunidad de ser atendidos.",
+    "questionsHeading": "¿Preguntas?",
+    "questionsDescription": "Estamos aquí para ayudar. Contáctenos si tiene alguna pregunta sobre nuestra política financiera o su situación específica."
   }
 }
