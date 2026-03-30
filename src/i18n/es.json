@@ -283,5 +283,19 @@
     "title": "Reseñas de Pacientes",
     "label": "Reseñas de Pacientes",
     "heading": "Lo Que Dicen Nuestros Pacientes"
+  },
+  "about": {
+    "sectionLabel": "Acerca del Doctor",
+    "doctorTitle": "Emerson Vicuña, DDS",
+    "doctorSubtitle": "Doctor en Cirugía Dental",
+    "credentialsHeading": "Educación y Credenciales",
+    "credential1": "DDS, Universidad Estatal de Ohio",
+    "credential2": "Licenciatura en Biología y Química, Universidad de Nuevo México",
+    "credential3": "Miembro de la Asociación Dental Americana",
+    "credential4": "Miembro de la Academia de Odontología General",
+    "credential5": "Ejerciendo desde 2005",
+    "practiceHeading": "Nuestra Práctica",
+    "practiceDescription": "El Dr. Vicuña abrió su propia práctica dental en 2005 con la visión de proporcionar atención dental excepcional y personalizada a su comunidad. Como el único dentista en su práctica, aporta un toque personal a cada interacción con el paciente. Su compromiso con el aprendizaje continuo, combinado con su pasión genuina por la odontología, garantiza que cada paciente reciba el más alto nivel de atención. A lo largo de los años, ha construido relaciones duraderas con cientos de familias en Albuquerque que confían en él con sus sonrisas.",
+    "readyHeading": "¿Listo para conocer al Dr. Vicuña?"
   }
 }
