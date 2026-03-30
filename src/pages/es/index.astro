@@ -9,6 +9,7 @@ import ReviewsSection from '../../components/ReviewsSection.astro';
 import JourneySteps from '../../components/JourneySteps.astro';
 import AffordableCareCallout from '../../components/AffordableCareCallout.astro';
 import MapSection from '../../components/MapSection.astro';
+import BookingSection from '../../components/BookingSection.astro';
 import FinalCta from '../../components/FinalCta.astro';
 ---
 
@@ -22,5 +23,13 @@ import FinalCta from '../../components/FinalCta.astro';
   <JourneySteps locale="es" />
   <AffordableCareCallout locale="es" />
   <MapSection locale="es" />
+
+  {/* Booking Section */}
+  <section class="py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <BookingSection locale="es" />
+    </div>
+  </section>
+
   <FinalCta locale="es" />
 </BaseLayout>

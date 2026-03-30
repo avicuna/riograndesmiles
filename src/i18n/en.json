@@ -92,6 +92,11 @@
     "check3": "Transparent Pricing",
     "cta": "View Insurance Info"
   },
+  "booking": {
+    "title": "Book an Appointment",
+    "fallbackText": "Call us to schedule your visit. We're happy to help find a time that works for you.",
+    "callButton": "Call (505) 877-1113"
+  },
   "finalCta": {
     "heading": "Ready to Get Started?",
     "subtitle": "Book your appointment today — new patients are always welcome.",

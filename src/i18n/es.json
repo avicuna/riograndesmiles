@@ -92,6 +92,11 @@
     "check3": "Precios Transparentes",
     "cta": "Ver Información de Seguros"
   },
+  "booking": {
+    "title": "Reserve una Cita",
+    "fallbackText": "Llámenos para programar su visita. Estaremos encantados de ayudarle a encontrar un horario que le funcione.",
+    "callButton": "Llamar (505) 877-1113"
+  },
   "finalCta": {
     "heading": "¿Listo para Comenzar?",
     "subtitle": "Reserve su cita hoy — los nuevos pacientes siempre son bienvenidos.",
