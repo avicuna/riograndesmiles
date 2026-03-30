@@ -282,7 +282,59 @@
   "reviews": {
     "title": "Patient Reviews",
     "label": "Patient Reviews",
-    "heading": "What Our Patients Say"
+    "heading": "What Our Patients Say",
+    "shareExperience": "We'd love to hear about your experience! Leave us a review on Google.",
+    "pageDescription": "Read what our patients have to say about their experience with Dr. Vicuña and the Rio Grande Smiles team."
+  },
+  "newPatients": {
+    "title": "New Patient Information",
+    "pageDescription": "Everything you need to know before your first visit to Rio Grande Smiles. Download forms, learn what to bring, and prepare for your appointment.",
+    "whatToBringHeading": "What to Bring",
+    "whatToBringItems": [
+      "Insurance card (front & back)",
+      "Photo ID",
+      "Completed forms (download below)",
+      "List of current medications"
+    ],
+    "firstVisitHeading": "Your First Visit",
+    "firstVisitP1": "Welcome to Rio Grande Smiles! We're excited to meet you and help you achieve optimal oral health. Your first visit is an important opportunity for us to get to know you and understand your dental health goals.",
+    "firstVisitP2": "Plan to spend 30-60 minutes for your first visit. We'll conduct a comprehensive examination, discuss your dental health history, and create a personalized treatment plan tailored to your needs.",
+    "downloadFormsHeading": "Downloadable Forms",
+    "downloadFormsIntro": "Save time at your appointment by downloading and completing these forms ahead of time:",
+    "medicalHistoryFormTitle": "Medical History Form",
+    "medicalHistoryFormDesc": "Help us understand your health background for the safest, most personalized care.",
+    "patientRegistrationFormTitle": "Patient Registration Form",
+    "patientRegistrationFormDesc": "Essential information to set up your account and manage your appointments.",
+    "firstAppointmentFaqHeading": "First Appointment Questions"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "pageDescription": "Get in touch with Rio Grande Smiles. Visit our office, call us, or send us a message.",
+    "formHeading": "Send Us a Message",
+    "nameLabel": "Full Name",
+    "phoneLabel": "Phone Number",
+    "emailLabel": "Email Address",
+    "messageLabel": "Message",
+    "submitButton": "Send Message",
+    "directionsHeading": "Directions & Parking",
+    "directionsText": "We're located on Coors Boulevard, just south of Montaño Road. Free parking is available in front of the building."
+  },
+  "faqPage": {
+    "title": "Frequently Asked Questions",
+    "pageDescription": "Find answers to common questions about dental care, appointments, insurance, and more.",
+    "firstAppointmentHeading": "First Appointment",
+    "preventiveDentistryHeading": "Preventive Dentistry",
+    "generalDentistryHeading": "General Dentistry",
+    "familyDentistryHeading": "Family Dentistry",
+    "cosmeticDentistryHeading": "Cosmetic Dentistry",
+    "emergenciesHeading": "Emergencies"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "heading": "404",
+    "subheading": "Page Not Found",
+    "message": "Sorry, we couldn't find the page you're looking for. It may have been moved or deleted.",
+    "homeButton": "Back to Home"
   },
   "about": {
     "sectionLabel": "About the Doctor",

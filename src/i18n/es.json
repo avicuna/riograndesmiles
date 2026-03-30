@@ -282,7 +282,59 @@
   "reviews": {
     "title": "Reseñas de Pacientes",
     "label": "Reseñas de Pacientes",
-    "heading": "Lo Que Dicen Nuestros Pacientes"
+    "heading": "Lo Que Dicen Nuestros Pacientes",
+    "shareExperience": "¡Nos encantaría saber sobre su experiencia! Déjenos una reseña en Google.",
+    "pageDescription": "Lea lo que nuestros pacientes tienen que decir sobre su experiencia con el Dr. Vicuña y el equipo de Rio Grande Smiles."
+  },
+  "newPatients": {
+    "title": "Información para Nuevos Pacientes",
+    "pageDescription": "Todo lo que necesita saber antes de su primera visita a Rio Grande Smiles. Descargue formularios, conozca qué traer y prepárese para su cita.",
+    "whatToBringHeading": "Qué Traer",
+    "whatToBringItems": [
+      "Tarjeta de seguro (frente y reverso)",
+      "Identificación con foto",
+      "Formularios completados (descargar abajo)",
+      "Lista de medicamentos actuales"
+    ],
+    "firstVisitHeading": "Su Primera Visita",
+    "firstVisitP1": "¡Bienvenido a Rio Grande Smiles! Estamos emocionados de conocerlo y ayudarlo a lograr una salud bucal óptima. Su primera visita es una oportunidad importante para que lo conozcamos y comprendamos sus objetivos de salud dental.",
+    "firstVisitP2": "Planifique pasar de 30 a 60 minutos en su primera visita. Realizaremos un examen completo, discutiremos su historial de salud dental y crearemos un plan de tratamiento personalizado adaptado a sus necesidades.",
+    "downloadFormsHeading": "Formularios Descargables",
+    "downloadFormsIntro": "Ahorre tiempo en su cita descargando y completando estos formularios con anticipación:",
+    "medicalHistoryFormTitle": "Formulario de Historial Médico",
+    "medicalHistoryFormDesc": "Ayúdenos a comprender su historial de salud para la atención más segura y personalizada.",
+    "patientRegistrationFormTitle": "Formulario de Registro de Paciente",
+    "patientRegistrationFormDesc": "Información esencial para configurar su cuenta y gestionar sus citas.",
+    "firstAppointmentFaqHeading": "Preguntas sobre Primera Cita"
+  },
+  "contact": {
+    "title": "Contacto",
+    "pageDescription": "Póngase en contacto con Rio Grande Smiles. Visite nuestra oficina, llámenos o envíenos un mensaje.",
+    "formHeading": "Envíenos un Mensaje",
+    "nameLabel": "Nombre Completo",
+    "phoneLabel": "Número de Teléfono",
+    "emailLabel": "Correo Electrónico",
+    "messageLabel": "Mensaje",
+    "submitButton": "Enviar Mensaje",
+    "directionsHeading": "Direcciones y Estacionamiento",
+    "directionsText": "Estamos ubicados en Coors Boulevard, justo al sur de Montaño Road. Hay estacionamiento gratuito disponible frente al edificio."
+  },
+  "faqPage": {
+    "title": "Preguntas Frecuentes",
+    "pageDescription": "Encuentre respuestas a preguntas comunes sobre atención dental, citas, seguros y más.",
+    "firstAppointmentHeading": "Primera Cita",
+    "preventiveDentistryHeading": "Odontología Preventiva",
+    "generalDentistryHeading": "Odontología General",
+    "familyDentistryHeading": "Odontología Familiar",
+    "cosmeticDentistryHeading": "Odontología Cosmética",
+    "emergenciesHeading": "Emergencias"
+  },
+  "notFound": {
+    "title": "Página No Encontrada",
+    "heading": "404",
+    "subheading": "Página No Encontrada",
+    "message": "Lo sentimos, no pudimos encontrar la página que busca. Es posible que se haya movido o eliminado.",
+    "homeButton": "Volver al Inicio"
   },
   "about": {
     "sectionLabel": "Acerca del Doctor",

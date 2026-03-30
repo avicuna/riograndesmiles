@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { useTranslations } from '../i18n/utils';
+import JourneySteps from '../components/JourneySteps.astro';
+import FAQAccordion from '../components/FAQAccordion';
+import BookingSection from '../components/BookingSection.astro';
+
+const locale = 'en';
+const t = useTranslations(locale);
+
+// First Appointment FAQ items
+const firstAppointmentFaq = [
+  {
+    question: t('faq.firstAppointment.arriveEarly'),
+    answer: t('faq.firstAppointment.arriveEarlyAnswer'),
+  },
+  {
+    question: t('faq.firstAppointment.preMedication'),
+    answer: t('faq.firstAppointment.preMedicationAnswer'),
+  },
+  {
+    question: t('faq.firstAppointment.bring'),
+    answer: `${t('faq.firstAppointment.bringAnswer')}
+• ${t('faq.firstAppointment.bringItem1')}
+• ${t('faq.firstAppointment.bringItem2')}
+• ${t('faq.firstAppointment.bringItem3')}
+• ${t('faq.firstAppointment.bringItem4')}`,
+  },
+  {
+    question: t('faq.firstAppointment.duration'),
+    answer: t('faq.firstAppointment.durationAnswer'),
+  },
+];
+---
+
+<BaseLayout
+  title={t('newPatients.title')}
+  description={t('newPatients.pageDescription')}
+  locale={locale}
+  canonicalPath="/new-patients"
+>
+  {/* Hero Header */}
+  <section class="bg-primary-50 py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="uppercase tracking-wider text-primary-500 text-xs font-semibold">
+        {t('journey.label')}
+      </span>
+      <h1 class="font-display text-3xl md:text-5xl font-bold text-neutral-900 mt-3">
+        {t('newPatients.title')}
+      </h1>
+    </div>
+  </section>
+
+  {/* Journey Steps */}
+  <JourneySteps locale={locale} />
+
+  {/* What to Bring Section */}
+  <section class="py-16 md:py-20 bg-neutral-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-neutral-900 mb-8 text-center">
+        {t('newPatients.whatToBringHeading')}
+      </h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {t('newPatients.whatToBringItems').map((item: string) => (
+          <div class="flex items-start bg-white p-5 rounded-lg border border-neutral-200 shadow-sm">
+            <svg class="w-6 h-6 text-primary-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+            </svg>
+            <span class="text-neutral-700 font-medium">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* Your First Visit Section */}
+  <section class="py-16 md:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-neutral-900 mb-6 text-center">
+        {t('newPatients.firstVisitHeading')}
+      </h2>
+      <div class="prose prose-lg max-w-none text-neutral-700">
+        <p class="leading-relaxed mb-4">
+          {t('newPatients.firstVisitP1')}
+        </p>
+        <p class="leading-relaxed">
+          {t('newPatients.firstVisitP2')}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {/* Downloadable Forms Section */}
+  <section class="py-16 md:py-20 bg-neutral-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-neutral-900 mb-4 text-center">
+        {t('newPatients.downloadFormsHeading')}
+      </h2>
+      <p class="text-center text-neutral-600 mb-10 max-w-2xl mx-auto">
+        {t('newPatients.downloadFormsIntro')}
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        {/* Medical History Form */}
+        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex items-start mb-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-primary-50 rounded-lg flex items-center justify-center mr-4">
+              <svg class="w-6 h-6 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-display text-lg font-semibold text-neutral-900 mb-2">
+                {t('newPatients.medicalHistoryFormTitle')}
+              </h3>
+              <p class="text-sm text-neutral-600 mb-4">
+                {t('newPatients.medicalHistoryFormDesc')}
+              </p>
+              <a
+                href="https://firebasestorage.googleapis.com/v0/b/emersonvicunadds-1.appspot.com/o/MedicalHistory.pdf?alt=media&token=08446965-f958-4735-852b-618ca443c91f"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block px-5 py-2.5 bg-primary-500 text-white font-semibold rounded-lg hover:bg-primary-600 transition-colors text-sm"
+              >
+                {t('button.downloadForm')}
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Patient Registration Form */}
+        <div class="bg-white p-6 rounded-xl border border-neutral-200 shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex items-start mb-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-primary-50 rounded-lg flex items-center justify-center mr-4">
+              <svg class="w-6 h-6 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-display text-lg font-semibold text-neutral-900 mb-2">
+                {t('newPatients.patientRegistrationFormTitle')}
+              </h3>
+              <p class="text-sm text-neutral-600 mb-4">
+                {t('newPatients.patientRegistrationFormDesc')}
+              </p>
+              <a
+                href="https://firebasestorage.googleapis.com/v0/b/emersonvicunadds-1.appspot.com/o/patientregistration.pdf?alt=media&token=69911c8b-bb1e-4765-a841-fc7adc15cac6"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block px-5 py-2.5 bg-primary-500 text-white font-semibold rounded-lg hover:bg-primary-600 transition-colors text-sm"
+              >
+                {t('button.downloadForm')}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* First Appointment FAQ */}
+  <section class="py-16 md:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-neutral-900 mb-10 text-center">
+        {t('newPatients.firstAppointmentFaqHeading')}
+      </h2>
+      <FAQAccordion items={firstAppointmentFaq} client:visible />
+    </div>
+  </section>
+
+  {/* Booking CTA */}
+  <section class="py-16 px-6 bg-neutral-50">
+    <div class="max-w-4xl mx-auto">
+      <BookingSection locale={locale} />
+    </div>
+  </section>
+</BaseLayout>

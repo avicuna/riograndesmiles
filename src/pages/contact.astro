@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { useTranslations } from '../i18n/utils';
+import MapSection from '../components/MapSection.astro';
+
+const locale = 'en';
+const t = useTranslations(locale);
+---
+
+<BaseLayout
+  title={t('contact.title')}
+  description={t('contact.pageDescription')}
+  locale={locale}
+  canonicalPath="/contact"
+>
+  {/* Hero Header */}
+  <section class="bg-primary-50 py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="uppercase tracking-wider text-primary-500 text-xs font-semibold">
+        {t('footer.contact')}
+      </span>
+      <h1 class="font-display text-3xl md:text-5xl font-bold text-neutral-900 mt-3">
+        {t('contact.title')}
+      </h1>
+    </div>
+  </section>
+
+  {/* Map + Hours Section */}
+  <MapSection locale={locale} />
+
+  {/* Contact Form Section */}
+  <section class="py-16 md:py-20 bg-white">
+    <div class="max-w-lg mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl md:text-3xl font-bold text-neutral-900 mb-8 text-center">
+        {t('contact.formHeading')}
+      </h2>
+
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        class="space-y-6"
+      >
+        {/* Hidden fields for Netlify */}
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hidden">
+          <label>
+            Don't fill this out if you're human: <input name="bot-field" />
+          </label>
+        </p>
+
+        {/* Name */}
+        <div>
+          <label for="name" class="block text-sm font-semibold text-neutral-900 mb-2">
+            {t('contact.nameLabel')} <span class="text-red-500">*</span>
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+          />
+        </div>
+
+        {/* Phone */}
+        <div>
+          <label for="phone" class="block text-sm font-semibold text-neutral-900 mb-2">
+            {t('contact.phoneLabel')}
+          </label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+          />
+        </div>
+
+        {/* Email */}
+        <div>
+          <label for="email" class="block text-sm font-semibold text-neutral-900 mb-2">
+            {t('contact.emailLabel')} <span class="text-red-500">*</span>
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+          />
+        </div>
+
+        {/* Message */}
+        <div>
+          <label for="message" class="block text-sm font-semibold text-neutral-900 mb-2">
+            {t('contact.messageLabel')} <span class="text-red-500">*</span>
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            required
+            class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors resize-none"
+          ></textarea>
+        </div>
+
+        {/* Submit Button */}
+        <button
+          type="submit"
+          class="w-full px-8 py-4 bg-primary-500 text-white font-semibold rounded-lg hover:bg-primary-600 transition-colors shadow-md hover:shadow-lg"
+        >
+          {t('contact.submitButton')}
+        </button>
+      </form>
+    </div>
+  </section>
+
+  {/* Directions Section */}
+  <section class="py-12 bg-neutral-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h3 class="font-display text-xl font-semibold text-neutral-900 mb-4 text-center">
+        {t('contact.directionsHeading')}
+      </h3>
+      <p class="text-neutral-700 text-center leading-relaxed">
+        {t('contact.directionsText')}
+      </p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../i18n/utils';
+import ReviewCarousel from '../../components/ReviewCarousel';
+import BookingSection from '../../components/BookingSection.astro';
+
+const locale = 'es';
+const t = useTranslations(locale);
+
+const reviews = [
+  {
+    text: "Muy profesional y siguiendo las medidas más seguras. Recomendaría este lugar dental a cualquiera. ¡El Dr. Vicuña y su personal son número 1!",
+    author: "Rafael Contreras",
+  },
+  {
+    text: "Muy útil y trabajo profesional.",
+    author: "Carlos Alvarez",
+  },
+  {
+    text: "¡Me encanta el Dr. Vicuña! Es tan gentil y su personal es tan amable. ¡He estado viniendo aquí por años y no iría a ningún otro lugar!",
+    author: "Clorinda Olguin",
+  },
+];
+---
+
+<BaseLayout
+  title={t('reviews.title')}
+  description={t('reviews.pageDescription')}
+  locale={locale}
+  canonicalPath="/es/reviews"
+>
+  {/* Hero Header */}
+  <section class="bg-primary-50 py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="uppercase tracking-wider text-primary-500 text-xs font-semibold">
+        {t('reviews.label')}
+      </span>
+      <h1 class="font-display text-3xl md:text-5xl font-bold text-neutral-900 mt-3">
+        {t('reviews.heading')}
+      </h1>
+    </div>
+  </section>
+
+  {/* Reviews Carousel */}
+  <section class="py-16 md:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <ReviewCarousel reviews={reviews} client:visible />
+    </div>
+  </section>
+
+  {/* Share Experience Section */}
+  <section class="py-12 bg-neutral-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-lg text-neutral-700 leading-relaxed">
+        {t('reviews.shareExperience')}
+      </p>
+      <a
+        href="https://g.page/r/CQj8kXVNhBUZEBM/review"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block mt-6 px-8 py-3 bg-primary-500 text-white font-semibold rounded-lg hover:bg-primary-600 transition-colors shadow-md hover:shadow-lg"
+      >
+        Dejar una Reseña en Google
+      </a>
+    </div>
+  </section>
+
+  {/* Booking CTA */}
+  <section class="py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <BookingSection locale={locale} />
+    </div>
+  </section>
+</BaseLayout>
