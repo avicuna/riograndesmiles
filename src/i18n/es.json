@@ -275,6 +275,8 @@
     "showLess": "Mostrar Menos"
   },
   "reviews": {
-    "title": "Reseñas de Pacientes"
+    "title": "Reseñas de Pacientes",
+    "label": "Reseñas de Pacientes",
+    "heading": "Lo Que Dicen Nuestros Pacientes"
   }
 }

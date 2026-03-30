@@ -275,6 +275,8 @@
     "showLess": "Show Less"
   },
   "reviews": {
-    "title": "Patient Reviews"
+    "title": "Patient Reviews",
+    "label": "Patient Reviews",
+    "heading": "What Our Patients Say"
   }
 }
