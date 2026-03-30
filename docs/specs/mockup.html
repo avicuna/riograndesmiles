@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rio Grande Smiles — Homepage Mockup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary-50: #f0f9ff;
+      --primary-100: #e0f2fe;
+      --primary-500: #0ea5e9;
+      --primary-600: #0284c7;
+      --primary-700: #0369a1;
+      --primary-900: #0c4a6e;
+      --neutral-50: #fafafa;
+      --neutral-100: #f5f5f5;
+      --neutral-200: #e5e5e5;
+      --neutral-400: #a3a3a3;
+      --neutral-700: #404040;
+      --neutral-900: #171717;
+      --teal: #14b8a6;
+      --white: #ffffff;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+      --radius: 12px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--neutral-700);
+      line-height: 1.6;
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── STICKY NAV ─── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--neutral-200);
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 24px;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; font-weight: 700;
+      color: var(--primary-700);
+    }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a {
+      text-decoration: none; color: var(--neutral-700);
+      font-size: 0.9rem; font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--primary-600); }
+    .nav-phone {
+      font-weight: 600; color: var(--neutral-900) !important;
+      white-space: nowrap;
+    }
+    .nav-phone svg { vertical-align: -2px; margin-right: 4px; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--primary-500); color: var(--white);
+      padding: 10px 22px; border-radius: 8px;
+      font-size: 0.9rem; font-weight: 600;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .btn-primary:hover { background: var(--primary-600); transform: translateY(-1px); }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: var(--primary-600);
+      padding: 10px 22px; border-radius: 8px;
+      font-size: 0.9rem; font-weight: 600;
+      text-decoration: none; border: 2px solid var(--primary-500);
+      cursor: pointer; transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .btn-outline:hover { background: var(--primary-50); }
+    .btn-white {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--white); color: var(--primary-700);
+      padding: 14px 28px; border-radius: 8px;
+      font-size: 1rem; font-weight: 600;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.2s;
+      box-shadow: var(--shadow-md);
+    }
+    .btn-white:hover { transform: translateY(-1px); box-shadow: var(--shadow-lg); }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, var(--primary-900) 0%, var(--primary-700) 100%);
+      color: var(--white);
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url('../../img/albuquerque-skyline.jpg') center/cover;
+      opacity: 0.15;
+    }
+    .hero-inner {
+      position: relative; z-index: 1;
+      max-width: 800px; margin: 0 auto;
+      padding: 80px 24px 70px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(4px);
+      padding: 6px 16px; border-radius: 20px;
+      font-size: 0.85rem; font-weight: 500;
+      margin-bottom: 24px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem; font-weight: 700;
+      line-height: 1.15; margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 1.15rem; opacity: 0.9;
+      max-width: 600px; margin: 0 auto 32px;
+      line-height: 1.7;
+    }
+    .hero-ctas {
+      display: flex; gap: 16px;
+      justify-content: center; flex-wrap: wrap;
+    }
+
+    /* ─── TRUST BAR ─── */
+    .trust-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--neutral-200);
+      padding: 20px 24px;
+    }
+    .trust-bar-inner {
+      max-width: 1000px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center;
+      gap: 32px; flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.85rem; font-weight: 500;
+      color: var(--neutral-700);
+    }
+    .trust-icon {
+      width: 20px; height: 20px;
+      background: var(--teal);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 11px; flex-shrink: 0;
+    }
+    .trust-divider {
+      width: 1px; height: 24px;
+      background: var(--neutral-200);
+    }
+
+    /* ─── INSURANCE LOGOS ─── */
+    .insurance-strip {
+      background: var(--white);
+      padding: 48px 24px;
+      text-align: center;
+      border-bottom: 1px solid var(--neutral-200);
+    }
+    .insurance-strip h3 {
+      font-size: 1.3rem; font-weight: 600;
+      color: var(--neutral-900);
+      margin-bottom: 8px;
+      font-family: 'Playfair Display', serif;
+    }
+    .insurance-strip .subtitle {
+      font-size: 0.95rem; color: var(--neutral-400);
+      margin-bottom: 32px;
+    }
+    .logo-row {
+      max-width: 1000px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .logo-card {
+      display: flex; align-items: center; gap: 14px;
+      background: var(--neutral-50);
+      border: 1px solid var(--neutral-200);
+      border-radius: 10px;
+      padding: 16px 20px;
+      transition: box-shadow 0.2s, transform 0.15s;
+    }
+    .logo-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    .logo-card img {
+      width: 48px; height: 48px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .logo-card .provider-name {
+      font-size: 0.95rem; font-weight: 600;
+      color: var(--neutral-900);
+    }
+    @media (max-width: 768px) {
+      .logo-row { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .logo-row { grid-template-columns: 1fr; }
+    }
+
+    /* ─── SECTIONS ─── */
+    section { padding: 72px 24px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-header {
+      text-align: center; margin-bottom: 48px;
+    }
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem; color: var(--neutral-900);
+      margin-bottom: 12px;
+    }
+    .section-header p {
+      font-size: 1.05rem; color: var(--neutral-400);
+      max-width: 550px; margin: 0 auto;
+    }
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 1.5px;
+      color: var(--primary-500);
+      margin-bottom: 8px;
+    }
+    .bg-alt { background: var(--neutral-50); }
+
+    /* ─── SERVICES GRID ─── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--neutral-200);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .service-icon {
+      width: 56px; height: 56px;
+      background: var(--primary-50);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 24px;
+    }
+    .service-card h3 {
+      font-size: 1.1rem; font-weight: 600;
+      color: var(--neutral-900);
+      margin-bottom: 8px;
+    }
+    .service-card p {
+      font-size: 0.85rem; color: var(--neutral-400);
+      line-height: 1.5;
+    }
+    .service-card .learn-more {
+      display: inline-block; margin-top: 12px;
+      font-size: 0.85rem; font-weight: 600;
+      color: var(--primary-500);
+      text-decoration: none;
+    }
+    .service-card .learn-more:hover { text-decoration: underline; }
+
+    /* ─── DOCTOR ─── */
+    .doctor-section {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 48px; align-items: center;
+    }
+    .doctor-photo {
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      background: var(--neutral-200);
+      border: 4px solid var(--primary-500);
+      box-shadow: var(--shadow-lg);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--neutral-400); font-size: 0.8rem;
+      overflow: hidden;
+    }
+    .doctor-photo img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .doctor-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem; color: var(--neutral-900);
+      margin-bottom: 4px;
+    }
+    .doctor-info .credentials {
+      font-size: 0.9rem; color: var(--primary-500);
+      font-weight: 600; margin-bottom: 16px;
+    }
+    .doctor-info p {
+      font-size: 0.95rem; line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .credential-badges {
+      display: flex; gap: 12px; flex-wrap: wrap;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--primary-50);
+      padding: 6px 14px; border-radius: 20px;
+      font-size: 0.8rem; font-weight: 500;
+      color: var(--primary-700);
+    }
+
+    /* ─── REVIEWS ─── */
+    .reviews-container {
+      max-width: 700px; margin: 0 auto;
+    }
+    .review-card {
+      background: var(--white);
+      border: 1px solid var(--neutral-200);
+      border-radius: var(--radius);
+      padding: 36px; text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .stars { color: #f59e0b; font-size: 1.3rem; margin-bottom: 16px; letter-spacing: 4px; }
+    .review-card blockquote {
+      font-size: 1.1rem; font-style: italic;
+      color: var(--neutral-700);
+      line-height: 1.7; margin-bottom: 20px;
+    }
+    .review-card cite {
+      font-style: normal; font-weight: 600;
+      color: var(--primary-600);
+    }
+    .review-dots {
+      display: flex; gap: 8px;
+      justify-content: center; margin-top: 24px;
+    }
+    .dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--neutral-200);
+    }
+    .dot.active { background: var(--primary-500); }
+
+    /* ─── JOURNEY ─── */
+    .journey-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px; text-align: center;
+    }
+    .journey-step {
+      position: relative;
+    }
+    .step-number {
+      width: 64px; height: 64px;
+      background: var(--primary-500);
+      color: white;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; font-weight: 700;
+      margin: 0 auto 16px;
+      box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+    }
+    .journey-step h3 {
+      font-size: 1.15rem; font-weight: 600;
+      color: var(--neutral-900);
+      margin-bottom: 8px;
+    }
+    .journey-step p {
+      font-size: 0.9rem; color: var(--neutral-400);
+    }
+
+    /* ─── AFFORDABLE CARE CALLOUT ─── */
+    .callout-section {
+      background: linear-gradient(135deg, var(--primary-700) 0%, var(--primary-900) 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 64px 24px;
+    }
+    .callout-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; margin-bottom: 16px;
+    }
+    .callout-section p {
+      font-size: 1.05rem; opacity: 0.9;
+      max-width: 600px; margin: 0 auto 32px;
+      line-height: 1.7;
+    }
+    .callout-features {
+      display: flex; gap: 32px;
+      justify-content: center; flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .callout-feature {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.95rem; font-weight: 500;
+    }
+    .callout-check {
+      width: 22px; height: 22px;
+      background: var(--teal);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; flex-shrink: 0;
+    }
+
+    /* ─── MAP + HOURS ─── */
+    .map-section {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 0;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--neutral-200);
+      box-shadow: var(--shadow-md);
+    }
+    .map-placeholder {
+      background: var(--neutral-100);
+      min-height: 380px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--neutral-400);
+      font-size: 0.9rem;
+      position: relative;
+    }
+    .map-placeholder iframe {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; border: 0;
+    }
+    .hours-card {
+      background: var(--white);
+      padding: 40px 32px;
+      display: flex; flex-direction: column;
+      justify-content: center;
+    }
+    .hours-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; color: var(--neutral-900);
+      margin-bottom: 24px;
+    }
+    .hours-row {
+      display: flex; justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--neutral-100);
+      font-size: 0.9rem;
+    }
+    .hours-row:last-of-type { border-bottom: none; }
+    .hours-day { font-weight: 500; color: var(--neutral-900); }
+    .hours-time { color: var(--neutral-400); }
+    .hours-contact {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--neutral-200);
+    }
+    .hours-contact a {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none; color: var(--neutral-700);
+      font-size: 0.9rem; margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+    .hours-contact a:hover { color: var(--primary-500); }
+    .contact-icon {
+      width: 32px; height: 32px;
+      background: var(--primary-50);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--primary-500); font-size: 14px; flex-shrink: 0;
+    }
+
+    /* ─── FINAL CTA ─── */
+    .final-cta {
+      text-align: center;
+      padding: 64px 24px;
+      background: var(--neutral-50);
+    }
+    .final-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; color: var(--neutral-900);
+      margin-bottom: 12px;
+    }
+    .final-cta p {
+      color: var(--neutral-400);
+      margin-bottom: 28px;
+    }
+    .final-cta-buttons {
+      display: flex; gap: 16px;
+      justify-content: center; flex-wrap: wrap;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--neutral-900);
+      color: rgba(255,255,255,0.7);
+      padding: 56px 24px 32px;
+    }
+    .footer-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .footer-desc { font-size: 0.85rem; line-height: 1.7; }
+    footer h4 {
+      color: var(--white);
+      font-size: 0.85rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+    footer ul { list-style: none; }
+    footer li { margin-bottom: 10px; }
+    footer a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none; font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    footer a:hover { color: var(--white); }
+    .footer-bottom {
+      max-width: 1100px; margin: 0 auto;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex; justify-content: space-between;
+      font-size: 0.8rem;
+    }
+    .lang-toggle {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--white);
+      padding: 6px 14px; border-radius: 6px;
+      font-size: 0.8rem; cursor: pointer;
+    }
+
+    /* ─── MOBILE STICKY BAR ─── */
+    .mobile-bar {
+      display: none;
+      position: fixed; bottom: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--white);
+      border-top: 1px solid var(--neutral-200);
+      box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
+      padding: 10px 16px;
+    }
+    .mobile-bar-inner {
+      display: flex; gap: 10px;
+    }
+    .mobile-bar a {
+      flex: 1;
+      display: flex; align-items: center; justify-content: center;
+      gap: 8px; padding: 12px;
+      border-radius: 8px; font-weight: 600;
+      font-size: 0.9rem; text-decoration: none;
+    }
+    .mobile-bar .call-btn {
+      background: var(--white);
+      border: 2px solid var(--primary-500);
+      color: var(--primary-600);
+    }
+    .mobile-bar .book-btn {
+      background: var(--primary-500);
+      color: var(--white); border: none;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero h1 { font-size: 2rem; }
+      .hero-inner { padding: 48px 20px 56px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .doctor-section { grid-template-columns: 1fr; text-align: center; }
+      .doctor-photo { margin: 0 auto; width: 200px; height: 200px; }
+      .credential-badges { justify-content: center; }
+      .journey-grid { grid-template-columns: 1fr; gap: 24px; }
+      .map-section { grid-template-columns: 1fr; }
+      .map-placeholder { min-height: 250px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .mobile-bar { display: block; }
+      body { padding-bottom: 70px; }
+    }
+
+    /* ─── ANNOTATION RIBBON ─── */
+    .mockup-ribbon {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: #fef3c7;
+      border-bottom: 2px solid #f59e0b;
+      padding: 8px 16px;
+      text-align: center;
+      font-size: 0.8rem; font-weight: 600;
+      color: #92400e;
+    }
+    nav { top: 36px; }
+  </style>
+</head>
+<body>
+
+<div class="mockup-ribbon">
+  MOCKUP — Rio Grande Smiles Homepage Redesign — Design tokens: Sky Blue + Modern Medical Clean
+</div>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Rio Grande Smiles</div>
+    <div class="nav-links">
+      <a href="#">Services</a>
+      <a href="#">About</a>
+      <a href="#">Reviews</a>
+      <a href="#">Insurance</a>
+      <a href="#">Contact</a>
+      <a href="#" class="nav-phone">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.13.81.36 1.6.68 2.34a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.74.32 1.53.55 2.34.68A2 2 0 0122 16.92z"/></svg>
+        (505) 877-1113
+      </a>
+      <a href="#" class="btn-primary">Book Online</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Now Accepting New Patients</div>
+    <h1>Exceptional Dental Care for Your Whole Family</h1>
+    <p>Dr. Vicuna and his team have been serving the Albuquerque community for over 20 years with personalized, compassionate dental care.</p>
+    <div class="hero-ctas">
+      <a href="#" class="btn-white">Book Your Visit</a>
+      <a href="#" class="btn-outline" style="color:white; border-color: rgba(255,255,255,0.5);">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.13.81.36 1.6.68 2.34a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.74.32 1.53.55 2.34.68A2 2 0 0122 16.92z"/></svg>
+        Call (505) 877-1113
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TRUST BAR ─── -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item">
+      <div class="trust-icon">&#10003;</div>
+      Medicaid Welcome
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-item">
+      <div class="trust-icon">&#10003;</div>
+      Se Habla Espanol
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-item">
+      <div class="trust-icon">&#10003;</div>
+      20+ Years Experience
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-item">
+      <div class="trust-icon">&#10003;</div>
+      ADA Member
+    </div>
+  </div>
+</div>
+
+<!-- ─── INSURANCE LOGOS ─── -->
+<div class="insurance-strip">
+  <h3>Accepted Insurance Providers</h3>
+  <p class="subtitle">We accept a variety of insurance plans to make dental care accessible for you and your family.</p>
+  <div class="logo-row">
+    <div class="logo-card">
+      <img src="../../img/united-healthcare.png" alt="United Healthcare" onerror="this.style.display='none'">
+      <span class="provider-name">United Healthcare</span>
+    </div>
+    <div class="logo-card">
+      <img src="../../img/delta-dental.png" alt="Delta Dental" onerror="this.style.display='none'">
+      <span class="provider-name">Delta Dental</span>
+    </div>
+    <div class="logo-card">
+      <img src="../../img/metlife.png" alt="MetLife" onerror="this.style.display='none'">
+      <span class="provider-name">MetLife</span>
+    </div>
+    <div class="logo-card">
+      <img src="../../img/guardian.png" alt="Guardian" onerror="this.style.display='none'">
+      <span class="provider-name">Guardian</span>
+    </div>
+    <div class="logo-card">
+      <img src="../../img/ameritas.png" alt="Ameritas" onerror="this.style.display='none'">
+      <span class="provider-name">Ameritas</span>
+    </div>
+    <div class="logo-card">
+      <img src="../../img/cigna.png" alt="Cigna" onerror="this.style.display='none'">
+      <span class="provider-name">Cigna</span>
+    </div>
+    <div class="logo-card">
+      <img src="../../img/medicaid.png" alt="Medicaid" onerror="this.style.display='none'">
+      <span class="provider-name">Medicaid</span>
+    </div>
+    <div class="logo-card">
+      <img src="../../img/principal.png" alt="Principal" onerror="this.style.display='none'">
+      <span class="provider-name">Principal</span>
+    </div>
+    <div class="logo-card">
+      <img src="../../img/united-concordia.png" alt="United Concordia" onerror="this.style.display='none'">
+      <span class="provider-name">United Concordia</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─── SERVICES ─── -->
+<section class="bg-alt">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Our Services</div>
+      <h2>Comprehensive Dental Care</h2>
+      <p>From routine cleanings to full restorations, we provide personalized care for every smile.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">&#128065;</div>
+        <h3>General Checkups</h3>
+        <p>Regular exams, cleanings, and preventive care to keep your smile healthy.</p>
+        <a href="#" class="learn-more">Learn more &rarr;</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#10024;</div>
+        <h3>Cosmetic Dentistry</h3>
+        <p>Veneers, bleaching, and aesthetic treatments to enhance your smile.</p>
+        <a href="#" class="learn-more">Learn more &rarr;</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#129463;</div>
+        <h3>Dental Implants</h3>
+        <p>Permanent tooth replacements that look and feel completely natural.</p>
+        <a href="#" class="learn-more">Learn more &rarr;</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128171;</div>
+        <h3>Root Canals</h3>
+        <p>Save damaged teeth with gentle, modern root canal therapy.</p>
+        <a href="#" class="learn-more">Learn more &rarr;</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#129702;</div>
+        <h3>Crowns &amp; Bridges</h3>
+        <p>Restore damaged or missing teeth with custom-fitted crowns and bridges.</p>
+        <a href="#" class="learn-more">Learn more &rarr;</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128168;</div>
+        <h3>Emergency Care</h3>
+        <p>Same-day appointments for dental emergencies. We're here when you need us.</p>
+        <a href="#" class="learn-more">Learn more &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── DOCTOR ─── -->
+<section>
+  <div class="section-inner">
+    <div class="doctor-section">
+      <div class="doctor-photo">
+        <img src="../../img/doctor-headshot.png" alt="Dr. Vicuna" onerror="this.style.display='none'; this.parentElement.textContent='Photo';">
+      </div>
+      <div class="doctor-info">
+        <div class="section-label">Meet Your Dentist</div>
+        <h3>Emerson Vicuna, DDS</h3>
+        <div class="credentials">Doctor of Dental Surgery &bull; Ohio State University</div>
+        <p>With over 20 years of experience, Dr. Vicuna combines expert clinical skills with a warm, personal approach. Originally from Lima, Peru, he earned his biology and chemistry degrees from UNM before completing his DDS at Ohio State. As the sole practitioner, every patient receives his personal attention.</p>
+        <div class="credential-badges">
+          <div class="badge">&#127891; ADA Member</div>
+          <div class="badge">&#127891; Academy of General Dentistry</div>
+          <div class="badge">&#128197; Practicing since 2005</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── REVIEWS ─── -->
+<section class="bg-alt">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Patient Reviews</div>
+      <h2>What Our Patients Say</h2>
+    </div>
+    <div class="reviews-container">
+      <div class="review-card">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"Love Dr. Vicuna! He is so gentle and so good at what he does. I've been with him for at least 7 years and I wouldn't go anywhere else. I recommend him to all my friends and family."</blockquote>
+        <cite>Clorinda Olguin</cite>
+      </div>
+      <div class="review-dots">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── JOURNEY ─── -->
+<section>
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">New Patients</div>
+      <h2>Getting Started Is Easy</h2>
+      <p>Three simple steps to your healthiest smile.</p>
+    </div>
+    <div class="journey-grid">
+      <div class="journey-step">
+        <div class="step-number">1</div>
+        <h3>Book Online</h3>
+        <p>Schedule your visit in seconds using our online booking tool — available 24/7.</p>
+      </div>
+      <div class="journey-step">
+        <div class="step-number">2</div>
+        <h3>Prepare for Your Visit</h3>
+        <p>Download and complete your forms ahead of time. We'll verify your insurance before you arrive.</p>
+      </div>
+      <div class="journey-step">
+        <div class="step-number">3</div>
+        <h3>Smile with Confidence</h3>
+        <p>Get personalized care from Dr. Vicuna and leave with a plan for your healthiest smile.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── AFFORDABLE CARE CALLOUT ─── -->
+<section class="callout-section">
+  <h2>Everyone Deserves a Healthy Smile</h2>
+  <p>We believe quality dental care should be accessible to everyone in our community. We work with you to make treatment affordable.</p>
+  <div class="callout-features">
+    <div class="callout-feature">
+      <div class="callout-check">&#10003;</div>
+      Medicaid Accepted
+    </div>
+    <div class="callout-feature">
+      <div class="callout-check">&#10003;</div>
+      Centennial Care
+    </div>
+    <div class="callout-feature">
+      <div class="callout-check">&#10003;</div>
+      Most Insurance Accepted
+    </div>
+    <div class="callout-feature">
+      <div class="callout-check">&#10003;</div>
+      Transparent Pricing
+    </div>
+  </div>
+  <a href="#" class="btn-white">View Insurance Info</a>
+</section>
+
+<!-- ─── MAP + HOURS ─── -->
+<section>
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Visit Us</div>
+      <h2>Find Us in Albuquerque</h2>
+    </div>
+    <div class="map-section">
+      <div class="map-placeholder">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3262.5!2d-106.7234!3d35.1095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87220ba8e4b0c4a7%3A0x8c0a4e6b78c91234!2s3200+Coors+Blvd+NW+Suite+F%2C+Albuquerque%2C+NM+87120!5e0!3m2!1sen!2sus!4v1"
+          allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <div class="hours-card">
+        <h3>Office Hours</h3>
+        <div class="hours-row">
+          <span class="hours-day">Monday</span>
+          <span class="hours-time">9:00 AM - 5:00 PM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Tuesday</span>
+          <span class="hours-time">9:00 AM - 5:00 PM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Wednesday</span>
+          <span class="hours-time">9:00 AM - 5:00 PM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Thursday</span>
+          <span class="hours-time">9:00 AM - 5:00 PM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Fri - Sun</span>
+          <span class="hours-time">Closed</span>
+        </div>
+        <div class="hours-contact">
+          <a href="tel:+5058771113">
+            <div class="contact-icon">&#9742;</div>
+            (505) 877-1113
+          </a>
+          <a href="mailto:emersonvicunadds@gmail.com">
+            <div class="contact-icon">&#9993;</div>
+            emersonvicunadds@gmail.com
+          </a>
+          <a href="#">
+            <div class="contact-icon">&#128205;</div>
+            3200 Coors Blvd NW Suite F, Albuquerque, NM 87120
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FINAL CTA ─── -->
+<div class="final-cta">
+  <h2>Ready to Get Started?</h2>
+  <p>Book your appointment today — new patients are always welcome.</p>
+  <div class="final-cta-buttons">
+    <a href="#" class="btn-primary" style="padding: 14px 32px; font-size: 1rem;">Book Your Visit</a>
+    <a href="#" class="btn-outline">Call (505) 877-1113</a>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Rio Grande Smiles</div>
+      <p class="footer-desc">Serving the Albuquerque community with personalized, compassionate dental care since 2005.</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">General Dentistry</a></li>
+        <li><a href="#">Cosmetic Dentistry</a></li>
+        <li><a href="#">Dental Implants</a></li>
+        <li><a href="#">Root Canals</a></li>
+        <li><a href="#">Crowns &amp; Bridges</a></li>
+        <li><a href="#">All Services</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Patients</h4>
+      <ul>
+        <li><a href="#">New Patient Info</a></li>
+        <li><a href="#">Insurance &amp; Plans</a></li>
+        <li><a href="#">Affordable Care</a></li>
+        <li><a href="#">Forms</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="#">(505) 877-1113</a></li>
+        <li><a href="#">emersonvicunadds@gmail.com</a></li>
+        <li><a href="#">3200 Coors Blvd NW Ste F</a></li>
+        <li><a href="#">Albuquerque, NM 87120</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Rio Grande Smiles. All rights reserved.</span>
+    <button class="lang-toggle">Espanol</button>
+  </div>
+</footer>
+
+<!-- ─── MOBILE STICKY BAR ─── -->
+<div class="mobile-bar">
+  <div class="mobile-bar-inner">
+    <a href="tel:+5058771113" class="call-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.13.81.36 1.6.68 2.34a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.74.32 1.53.55 2.34.68A2 2 0 0122 16.92z"/></svg>
+      Call
+    </a>
+    <a href="#" class="book-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Book Online
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
