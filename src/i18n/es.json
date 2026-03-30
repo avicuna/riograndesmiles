@@ -1,6 +1,13 @@
 {
   "navbar": {
-    "book": "Reservar una Cita"
+    "book": "Reservar Cita",
+    "services": "Servicios",
+    "about": "Nosotros",
+    "reviews": "Reseñas",
+    "insurance": "Seguros",
+    "contact": "Contacto",
+    "langSwitch": "English",
+    "call": "Llamar"
   },
   "header": {
     "location": "Albuquerque, Nuevo México",
@@ -142,14 +149,33 @@
     "title": "Encuéntranos Aquí"
   },
   "footer": {
-    "contact": "Contáctanos",
+    "contact": "Contacto",
     "address": "Dirección",
-    "phone": "Teléfono: (505) 877-1113",
-    "email": "Correo electrónico: emersonvicunadds@gmail.com",
+    "phone": "(505) 877-1113",
+    "email": "emersonvicunadds@gmail.com",
     "hours": {
       "title": "Horario",
       "description": "Lun-Jue 9am - 5pm"
-    }
+    },
+    "brand": "Rio Grande Smiles",
+    "brandDescription": "Atención dental excepcional en Albuquerque, NM. Sirviendo a la comunidad con odontología general, cosmética y restaurativa por más de 20 años.",
+    "servicesHeading": "Servicios",
+    "patientsHeading": "Pacientes",
+    "generalDentistry": "Odontología General",
+    "cosmetic": "Odontología Cosmética",
+    "implants": "Implantes Dentales",
+    "rootCanals": "Tratamientos de Conducto",
+    "crownsBridges": "Coronas y Puentes",
+    "allServices": "Todos los Servicios",
+    "newPatient": "Información para Nuevos Pacientes",
+    "insurancePlans": "Seguros y Planes",
+    "affordableCare": "Atención Accesible",
+    "forms": "Formularios",
+    "faq": "Preguntas Frecuentes",
+    "addressLine1": "1630 Coors Blvd NW",
+    "addressLine2": "Albuquerque, NM 87121",
+    "langSwitch": "English",
+    "copyright": "2026 Rio Grande Smiles. Todos los derechos reservados."
   },
   "button": {
     "learnMore": "Aprende Más",

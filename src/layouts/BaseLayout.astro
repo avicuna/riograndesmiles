@@ -1,0 +1,67 @@
+---
+import type { Locale } from '../i18n/utils';
+import { getAlternatePath } from '../i18n/utils';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import MobileCtaBar from '../components/MobileCtaBar';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  locale?: Locale;
+  canonicalPath: string;
+}
+
+const { title, description, locale = 'en', canonicalPath } = Astro.props;
+const site = Astro.site?.toString().replace(/\/$/, '') ?? 'https://riograndesmiles.com';
+const canonicalUrl = `${site}${canonicalPath}`;
+const alternatePath = getAlternatePath(canonicalPath, locale);
+const alternateUrl = `${site}${alternatePath}`;
+const ogImage = `${site}/og-image.jpg`;
+---
+
+<!DOCTYPE html>
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    {/* Fonts */}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    {/* SEO */}
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang={locale === 'en' ? 'es' : 'en'} href={alternateUrl} />
+    <link rel="alternate" hreflang={locale} href={canonicalUrl} />
+
+    {/* Open Graph */}
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+
+    {/* Twitter Card */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+  </head>
+  <body class="font-sans text-neutral-700 bg-white">
+    <Nav locale={locale} />
+    <main class="pb-[70px] md:pb-0">
+      <slot />
+    </main>
+    <Footer locale={locale} />
+    <MobileCtaBar client:media="(max-width: 768px)" />
+  </body>
+</html>
