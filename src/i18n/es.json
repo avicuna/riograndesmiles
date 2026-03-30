@@ -1,0 +1,162 @@
+{
+  "navbar": {
+    "book": "Reservar una Cita"
+  },
+  "header": {
+    "location": "Albuquerque, Nuevo México",
+    "description": "El Dr. Vicuña y su equipo brindan atención dental excepcional para mantener su sonrisa saludable y fuerte de por vida. Durante más de 20 años hemos establecido relaciones de confianza con nuestros pacientes donde podemos contribuir al bienestar general de todos nuestros pacientes. Usando técnicas probadas para la odontología general, estética y restaurativa, personalizaremos un plan de tratamiento que se adapte a sus objetivos únicos. Desde chequeos hasta mejoras estéticas y restauraciones integrales, el Dr. Vicuna realizará su trabajo dental con habilidad y precisión."
+  },
+  "insurance": {
+    "title": "Proveedores de Seguros",
+    "description": "Aceptamos una variedad de proveedores de seguros para hacer que su atención dental sea más accesible."
+  },
+  "doctor": {
+    "title": "Acerca del Doctor",
+    "description": "Con más de 20 años de experiencia, el Dr. Emerson Vicuña, DDS es un dentista general que ama ayudar a las personas que necesitan su experiencia dental. Sus pacientes adoran su personalidad amigable, ética de trabajo y resultados sobresalientes. Originario de Lima, Perú, el Dr. Vicuña obtuvo su título de Doctor en Cirugía Dental de la Universidad Estatal de Ohio después de recibir su licenciatura en Biología y Química de la Universidad de Nuevo México. También es miembro de la Asociación Dental Americana y de la Academia de Odontología General. Desde que comenzó su propia práctica en 2005, el Dr. Vicuña ha sido el único dentista en su práctica, lo que permite a los pacientes conocerlo personalmente y recibir atención personalizada."
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "extractions": {
+      "title": "Extracciones",
+      "description": "Las extracciones implican la remoción de un diente de su cavidad en el hueso. Este procedimiento puede ser necesario debido a caries, daño o hacinamiento."
+    },
+    "fillings": {
+      "title": "Rellenos",
+      "description": "Los rellenos se utilizan para restaurar un diente dañado por caries. El dentista quita la parte afectada del diente y lo llena con un material que coincide con el color de su diente."
+    },
+    "crowns": {
+      "title": "Coronas",
+      "description": "Las coronas son tapas personalizadas que se colocan sobre dientes dañados para restaurar su forma, tamaño y resistencia mientras mejoran su apariencia."
+    },
+    "rootCanals": {
+      "title": "Tratamientos de Conducto",
+      "description": "Un tratamiento de conducto es un procedimiento utilizado para reparar y salvar un diente que está muy dañado o infectado. Implica la eliminación del tejido dañado dentro del diente."
+    },
+    "wisdomTeeth": {
+      "title": "Muelas del Juicio",
+      "description": "La extracción de muelas del juicio es un procedimiento común para remover una o más de las cuatro muelas del juicio, que pueden causar dolor o problemas dentales."
+    },
+    "bleaching": {
+      "title": "Blanqueo Dental",
+      "description": "El blanqueo dental es un procedimiento estético que aclara los dientes utilizando agentes blanqueadores seguros para mejorar su sonrisa."
+    },
+    "dentures": {
+      "title": "Dentaduras",
+      "description": "Las dentaduras son reemplazos removibles para dientes perdidos y tejidos circundantes, disponibles como dentaduras completas o parciales."
+    },
+    "partials": {
+      "title": "Dentaduras Parciales",
+      "description": "Las dentaduras parciales se utilizan cuando quedan algunos dientes naturales. Ayudan a llenar los espacios creados por los dientes perdidos y evitan que otros dientes se desplacen."
+    },
+    "dentureRepair": {
+      "title": "Reparación de Dentaduras",
+      "description": "Los servicios de reparación de dentaduras arreglan dentaduras rotas o dañadas, restaurando la funcionalidad y la apariencia para un uso cómodo."
+    },
+    "bridges": {
+      "title": "Puentes Dentales",
+      "description": "Un puente dental se utiliza para reemplazar uno o más dientes faltantes anclándolos a los dientes adyacentes para dar soporte."
+    },
+    "veneers": {
+      "title": "Carillas",
+      "description": "Las carillas son capas delgadas de porcelana o resina compuesta que cubren la superficie frontal de los dientes para mejorar su apariencia."
+    },
+    "implants": {
+      "title": "Implantes",
+      "description": "Los implantes dentales son raíces de dientes artificiales colocadas en el hueso de la mandíbula para soportar dientes de reemplazo, proporcionando una solución permanente para los dientes perdidos."
+    }
+  },
+  "forms": {
+    "title": "Formularios Descargables",
+    "description": "Por favor descargue y complete los formularios a continuación antes de su visita para agilizar el proceso de registro.",
+    "medicalHistory": {
+      "title": "Formulario de Historial Médico",
+      "description": "Complete este formulario para proporcionarnos su historial médico para una mejor atención al paciente."
+    },
+    "patientRegistration": {
+      "title": "Formulario de Registro de Paciente",
+      "description": "Este formulario es esencial para que configuremos su cuenta y gestionemos sus citas."
+    }
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "firstAppointment": {
+      "title": "Primera Cita",
+      "arriveEarly": "¿Necesito llegar temprano para mi primera cita?",
+      "arriveEarlyAnswer": "Si no ha completado nuestros formularios de historial médico y registro de pacientes descargables en línea, llegue 10-15 minutos antes para hacerlo. Descargue nuestros formularios yendo a la página de formularios.",
+      "preMedication": "¿Qué debo hacer si necesito premedicación?",
+      "preMedicationAnswer": "Asegúrese de solicitar una receta antes de su cita, o si no está seguro, contáctenos y podemos ayudar.",
+      "bring": "¿Qué debo llevar a mi primera cita?",
+      "bringAnswer": "Por favor traiga los siguientes artículos a su cita:",
+      "bringItem1": "Formulario de Historial Médico",
+      "bringItem2": "Formulario de Registro de Paciente",
+      "bringItem3": "Tarjeta de Seguro Dental (si aplica)",
+      "bringItem4": "Identificación como Licencia de Conducir, ID Militar o ID Estatal",
+      "duration": "¿Cuánto durará mi primera cita?",
+      "durationAnswer": "Varía, pero planifique pasar de 30 minutos a una hora en su primera visita. Nos aseguramos de explicar claramente los beneficios y costos de cada tratamiento antes de nuestra reunión inicial."
+    },
+    "preventiveDentistry": {
+      "title": "Odontología Preventiva",
+      "healthyTeeth": "¿Qué puedo hacer para mantener mis dientes sanos?",
+      "healthyTeethAnswer": "Las revisiones y limpiezas dentales regulares, una dieta equilibrada y prácticas adecuadas de higiene bucal son esenciales.",
+      "toothpaste": "¿Qué pasta de dientes debo usar?",
+      "toothpasteAnswer": "El ingrediente más importante a buscar al elegir una pasta de dientes es el flúor, que ayuda a proteger sus dientes de la caries.",
+      "flossing": "¿Por qué debo usar hilo dental? ¿No es suficiente con cepillarse?",
+      "flossingAnswer": "El uso del hilo dental elimina la placa entre los dientes donde el cepillo no puede alcanzar, ayudando a prevenir enfermedades de las encías y caries.",
+      "preventCavities": "¿Cómo puedo prevenir las caries?",
+      "preventCavitiesItem1": "Cepíllese los dientes dos veces al día durante al menos dos minutos.",
+      "preventCavitiesItem2": "Limite los alimentos y bebidas azucaradas.",
+      "preventCavitiesItem3": "Visite a su dentista regularmente para limpiezas y revisiones."
+    },
+    "generalDentistry": {
+      "title": "Odontología General",
+      "visitFrequency": "¿Con qué frecuencia necesito visitar al dentista?",
+      "visitFrequencyAnswer": "La mayoría de las personas deben ver a su dentista dos veces al año, pero aquellos con preocupaciones dentales específicas pueden necesitar visitas más frecuentes.",
+      "xraySafety": "¿Qué tan seguras son las radiografías dentales?",
+      "xraySafetyAnswer": "Las radiografías dentales son muy seguras y lo exponen a niveles muy bajos de radiación.",
+      "sensitiveTeeth": "¿Qué puedo hacer con los dientes sensibles?",
+      "sensitiveTeethAnswer": "Use pasta de dientes para la sensibilidad y evite los alimentos altamente ácidos. Si la sensibilidad persiste, consulte a su dentista para obtener consejos personalizados."
+    },
+    "familyDentistry": {
+      "title": "Odontología Familiar",
+      "firstCheckup": "¿Cuándo debo llevar a mi hijo al dentista para su primera revisión?",
+      "firstCheckupAnswer": "Su hijo debe ver a un dentista pediátrico entre los 6-9 meses o a más tardar en su primer cumpleaños.",
+      "pregnancy": "¿Qué pasa si una mujer tiene un problema dental cuando está embarazada?",
+      "pregnancyAnswer": "Las limpiezas dentales preventivas durante el embarazo son seguras y recomendadas para evitar complicaciones."
+    },
+    "cosmeticDentistry": {
+      "title": "Odontología Cosmética",
+      "changeShape": "Estoy interesado en cambiar la forma de mis dientes. ¿Qué opciones están disponibles?",
+      "changeShapeAnswer": "Las opciones incluyen adhesión, coronas, carillas y recontorneado.",
+      "whitening": "¿Cuáles son mis opciones para blanquear mis dientes?",
+      "whiteningAnswer": "Considere pastas dentales blanqueadoras o blanqueamiento en el consultorio después de consultar con su dentista."
+    },
+    "emergencies": {
+      "title": "Emergencias",
+      "knockedOut": "¿Qué pasa si mi diente se cae en un accidente?",
+      "knockedOutAnswer": "Ubique el diente y enjuáguelo suavemente. Colóquelo en leche o saliva y busque atención dental de inmediato.",
+      "dentalEmergency": "¿Qué debo hacer si tengo una emergencia dental y no puedo comunicarme con mi dentista?",
+      "dentalEmergencyAnswer": "Si no puede comunicarse con su dentista, visite el centro de atención urgente o la sala de emergencias más cercana para obtener ayuda."
+    }
+  },
+  "location": {
+    "title": "Encuéntranos Aquí"
+  },
+  "footer": {
+    "contact": "Contáctanos",
+    "address": "Dirección",
+    "phone": "Teléfono: (505) 877-1113",
+    "email": "Correo electrónico: emersonvicunadds@gmail.com",
+    "hours": {
+      "title": "Horario",
+      "description": "Lun-Jue 9am - 5pm"
+    }
+  },
+  "button": {
+    "learnMore": "Aprende Más",
+    "downloadForm": "Descargar Formulario",
+    "showLess": "Mostrar Menos"
+  },
+  "reviews": {
+    "title": "Reseñas de Pacientes"
+  }
+}
