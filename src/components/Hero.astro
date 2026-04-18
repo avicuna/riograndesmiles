@@ -1,0 +1,132 @@
+---
+import type { Locale } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const chips = [
+  t('hero.chipExperience'),
+  t('hero.chipFamily'),
+  t('hero.chipMedicaid'),
+  t('hero.chipInsurance'),
+];
+---
+
+<section class="hero-section relative overflow-hidden py-20 md:py-[100px]">
+  {/* Skyline background with gradient overlay */}
+  <div class="absolute inset-0 z-0">
+    <img
+      src="/img/albuquerque-skyline.jpg"
+      alt=""
+      class="w-full h-full object-cover opacity-[0.07]"
+      loading="eager"
+    />
+  </div>
+  <div class="hero-gradient absolute inset-0 z-0 pointer-events-none"></div>
+
+  {/* Content grid */}
+  <div class="relative z-10 max-w-content mx-auto px-7">
+    <div class="hero-grid grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-16 items-center">
+      {/* Left — text */}
+      <div>
+        {/* Eyebrow */}
+        <div class="flex items-center gap-2.5 mb-5 font-sans text-[0.78rem] font-medium text-primary-500 uppercase tracking-[0.14em]">
+          <span class="w-7 h-px bg-primary-500"></span>
+          {t('hero.eyebrow')}
+        </div>
+
+        {/* Headline */}
+        <h1>
+          <span>{t('hero.title1')}</span><em class="italic text-primary-500 font-normal">{t('hero.titleEm')}</em>.
+        </h1>
+
+        {/* Lede */}
+        <p class="mt-6 text-[1.15rem] text-ink-2 leading-relaxed max-w-[48ch]">
+          {t('hero.lede')}
+        </p>
+
+        {/* Chips */}
+        <div class="flex flex-wrap gap-2.5 mt-7">
+          {chips.map((chip) => (
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-bg-card border border-line text-[0.82rem] text-ink-2 whitespace-nowrap">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent-500"></span>
+              {chip}
+            </span>
+          ))}
+        </div>
+
+        {/* CTAs */}
+        <div class="flex flex-wrap gap-3 mt-9">
+          <a
+            href="tel:+15058771113"
+            class="inline-flex items-center gap-2 bg-primary-500 text-white rounded-full px-5 py-[11px] text-[0.92rem] font-medium no-underline hover:bg-primary-700 transition-all hover:-translate-y-px"
+          >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            {t('hero.ctaCall')}
+          </a>
+          <a
+            href={locale === 'es' ? '/es/services/' : '/services/'}
+            class="inline-flex items-center gap-2 bg-transparent text-ink border border-line-2 rounded-full px-5 py-[11px] text-[0.92rem] font-medium no-underline hover:bg-bg-warm transition-colors"
+          >
+            {t('hero.ctaServices')}
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      {/* Right — portrait */}
+      <div class="relative aspect-[4/5] max-w-[520px] mx-auto lg:mx-0">
+        {/* Portrait card */}
+        <div class="absolute inset-0 rounded-md overflow-hidden bg-bg-warm border border-line-2">
+          <img
+            src="/img/doctor-headshot.png"
+            alt="Dr. Emerson Vicuña, DDS"
+            class="w-full h-full object-cover object-top"
+            loading="eager"
+          />
+        </div>
+
+        {/* 20+ years badge */}
+        <div class="absolute -bottom-5 -left-5 w-[130px] h-[130px] rounded-full bg-ink grid place-items-center text-center font-display shadow-[0_20px_40px_-10px_rgba(26,35,50,0.25)]"
+             aria-label={`20+ ${t('hero.chipExperience')}`}>
+          <div>
+            <div class="text-[2.8rem] leading-none font-normal italic text-bg-card">20<sup class="text-[0.5em] font-normal">+</sup></div>
+            <div class="text-[0.62rem] uppercase tracking-[0.12em] font-sans mt-1 text-bg-card/80 whitespace-nowrap">
+              {locale === 'es' ? 'Años de práctica' : 'Years of practice'}
+            </div>
+          </div>
+        </div>
+
+        {/* Accepting new patients pill */}
+        <div class="absolute top-6 -right-4 bg-bg-card border border-line-2 px-4 py-2.5 rounded-full text-[0.78rem] font-medium shadow-[0_8px_24px_-8px_rgba(26,35,50,0.15)] flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-accent-500 shadow-[0_0_0_3px_rgba(42,157,143,0.25)]"></span>
+          {locale === 'es' ? 'Aceptando nuevos pacientes' : 'Accepting new patients'}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-gradient {
+    background:
+      radial-gradient(circle at 12% 20%, oklch(94% 0.03 245 / 0.6), transparent 45%),
+      radial-gradient(circle at 88% 85%, oklch(94% 0.04 200 / 0.5), transparent 50%);
+  }
+  @media (max-width: 560px) {
+    .hero-section :global(.absolute.-bottom-5.-left-5) {
+      width: 100px;
+      height: 100px;
+      bottom: -10px;
+      left: -10px;
+    }
+    .hero-section :global(.absolute.-bottom-5.-left-5 .text-\[2\.8rem\]) {
+      font-size: 2.2rem;
+    }
+  }
+</style>

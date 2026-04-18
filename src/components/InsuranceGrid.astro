@@ -1,0 +1,42 @@
+---
+import type { Locale } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+import SectionTag from './SectionTag.astro';
+
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const providers = [
+  'United Healthcare', 'Delta Dental', 'MetLife',
+  'Guardian', 'Ameritas', 'Cigna',
+  'Medicaid', 'Principal', 'United Concordia'
+];
+---
+
+<section class="py-[100px]">
+  <div class="max-w-content mx-auto px-7">
+    {/* Split grid */}
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16 items-center">
+      {/* Left — text */}
+      <div>
+        <SectionTag label={t('sectionTags.insurance')} />
+        <h2 class="font-display text-[2.2rem] leading-[1.15] font-medium text-ink">
+          {t('insurance.heading')}
+        </h2>
+        <p class="text-ink-3 max-w-[56ch] text-[1.05rem] mt-4.5">
+          {t('insurance.sub')}
+        </p>
+      </div>
+
+      {/* Right — 3x3 provider grid */}
+      <div class="grid grid-cols-3 bg-line gap-px border border-line rounded-lg overflow-hidden">
+        {providers.map((provider) => (
+          <div class="bg-bg-card p-6 grid place-items-center font-display font-medium text-[0.95rem] text-ink-2 text-center min-h-[80px] tracking-tight hover:bg-bg-warm hover:text-ink transition-colors">
+            {provider}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

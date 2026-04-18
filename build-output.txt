@@ -1,0 +1,110 @@
+
+> riograndesmiles@0.0.1 build
+> astro check && astro build
+
+To continue, Astro requires the following dependency to be installed: @astrojs/check.
+
+  Astro will run the following command:
+  If you skip this step, you can always run it yourself later
+
+ ╭────────────────────────────────────────╮
+ │ npm install @astrojs/check typescript  │
+ ╰────────────────────────────────────────╯
+
+[?25l[2K[1G[36m?[39m [1mContinue?[22m [90m›[39m [90m(Y/n)[39m23:15:25 [types] Generated 254ms
+23:15:25 [build] output: "static"
+23:15:25 [build] directory: /Users/avicuna/dev/riograndesmiles/.claude/worktrees/redesign/dist/
+23:15:25 [build] Collecting build info...
+23:15:25 [build] ✓ Completed in 634ms.
+23:15:25 [build] Building static entrypoints...
+23:15:26 [vite] ✓ built in 1.11s
+23:15:26 [build] ✓ Completed in 1.16s.
+
+ building client (vite) 
+23:15:26 [vite] transforming...
+23:15:27 [vite] ✓ 38 modules transformed.
+23:15:27 [vite] rendering chunks...
+23:15:27 [vite] computing gzip size...
+23:15:27 [vite] dist/_astro/GoogleMap.BnXzwB6k.js         0.57 kB │ gzip:  0.45 kB
+23:15:27 [vite] dist/_astro/WeaveScheduler.DJ6iNKvQ.js    0.78 kB │ gzip:  0.51 kB
+23:15:27 [vite] dist/_astro/jsx-runtime.TBa3i5EZ.js       0.92 kB │ gzip:  0.58 kB
+23:15:27 [vite] dist/_astro/FAQAccordion.DCO9vE3V.js      1.20 kB │ gzip:  0.68 kB
+23:15:27 [vite] dist/_astro/MobileCtaBar.Dm7lKZDr.js      1.79 kB │ gzip:  0.81 kB
+23:15:27 [vite] dist/_astro/ReviewCarousel.CUvFhOeJ.js    2.39 kB │ gzip:  1.02 kB
+23:15:27 [vite] dist/_astro/index.CVf8TyFT.js             6.72 kB │ gzip:  2.68 kB
+23:15:27 [vite] dist/_astro/client.BuOr9PT5.js          135.60 kB │ gzip: 43.80 kB
+23:15:27 [vite] ✓ built in 229ms
+
+ generating static routes 
+23:15:27 ▶ src/pages/404.astro
+23:15:27   └─ /404.html (+7ms)
+23:15:27 ▶ src/pages/about.astro
+23:15:27   └─ /about/index.html (+2ms)
+23:15:27 ▶ src/pages/affordable-care.astro
+23:15:27   └─ /affordable-care/index.html (+2ms)
+23:15:27 ▶ src/pages/contact.astro
+23:15:27   └─ /contact/index.html (+2ms)
+23:15:27 ▶ src/pages/es/about.astro
+23:15:27   └─ /es/about/index.html (+2ms)
+23:15:27 ▶ src/pages/es/affordable-care.astro
+23:15:27   └─ /es/affordable-care/index.html (+2ms)
+23:15:27 ▶ src/pages/es/contact.astro
+23:15:27   └─ /es/contact/index.html (+2ms)
+23:15:27 ▶ src/pages/es/faq.astro
+23:15:27   └─ /es/faq/index.html (+4ms)
+23:15:27 ▶ src/pages/es/financial-policy.astro
+23:15:27   └─ /es/financial-policy/index.html (+2ms)
+23:15:27 ▶ src/pages/es/insurance.astro
+23:15:27   └─ /es/insurance/index.html (+2ms)
+23:15:27 ▶ src/pages/es/new-patients.astro
+23:15:27   └─ /es/new-patients/index.html (+2ms)
+23:15:27 ▶ src/pages/es/reviews.astro
+23:15:27   └─ /es/reviews/index.html (+2ms)
+23:15:27 ▶ src/pages/es/services/index.astro
+23:15:27   └─ /es/services/index.html (+4ms)
+23:15:27 ▶ src/pages/es/services/[...slug].astro
+23:15:27   ├─ /es/services/bleaching/index.html (+4ms)
+23:15:27   ├─ /es/services/bridges/index.html (+3ms)
+23:15:27   ├─ /es/services/crowns/index.html (+3ms)
+23:15:27   ├─ /es/services/denture-repair/index.html (+3ms)
+23:15:27   ├─ /es/services/dentures/index.html (+2ms)
+23:15:27   ├─ /es/services/extractions/index.html (+2ms)
+23:15:27   ├─ /es/services/fillings/index.html (+2ms)
+23:15:27   ├─ /es/services/implants/index.html (+2ms)
+23:15:27   ├─ /es/services/partials/index.html (+63ms)
+23:15:27   ├─ /es/services/root-canals/index.html (+3ms)
+23:15:27   ├─ /es/services/veneers/index.html (+5ms)
+23:15:27   └─ /es/services/wisdom-teeth/index.html (+6ms)
+23:15:27 ▶ src/pages/es/index.astro
+23:15:27   └─ /es/index.html (+3ms)
+23:15:27 ▶ src/pages/faq.astro
+23:15:27   └─ /faq/index.html (+3ms)
+23:15:27 ▶ src/pages/financial-policy.astro
+23:15:27   └─ /financial-policy/index.html (+2ms)
+23:15:27 ▶ src/pages/insurance.astro
+23:15:27   └─ /insurance/index.html (+2ms)
+23:15:27 ▶ src/pages/new-patients.astro
+23:15:27   └─ /new-patients/index.html (+2ms)
+23:15:27 ▶ src/pages/reviews.astro
+23:15:27   └─ /reviews/index.html (+2ms)
+23:15:27 ▶ src/pages/services/index.astro
+23:15:27   └─ /services/index.html (+2ms)
+23:15:27 ▶ src/pages/services/[...slug].astro
+23:15:27   ├─ /services/bleaching/index.html (+3ms)
+23:15:27   ├─ /services/bridges/index.html (+2ms)
+23:15:27   ├─ /services/crowns/index.html (+6ms)
+23:15:27   ├─ /services/denture-repair/index.html (+2ms)
+23:15:27   ├─ /services/dentures/index.html (+1ms)
+23:15:27   ├─ /services/extractions/index.html (+1ms)
+23:15:27   ├─ /services/fillings/index.html (+1ms)
+23:15:27   ├─ /services/implants/index.html (+1ms)
+23:15:27   ├─ /services/partials/index.html (+7ms)
+23:15:27   ├─ /services/root-canals/index.html (+5ms)
+23:15:27   ├─ /services/veneers/index.html (+3ms)
+23:15:27   └─ /services/wisdom-teeth/index.html (+1ms)
+23:15:27 ▶ src/pages/index.astro
+23:15:27   └─ /index.html (+2ms)
+23:15:27 ✓ Completed in 271ms.
+
+23:15:27 [build] 45 page(s) built in 2.36s
+23:15:27 [build] Complete!

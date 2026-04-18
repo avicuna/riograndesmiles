@@ -1,0 +1,50 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BookingSection from '../../components/BookingSection.astro';
+
+const services = await getCollection('services');
+const sorted = services.sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout
+  title="Our Services | Rio Grande Smiles — Dentist in Albuquerque, NM"
+  description="Comprehensive dental services including extractions, fillings, implants, crowns, veneers, root canals, and more at Rio Grande Smiles in Albuquerque, NM."
+  locale="en"
+  canonicalPath="/services/"
+>
+  <section class="bg-bg-warm border-b border-line py-12 text-center">
+    <div class="max-w-content mx-auto px-4">
+      <h1 class="font-display text-3xl md:text-4xl font-medium text-ink">
+        Our Services
+      </h1>
+      <p class="text-ink-2 mt-2 text-lg">Comprehensive dental care in Albuquerque, NM</p>
+    </div>
+  </section>
+
+  <section class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {sorted.map((service) => (
+        <a
+          href={`/services/${service.data.serviceSlug}`}
+          class="group bg-bg-card border border-line rounded-lg p-8 text-center motion-safe:hover:-translate-y-1 hover:border-primary-500 transition-all duration-200"
+        >
+          <div class="inline-flex items-center justify-center w-14 h-14 bg-primary-100 rounded-lg mb-4 text-2xl">
+            {service.data.icon}
+          </div>
+          <h2 class="font-display text-lg font-medium text-ink mb-2">
+            {service.data.titleEn}
+          </h2>
+          <p class="text-sm text-ink-2 mb-4">
+            {service.data.descriptionEn}
+          </p>
+          <span class="text-sm font-medium text-primary-500 group-hover:text-primary-700 transition-colors">
+            Learn more &rarr;
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <BookingSection locale="en" />
+</BaseLayout>

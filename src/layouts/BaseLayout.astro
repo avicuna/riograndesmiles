@@ -1,0 +1,65 @@
+---
+import type { Locale } from '../i18n/utils';
+import { getAlternatePath } from '../i18n/utils';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import MobileCtaBar from '../components/MobileCtaBar';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  locale?: Locale;
+  canonicalPath: string;
+}
+
+const { title, description, locale = 'en', canonicalPath } = Astro.props;
+const site = Astro.site?.toString().replace(/\/$/, '') ?? 'https://riograndesmiles.com';
+const canonicalUrl = `${site}${canonicalPath}`;
+const alternatePath = getAlternatePath(canonicalPath, locale);
+const alternateUrl = `${site}${alternatePath}`;
+const ogImage = `${site}/og-image.jpg`;
+---
+
+<!DOCTYPE html>
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    {/* Fonts — self-hosted via @fontsource (imported in global.css) */}
+    <meta name="theme-color" content="#2b7cc9" />
+
+    {/* SEO */}
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang={locale === 'en' ? 'es' : 'en'} href={alternateUrl} />
+    <link rel="alternate" hreflang={locale} href={canonicalUrl} />
+
+    {/* Open Graph */}
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+
+    {/* Twitter Card */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+  </head>
+  <body class="font-sans text-ink-2 bg-bg">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-primary-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-semibold">
+      Skip to main content
+    </a>
+    <Nav locale={locale} />
+    <main id="main-content" class="pb-[70px] md:pb-0">
+      <slot />
+    </main>
+    <Footer locale={locale} />
+    <MobileCtaBar client:media="(max-width: 768px)" />
+  </body>
+</html>

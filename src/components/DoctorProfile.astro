@@ -1,0 +1,73 @@
+---
+import type { Locale } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+import SectionTag from './SectionTag.astro';
+
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<section class="py-[100px]">
+  <div class="max-w-content mx-auto px-7">
+    {/* Section header */}
+    <div class="grid grid-cols-1 md:grid-cols-[1fr_1.3fr] gap-16 mb-14 items-end">
+      <div>
+        <SectionTag label={t('sectionTags.doctor')} />
+        <h2 class="font-display text-[2.2rem] leading-[1.15] font-medium text-ink">
+          {t('doctorProfile.heading')}
+        </h2>
+      </div>
+      <p class="text-ink-3 max-w-[56ch] text-[1.05rem]">
+        {t('doctorProfile.sub')}
+      </p>
+    </div>
+
+    {/* Doctor content */}
+    <div class="max-w-[860px]">
+      <blockquote class="font-display text-[1.6rem] leading-[1.3] font-normal text-ink italic max-w-[46ch] pl-5 border-l-2 border-primary-500 my-8">
+        {t('doctorProfile.quote')}
+      </blockquote>
+
+      <p class="text-[1.02rem] text-ink-2 leading-[1.7]">
+        {t('doctorProfile.bio')}
+      </p>
+
+      {/* Credentials grid */}
+      <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 border-t border-line pt-7">
+        <div>
+          <div class="font-mono text-[0.72rem] text-ink-3 uppercase tracking-[0.1em] mb-1.5">
+            {t('doctorProfile.credEduLabel')}
+          </div>
+          <div class="font-display text-base text-ink">
+            {t('doctorProfile.credEduValue')}
+          </div>
+        </div>
+        <div>
+          <div class="font-mono text-[0.72rem] text-ink-3 uppercase tracking-[0.1em] mb-1.5">
+            {t('doctorProfile.credUndergradLabel')}
+          </div>
+          <div class="font-display text-base text-ink">
+            {t('doctorProfile.credUndergradValue')}
+          </div>
+        </div>
+        <div>
+          <div class="font-mono text-[0.72rem] text-ink-3 uppercase tracking-[0.1em] mb-1.5">
+            {t('doctorProfile.credMembLabel')}
+          </div>
+          <div class="font-display text-base text-ink">
+            {t('doctorProfile.credMembValue')}
+          </div>
+        </div>
+        <div>
+          <div class="font-mono text-[0.72rem] text-ink-3 uppercase tracking-[0.1em] mb-1.5">
+            {t('doctorProfile.credSinceLabel')}
+          </div>
+          <div class="font-display text-base text-ink">
+            {t('doctorProfile.credSinceValue')}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

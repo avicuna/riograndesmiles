@@ -1,0 +1,79 @@
+/* Self-hosted fonts */
+@import '@fontsource-variable/newsreader';
+@import '@fontsource-variable/newsreader/wght-italic.css';
+@import '@fontsource-variable/inter-tight';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/500.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* oklch native tokens — for gradients and color-mix() */
+    --c-primary: oklch(48% 0.14 245);
+    --c-primary-deep: oklch(36% 0.13 250);
+    --c-primary-tint: oklch(94% 0.03 245);
+    --c-accent: oklch(62% 0.13 200);
+    --c-accent-tint: oklch(94% 0.04 200);
+    --c-ink: oklch(22% 0.03 250);
+    --c-bg: oklch(98% 0.006 240);
+    --c-bg-warm: oklch(95% 0.012 235);
+    --c-bg-card: oklch(99.5% 0.003 240);
+    --c-line: oklch(90% 0.012 240);
+    --c-gold: oklch(75% 0.13 85);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Newsreader Variable', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: theme('colors.ink.DEFAULT');
+  }
+
+  h1 {
+    font-size: clamp(2.6rem, 5.2vw, 4.8rem);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+  }
+
+  h2 {
+    font-size: clamp(1.9rem, 3vw, 2.7rem);
+    line-height: 1.1;
+    font-weight: 400;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+
+  /* Focus indicators for accessibility */
+  :focus-visible {
+    outline: 2px solid theme('colors.primary.500');
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+/* Reduced motion — disable animations and transitions */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

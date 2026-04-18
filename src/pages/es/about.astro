@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../i18n/utils';
+import BookingSection from '../../components/BookingSection.astro';
+const t = useTranslations('es');
+---
+
+<BaseLayout
+  title="Acerca del Dr. Vicuña | Rio Grande Smiles"
+  description={t('doctor.description')}
+  locale="es"
+  canonicalPath="/es/about"
+>
+  {/* Hero Section */}
+  <section class="bg-bg-warm border-b border-line py-12">
+    <div class="max-w-content mx-auto px-6 text-center">
+      <span class="uppercase tracking-wider text-primary-500 text-xs font-medium block mb-4">
+        {t('about.sectionLabel')}
+      </span>
+      <h1 class="font-display text-3xl font-medium text-ink mb-2">
+        {t('about.doctorTitle')}
+      </h1>
+      <p class="text-primary-500 font-medium">
+        {t('about.doctorSubtitle')}
+      </p>
+    </div>
+  </section>
+
+  {/* Profile Section */}
+  <section class="py-12">
+    <div class="max-w-4xl mx-auto px-6">
+      {/* Circular Headshot */}
+      <div class="flex justify-center mb-8">
+        <div class="w-48 h-48 rounded-full border-4 border-primary-500 overflow-hidden flex-shrink-0">
+          <img
+            src="/img/doctor-headshot.png"
+            alt={t('about.doctorTitle')}
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+
+      {/* Full Bio */}
+      <div class="text-center">
+        <p class="text-lg leading-relaxed text-ink-2 mb-8">
+          {t('doctor.description')}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {/* Credentials Section */}
+  <section class="bg-bg-warm py-12">
+    <div class="max-w-2xl mx-auto px-6">
+      <h2 class="font-display text-2xl font-medium text-ink text-center mb-8">
+        {t('about.credentialsHeading')}
+      </h2>
+
+      <div class="space-y-3">
+        <div class="bg-bg-card p-4 rounded-lg border border-line">
+          <p class="text-ink-2 font-medium">{t('about.credential1')}</p>
+        </div>
+        <div class="bg-bg-card p-4 rounded-lg border border-line">
+          <p class="text-ink-2 font-medium">{t('about.credential2')}</p>
+        </div>
+        <div class="bg-bg-card p-4 rounded-lg border border-line">
+          <p class="text-ink-2 font-medium">{t('about.credential3')}</p>
+        </div>
+        <div class="bg-bg-card p-4 rounded-lg border border-line">
+          <p class="text-ink-2 font-medium">{t('about.credential4')}</p>
+        </div>
+        <div class="bg-bg-card p-4 rounded-lg border border-line">
+          <p class="text-ink-2 font-medium">{t('about.credential5')}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Practice Story Section */}
+  <section class="py-12">
+    <div class="max-w-2xl mx-auto px-6">
+      <h2 class="font-display text-2xl font-medium text-ink text-center mb-8">
+        {t('about.practiceHeading')}
+      </h2>
+      <p class="text-lg leading-relaxed text-ink-2 text-center">
+        {t('about.practiceDescription')}
+      </p>
+    </div>
+  </section>
+
+  {/* CTA Section */}
+  <section class="py-12">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="font-display text-2xl font-medium text-ink mb-4">
+          {t('about.readyHeading')}
+        </h2>
+      </div>
+
+      <div class="max-w-2xl mx-auto">
+        <BookingSection locale="es" />
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

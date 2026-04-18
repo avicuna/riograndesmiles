@@ -1,0 +1,74 @@
+---
+import type { Locale } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'en' } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<section class="cta-band bg-primary-500 text-white py-20 relative overflow-hidden">
+  <div class="cta-inner max-w-content mx-auto px-7 relative z-10 grid grid-cols-[1.3fr_1fr] gap-12 items-center">
+    {/* Left: copy */}
+    <div>
+      <h2 class="font-display text-[2rem] leading-tight text-white max-w-[18ch]">
+        {t('ctaBand.heading')}
+      </h2>
+      <p class="text-white/80 mt-3.5 text-[1.05rem]">
+        {t('ctaBand.sub')}
+      </p>
+    </div>
+
+    {/* Right: buttons */}
+    <div class="cta-buttons flex gap-3 justify-end flex-wrap">
+      {/* Call button */}
+      <a
+        href="tel:+15058771113"
+        class="inline-flex items-center gap-2 bg-white text-primary-500 rounded-full px-5 py-[11px] font-medium text-[0.92rem] hover:bg-ink hover:text-white transition-colors"
+      >
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        {t('ctaBand.callButton')}
+      </a>
+
+      {/* Text button */}
+      <a
+        href="sms:+15058771113"
+        class="inline-flex items-center gap-2 bg-transparent text-white border border-white/40 rounded-full px-5 py-[11px] text-[0.92rem] hover:bg-white/10 transition-colors"
+      >
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"/></svg>
+        {t('ctaBand.textButton')}
+      </a>
+
+      {/* Email button */}
+      <a
+        href="mailto:emersonvicunadds@gmail.com"
+        class="inline-flex items-center gap-2 bg-transparent text-white border border-white/40 rounded-full px-5 py-[11px] text-[0.92rem] hover:bg-white/10 transition-colors"
+      >
+        {t('ctaBand.emailButton')}
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-band::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 90% 20%, rgba(30, 58, 95, 0.6), transparent 50%);
+    background-image: radial-gradient(circle at 90% 20%, oklch(36% 0.13 250 / 0.6), transparent 50%);
+  }
+
+  @media (max-width: 900px) {
+    .cta-inner {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+      justify-content: flex-start;
+    }
+  }
+</style>

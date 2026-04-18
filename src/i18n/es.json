@@ -1,0 +1,481 @@
+{
+  "navbar": {
+    "services": "Servicios",
+    "about": "Nosotros",
+    "reviews": "Reseñas",
+    "insurance": "Seguros",
+    "contact": "Contacto",
+    "langSwitch": "English",
+    "brandSub": "Dr. Vicuña · DDS"
+  },
+  "formsCallout": {
+    "heading": "Descargue Sus Formularios",
+    "body": "Ahorre tiempo en su visita — descargue y complete sus formularios antes de llegar.",
+    "cta": "Ver Formularios"
+  },
+  "header": {
+    "location": "Albuquerque, Nuevo México",
+    "description": "El Dr. Vicuña y su equipo brindan atención dental excepcional para mantener su sonrisa saludable y fuerte de por vida. Durante más de 20 años hemos establecido relaciones de confianza con nuestros pacientes donde podemos contribuir al bienestar general de todos nuestros pacientes. Usando técnicas probadas para la odontología general, estética y restaurativa, personalizaremos un plan de tratamiento que se adapte a sus objetivos únicos. Desde chequeos hasta mejoras estéticas y restauraciones integrales, el Dr. Vicuna realizará su trabajo dental con habilidad y precisión."
+  },
+  "hero": {
+    "eyebrow": "Odontología familiar · Albuquerque, NM",
+    "title1": "Atención dental ",
+    "titleEm": "para toda la familia",
+    "lede": "Dr. Emerson Vicuña ofrece visitas sin prisa, respuestas honestas y planes de tratamiento personalizados — más de veinte años cuidando a pacientes en el Valle del Río Grande.",
+    "chipExperience": "Más de 20 años de experiencia",
+    "chipFamily": "Ambiente familiar",
+    "chipMedicaid": "Medicaid bienvenido",
+    "chipInsurance": "Aceptamos la mayoría de seguros",
+    "ctaCall": "Llame o envíe texto al (505) 877-1113",
+    "ctaServices": "Ver servicios"
+  },
+  "trustBar": {
+    "yearsNum": "20+",
+    "yearsLabel": "Años de experiencia",
+    "patientsNum": "1,200+",
+    "patientsLabel": "Familias atendidas",
+    "servicesNum": "12",
+    "servicesLabel": "Servicios dentales",
+    "insuranceNum": "9",
+    "insuranceLabel": "Seguros aceptados"
+  },
+  "sectionTags": {
+    "doctor": "Sobre el doctor",
+    "services": "Nuestros servicios",
+    "reviews": "Lo que dicen nuestros pacientes",
+    "insurance": "Seguros aceptados",
+    "faq": "Preguntas frecuentes",
+    "location": "Nuestra ubicación",
+    "ctaBand": "Contáctenos"
+  },
+  "insurance": {
+    "heading": "Aceptamos Medicaid y los principales seguros.",
+    "sub": "¿No ve su plan? Llámenos — trabajamos con muchos proveedores y podemos ayudar a verificar su cobertura antes de su visita."
+  },
+  "servicesOverview": {
+    "heading": "Todo lo que su familia necesita, bajo un mismo techo.",
+    "sub": "De una limpieza rutinaria a una restauración completa — con explicaciones claras y precios honestos, antes de comenzar.",
+    "items": [
+      { "num": "01", "key": "cleanings", "title": "Limpiezas y chequeos", "desc": "Cuidado preventivo para mantener su sonrisa fuerte — para usted y toda su familia." },
+      { "num": "02", "key": "fillings", "title": "Rellenos", "desc": "Restaure dientes con caries usando materiales del color natural del diente." },
+      { "num": "03", "key": "crowns", "title": "Coronas", "desc": "Tapas personalizadas que restauran la forma, el tamaño y la resistencia de un diente dañado." },
+      { "num": "04", "key": "bridges", "title": "Puentes", "desc": "Reemplace dientes faltantes anclándolos a dientes sanos adyacentes." },
+      { "num": "05", "key": "implants", "title": "Implantes", "desc": "Raíces de titanio colocadas en la mandíbula — una solución permanente para dientes perdidos." },
+      { "num": "06", "key": "dentures", "title": "Dentaduras", "desc": "Prótesis removibles completas o parciales, ajustadas a su boca." },
+      { "num": "07", "key": "partials", "title": "Parciales", "desc": "Cuando aún tiene dientes naturales, las parciales llenan los espacios cómodamente." },
+      { "num": "08", "key": "repair", "title": "Reparación de dentaduras", "desc": "Reparamos dentaduras rotas o dañadas para que sigan funcionando cómodamente." },
+      { "num": "09", "key": "whitening", "title": "Blanqueamiento", "desc": "Tratamiento cosmético seguro que aclara y blanquea su sonrisa." },
+      { "num": "10", "key": "veneers", "title": "Carillas", "desc": "Delgadas capas de porcelana que transforman la apariencia de sus dientes frontales." },
+      { "num": "11", "key": "root", "title": "Tratamientos de conducto", "desc": "Tratamiento endodóntico para salvar un diente gravemente dañado o infectado." },
+      { "num": "12", "key": "extraction", "title": "Extracciones y muelas del juicio", "desc": "Extracciones de rutina y remoción de muelas del juicio, con su comodidad primero." }
+    ]
+  },
+  "doctorProfile": {
+    "heading": "Más de dos décadas cuidando sonrisas en Albuquerque.",
+    "sub": "Dr. Vicuña es el único dentista de la clínica. Cada paciente lo conoce en persona — y él a usted.",
+    "quote": "Mi compromiso es tratar a cada paciente con el tiempo, el respeto y la atención que merece.",
+    "bio": "El Dr. Emerson Vicuña obtuvo su licenciatura en Biología y Química en la Universidad de Nuevo México y su título de Doctor en Cirugía Dental (DDS) de la Universidad Estatal de Ohio. Desde 2005 dirige su propia clínica, combinando técnicas probadas en odontología general, cosmética y restaurativa para diseñar un plan personalizado para cada paciente. Miembro de la Asociación Dental Americana y la Academia de Odontología General.",
+    "credEduLabel": "Educación",
+    "credEduValue": "DDS, Universidad Estatal de Ohio",
+    "credUndergradLabel": "Licenciatura",
+    "credUndergradValue": "Biología y Química, UNM",
+    "credMembLabel": "Membresías",
+    "credMembValue": "ADA · Academia de Odontología General",
+    "credSinceLabel": "Ejerciendo desde",
+    "credSinceValue": "2005 · Albuquerque, NM"
+  },
+  "journey": {
+    "label": "Nuevos Pacientes",
+    "heading": "Comenzar Es Fácil",
+    "step1": {
+      "title": "Llame o Envíe Texto",
+      "description": "Comuníquese al (505) 877-1113 para programar su visita — estamos felices de ayudar."
+    },
+    "step2": {
+      "title": "Prepárese para su Visita",
+      "description": "Descargue y complete sus formularios con anticipación para estar listo."
+    },
+    "step3": {
+      "title": "Sonría con Confianza",
+      "description": "Reciba atención personalizada del Dr. Vicuña y salga con una sonrisa más saludable."
+    }
+  },
+  "affordableCare": {
+    "heading": "Todos Merecen una Sonrisa Saludable",
+    "body": "Creemos que la atención dental debe ser accesible para todos. Nuestra oficina trabaja con una amplia gama de proveedores de seguros y ofrece precios transparentes para que pueda concentrarse en su salud, no en costos ocultos.",
+    "check1": "Medicaid Aceptado",
+    "check2": "Mayoría de Seguros Aceptados",
+    "check3": "Precios Transparentes",
+    "cta": "Ver Información de Seguros"
+  },
+  "booking": {
+    "title": "Programe una Cita",
+    "text": "Llámenos o envíenos un mensaje de texto para programar su visita. Estaremos encantados de ayudarle a encontrar un horario que le funcione.",
+    "callButton": "Llamar (505) 877-1113",
+    "textButton": "Texto (505) 877-1113"
+  },
+  "finalCta": {
+    "heading": "¿Listo para Comenzar?",
+    "subtitle": "Los nuevos pacientes siempre son bienvenidos — llame o envíe texto para programar.",
+    "callCta": "Llame o envíe texto al (505) 877-1113"
+  },
+  "ctaBand": {
+    "heading": "Llame o envíenos un texto hoy.",
+    "sub": "Lunes – Jueves, 9am – 5pm. 3200 Coors Blvd NW, Suite F, Albuquerque.",
+    "callButton": "(505) 877-1113",
+    "textButton": "Enviar texto",
+    "emailButton": "Enviar correo"
+  },
+  "insuranceProviders": {
+    "unitedHealthcare": "United Healthcare",
+    "deltaDental": "Delta Dental",
+    "metlife": "MetLife",
+    "guardian": "Guardian",
+    "ameritas": "Ameritas",
+    "cigna": "Cigna",
+    "medicaid": "Medicaid",
+    "principal": "Principal",
+    "unitedConcordia": "United Concordia"
+  },
+  "doctor": {
+    "title": "Acerca del Doctor",
+    "description": "Con más de 20 años de experiencia, el Dr. Emerson Vicuña, DDS es un dentista general que ama ayudar a las personas que necesitan su experiencia dental. Sus pacientes adoran su personalidad amigable, ética de trabajo y resultados sobresalientes. Originario de Lima, Perú, el Dr. Vicuña obtuvo su título de Doctor en Cirugía Dental de la Universidad Estatal de Ohio después de recibir su licenciatura en Biología y Química de la Universidad de Nuevo México. También es miembro de la Asociación Dental Americana y de la Academia de Odontología General. Desde que comenzó su propia práctica en 2005, el Dr. Vicuña ha sido el único dentista en su práctica, lo que permite a los pacientes conocerlo personalmente y recibir atención personalizada."
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "extractions": {
+      "title": "Extracciones",
+      "description": "Las extracciones implican la remoción de un diente de su cavidad en el hueso. Este procedimiento puede ser necesario debido a caries, daño o hacinamiento."
+    },
+    "fillings": {
+      "title": "Rellenos",
+      "description": "Los rellenos se utilizan para restaurar un diente dañado por caries. El dentista quita la parte afectada del diente y lo llena con un material que coincide con el color de su diente."
+    },
+    "crowns": {
+      "title": "Coronas",
+      "description": "Las coronas son tapas personalizadas que se colocan sobre dientes dañados para restaurar su forma, tamaño y resistencia mientras mejoran su apariencia."
+    },
+    "rootCanals": {
+      "title": "Tratamientos de Conducto",
+      "description": "Un tratamiento de conducto es un procedimiento utilizado para reparar y salvar un diente que está muy dañado o infectado. Implica la eliminación del tejido dañado dentro del diente."
+    },
+    "wisdomTeeth": {
+      "title": "Muelas del Juicio",
+      "description": "La extracción de muelas del juicio es un procedimiento común para remover una o más de las cuatro muelas del juicio, que pueden causar dolor o problemas dentales."
+    },
+    "bleaching": {
+      "title": "Blanqueo Dental",
+      "description": "El blanqueo dental es un procedimiento estético que aclara los dientes utilizando agentes blanqueadores seguros para mejorar su sonrisa."
+    },
+    "dentures": {
+      "title": "Dentaduras",
+      "description": "Las dentaduras son reemplazos removibles para dientes perdidos y tejidos circundantes, disponibles como dentaduras completas o parciales."
+    },
+    "partials": {
+      "title": "Dentaduras Parciales",
+      "description": "Las dentaduras parciales se utilizan cuando quedan algunos dientes naturales. Ayudan a llenar los espacios creados por los dientes perdidos y evitan que otros dientes se desplacen."
+    },
+    "dentureRepair": {
+      "title": "Reparación de Dentaduras",
+      "description": "Los servicios de reparación de dentaduras arreglan dentaduras rotas o dañadas, restaurando la funcionalidad y la apariencia para un uso cómodo."
+    },
+    "bridges": {
+      "title": "Puentes Dentales",
+      "description": "Un puente dental se utiliza para reemplazar uno o más dientes faltantes anclándolos a los dientes adyacentes para dar soporte."
+    },
+    "veneers": {
+      "title": "Carillas",
+      "description": "Las carillas son capas delgadas de porcelana o resina compuesta que cubren la superficie frontal de los dientes para mejorar su apariencia."
+    },
+    "implants": {
+      "title": "Implantes",
+      "description": "Los implantes dentales son raíces de dientes artificiales colocadas en el hueso de la mandíbula para soportar dientes de reemplazo, proporcionando una solución permanente para los dientes perdidos."
+    }
+  },
+  "forms": {
+    "title": "Formularios Descargables",
+    "description": "Por favor descargue y complete los formularios a continuación antes de su visita para agilizar el proceso de registro.",
+    "medicalHistory": {
+      "title": "Formulario de Historial Médico",
+      "description": "Complete este formulario para proporcionarnos su historial médico para una mejor atención al paciente."
+    },
+    "patientRegistration": {
+      "title": "Formulario de Registro de Paciente",
+      "description": "Este formulario es esencial para que configuremos su cuenta y gestionemos sus citas."
+    }
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "firstAppointment": {
+      "title": "Primera Cita",
+      "arriveEarly": "¿Necesito llegar temprano para mi primera cita?",
+      "arriveEarlyAnswer": "Si no ha completado nuestros formularios de historial médico y registro de pacientes descargables en línea, llegue 10-15 minutos antes para hacerlo. Descargue nuestros formularios yendo a la página de formularios.",
+      "preMedication": "¿Qué debo hacer si necesito premedicación?",
+      "preMedicationAnswer": "Asegúrese de solicitar una receta antes de su cita, o si no está seguro, contáctenos y podemos ayudar.",
+      "bring": "¿Qué debo llevar a mi primera cita?",
+      "bringAnswer": "Por favor traiga los siguientes artículos a su cita:",
+      "bringItem1": "Formulario de Historial Médico",
+      "bringItem2": "Formulario de Registro de Paciente",
+      "bringItem3": "Tarjeta de Seguro Dental (si aplica)",
+      "bringItem4": "Identificación como Licencia de Conducir, ID Militar o ID Estatal",
+      "duration": "¿Cuánto durará mi primera cita?",
+      "durationAnswer": "Varía, pero planifique pasar de 30 minutos a una hora en su primera visita. Nos aseguramos de explicar claramente los beneficios y costos de cada tratamiento antes de nuestra reunión inicial."
+    },
+    "preventiveDentistry": {
+      "title": "Odontología Preventiva",
+      "healthyTeeth": "¿Qué puedo hacer para mantener mis dientes sanos?",
+      "healthyTeethAnswer": "Las revisiones y limpiezas dentales regulares, una dieta equilibrada y prácticas adecuadas de higiene bucal son esenciales.",
+      "toothpaste": "¿Qué pasta de dientes debo usar?",
+      "toothpasteAnswer": "El ingrediente más importante a buscar al elegir una pasta de dientes es el flúor, que ayuda a proteger sus dientes de la caries.",
+      "flossing": "¿Por qué debo usar hilo dental? ¿No es suficiente con cepillarse?",
+      "flossingAnswer": "El uso del hilo dental elimina la placa entre los dientes donde el cepillo no puede alcanzar, ayudando a prevenir enfermedades de las encías y caries.",
+      "preventCavities": "¿Cómo puedo prevenir las caries?",
+      "preventCavitiesItem1": "Cepíllese los dientes dos veces al día durante al menos dos minutos.",
+      "preventCavitiesItem2": "Limite los alimentos y bebidas azucaradas.",
+      "preventCavitiesItem3": "Visite a su dentista regularmente para limpiezas y revisiones."
+    },
+    "generalDentistry": {
+      "title": "Odontología General",
+      "visitFrequency": "¿Con qué frecuencia necesito visitar al dentista?",
+      "visitFrequencyAnswer": "La mayoría de las personas deben ver a su dentista dos veces al año, pero aquellos con preocupaciones dentales específicas pueden necesitar visitas más frecuentes.",
+      "xraySafety": "¿Qué tan seguras son las radiografías dentales?",
+      "xraySafetyAnswer": "Las radiografías dentales son muy seguras y lo exponen a niveles muy bajos de radiación.",
+      "sensitiveTeeth": "¿Qué puedo hacer con los dientes sensibles?",
+      "sensitiveTeethAnswer": "Use pasta de dientes para la sensibilidad y evite los alimentos altamente ácidos. Si la sensibilidad persiste, consulte a su dentista para obtener consejos personalizados."
+    },
+    "familyDentistry": {
+      "title": "Odontología Familiar",
+      "firstCheckup": "¿Cuándo debo llevar a mi hijo al dentista para su primera revisión?",
+      "firstCheckupAnswer": "Su hijo debe ver a un dentista pediátrico entre los 6-9 meses o a más tardar en su primer cumpleaños.",
+      "pregnancy": "¿Qué pasa si una mujer tiene un problema dental cuando está embarazada?",
+      "pregnancyAnswer": "Las limpiezas dentales preventivas durante el embarazo son seguras y recomendadas para evitar complicaciones."
+    },
+    "cosmeticDentistry": {
+      "title": "Odontología Cosmética",
+      "changeShape": "Estoy interesado en cambiar la forma de mis dientes. ¿Qué opciones están disponibles?",
+      "changeShapeAnswer": "Las opciones incluyen adhesión, coronas, carillas y recontorneado.",
+      "whitening": "¿Cuáles son mis opciones para blanquear mis dientes?",
+      "whiteningAnswer": "Considere pastas dentales blanqueadoras o blanqueamiento en el consultorio después de consultar con su dentista."
+    },
+    "emergencies": {
+      "title": "Emergencias",
+      "knockedOut": "¿Qué pasa si mi diente se cae en un accidente?",
+      "knockedOutAnswer": "Ubique el diente y enjuáguelo suavemente. Colóquelo en leche o saliva y busque atención dental de inmediato.",
+      "dentalEmergency": "¿Qué debo hacer si tengo una emergencia dental y no puedo comunicarme con mi dentista?",
+      "dentalEmergencyAnswer": "Si no puede comunicarse con su dentista, visite el centro de atención urgente o la sala de emergencias más cercana para obtener ayuda."
+    }
+  },
+  "homeFaq": {
+    "heading": "Todo lo que quiere saber antes de su primera visita.",
+    "sub": "¿Tiene otra pregunta que no aparece aquí? Llámenos.",
+    "items": [
+      { "q": "¿Están aceptando nuevos pacientes?", "a": "Sí — estamos recibiendo nuevos pacientes de todas las edades. Puede programar su primera visita por teléfono o mensaje de texto. Reservamos tiempo extra para las primeras citas para conocerlo y revisar su historial sin prisas." },
+      { "q": "¿Qué seguros aceptan? ¿Aceptan Medicaid?", "a": "Sí, aceptamos Medicaid así como United Healthcare, Delta Dental, MetLife, Guardian, Ameritas, Cigna, Principal y United Concordia. Si no ve su plan, llámenos — con frecuencia podemos ayudar a verificar la cobertura." },
+      { "q": "¿Qué debo llevar a mi primera cita?", "a": "Su identificación (licencia de conducir, ID militar o estatal), su tarjeta de seguro dental si tiene una, y sus formularios de historial médico y registro completados (o llegue 10–15 minutos antes para llenarlos)." },
+      { "q": "¿Con qué frecuencia debo visitar al dentista?", "a": "La mayoría de las personas deben ver a su dentista cada seis meses para una limpieza y chequeo. Los pacientes con preocupaciones específicas pueden necesitar visitas más frecuentes." },
+      { "q": "¿Cuándo debo traer a mi hijo a su primera visita?", "a": "Recomendamos la primera visita entre los 6–9 meses de edad, a más tardar en su primer cumpleaños. Queremos que los niños crezcan sintiéndose cómodos en el dentista desde temprana edad." },
+      { "q": "¿Qué pasa si un diente se cae en un accidente?", "a": "Encuentre el diente, enjuáguelo suavemente (no lo frote) y colóquelo en leche o su saliva. Llámenos de inmediato — el tiempo es crítico. Fuera de horario, acuda a un centro de atención urgente o emergencias." }
+    ]
+  },
+  "reviews": {
+    "title": "Reseñas de Pacientes",
+    "label": "Reseñas de Pacientes",
+    "heading": "Familias que nos han confiado su sonrisa.",
+    "sub": "Reseñas verificadas de pacientes en Albuquerque.",
+    "shareExperience": "¡Nos encantaría saber sobre su experiencia! Déjenos una reseña en Google.",
+    "pageDescription": "Lea lo que nuestros pacientes tienen que decir sobre su experiencia con el Dr. Vicuña y el equipo de Rio Grande Smiles.",
+    "review1": "Muy profesional y siguiendo las medidas más seguras para el cuidado dental. Personal amable, sin duda fue una gran experiencia.",
+    "review1Author": "Rafael Contreras",
+    "review1Meta": "Google · Paciente desde 2019",
+    "review2": "¡Me encanta el Dr. Vicuña! Es muy gentil y muy bueno en lo que hace. He sido su paciente por al menos 7 años y no iría a ningún otro lugar.",
+    "review2Author": "Clorinda Olguín",
+    "review2Meta": "Google · Paciente desde 2017",
+    "review3": "Trabajo muy útil y profesional. Me explicaron el procedimiento claramente y me sentí completamente a gusto.",
+    "review3Author": "Carlos Álvarez",
+    "review3Meta": "Google · Paciente desde 2022"
+  },
+  "location": {
+    "heading": "Venga a vernos en el oeste de Albuquerque.",
+    "sub": "",
+    "addressLabel": "Dirección",
+    "phoneLabel": "Teléfono",
+    "emailLabel": "Correo electrónico",
+    "hoursLabel": "Horario"
+  },
+  "footer": {
+    "contact": "Contacto",
+    "address": "Dirección",
+    "phone": "(505) 877-1113",
+    "email": "emersonvicunadds@gmail.com",
+    "hours": {
+      "title": "Horario",
+      "description": "Lun-Jue 9am - 5pm"
+    },
+    "brand": "Rio Grande Smiles",
+    "brandSub": "Dr. Vicuña · DDS",
+    "brandDescription": "Atención dental excepcional en Albuquerque, NM. Sirviendo a la comunidad con odontología general, cosmética y restaurativa por más de 20 años.",
+    "tagline": "Odontología familiar en Albuquerque, Nuevo México — cuidando a nuestra comunidad desde 2005.",
+    "servicesHeading": "Servicios",
+    "patientsHeading": "Pacientes",
+    "navigate": "Navegar",
+    "formsCol": "Formularios",
+    "medHistory": "Historial médico",
+    "registration": "Registro de paciente",
+    "generalDentistry": "Odontología General",
+    "cosmetic": "Odontología Cosmética",
+    "implants": "Implantes Dentales",
+    "rootCanals": "Tratamientos de Conducto",
+    "crownsBridges": "Coronas y Puentes",
+    "allServices": "Todos los Servicios",
+    "newPatient": "Información para Nuevos Pacientes",
+    "insurancePlans": "Seguros y Planes",
+    "affordableCare": "Atención Accesible",
+    "forms": "Formularios",
+    "faq": "Preguntas Frecuentes",
+    "addressLine1": "1630 Coors Blvd NW",
+    "addressLine2": "Albuquerque, NM 87121",
+    "langSwitch": "English",
+    "copyright": "2026 Rio Grande Smiles. Todos los derechos reservados.",
+    "madeWith": "Albuquerque, NM · Hecho con cariño"
+  },
+  "button": {
+    "learnMore": "Aprende Más",
+    "downloadForm": "Descargar Formulario",
+    "showLess": "Mostrar Menos"
+  },
+  "newPatients": {
+    "title": "Información para Nuevos Pacientes",
+    "pageDescription": "Todo lo que necesita saber antes de su primera visita a Rio Grande Smiles. Descargue formularios, conozca qué traer y prepárese para su cita.",
+    "whatToBringHeading": "Qué Traer",
+    "whatToBringItems": [
+      "Tarjeta de seguro (frente y reverso)",
+      "Identificación con foto",
+      "Formularios completados (descargar abajo)",
+      "Lista de medicamentos actuales"
+    ],
+    "firstVisitHeading": "Su Primera Visita",
+    "firstVisitP1": "¡Bienvenido a Rio Grande Smiles! Estamos emocionados de conocerlo y ayudarlo a lograr una salud bucal óptima. Su primera visita es una oportunidad importante para que lo conozcamos y comprendamos sus objetivos de salud dental.",
+    "firstVisitP2": "Planifique pasar de 30 a 60 minutos en su primera visita. Realizaremos un examen completo, discutiremos su historial de salud dental y crearemos un plan de tratamiento personalizado adaptado a sus necesidades.",
+    "downloadFormsHeading": "Formularios Descargables",
+    "downloadFormsIntro": "Ahorre tiempo en su cita descargando y completando estos formularios con anticipación:",
+    "medicalHistoryFormTitle": "Formulario de Historial Médico",
+    "medicalHistoryFormDesc": "Ayúdenos a comprender su historial de salud para la atención más segura y personalizada.",
+    "patientRegistrationFormTitle": "Formulario de Registro de Paciente",
+    "patientRegistrationFormDesc": "Información esencial para configurar su cuenta y gestionar sus citas.",
+    "firstAppointmentFaqHeading": "Preguntas sobre Primera Cita"
+  },
+  "contact": {
+    "title": "Contacto",
+    "pageDescription": "Póngase en contacto con Rio Grande Smiles. Visite nuestra oficina, llámenos o envíenos un mensaje.",
+    "formHeading": "Envíenos un Mensaje",
+    "nameLabel": "Nombre Completo",
+    "phoneLabel": "Número de Teléfono",
+    "emailLabel": "Correo Electrónico",
+    "messageLabel": "Mensaje",
+    "submitButton": "Enviar Mensaje",
+    "directionsHeading": "Direcciones y Estacionamiento",
+    "directionsText": "Estamos ubicados en Coors Boulevard, justo al sur de Montaño Road. Hay estacionamiento gratuito disponible frente al edificio."
+  },
+  "faqPage": {
+    "title": "Preguntas Frecuentes",
+    "pageDescription": "Encuentre respuestas a preguntas comunes sobre atención dental, citas, seguros y más.",
+    "firstAppointmentHeading": "Primera Cita",
+    "preventiveDentistryHeading": "Odontología Preventiva",
+    "generalDentistryHeading": "Odontología General",
+    "familyDentistryHeading": "Odontología Familiar",
+    "cosmeticDentistryHeading": "Odontología Cosmética",
+    "emergenciesHeading": "Emergencias"
+  },
+  "notFound": {
+    "title": "Página No Encontrada",
+    "heading": "404",
+    "subheading": "Página No Encontrada",
+    "message": "Lo sentimos, no pudimos encontrar la página que busca. Es posible que se haya movido o eliminado.",
+    "homeButton": "Volver al Inicio"
+  },
+  "about": {
+    "sectionLabel": "Acerca del Doctor",
+    "doctorTitle": "Emerson Vicuña, DDS",
+    "doctorSubtitle": "Doctor en Cirugía Dental",
+    "credentialsHeading": "Educación y Credenciales",
+    "credential1": "DDS, Universidad Estatal de Ohio",
+    "credential2": "Licenciatura en Biología y Química, Universidad de Nuevo México",
+    "credential3": "Miembro de la Asociación Dental Americana",
+    "credential4": "Miembro de la Academia de Odontología General",
+    "credential5": "Ejerciendo desde 2005",
+    "practiceHeading": "Nuestra Práctica",
+    "practiceDescription": "El Dr. Vicuña abrió su propia práctica dental en 2005 con la visión de proporcionar atención dental excepcional y personalizada a su comunidad. Como el único dentista en su práctica, aporta un toque personal a cada interacción con el paciente. Su compromiso con el aprendizaje continuo, combinado con su pasión genuina por la odontología, garantiza que cada paciente reciba el más alto nivel de atención. A lo largo de los años, ha construido relaciones duraderas con cientos de familias en Albuquerque que confían en él con sus sonrisas.",
+    "readyHeading": "¿Listo para conocer al Dr. Vicuña?"
+  },
+  "insurancePage": {
+    "title": "Seguros y Planes",
+    "howItWorksHeading": "Cómo Funciona el Seguro Dental",
+    "howItWorksIntro": "El seguro dental puede ser confuso. Estamos aquí para ayudarle a entender sus beneficios para que pueda tomar decisiones informadas sobre su atención.",
+    "deductible": {
+      "title": "¿Qué es un Deducible?",
+      "description": "Un deducible es la cantidad que paga de su bolsillo antes de que su seguro comience a cubrir los costos. Por ejemplo, si su deducible es de $50, usted paga los primeros $50 de servicios cubiertos cada año."
+    },
+    "copay": {
+      "title": "¿Qué es un Co-Pago?",
+      "description": "Un co-pago es una cantidad fija que paga por un servicio cubierto. Por ejemplo, podría pagar $20 por una limpieza de rutina, y su seguro cubre el resto."
+    },
+    "coverage": {
+      "title": "¿Qué Significa 'Cubierto al 80%'?",
+      "description": "Esto significa que su seguro paga el 80% del costo de ese servicio, y usted paga el 20% restante. Para un servicio de $100 cubierto al 80%, usted pagaría $20."
+    },
+    "notSureHeading": "¿No Está Seguro de Su Cobertura?",
+    "notSureDescription": "Contáctenos y le ayudaremos a verificar sus beneficios antes de su visita.",
+    "whatToBringHeading": "Qué Traer",
+    "whatToBringItems": [
+      "Tarjeta de seguro (frente y reverso)",
+      "Identificación con foto",
+      "Formularios de paciente completados"
+    ],
+    "formsReminder": "No Olvide Sus Formularios",
+    "formsReminderBody": "Descargue y complete sus formularios de paciente antes de su visita para ahorrar tiempo en el registro."
+  },
+  "affordableCarePage": {
+    "title": "Atención Dental Accesible",
+    "welcomeHeading": "Todos Merecen una Sonrisa Saludable",
+    "welcomeMessage": "Creemos que la atención dental de calidad debe ser accesible para todos en nuestra comunidad.",
+    "medicaidBadge": "Medicaid Bienvenido",
+    "howWeHelpHeading": "Cómo Mantenemos la Atención Accesible",
+    "insurance": {
+      "title": "Seguros",
+      "description": "Aceptamos más de 9 proveedores de seguros incluyendo Medicaid"
+    },
+    "transparent": {
+      "title": "Precios Transparentes",
+      "description": "Discutimos todos los costos antes de comenzar el tratamiento para que no haya sorpresas"
+    },
+    "selfPay": {
+      "title": "Opciones de Pago Directo",
+      "description": "Tarifas competitivas de pago directo para pacientes sin seguro"
+    },
+    "resourcesHeading": "Recursos Comunitarios",
+    "resourcesIntro": "Si necesita ayuda para acceder a cobertura dental, estos recursos pueden ayudar:",
+    "resource1Title": "Departamento de Servicios Humanos de Nuevo México",
+    "resource1Description": "Información sobre inscripción y elegibilidad para Medicaid",
+    "resource2Title": "Healthcare.gov",
+    "resource2Description": "Inscripción y asistencia en el mercado de seguros"
+  },
+  "financialPolicyPage": {
+    "title": "Política Financiera",
+    "policyHeading": "Nuestra Política",
+    "policyIntro": "El pago se debe en el momento de su visita. Esta política nos permite mantener nuestros costos bajos y enfocarnos en brindar la mejor atención para todos nuestros pacientes.",
+    "paymentMethodsHeading": "Métodos de Pago Aceptados",
+    "paymentMethods": [
+      "Efectivo",
+      "Tarjetas de crédito y débito",
+      "Cheques"
+    ],
+    "insuranceBillingHeading": "Facturación de Seguros",
+    "insuranceBillingP1": "Presentamos reclamos de seguros en su nombre como cortesía. Su porción estimada del paciente se debe en el momento del servicio.",
+    "insuranceBillingP2": "Si tiene preguntas sobre su cobertura, por favor contáctenos antes de su cita.",
+    "cancellationHeading": "Política de Cancelación y No Presentación",
+    "cancellationP1": "Le pedimos amablemente un aviso de 24 horas si necesita cancelar o reprogramar su cita.",
+    "cancellationP2": "Su tiempo de cita está reservado solo para usted. Cuando las citas no se utilizan, otros pacientes pierden la oportunidad de ser atendidos.",
+    "questionsHeading": "¿Preguntas?",
+    "questionsDescription": "Estamos aquí para ayudar. Contáctenos si tiene alguna pregunta sobre nuestra política financiera o su situación específica."
+  }
+}

@@ -1,0 +1,55 @@
+---
+import type { Locale } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'en' } = Astro.props;
+const t = useTranslations(locale);
+
+const stats = [
+  { num: t('trustBar.yearsNum'), label: t('trustBar.yearsLabel') },
+  { num: t('trustBar.patientsNum'), label: t('trustBar.patientsLabel') },
+  { num: t('trustBar.servicesNum'), label: t('trustBar.servicesLabel') },
+  { num: t('trustBar.insuranceNum'), label: t('trustBar.insuranceLabel') },
+];
+---
+
+<section class="bg-bg-warm border-t border-b border-line">
+  <div class="trust-grid max-w-content mx-auto grid grid-cols-4 py-7">
+    {stats.map((stat, i) => (
+      <div class:list={[
+        'text-center',
+        i < stats.length - 1 && 'trust-stat-border border-r border-line',
+      ]}>
+        <div class="font-display text-[2rem] leading-none text-primary-500 font-medium">
+          {stat.num}
+        </div>
+        <div class="text-[0.82rem] text-ink-3 mt-1.5 tracking-wide">
+          {stat.label}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  @media (max-width: 900px) {
+    .trust-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .trust-stat-border {
+      border-right: none !important;
+    }
+
+    /* First two items get bottom border */
+    .trust-grid > :nth-child(-n+2) {
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--color-line, #e5e5e5);
+    }
+  }
+</style>

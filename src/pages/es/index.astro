@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import TrustBar from '../../components/TrustBar.astro';
+import DoctorProfile from '../../components/DoctorProfile.astro';
+import ServicesOverview from '../../components/ServicesOverview.astro';
+import ReviewsSection from '../../components/ReviewsSection.astro';
+import InsuranceGrid from '../../components/InsuranceGrid.astro';
+import FAQAccordion from '../../components/FAQAccordion';
+import SectionTag from '../../components/SectionTag.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import MapSection from '../../components/MapSection.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const t = useTranslations('es');
+const faqItems = t('homeFaq.items') as unknown as Array<{q: string; a: string}>;
+---
+
+<BaseLayout title="Rio Grande Smiles | Dentista en Albuquerque, NM" description="Cuidado dental excepcional en Albuquerque, NM. El Dr. Emerson Vicuña ofrece odontología general, cosmética y restaurativa." locale="es" canonicalPath="/es/">
+  {/* Dentist JSON-LD structured data */}
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "Rio Grande Smiles",
+    "description": "Cuidado dental excepcional en Albuquerque, NM. El Dr. Emerson Vicuña ofrece odontología general, cosmética y restaurativa.",
+    "url": "https://riograndesmiles.com",
+    "telephone": "+15058771113",
+    "email": "emersonvicunadds@gmail.com",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3200 Coors Blvd NW Suite F",
+      "addressLocality": "Albuquerque",
+      "addressRegion": "NM",
+      "postalCode": "87120",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "35.1095",
+      "longitude": "-106.7234"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+        "opens": "09:00",
+        "closes": "17:00"
+      }
+    ],
+    "acceptedPaymentMethod": [
+      { "@type": "PaymentMethod", "name": "Cash" },
+      { "@type": "PaymentMethod", "name": "Credit Card" },
+      { "@type": "PaymentMethod", "name": "Insurance" }
+    ]
+  })} />
+
+  <Hero locale="es" />
+  <TrustBar locale="es" />
+  <DoctorProfile locale="es" />
+  <ServicesOverview locale="es" />
+  <ReviewsSection locale="es" />
+  <InsuranceGrid locale="es" />
+
+  {/* FAQ */}
+  <section class="bg-bg-warm py-[100px]">
+    <div class="max-w-content mx-auto px-7">
+      <div class="grid grid-cols-1 md:grid-cols-[1fr_1.3fr] gap-16 mb-14 items-end">
+        <div>
+          <SectionTag label={t('sectionTags.faq')} />
+          <h2>{t('homeFaq.heading')}</h2>
+        </div>
+        <p class="text-ink-3 max-w-[56ch] text-[1.05rem]">
+          {t('homeFaq.sub')}
+        </p>
+      </div>
+      <FAQAccordion
+        items={faqItems.map(item => ({ question: item.q, answer: item.a }))}
+        client:visible
+      />
+    </div>
+  </section>
+
+  <CtaBand locale="es" />
+  <MapSection locale="es" />
+</BaseLayout>

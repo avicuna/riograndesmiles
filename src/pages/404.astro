@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { useTranslations } from '../i18n/utils';
+
+const locale = 'en';
+const t = useTranslations(locale);
+---
+
+<BaseLayout
+  title={t('notFound.title')}
+  description="The page you are looking for could not be found."
+  locale={locale}
+  canonicalPath="/404"
+>
+  <section class="min-h-[70vh] flex items-center justify-center bg-bg px-7">
+    <div class="max-w-2xl mx-auto text-center">
+      <div class="mb-8">
+        <h1 class="text-9xl md:text-[12rem] font-display text-primary-500 leading-none font-normal italic">
+          {t('notFound.heading')}
+        </h1>
+      </div>
+      <h2 class="font-display text-ink mb-4">
+        {t('notFound.subheading')}
+      </h2>
+      <p class="text-lg text-ink-2 mb-10 max-w-md mx-auto leading-relaxed">
+        {t('notFound.message')}
+      </p>
+      <a
+        href="/"
+        class="inline-flex items-center gap-2 px-6 py-3 bg-primary-500 text-white font-medium rounded-full hover:bg-primary-700 transition-colors no-underline"
+      >
+        {t('notFound.homeButton')}
+      </a>
+    </div>
+  </section>
+</BaseLayout>

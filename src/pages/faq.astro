@@ -1,0 +1,167 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { useTranslations } from '../i18n/utils';
+import FAQAccordion from '../components/FAQAccordion';
+import BookingSection from '../components/BookingSection.astro';
+
+const locale = 'en';
+const t = useTranslations(locale);
+
+// Build FAQ categories
+const firstAppointmentFaq = [
+  { question: t('faq.firstAppointment.arriveEarly'), answer: t('faq.firstAppointment.arriveEarlyAnswer') },
+  { question: t('faq.firstAppointment.preMedication'), answer: t('faq.firstAppointment.preMedicationAnswer') },
+  {
+    question: t('faq.firstAppointment.bring'),
+    answer: `${t('faq.firstAppointment.bringAnswer')}
+• ${t('faq.firstAppointment.bringItem1')}
+• ${t('faq.firstAppointment.bringItem2')}
+• ${t('faq.firstAppointment.bringItem3')}
+• ${t('faq.firstAppointment.bringItem4')}`,
+  },
+  { question: t('faq.firstAppointment.duration'), answer: t('faq.firstAppointment.durationAnswer') },
+];
+
+const preventiveDentistryFaq = [
+  { question: t('faq.preventiveDentistry.healthyTeeth'), answer: t('faq.preventiveDentistry.healthyTeethAnswer') },
+  { question: t('faq.preventiveDentistry.toothpaste'), answer: t('faq.preventiveDentistry.toothpasteAnswer') },
+  { question: t('faq.preventiveDentistry.flossing'), answer: t('faq.preventiveDentistry.flossingAnswer') },
+  {
+    question: t('faq.preventiveDentistry.preventCavities'),
+    answer: `• ${t('faq.preventiveDentistry.preventCavitiesItem1')}
+• ${t('faq.preventiveDentistry.preventCavitiesItem2')}
+• ${t('faq.preventiveDentistry.preventCavitiesItem3')}`,
+  },
+];
+
+const generalDentistryFaq = [
+  { question: t('faq.generalDentistry.visitFrequency'), answer: t('faq.generalDentistry.visitFrequencyAnswer') },
+  { question: t('faq.generalDentistry.xraySafety'), answer: t('faq.generalDentistry.xraySafetyAnswer') },
+  { question: t('faq.generalDentistry.sensitiveTeeth'), answer: t('faq.generalDentistry.sensitiveTeethAnswer') },
+];
+
+const familyDentistryFaq = [
+  { question: t('faq.familyDentistry.firstCheckup'), answer: t('faq.familyDentistry.firstCheckupAnswer') },
+  { question: t('faq.familyDentistry.pregnancy'), answer: t('faq.familyDentistry.pregnancyAnswer') },
+];
+
+const cosmeticDentistryFaq = [
+  { question: t('faq.cosmeticDentistry.changeShape'), answer: t('faq.cosmeticDentistry.changeShapeAnswer') },
+  { question: t('faq.cosmeticDentistry.whitening'), answer: t('faq.cosmeticDentistry.whiteningAnswer') },
+];
+
+const emergenciesFaq = [
+  { question: t('faq.emergencies.knockedOut'), answer: t('faq.emergencies.knockedOutAnswer') },
+  { question: t('faq.emergencies.dentalEmergency'), answer: t('faq.emergencies.dentalEmergencyAnswer') },
+];
+
+// Build all FAQ items for JSON-LD
+const allFaqItems = [
+  ...firstAppointmentFaq,
+  ...preventiveDentistryFaq,
+  ...generalDentistryFaq,
+  ...familyDentistryFaq,
+  ...cosmeticDentistryFaq,
+  ...emergenciesFaq,
+];
+---
+
+<BaseLayout
+  title={t('faqPage.title')}
+  description={t('faqPage.pageDescription')}
+  locale={locale}
+  canonicalPath="/faq"
+>
+  {/* FAQPage JSON-LD structured data */}
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": allFaqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  })} />
+
+  {/* Hero Header */}
+  <section class="bg-bg-warm border-b border-line py-16 md:py-20">
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="uppercase tracking-wider text-primary-500 text-xs font-medium">
+        {t('footer.faq')}
+      </span>
+      <h1 class="font-display text-3xl md:text-5xl font-medium text-ink mt-3">
+        {t('faqPage.title')}
+      </h1>
+    </div>
+  </section>
+
+  {/* First Appointment */}
+  <section class="py-16 md:py-20 bg-bg-card">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl md:text-3xl font-medium text-ink mb-8">
+        {t('faqPage.firstAppointmentHeading')}
+      </h2>
+      <FAQAccordion items={firstAppointmentFaq} client:visible />
+    </div>
+  </section>
+
+  {/* Preventive Dentistry */}
+  <section class="py-16 md:py-20 bg-bg-warm">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl md:text-3xl font-medium text-ink mb-8">
+        {t('faqPage.preventiveDentistryHeading')}
+      </h2>
+      <FAQAccordion items={preventiveDentistryFaq} client:visible />
+    </div>
+  </section>
+
+  {/* General Dentistry */}
+  <section class="py-16 md:py-20 bg-bg-card">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl md:text-3xl font-medium text-ink mb-8">
+        {t('faqPage.generalDentistryHeading')}
+      </h2>
+      <FAQAccordion items={generalDentistryFaq} client:visible />
+    </div>
+  </section>
+
+  {/* Family Dentistry */}
+  <section class="py-16 md:py-20 bg-bg-warm">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl md:text-3xl font-medium text-ink mb-8">
+        {t('faqPage.familyDentistryHeading')}
+      </h2>
+      <FAQAccordion items={familyDentistryFaq} client:visible />
+    </div>
+  </section>
+
+  {/* Cosmetic Dentistry */}
+  <section class="py-16 md:py-20 bg-bg-card">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl md:text-3xl font-medium text-ink mb-8">
+        {t('faqPage.cosmeticDentistryHeading')}
+      </h2>
+      <FAQAccordion items={cosmeticDentistryFaq} client:visible />
+    </div>
+  </section>
+
+  {/* Emergencies */}
+  <section class="py-16 md:py-20 bg-bg-warm">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-2xl md:text-3xl font-medium text-ink mb-8">
+        {t('faqPage.emergenciesHeading')}
+      </h2>
+      <FAQAccordion items={emergenciesFaq} client:visible />
+    </div>
+  </section>
+
+  {/* Booking CTA */}
+  <section class="py-16 px-6 bg-bg-card">
+    <div class="max-w-4xl mx-auto">
+      <BookingSection locale={locale} />
+    </div>
+  </section>
+</BaseLayout>

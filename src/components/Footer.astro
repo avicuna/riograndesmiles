@@ -1,0 +1,126 @@
+---
+import type { Locale } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'en' } = Astro.props;
+const t = useTranslations(locale);
+
+const prefix = locale === 'es' ? '/es' : '';
+
+const navLinks = [
+  { label: t('navbar.about'), href: `${prefix}/about/` },
+  { label: t('navbar.services'), href: `${prefix}/services/` },
+  { label: t('navbar.insurance'), href: `${prefix}/insurance/` },
+  { label: t('navbar.reviews'), href: `${prefix}/reviews/` },
+  { label: t('navbar.contact'), href: `${prefix}/contact/` },
+];
+
+const patientLinks = [
+  { label: locale === 'es' ? 'Nuevos Pacientes' : 'New Patients', href: `${prefix}/new-patients/` },
+  { label: locale === 'es' ? 'Atención Accesible' : 'Affordable Care', href: `${prefix}/affordable-care/` },
+  { label: locale === 'es' ? 'Política Financiera' : 'Financial Policy', href: `${prefix}/financial-policy/` },
+  { label: t('footer.faq'), href: `${prefix}/faq/` },
+  { label: t('footer.medHistory'), href: `${prefix}/new-patients/#forms` },
+];
+---
+
+<footer class="bg-bg border-t border-line py-[60px] pb-10">
+  <div class="footer-grid max-w-content mx-auto px-7">
+    <div class="grid grid-cols-[2fr_1fr_1fr_1fr] gap-12">
+      {/* Col 1: Brand */}
+      <div>
+        <span class="font-display text-[1.15rem] font-medium text-ink">
+          {t('footer.brand')}
+        </span>
+        <div class="font-sans text-[0.7rem] uppercase tracking-widest text-ink-3">
+          {t('footer.brandSub')}
+        </div>
+        <p class="text-ink-3 text-[0.92rem] mt-3.5 leading-relaxed">
+          {t('footer.tagline')}
+        </p>
+      </div>
+
+      {/* Col 2: Navigate */}
+      <div>
+        <h4 class="font-sans text-[0.78rem] uppercase tracking-[0.12em] text-ink-3 font-medium mb-4">
+          {t('footer.navigate')}
+        </h4>
+        <nav>
+          {navLinks.map((link) => (
+            <a
+              href={link.href}
+              class="block text-ink-2 text-[0.95rem] py-1 hover:text-primary-500 transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+
+      {/* Col 3: Patients */}
+      <div>
+        <h4 class="font-sans text-[0.78rem] uppercase tracking-[0.12em] text-ink-3 font-medium mb-4">
+          {locale === 'es' ? 'Pacientes' : 'Patients'}
+        </h4>
+        <nav>
+          {patientLinks.map((link) => (
+            <a
+              href={link.href}
+              class="block text-ink-2 text-[0.95rem] py-1 hover:text-primary-500 transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+
+      {/* Col 4: Contact */}
+      <div>
+        <h4 class="font-sans text-[0.78rem] uppercase tracking-[0.12em] text-ink-3 font-medium mb-4">
+          {t('footer.contact')}
+        </h4>
+        <nav>
+          <a
+            href="tel:+15058771113"
+            class="block text-ink-2 text-[0.95rem] py-1 hover:text-primary-500 transition-colors"
+          >
+            {t('footer.phone')}
+          </a>
+          <a
+            href="mailto:emersonvicunadds@gmail.com"
+            class="block text-ink-2 text-[0.95rem] py-1 hover:text-primary-500 transition-colors"
+          >
+            {t('footer.email')}
+          </a>
+          <span class="block text-ink-2 text-[0.95rem] py-1">
+            {t('footer.addressLine1')}<br />{t('footer.addressLine2')}
+          </span>
+        </nav>
+      </div>
+    </div>
+
+    {/* Bottom bar */}
+    <div class="mt-14 pt-6 border-t border-line flex justify-between items-center text-[0.82rem] text-ink-3">
+      <span>&copy; {t('footer.copyright')}</span>
+      <span>{t('footer.madeWith')}</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  @media (max-width: 900px) {
+    .footer-grid .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .footer-grid .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

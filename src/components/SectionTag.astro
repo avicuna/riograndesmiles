@@ -1,0 +1,17 @@
+---
+interface Props {
+  label: string;
+  dark?: boolean;
+}
+
+const { label, dark = false } = Astro.props;
+---
+
+<div class:list={[
+  "flex items-center gap-2.5 mb-3.5",
+  "font-mono text-[0.78rem] uppercase tracking-[0.1em]",
+  dark ? "text-bg-card" : "text-ink-3"
+]}>
+  <span class:list={[dark ? "text-gold" : "text-primary-500"]}>§</span>
+  {label}
+</div>
