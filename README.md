@@ -128,27 +128,18 @@ npx serve dist -l 4000
 
 **Hosted on Netlify** (free tier). Deploys automatically on push to `main`.
 
-- **Site:** `frolicking-sprinkles-06cb72.netlify.app`
 - **Custom domain:** `riograndesmiles.com` (primary) + `www.riograndesmiles.com` (redirects)
 - **SSL:** Let's Encrypt, auto-renewing
 - **Build config:** `netlify.toml` in repo root
-
-### DNS (Squarespace Domains)
-
-Domain registered at Squarespace. DNS records:
-
-| Type | Name | Data |
-|------|------|------|
-| A | @ | 75.2.60.5 |
-| CNAME | www | frolicking-sprinkles-06cb72.netlify.app |
+- **DNS registrar:** Squarespace Domains — A record + CNAME pointing to Netlify
 
 ### To redeploy
 
 Push to `main` — Netlify auto-builds. Or trigger manually in the Netlify dashboard under Deploys.
 
-### To change the Netlify site name
+### DNS / domain changes
 
-Netlify dashboard → Project configuration → Change site name. Then update the CNAME record in Squarespace to match.
+DNS records and Netlify site name are managed via the Netlify and Squarespace dashboards. See your Netlify project's Domain Management page for current values.
 
 ## Photos
 
