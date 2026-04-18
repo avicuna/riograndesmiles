@@ -16,14 +16,14 @@ const steps = [
 ];
 ---
 
-<section class="bg-white py-16 md:py-20">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="bg-bg-card py-16 md:py-20">
+  <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
     {/* Header */}
     <div class="text-center mb-12">
-      <span class="uppercase tracking-wider text-primary-500 text-xs font-semibold">
+      <span class="uppercase tracking-wider text-primary-500 text-xs font-medium">
         {t('journey.label')}
       </span>
-      <h2 class="font-display text-2xl md:text-3xl font-bold text-neutral-900 mt-2">
+      <h2 class="font-display text-2xl md:text-3xl font-medium text-ink mt-2">
         {t('journey.heading')}
       </h2>
     </div>
@@ -33,15 +33,15 @@ const steps = [
       {steps.map((step) => (
         <div class="flex flex-col items-center text-center">
           {/* Number circle */}
-          <div class="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg mb-5">
+          <div class="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center text-white text-2xl font-medium mb-5">
             {step.num}
           </div>
           {/* Title */}
-          <h3 class="font-display text-lg font-semibold text-neutral-900 mb-2">
+          <h3 class="font-display text-lg font-medium text-ink mb-2">
             {t(`journey.${step.key}.title`)}
           </h3>
           {/* Description */}
-          <p class="text-sm text-neutral-600 max-w-xs">
+          <p class="text-sm text-ink-2 max-w-xs">
             {t(`journey.${step.key}.description`)}
           </p>
         </div>

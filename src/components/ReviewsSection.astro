@@ -1,7 +1,7 @@
 ---
 import type { Locale } from '../i18n/utils';
 import { useTranslations } from '../i18n/utils';
-import ReviewCarousel from './ReviewCarousel';
+import SectionTag from './SectionTag.astro';
 
 interface Props {
   locale: Locale;
@@ -11,33 +11,53 @@ const { locale } = Astro.props;
 const t = useTranslations(locale);
 
 const reviews = [
-  {
-    text: "Very professional and following the safest measures. I would recommend this dental place to anyone. Dr. Vicuña and his staff are number 1!",
-    author: "Rafael Contreras",
-  },
-  {
-    text: "Very helpful and professional work.",
-    author: "Carlos Alvarez",
-  },
-  {
-    text: "Love Dr. Vicuña! He is so gentle and his staff is so friendly. I've been coming here for years and I wouldn't go anywhere else!",
-    author: "Clorinda Olguin",
-  },
+  { key: '1', initial: 'R' },
+  { key: '2', initial: 'C' },
+  { key: '3', initial: 'C' },
 ];
 ---
 
-<section class="bg-neutral-50 py-16 md:py-20">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    {/* Header */}
-    <div class="text-center mb-12">
-      <span class="uppercase tracking-wider text-primary-500 text-xs font-semibold">
-        {t('reviews.label')}
-      </span>
-      <h2 class="font-display text-2xl md:text-3xl font-bold text-neutral-900 mt-2">
-        {t('reviews.heading')}
-      </h2>
+<section class="bg-ink py-[100px]">
+  <div class="max-w-content mx-auto px-7">
+    {/* Section header */}
+    <div class="grid grid-cols-1 md:grid-cols-[1fr_1.3fr] gap-16 mb-14 items-end">
+      <div>
+        <SectionTag label={t('sectionTags.reviews')} dark />
+        <h2 class="text-bg-card">{t('reviews.heading')}</h2>
+      </div>
+      <p class="text-bg-card/70 max-w-[56ch] text-[1.05rem]">
+        {t('reviews.sub')}
+      </p>
     </div>
 
-    <ReviewCarousel reviews={reviews} client:visible />
+    {/* Review cards grid */}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {reviews.map(({ key, initial }) => (
+        <div class="review-card bg-white/[0.06] border border-white/[0.15] rounded-lg p-8 flex flex-col gap-5">
+          {/* Stars */}
+          <div class="text-gold tracking-wider text-[0.95rem]">★★★★★</div>
+
+          {/* Quote */}
+          <div class="font-display text-[1.15rem] leading-[1.5] text-white/95 font-normal flex-1">
+            "{t(`reviews.review${key}`)}"
+          </div>
+
+          {/* Author */}
+          <div class="flex items-center gap-3 mt-auto pt-5 border-t border-white/[0.15]">
+            <div class="w-[38px] h-[38px] rounded-full bg-primary-500 grid place-items-center font-display font-medium text-white text-[0.95rem]">
+              {initial}
+            </div>
+            <div>
+              <div class="text-[0.92rem] text-white font-medium">
+                {t(`reviews.review${key}Author`)}
+              </div>
+              <div class="text-[0.78rem] text-white/50">
+                {t(`reviews.review${key}Meta`)}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
   </div>
 </section>

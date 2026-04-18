@@ -11,20 +11,20 @@ const t = useTranslations(locale);
 const prefix = locale === 'es' ? '/es' : '';
 ---
 
-<div class="max-w-3xl mx-auto mt-12 px-4">
-  <div class="bg-white border border-neutral-200 rounded-xl p-6 md:p-8 shadow-sm flex flex-col md:flex-row items-center gap-6">
+<div class="max-w-content mx-auto mt-12 px-7">
+  <div class="bg-bg-card border border-line rounded-lg p-6 md:p-8 flex flex-col md:flex-row items-center gap-6">
     <div class="flex-shrink-0 text-4xl">📋</div>
     <div class="flex-1 text-center md:text-left">
-      <h3 class="font-display text-lg font-bold text-neutral-900 mb-1">
+      <h3 class="font-display text-lg font-medium text-ink mb-1">
         {t('formsCallout.heading')}
       </h3>
-      <p class="text-sm text-neutral-600">
+      <p class="text-sm text-ink-3">
         {t('formsCallout.body')}
       </p>
     </div>
     <a
       href={`${prefix}/new-patients/#forms`}
-      class="inline-flex items-center bg-primary-500 text-white text-sm font-semibold rounded-lg px-5 py-2.5 hover:bg-primary-600 transition-colors whitespace-nowrap"
+      class="inline-flex items-center bg-primary-500 text-white text-sm font-medium rounded-full px-5 py-2.5 hover:bg-primary-700 transition-colors whitespace-nowrap no-underline"
     >
       {t('formsCallout.cta')}
     </a>

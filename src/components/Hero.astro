@@ -8,54 +8,125 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = useTranslations(locale);
+
+const chips = [
+  t('hero.chipExperience'),
+  t('hero.chipFamily'),
+  t('hero.chipMedicaid'),
+  t('hero.chipInsurance'),
+];
 ---
 
-<section class="relative overflow-hidden">
-  {/* Background image with dark overlay */}
-  <div class="absolute inset-0">
+<section class="hero-section relative overflow-hidden py-20 md:py-[100px]">
+  {/* Skyline background with gradient overlay */}
+  <div class="absolute inset-0 z-0">
     <img
       src="/img/albuquerque-skyline.jpg"
       alt=""
-      class="w-full h-full object-cover"
+      class="w-full h-full object-cover opacity-[0.07]"
       loading="eager"
     />
-    <div class="absolute inset-0 bg-gradient-to-br from-primary-900/90 via-primary-700/85 to-primary-900/90"></div>
   </div>
+  <div class="hero-gradient absolute inset-0 z-0 pointer-events-none"></div>
 
-  {/* Content */}
-  <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24 text-center">
-    {/* Badge */}
-    <span class="inline-block bg-white/15 backdrop-blur-sm text-white text-sm font-medium px-4 py-1.5 rounded-full mb-6 border border-white/20">
-      {t('hero.badge')}
-    </span>
+  {/* Content grid */}
+  <div class="relative z-10 max-w-content mx-auto px-7">
+    <div class="hero-grid grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-16 items-center">
+      {/* Left — text */}
+      <div>
+        {/* Eyebrow */}
+        <div class="flex items-center gap-2.5 mb-5 font-sans text-[0.78rem] font-medium text-primary-500 uppercase tracking-[0.14em]">
+          <span class="w-7 h-px bg-primary-500"></span>
+          {t('hero.eyebrow')}
+        </div>
 
-    {/* Heading */}
-    <h1 class="font-display text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
-      {t('hero.heading')}
-    </h1>
+        {/* Headline */}
+        <h1>
+          <span>{t('hero.title1')}</span><em class="italic text-primary-500 font-normal">{t('hero.titleEm')}</em>.
+        </h1>
 
-    {/* Subtitle */}
-    <p class="text-lg text-white/80 mb-8">
-      {t('hero.subtitle')}
-    </p>
+        {/* Lede */}
+        <p class="mt-6 text-[1.15rem] text-ink-2 leading-relaxed max-w-[48ch]">
+          {t('hero.lede')}
+        </p>
 
-    {/* CTA Buttons */}
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a
-        href="tel:+5058771113"
-        class="inline-flex items-center bg-white text-primary-700 font-semibold rounded-lg px-6 py-3 hover:bg-neutral-100 transition-colors shadow-lg"
-      >
-        {t('hero.bookCta')}
-      </a>
-      <a
-        href="tel:+5058771113"
-        class="inline-flex items-center border-2 border-white text-white font-semibold rounded-lg px-6 py-3 hover:bg-white/10 transition-colors"
-      >
-        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-        </svg>
-        {t('hero.callCta')}
-      </a>
+        {/* Chips */}
+        <div class="flex flex-wrap gap-2.5 mt-7">
+          {chips.map((chip) => (
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-bg-card border border-line text-[0.82rem] text-ink-2 whitespace-nowrap">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent-500"></span>
+              {chip}
+            </span>
+          ))}
+        </div>
+
+        {/* CTAs */}
+        <div class="flex flex-wrap gap-3 mt-9">
+          <a
+            href="tel:+15058771113"
+            class="inline-flex items-center gap-2 bg-primary-500 text-white rounded-full px-5 py-[11px] text-[0.92rem] font-medium no-underline hover:bg-primary-700 transition-all hover:-translate-y-px"
+          >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            {t('hero.ctaCall')}
+          </a>
+          <a
+            href={locale === 'es' ? '/es/services/' : '/services/'}
+            class="inline-flex items-center gap-2 bg-transparent text-ink border border-line-2 rounded-full px-5 py-[11px] text-[0.92rem] font-medium no-underline hover:bg-bg-warm transition-colors"
+          >
+            {t('hero.ctaServices')}
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      {/* Right — portrait */}
+      <div class="relative aspect-[4/5] max-w-[520px] mx-auto lg:mx-0">
+        {/* Portrait card */}
+        <div class="absolute inset-0 rounded-md overflow-hidden bg-bg-warm border border-line-2">
+          <img
+            src="/img/doctor-headshot.png"
+            alt="Dr. Emerson Vicuña, DDS"
+            class="w-full h-full object-cover object-top"
+            loading="eager"
+          />
+        </div>
+
+        {/* 20+ years badge */}
+        <div class="absolute -bottom-5 -left-5 w-[130px] h-[130px] rounded-full bg-ink grid place-items-center text-center font-display shadow-[0_20px_40px_-10px_rgba(26,35,50,0.25)]"
+             aria-label={`20+ ${t('hero.chipExperience')}`}>
+          <div>
+            <div class="text-[2.8rem] leading-none font-normal italic text-bg-card">20<sup class="text-[0.5em] font-normal">+</sup></div>
+            <div class="text-[0.62rem] uppercase tracking-[0.12em] font-sans mt-1 text-bg-card/80 whitespace-nowrap">
+              {locale === 'es' ? 'Años de práctica' : 'Years of practice'}
+            </div>
+          </div>
+        </div>
+
+        {/* Accepting new patients pill */}
+        <div class="absolute top-6 -right-4 bg-bg-card border border-line-2 px-4 py-2.5 rounded-full text-[0.78rem] font-medium shadow-[0_8px_24px_-8px_rgba(26,35,50,0.15)] flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-accent-500 shadow-[0_0_0_3px_rgba(42,157,143,0.25)]"></span>
+          {locale === 'es' ? 'Aceptando nuevos pacientes' : 'Accepting new patients'}
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<style>
+  .hero-gradient {
+    background:
+      radial-gradient(circle at 12% 20%, oklch(94% 0.03 245 / 0.6), transparent 45%),
+      radial-gradient(circle at 88% 85%, oklch(94% 0.04 200 / 0.5), transparent 50%);
+  }
+  @media (max-width: 560px) {
+    .hero-section :global(.absolute.-bottom-5.-left-5) {
+      width: 100px;
+      height: 100px;
+      bottom: -10px;
+      left: -10px;
+    }
+    .hero-section :global(.absolute.-bottom-5.-left-5 .text-\[2\.8rem\]) {
+      font-size: 2.2rem;
+    }
+  }
+</style>

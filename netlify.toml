@@ -2,11 +2,11 @@
   command = "npm run build"
   publish = "dist"
 
-[context.production.environment]
-  PUBLIC_ENABLE_SCHEDULING = "false"
+[build.environment]
+  NODE_VERSION = "20"
 
-[context.deploy-preview.environment]
-  PUBLIC_ENABLE_SCHEDULING = "true"
-
-[context.branch-deploy.environment]
-  PUBLIC_ENABLE_SCHEDULING = "true"
+# Custom 404 page
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404

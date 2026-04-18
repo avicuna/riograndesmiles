@@ -1,14 +1,12 @@
 {
   "navbar": {
-    "book": "Reservar Cita",
     "services": "Servicios",
     "about": "Nosotros",
     "reviews": "Reseñas",
     "insurance": "Seguros",
     "contact": "Contacto",
-    "forms": "Formularios",
     "langSwitch": "English",
-    "call": "Llamar"
+    "brandSub": "Dr. Vicuña · DDS"
   },
   "formsCallout": {
     "heading": "Descargue Sus Formularios",
@@ -20,66 +18,78 @@
     "description": "El Dr. Vicuña y su equipo brindan atención dental excepcional para mantener su sonrisa saludable y fuerte de por vida. Durante más de 20 años hemos establecido relaciones de confianza con nuestros pacientes donde podemos contribuir al bienestar general de todos nuestros pacientes. Usando técnicas probadas para la odontología general, estética y restaurativa, personalizaremos un plan de tratamiento que se adapte a sus objetivos únicos. Desde chequeos hasta mejoras estéticas y restauraciones integrales, el Dr. Vicuna realizará su trabajo dental con habilidad y precisión."
   },
   "hero": {
-    "badge": "Aceptando Nuevos Pacientes",
-    "heading": "Cuidado Dental Excepcional para Toda su Familia",
-    "subtitle": "Aceptando nuevos pacientes · Medicaid bienvenido · Se habla español",
-    "bookCta": "Reserve su Cita",
-    "callCta": "Llame al (505) 877-1113"
+    "eyebrow": "Odontología familiar · Albuquerque, NM",
+    "title1": "Atención dental ",
+    "titleEm": "para toda la familia",
+    "lede": "Dr. Emerson Vicuña ofrece visitas sin prisa, respuestas honestas y planes de tratamiento personalizados — más de veinte años cuidando a pacientes en el Valle del Río Grande.",
+    "chipExperience": "Más de 20 años de experiencia",
+    "chipFamily": "Ambiente familiar",
+    "chipMedicaid": "Medicaid bienvenido",
+    "chipInsurance": "Aceptamos la mayoría de seguros",
+    "ctaCall": "Llame o envíe texto al (505) 877-1113",
+    "ctaServices": "Ver servicios"
   },
   "trustBar": {
-    "medicaid": "Medicaid Bienvenido",
-    "spanish": "Se Habla Español",
-    "experience": "20+ Años de Experiencia",
-    "ada": "Miembro de ADA"
+    "yearsNum": "20+",
+    "yearsLabel": "Años de experiencia",
+    "patientsNum": "1,200+",
+    "patientsLabel": "Familias atendidas",
+    "servicesNum": "12",
+    "servicesLabel": "Servicios dentales",
+    "insuranceNum": "9",
+    "insuranceLabel": "Seguros aceptados"
+  },
+  "sectionTags": {
+    "doctor": "Sobre el doctor",
+    "services": "Nuestros servicios",
+    "reviews": "Lo que dicen nuestros pacientes",
+    "insurance": "Seguros aceptados",
+    "faq": "Preguntas frecuentes",
+    "location": "Nuestra ubicación",
+    "ctaBand": "Contáctenos"
   },
   "insurance": {
-    "title": "Proveedores de Seguros Aceptados",
-    "description": "Aceptamos una variedad de planes de seguros para hacer que su atención dental sea más accesible y económica."
+    "heading": "Aceptamos Medicaid y los principales seguros.",
+    "sub": "¿No ve su plan? Llámenos — trabajamos con muchos proveedores y podemos ayudar a verificar su cobertura antes de su visita."
   },
   "servicesOverview": {
-    "label": "Nuestros Servicios",
-    "heading": "Cuidado Dental Integral",
-    "checkups": {
-      "title": "Chequeos Generales",
-      "description": "Exámenes y limpiezas de rutina para mantener su sonrisa saludable y detectar problemas a tiempo."
-    },
-    "cosmetic": {
-      "title": "Odontología Cosmética",
-      "description": "Mejore y realce su sonrisa con blanqueamiento, carillas y más."
-    },
-    "implants": {
-      "title": "Implantes Dentales",
-      "description": "Reemplazos permanentes y de aspecto natural para dientes perdidos."
-    },
-    "rootCanals": {
-      "title": "Tratamientos de Conducto",
-      "description": "Alivie el dolor y salve su diente natural con terapia experta de conducto."
-    },
-    "crowns": {
-      "title": "Coronas y Puentes",
-      "description": "Restaure dientes dañados o perdidos con coronas y puentes hechos a medida."
-    },
-    "emergency": {
-      "title": "Atención de Emergencia",
-      "description": "Atención dental urgente cuando más lo necesita — llámenos de inmediato."
-    },
-    "learnMore": "Más información"
+    "heading": "Todo lo que su familia necesita, bajo un mismo techo.",
+    "sub": "De una limpieza rutinaria a una restauración completa — con explicaciones claras y precios honestos, antes de comenzar.",
+    "items": [
+      { "num": "01", "key": "cleanings", "title": "Limpiezas y chequeos", "desc": "Cuidado preventivo para mantener su sonrisa fuerte — para usted y toda su familia." },
+      { "num": "02", "key": "fillings", "title": "Rellenos", "desc": "Restaure dientes con caries usando materiales del color natural del diente." },
+      { "num": "03", "key": "crowns", "title": "Coronas", "desc": "Tapas personalizadas que restauran la forma, el tamaño y la resistencia de un diente dañado." },
+      { "num": "04", "key": "bridges", "title": "Puentes", "desc": "Reemplace dientes faltantes anclándolos a dientes sanos adyacentes." },
+      { "num": "05", "key": "implants", "title": "Implantes", "desc": "Raíces de titanio colocadas en la mandíbula — una solución permanente para dientes perdidos." },
+      { "num": "06", "key": "dentures", "title": "Dentaduras", "desc": "Prótesis removibles completas o parciales, ajustadas a su boca." },
+      { "num": "07", "key": "partials", "title": "Parciales", "desc": "Cuando aún tiene dientes naturales, las parciales llenan los espacios cómodamente." },
+      { "num": "08", "key": "repair", "title": "Reparación de dentaduras", "desc": "Reparamos dentaduras rotas o dañadas para que sigan funcionando cómodamente." },
+      { "num": "09", "key": "whitening", "title": "Blanqueamiento", "desc": "Tratamiento cosmético seguro que aclara y blanquea su sonrisa." },
+      { "num": "10", "key": "veneers", "title": "Carillas", "desc": "Delgadas capas de porcelana que transforman la apariencia de sus dientes frontales." },
+      { "num": "11", "key": "root", "title": "Tratamientos de conducto", "desc": "Tratamiento endodóntico para salvar un diente gravemente dañado o infectado." },
+      { "num": "12", "key": "extraction", "title": "Extracciones y muelas del juicio", "desc": "Extracciones de rutina y remoción de muelas del juicio, con su comodidad primero." }
+    ]
   },
   "doctorProfile": {
-    "label": "Conozca a su Dentista",
-    "name": "Emerson Vicuña, DDS",
-    "credentials": "Doctor en Cirugía Dental · Universidad Estatal de Ohio",
-    "bio": "Con más de 20 años de experiencia, el Dr. Emerson Vicuña es un dentista general que ama ayudar a las personas que necesitan atención dental. Sus pacientes adoran su personalidad amigable, ética de trabajo y resultados sobresalientes. Originario de Lima, Perú, el Dr. Vicuña obtuvo su título de Doctor en Cirugía Dental de la Universidad Estatal de Ohio después de completar su licenciatura en Biología y Química en la Universidad de Nuevo México. Es miembro orgulloso de la Asociación Dental Americana y la Academia de Odontología General. Desde que abrió su propia práctica en 2005, el Dr. Vicuña ha sido el único dentista, lo que permite a los pacientes construir una relación personal y recibir atención verdaderamente individualizada.",
-    "badge1": "Miembro de ADA",
-    "badge2": "Academia de Odontología General",
-    "badge3": "Practicando desde 2005"
+    "heading": "Más de dos décadas cuidando sonrisas en Albuquerque.",
+    "sub": "Dr. Vicuña es el único dentista de la clínica. Cada paciente lo conoce en persona — y él a usted.",
+    "quote": "Mi compromiso es tratar a cada paciente con el tiempo, el respeto y la atención que merece.",
+    "bio": "El Dr. Emerson Vicuña obtuvo su licenciatura en Biología y Química en la Universidad de Nuevo México y su título de Doctor en Cirugía Dental (DDS) de la Universidad Estatal de Ohio. Desde 2005 dirige su propia clínica, combinando técnicas probadas en odontología general, cosmética y restaurativa para diseñar un plan personalizado para cada paciente. Miembro de la Asociación Dental Americana y la Academia de Odontología General.",
+    "credEduLabel": "Educación",
+    "credEduValue": "DDS, Universidad Estatal de Ohio",
+    "credUndergradLabel": "Licenciatura",
+    "credUndergradValue": "Biología y Química, UNM",
+    "credMembLabel": "Membresías",
+    "credMembValue": "ADA · Academia de Odontología General",
+    "credSinceLabel": "Ejerciendo desde",
+    "credSinceValue": "2005 · Albuquerque, NM"
   },
   "journey": {
     "label": "Nuevos Pacientes",
     "heading": "Comenzar Es Fácil",
     "step1": {
-      "title": "Reserve en Línea",
-      "description": "Programe su visita en segundos usando nuestro sencillo sistema de reservas en línea."
+      "title": "Llame o Envíe Texto",
+      "description": "Comuníquese al (505) 877-1113 para programar su visita — estamos felices de ayudar."
     },
     "step2": {
       "title": "Prepárese para su Visita",
@@ -99,15 +109,22 @@
     "cta": "Ver Información de Seguros"
   },
   "booking": {
-    "title": "Reserve una Cita",
-    "fallbackText": "Llámenos para programar su visita. Estaremos encantados de ayudarle a encontrar un horario que le funcione.",
-    "callButton": "Llamar (505) 877-1113"
+    "title": "Programe una Cita",
+    "text": "Llámenos o envíenos un mensaje de texto para programar su visita. Estaremos encantados de ayudarle a encontrar un horario que le funcione.",
+    "callButton": "Llamar (505) 877-1113",
+    "textButton": "Texto (505) 877-1113"
   },
   "finalCta": {
     "heading": "¿Listo para Comenzar?",
-    "subtitle": "Reserve su cita hoy — los nuevos pacientes siempre son bienvenidos.",
-    "bookCta": "Reserve su Cita",
-    "callCta": "Llame al (505) 877-1113"
+    "subtitle": "Los nuevos pacientes siempre son bienvenidos — llame o envíe texto para programar.",
+    "callCta": "Llame o envíe texto al (505) 877-1113"
+  },
+  "ctaBand": {
+    "heading": "Llame o envíenos un texto hoy.",
+    "sub": "Lunes – Jueves, 9am – 5pm. 3200 Coors Blvd NW, Suite F, Albuquerque.",
+    "callButton": "(505) 877-1113",
+    "textButton": "Enviar texto",
+    "emailButton": "Enviar correo"
   },
   "insuranceProviders": {
     "unitedHealthcare": "United Healthcare",
@@ -248,8 +265,42 @@
       "dentalEmergencyAnswer": "Si no puede comunicarse con su dentista, visite el centro de atención urgente o la sala de emergencias más cercana para obtener ayuda."
     }
   },
+  "homeFaq": {
+    "heading": "Todo lo que quiere saber antes de su primera visita.",
+    "sub": "¿Tiene otra pregunta que no aparece aquí? Llámenos.",
+    "items": [
+      { "q": "¿Están aceptando nuevos pacientes?", "a": "Sí — estamos recibiendo nuevos pacientes de todas las edades. Puede programar su primera visita por teléfono o mensaje de texto. Reservamos tiempo extra para las primeras citas para conocerlo y revisar su historial sin prisas." },
+      { "q": "¿Qué seguros aceptan? ¿Aceptan Medicaid?", "a": "Sí, aceptamos Medicaid así como United Healthcare, Delta Dental, MetLife, Guardian, Ameritas, Cigna, Principal y United Concordia. Si no ve su plan, llámenos — con frecuencia podemos ayudar a verificar la cobertura." },
+      { "q": "¿Qué debo llevar a mi primera cita?", "a": "Su identificación (licencia de conducir, ID militar o estatal), su tarjeta de seguro dental si tiene una, y sus formularios de historial médico y registro completados (o llegue 10–15 minutos antes para llenarlos)." },
+      { "q": "¿Con qué frecuencia debo visitar al dentista?", "a": "La mayoría de las personas deben ver a su dentista cada seis meses para una limpieza y chequeo. Los pacientes con preocupaciones específicas pueden necesitar visitas más frecuentes." },
+      { "q": "¿Cuándo debo traer a mi hijo a su primera visita?", "a": "Recomendamos la primera visita entre los 6–9 meses de edad, a más tardar en su primer cumpleaños. Queremos que los niños crezcan sintiéndose cómodos en el dentista desde temprana edad." },
+      { "q": "¿Qué pasa si un diente se cae en un accidente?", "a": "Encuentre el diente, enjuáguelo suavemente (no lo frote) y colóquelo en leche o su saliva. Llámenos de inmediato — el tiempo es crítico. Fuera de horario, acuda a un centro de atención urgente o emergencias." }
+    ]
+  },
+  "reviews": {
+    "title": "Reseñas de Pacientes",
+    "label": "Reseñas de Pacientes",
+    "heading": "Familias que nos han confiado su sonrisa.",
+    "sub": "Reseñas verificadas de pacientes en Albuquerque.",
+    "shareExperience": "¡Nos encantaría saber sobre su experiencia! Déjenos una reseña en Google.",
+    "pageDescription": "Lea lo que nuestros pacientes tienen que decir sobre su experiencia con el Dr. Vicuña y el equipo de Rio Grande Smiles.",
+    "review1": "Muy profesional y siguiendo las medidas más seguras para el cuidado dental. Personal amable, sin duda fue una gran experiencia.",
+    "review1Author": "Rafael Contreras",
+    "review1Meta": "Google · Paciente desde 2019",
+    "review2": "¡Me encanta el Dr. Vicuña! Es muy gentil y muy bueno en lo que hace. He sido su paciente por al menos 7 años y no iría a ningún otro lugar.",
+    "review2Author": "Clorinda Olguín",
+    "review2Meta": "Google · Paciente desde 2017",
+    "review3": "Trabajo muy útil y profesional. Me explicaron el procedimiento claramente y me sentí completamente a gusto.",
+    "review3Author": "Carlos Álvarez",
+    "review3Meta": "Google · Paciente desde 2022"
+  },
   "location": {
-    "title": "Encuéntranos Aquí"
+    "heading": "Venga a vernos en el oeste de Albuquerque.",
+    "sub": "",
+    "addressLabel": "Dirección",
+    "phoneLabel": "Teléfono",
+    "emailLabel": "Correo electrónico",
+    "hoursLabel": "Horario"
   },
   "footer": {
     "contact": "Contacto",
@@ -261,9 +312,15 @@
       "description": "Lun-Jue 9am - 5pm"
     },
     "brand": "Rio Grande Smiles",
+    "brandSub": "Dr. Vicuña · DDS",
     "brandDescription": "Atención dental excepcional en Albuquerque, NM. Sirviendo a la comunidad con odontología general, cosmética y restaurativa por más de 20 años.",
+    "tagline": "Odontología familiar en Albuquerque, Nuevo México — cuidando a nuestra comunidad desde 2005.",
     "servicesHeading": "Servicios",
     "patientsHeading": "Pacientes",
+    "navigate": "Navegar",
+    "formsCol": "Formularios",
+    "medHistory": "Historial médico",
+    "registration": "Registro de paciente",
     "generalDentistry": "Odontología General",
     "cosmetic": "Odontología Cosmética",
     "implants": "Implantes Dentales",
@@ -278,19 +335,13 @@
     "addressLine1": "1630 Coors Blvd NW",
     "addressLine2": "Albuquerque, NM 87121",
     "langSwitch": "English",
-    "copyright": "2026 Rio Grande Smiles. Todos los derechos reservados."
+    "copyright": "2026 Rio Grande Smiles. Todos los derechos reservados.",
+    "madeWith": "Albuquerque, NM · Hecho con cariño"
   },
   "button": {
     "learnMore": "Aprende Más",
     "downloadForm": "Descargar Formulario",
     "showLess": "Mostrar Menos"
-  },
-  "reviews": {
-    "title": "Reseñas de Pacientes",
-    "label": "Reseñas de Pacientes",
-    "heading": "Lo Que Dicen Nuestros Pacientes",
-    "shareExperience": "¡Nos encantaría saber sobre su experiencia! Déjenos una reseña en Google.",
-    "pageDescription": "Lea lo que nuestros pacientes tienen que decir sobre su experiencia con el Dr. Vicuña y el equipo de Rio Grande Smiles."
   },
   "newPatients": {
     "title": "Información para Nuevos Pacientes",

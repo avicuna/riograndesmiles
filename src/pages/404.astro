@@ -12,39 +12,25 @@ const t = useTranslations(locale);
   locale={locale}
   canonicalPath="/404"
 >
-  <section class="min-h-[70vh] flex items-center justify-center bg-white px-4">
+  <section class="min-h-[70vh] flex items-center justify-center bg-bg px-7">
     <div class="max-w-2xl mx-auto text-center">
-      {/* Large 404 */}
       <div class="mb-8">
-        <h1 class="text-9xl md:text-[12rem] font-display font-bold text-primary-500 leading-none">
+        <h1 class="text-9xl md:text-[12rem] font-display text-primary-500 leading-none font-normal italic">
           {t('notFound.heading')}
         </h1>
       </div>
-
-      {/* Subheading */}
-      <h2 class="font-display text-2xl md:text-3xl font-bold text-neutral-900 mb-4">
+      <h2 class="font-display text-ink mb-4">
         {t('notFound.subheading')}
       </h2>
-
-      {/* Message */}
-      <p class="text-lg text-neutral-600 mb-10 max-w-md mx-auto leading-relaxed">
+      <p class="text-lg text-ink-2 mb-10 max-w-md mx-auto leading-relaxed">
         {t('notFound.message')}
       </p>
-
-      {/* Home button */}
       <a
         href="/"
-        class="inline-block px-8 py-4 bg-primary-500 text-white font-semibold rounded-lg hover:bg-primary-600 transition-colors shadow-md hover:shadow-lg"
+        class="inline-flex items-center gap-2 px-6 py-3 bg-primary-500 text-white font-medium rounded-full hover:bg-primary-700 transition-colors no-underline"
       >
         {t('notFound.homeButton')}
       </a>
-
-      {/* Decorative element */}
-      <div class="mt-16 flex justify-center gap-3">
-        <div class="w-2 h-2 bg-primary-200 rounded-full"></div>
-        <div class="w-2 h-2 bg-primary-300 rounded-full"></div>
-        <div class="w-2 h-2 bg-primary-400 rounded-full"></div>
-      </div>
     </div>
   </section>
 </BaseLayout>

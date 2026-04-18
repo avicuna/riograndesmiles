@@ -3,38 +3,53 @@ import type { Locale } from '../i18n/utils';
 import { useTranslations } from '../i18n/utils';
 
 interface Props {
-  locale: Locale;
+  locale?: Locale;
 }
 
-const { locale } = Astro.props;
+const { locale = 'en' } = Astro.props;
 const t = useTranslations(locale);
 
-const items = [
-  t('trustBar.medicaid'),
-  t('trustBar.spanish'),
-  t('trustBar.experience'),
-  t('trustBar.ada'),
+const stats = [
+  { num: t('trustBar.yearsNum'), label: t('trustBar.yearsLabel') },
+  { num: t('trustBar.patientsNum'), label: t('trustBar.patientsLabel') },
+  { num: t('trustBar.servicesNum'), label: t('trustBar.servicesLabel') },
+  { num: t('trustBar.insuranceNum'), label: t('trustBar.insuranceLabel') },
 ];
 ---
 
-<section class="bg-white border-b border-neutral-200">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-    <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 md:gap-x-0">
-      {items.map((item, i) => (
-        <div class="flex items-center">
-          {/* Divider (hidden on mobile, shown between items on desktop) */}
-          {i > 0 && (
-            <div class="hidden md:block w-px h-5 bg-neutral-200 mx-6" aria-hidden="true"></div>
-          )}
-          {/* Checkmark icon */}
-          <span class="flex-shrink-0 w-5 h-5 bg-teal rounded-full flex items-center justify-center mr-2">
-            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-          </span>
-          <span class="text-sm font-medium text-neutral-700">{item}</span>
+<section class="bg-bg-warm border-t border-b border-line">
+  <div class="trust-grid max-w-content mx-auto grid grid-cols-4 py-7">
+    {stats.map((stat, i) => (
+      <div class:list={[
+        'text-center',
+        i < stats.length - 1 && 'trust-stat-border border-r border-line',
+      ]}>
+        <div class="font-display text-[2rem] leading-none text-primary-500 font-medium">
+          {stat.num}
         </div>
-      ))}
-    </div>
+        <div class="text-[0.82rem] text-ink-3 mt-1.5 tracking-wide">
+          {stat.label}
+        </div>
+      </div>
+    ))}
   </div>
 </section>
+
+<style>
+  @media (max-width: 900px) {
+    .trust-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .trust-stat-border {
+      border-right: none !important;
+    }
+
+    /* First two items get bottom border */
+    .trust-grid > :nth-child(-n+2) {
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--color-line, #e5e5e5);
+    }
+  }
+</style>

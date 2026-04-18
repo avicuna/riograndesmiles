@@ -1,73 +1,64 @@
 ---
 import type { Locale } from '../i18n/utils';
 import { useTranslations } from '../i18n/utils';
+import SectionTag from './SectionTag.astro';
 
-interface Props {
-  locale: Locale;
-}
-
+interface Props { locale: Locale; }
 const { locale } = Astro.props;
 const t = useTranslations(locale);
 
-const services = [
-  { key: 'checkups', icon: '🦷', slug: 'extractions' },
-  { key: 'cosmetic', icon: '✨', slug: 'bleaching' },
-  { key: 'implants', icon: '🔩', slug: 'implants' },
-  { key: 'rootCanals', icon: '🩺', slug: 'root-canals' },
-  { key: 'crowns', icon: '👑', slug: 'crowns' },
-  { key: 'emergency', icon: '🔨', slug: 'denture-repair' },
-];
+// Service items are stored as an array in i18n
+const items = t('servicesOverview.items') as unknown as Array<{num: string; key: string; title: string; desc: string}>;
 
+// Map service keys to their URL slugs
+const slugMap: Record<string, string> = {
+  cleanings: 'extractions', fillings: 'fillings', crowns: 'crowns',
+  bridges: 'bridges', implants: 'implants', dentures: 'dentures',
+  partials: 'partials', repair: 'denture-repair', whitening: 'bleaching',
+  veneers: 'veneers', root: 'root-canals', extraction: 'extractions'
+};
 const prefix = locale === 'es' ? '/es' : '';
 ---
 
-<section class="bg-white py-16 md:py-20">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    {/* Header */}
-    <div class="text-center mb-12">
-      <span class="uppercase tracking-wider text-primary-500 text-xs font-semibold">
-        {t('servicesOverview.label')}
-      </span>
-      <h2 class="font-display text-2xl md:text-3xl font-bold text-neutral-900 mt-2">
-        {t('servicesOverview.heading')}
-      </h2>
+<section class="bg-bg-warm py-[100px]">
+  <div class="max-w-content mx-auto px-7">
+    {/* Section header */}
+    <div class="grid grid-cols-1 md:grid-cols-[1fr_1.3fr] gap-16 mb-14 items-end">
+      <div>
+        <SectionTag label={t('sectionTags.services')} />
+        <h2 class="font-display text-[2.2rem] leading-[1.15] font-medium text-ink">
+          {t('servicesOverview.heading')}
+        </h2>
+      </div>
+      <p class="text-ink-3 max-w-[56ch] text-[1.05rem]">
+        {t('servicesOverview.sub')}
+      </p>
     </div>
 
-    {/* Grid */}
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {services.map((service) => (
+    {/* Services grid — bg-line acts as the 1px gap color */}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-line gap-px border border-line rounded-lg overflow-hidden">
+      {items.map((item) => (
         <a
-          href={`${prefix}/services/${service.slug}`}
-          class="group bg-white border border-neutral-200 rounded-xl p-8 text-center motion-safe:hover:-translate-y-1 hover:shadow-lg transition-all duration-200"
+          href={`${prefix}/services/${slugMap[item.key] || item.key}/`}
+          class="group bg-bg-card p-8 flex flex-col gap-3 min-h-[220px] transition-colors hover:bg-primary-50 cursor-pointer no-underline"
         >
-          {/* Icon */}
-          <div class="inline-flex items-center justify-center w-14 h-14 bg-primary-50 rounded-xl mb-4 text-2xl">
-            {service.icon}
-          </div>
-          {/* Title */}
-          <h3 class="font-display text-lg font-semibold text-neutral-900 mb-2">
-            {t(`servicesOverview.${service.key}.title`)}
+          {/* Title with number */}
+          <h3 class="font-display text-[1.4rem] font-medium text-ink">
+            <span class="font-mono text-[0.72rem] text-primary-500 tracking-wide mr-2">{item.num}</span>
+            {item.title}
           </h3>
+
           {/* Description */}
-          <p class="text-sm text-neutral-600 mb-4">
-            {t(`servicesOverview.${service.key}.description`)}
+          <p class="text-[0.93rem] text-ink-3 leading-relaxed">
+            {item.desc}
           </p>
-          {/* Link */}
-          <span class="text-sm font-medium text-primary-500 group-hover:text-primary-600 transition-colors">
-            {t('servicesOverview.learnMore')} &rarr;
-          </span>
+
+          {/* Arrow button — always visible */}
+          <div class="mt-auto w-8 h-8 rounded-full bg-bg-warm grid place-items-center text-ink-2 group-hover:bg-primary-500 group-hover:text-white group-hover:translate-x-[3px] group-hover:-translate-y-[3px] transition-all">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </div>
         </a>
       ))}
-    </div>
-
-    {/* View All Services Link */}
-    <div class="text-center mt-10">
-      <a
-        href={`${prefix}/services/`}
-        class="inline-flex items-center text-primary-500 hover:text-primary-600 font-medium transition-colors"
-      >
-        {locale === 'es' ? 'Ver Todos los Servicios' : 'View All Services'} &rarr;
-      </a>
     </div>
   </div>
 </section>

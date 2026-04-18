@@ -30,35 +30,35 @@ const reviews = [
   canonicalPath="/es/reviews"
 >
   {/* Hero Header */}
-  <section class="bg-primary-50 py-16 md:py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <span class="uppercase tracking-wider text-primary-500 text-xs font-semibold">
+  <section class="bg-bg-warm border-b border-line py-16 md:py-20">
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="uppercase tracking-wider text-primary-500 text-xs font-medium">
         {t('reviews.label')}
       </span>
-      <h1 class="font-display text-3xl md:text-5xl font-bold text-neutral-900 mt-3">
+      <h1 class="font-display text-3xl md:text-5xl font-medium text-ink mt-3">
         {t('reviews.heading')}
       </h1>
     </div>
   </section>
 
   {/* Reviews Carousel */}
-  <section class="py-16 md:py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="py-16 md:py-20 bg-bg-card">
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
       <ReviewCarousel reviews={reviews} client:visible />
     </div>
   </section>
 
   {/* Share Experience Section */}
-  <section class="py-12 bg-neutral-50">
+  <section class="py-12 bg-bg-warm">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-lg text-neutral-700 leading-relaxed">
+      <p class="text-lg text-ink-2 leading-relaxed">
         {t('reviews.shareExperience')}
       </p>
       <a
         href="https://g.page/r/CQj8kXVNhBUZEBM/review"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-block mt-6 px-8 py-3 bg-primary-500 text-white font-semibold rounded-lg hover:bg-primary-600 transition-colors shadow-md hover:shadow-lg"
+        class="inline-block mt-6 px-8 py-3 bg-primary-500 text-white font-medium rounded-full hover:bg-primary-700 transition-colors"
       >
         Dejar una Reseña en Google
       </a>

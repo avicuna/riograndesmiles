@@ -70,7 +70,7 @@ export default function ReviewCarousel({ reviews }: Props) {
 
   return (
     <div
-      className="relative bg-white border border-neutral-200 rounded-xl shadow-sm max-w-2xl mx-auto overflow-hidden"
+      className="relative bg-bg-card border border-line rounded-lg max-w-2xl mx-auto overflow-hidden"
       onMouseEnter={handlePause}
       onMouseLeave={handleResume}
       onFocus={handlePause}
@@ -80,7 +80,7 @@ export default function ReviewCarousel({ reviews }: Props) {
       <button
         onClick={prev}
         aria-label="Previous review"
-        className="absolute left-3 top-1/2 -translate-y-1/2 bg-primary-500/90 hover:bg-primary-600 text-white w-10 h-10 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center z-10 cursor-pointer transition-colors"
+        className="absolute left-3 top-1/2 -translate-y-1/2 bg-primary-500/90 hover:bg-primary-700 text-white w-10 h-10 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center z-10 cursor-pointer transition-colors"
       >
         ❮
       </button>
@@ -89,20 +89,20 @@ export default function ReviewCarousel({ reviews }: Props) {
       <button
         onClick={next}
         aria-label="Next review"
-        className="absolute right-3 top-1/2 -translate-y-1/2 bg-primary-500/90 hover:bg-primary-600 text-white w-10 h-10 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center z-10 cursor-pointer transition-colors"
+        className="absolute right-3 top-1/2 -translate-y-1/2 bg-primary-500/90 hover:bg-primary-700 text-white w-10 h-10 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center z-10 cursor-pointer transition-colors"
       >
         ❯
       </button>
 
       {/* Review content */}
       <div aria-live="polite" className="px-10 md:px-16 py-10 text-center">
-        <div className="text-xl text-amber-500 mb-4 tracking-wider" aria-hidden="true">
+        <div className="text-xl text-gold mb-4 tracking-wider" aria-hidden="true">
           ★★★★★
         </div>
-        <p className="text-lg italic text-neutral-700 leading-relaxed mb-5">
+        <p className="text-lg italic text-ink-2 leading-relaxed mb-5 font-display">
           &ldquo;{review.text}&rdquo;
         </p>
-        <p className="font-semibold text-primary-600">{review.author}</p>
+        <p className="font-medium text-primary-500">{review.author}</p>
       </div>
 
       {/* Dots */}
@@ -116,7 +116,7 @@ export default function ReviewCarousel({ reviews }: Props) {
           >
             <span
               className={`block w-2.5 h-2.5 rounded-full transition-colors ${
-                index === current ? 'bg-primary-500' : 'bg-neutral-200'
+                index === current ? 'bg-primary-500' : 'bg-line-2'
               }`}
             />
           </button>

@@ -34,36 +34,32 @@ const subtitleText = locale === 'es' ? 'en Albuquerque, NM' : 'in Albuquerque, N
   canonicalPath={basePath}
 >
   {/* Hero Header */}
-  <section class="bg-primary-50 py-12 text-center">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="inline-flex items-center justify-center w-20 h-20 bg-primary-100 rounded-full mb-4 text-5xl">
+  <section class="bg-bg-warm py-14 text-center border-b border-line">
+    <div class="max-w-content mx-auto px-7">
+      <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4 text-4xl">
         {service.data.icon}
       </div>
-      <h1 class="font-display text-3xl md:text-4xl font-bold text-neutral-900">
-        {title}
-      </h1>
-      <p class="text-neutral-600 mt-2 text-lg">{subtitleText}</p>
+      <h1 class="font-display text-ink">{title}</h1>
+      <p class="text-ink-3 mt-2 text-lg">{subtitleText}</p>
     </div>
   </section>
 
   {/* Main Content */}
-  <section class="max-w-3xl mx-auto px-6 py-12">
-    {/* Description */}
-    <p class="text-lg leading-relaxed text-neutral-700 mb-10">
+  <section class="max-w-[720px] mx-auto px-7 py-14">
+    <p class="text-lg leading-relaxed text-ink-2 mb-10">
       {description}
     </p>
 
-    {/* Rendered Markdown Body */}
-    <div class="prose prose-lg max-w-none mb-12">
+    <div class="prose prose-lg max-w-none mb-12 prose-headings:font-display prose-headings:text-ink prose-p:text-ink-2">
       <Content />
     </div>
 
     {/* Insurance Callout */}
-    <div class="bg-neutral-50 border border-neutral-200 rounded-xl p-6 text-center mb-12">
-      <p class="text-neutral-700 mb-3">{insuranceText}</p>
+    <div class="bg-bg-warm border border-line rounded-lg p-6 text-center mb-12">
+      <p class="text-ink-2 mb-3">{insuranceText}</p>
       <a
         href={insurancePath}
-        class="text-primary-500 hover:text-primary-600 font-medium transition-colors"
+        class="text-primary-500 hover:text-primary-700 font-medium transition-colors no-underline"
       >
         {insuranceLinkText} &rarr;
       </a>
@@ -71,13 +67,17 @@ const subtitleText = locale === 'es' ? 'en Albuquerque, NM' : 'in Albuquerque, N
   </section>
 
   {/* Booking CTA */}
-  <BookingSection locale={locale} />
+  <section class="py-12 px-7">
+    <div class="max-w-lg mx-auto">
+      <BookingSection locale={locale} />
+    </div>
+  </section>
 
   {/* Back Link */}
   <div class="text-center py-8">
     <a
       href={servicesPath}
-      class="text-primary-500 hover:text-primary-600 font-medium transition-colors"
+      class="text-primary-500 hover:text-primary-700 font-medium transition-colors no-underline"
     >
       &larr; {backLabel}
     </a>

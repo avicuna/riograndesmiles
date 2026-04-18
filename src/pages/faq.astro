@@ -87,21 +87,21 @@ const allFaqItems = [
   })} />
 
   {/* Hero Header */}
-  <section class="bg-primary-50 py-16 md:py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <span class="uppercase tracking-wider text-primary-500 text-xs font-semibold">
+  <section class="bg-bg-warm border-b border-line py-16 md:py-20">
+    <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="uppercase tracking-wider text-primary-500 text-xs font-medium">
         {t('footer.faq')}
       </span>
-      <h1 class="font-display text-3xl md:text-5xl font-bold text-neutral-900 mt-3">
+      <h1 class="font-display text-3xl md:text-5xl font-medium text-ink mt-3">
         {t('faqPage.title')}
       </h1>
     </div>
   </section>
 
   {/* First Appointment */}
-  <section class="py-16 md:py-20 bg-white">
+  <section class="py-16 md:py-20 bg-bg-card">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-display text-2xl md:text-3xl font-bold text-neutral-900 mb-8">
+      <h2 class="font-display text-2xl md:text-3xl font-medium text-ink mb-8">
         {t('faqPage.firstAppointmentHeading')}
       </h2>
       <FAQAccordion items={firstAppointmentFaq} client:visible />
@@ -109,9 +109,9 @@ const allFaqItems = [
   </section>
 
   {/* Preventive Dentistry */}
-  <section class="py-16 md:py-20 bg-neutral-50">
+  <section class="py-16 md:py-20 bg-bg-warm">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-display text-2xl md:text-3xl font-bold text-neutral-900 mb-8">
+      <h2 class="font-display text-2xl md:text-3xl font-medium text-ink mb-8">
         {t('faqPage.preventiveDentistryHeading')}
       </h2>
       <FAQAccordion items={preventiveDentistryFaq} client:visible />
@@ -119,9 +119,9 @@ const allFaqItems = [
   </section>
 
   {/* General Dentistry */}
-  <section class="py-16 md:py-20 bg-white">
+  <section class="py-16 md:py-20 bg-bg-card">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-display text-2xl md:text-3xl font-bold text-neutral-900 mb-8">
+      <h2 class="font-display text-2xl md:text-3xl font-medium text-ink mb-8">
         {t('faqPage.generalDentistryHeading')}
       </h2>
       <FAQAccordion items={generalDentistryFaq} client:visible />
@@ -129,9 +129,9 @@ const allFaqItems = [
   </section>
 
   {/* Family Dentistry */}
-  <section class="py-16 md:py-20 bg-neutral-50">
+  <section class="py-16 md:py-20 bg-bg-warm">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-display text-2xl md:text-3xl font-bold text-neutral-900 mb-8">
+      <h2 class="font-display text-2xl md:text-3xl font-medium text-ink mb-8">
         {t('faqPage.familyDentistryHeading')}
       </h2>
       <FAQAccordion items={familyDentistryFaq} client:visible />
@@ -139,9 +139,9 @@ const allFaqItems = [
   </section>
 
   {/* Cosmetic Dentistry */}
-  <section class="py-16 md:py-20 bg-white">
+  <section class="py-16 md:py-20 bg-bg-card">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-display text-2xl md:text-3xl font-bold text-neutral-900 mb-8">
+      <h2 class="font-display text-2xl md:text-3xl font-medium text-ink mb-8">
         {t('faqPage.cosmeticDentistryHeading')}
       </h2>
       <FAQAccordion items={cosmeticDentistryFaq} client:visible />
@@ -149,9 +149,9 @@ const allFaqItems = [
   </section>
 
   {/* Emergencies */}
-  <section class="py-16 md:py-20 bg-neutral-50">
+  <section class="py-16 md:py-20 bg-bg-warm">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-display text-2xl md:text-3xl font-bold text-neutral-900 mb-8">
+      <h2 class="font-display text-2xl md:text-3xl font-medium text-ink mb-8">
         {t('faqPage.emergenciesHeading')}
       </h2>
       <FAQAccordion items={emergenciesFaq} client:visible />
@@ -159,7 +159,7 @@ const allFaqItems = [
   </section>
 
   {/* Booking CTA */}
-  <section class="py-16 px-6 bg-white">
+  <section class="py-16 px-6 bg-bg-card">
     <div class="max-w-4xl mx-auto">
       <BookingSection locale={locale} />
     </div>

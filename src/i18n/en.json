@@ -1,14 +1,12 @@
 {
   "navbar": {
-    "book": "Book Online",
     "services": "Services",
     "about": "About",
     "reviews": "Reviews",
     "insurance": "Insurance",
     "contact": "Contact",
-    "forms": "Forms",
     "langSwitch": "Español",
-    "call": "Call"
+    "brandSub": "Dr. Vicuña · DDS"
   },
   "formsCallout": {
     "heading": "Download Your Patient Forms",
@@ -20,66 +18,78 @@
     "description": "Dr. Vicuña and his team provide exceptional dental care to keep your smile healthy and strong for life. For over 20 years we have established trusting relationships with our patients where we can contribute to the overall well-being of all our patients. Using proven techniques for general, cosmetic, and restorative dentistry, we'll personalize a treatment plan that meets your unique goals. From checkups, to aesthetic enhancements, to comprehensive restorations, Dr. Vicuna will perform your dental work with skill and precision."
   },
   "hero": {
-    "badge": "Now Accepting New Patients",
-    "heading": "Exceptional Dental Care for Your Whole Family",
-    "subtitle": "Accepting new patients · Medicaid welcome · Se habla español",
-    "bookCta": "Book Your Visit",
-    "callCta": "Call (505) 877-1113"
+    "eyebrow": "Family dentistry · Albuquerque, NM",
+    "title1": "Dental care ",
+    "titleEm": "for every smile in the family",
+    "lede": "Dr. Emerson Vicuña has built his practice on unhurried visits, honest answers, and personalized treatment — over twenty years of caring for patients across the Rio Grande Valley.",
+    "chipExperience": "20+ years of experience",
+    "chipFamily": "Family-friendly",
+    "chipMedicaid": "Medicaid welcome",
+    "chipInsurance": "Most insurance accepted",
+    "ctaCall": "Call or Text (505) 877-1113",
+    "ctaServices": "See services"
   },
   "trustBar": {
-    "medicaid": "Medicaid Welcome",
-    "spanish": "Se Habla Español",
-    "experience": "20+ Years Experience",
-    "ada": "ADA Member"
+    "yearsNum": "20+",
+    "yearsLabel": "Years of experience",
+    "patientsNum": "1,200+",
+    "patientsLabel": "Families cared for",
+    "servicesNum": "12",
+    "servicesLabel": "Dental services",
+    "insuranceNum": "9",
+    "insuranceLabel": "Insurance plans accepted"
+  },
+  "sectionTags": {
+    "doctor": "About the doctor",
+    "services": "Our services",
+    "reviews": "What our patients say",
+    "insurance": "Accepted insurance",
+    "faq": "Frequently asked questions",
+    "location": "Our location",
+    "ctaBand": "Get in touch"
   },
   "insurance": {
-    "title": "Accepted Insurance Providers",
-    "description": "We accept a variety of insurance plans to make your dental care more accessible and affordable."
+    "heading": "We accept Medicaid and all major insurance plans.",
+    "sub": "Don't see your plan? Call us — we work with many providers and can help verify your coverage before your visit."
   },
   "servicesOverview": {
-    "label": "Our Services",
-    "heading": "Comprehensive Dental Care",
-    "checkups": {
-      "title": "General Checkups",
-      "description": "Routine exams and cleanings to keep your smile healthy and catch issues early."
-    },
-    "cosmetic": {
-      "title": "Cosmetic Dentistry",
-      "description": "Brighten and enhance your smile with whitening, veneers, and more."
-    },
-    "implants": {
-      "title": "Dental Implants",
-      "description": "Permanent, natural-looking replacements for missing teeth."
-    },
-    "rootCanals": {
-      "title": "Root Canals",
-      "description": "Relieve pain and save your natural tooth with expert root canal therapy."
-    },
-    "crowns": {
-      "title": "Crowns & Bridges",
-      "description": "Restore damaged or missing teeth with custom-crafted crowns and bridges."
-    },
-    "emergency": {
-      "title": "Emergency Care",
-      "description": "Urgent dental care when you need it most — call us right away."
-    },
-    "learnMore": "Learn more"
+    "heading": "Everything your family needs, under one roof.",
+    "sub": "From a routine cleaning to a complete restoration — with clear explanations and honest pricing, before we begin.",
+    "items": [
+      { "num": "01", "key": "cleanings", "title": "Cleanings & Checkups", "desc": "Preventive care to keep your smile strong — for you and your whole family." },
+      { "num": "02", "key": "fillings", "title": "Fillings", "desc": "Restore decayed teeth with tooth-colored, natural-looking materials." },
+      { "num": "03", "key": "crowns", "title": "Crowns", "desc": "Custom caps that restore shape, size, and strength to a damaged tooth." },
+      { "num": "04", "key": "bridges", "title": "Bridges", "desc": "Replace missing teeth by anchoring to adjacent healthy teeth." },
+      { "num": "05", "key": "implants", "title": "Implants", "desc": "Titanium roots placed in the jaw — a permanent solution for missing teeth." },
+      { "num": "06", "key": "dentures", "title": "Dentures", "desc": "Full or partial removable prosthetics, custom-fit to your mouth." },
+      { "num": "07", "key": "partials", "title": "Partials", "desc": "When you still have natural teeth, partials fill in the gaps comfortably." },
+      { "num": "08", "key": "repair", "title": "Denture Repair", "desc": "We fix broken or damaged dentures so they keep working comfortably." },
+      { "num": "09", "key": "whitening", "title": "Whitening", "desc": "Safe cosmetic treatment that brightens and whitens your smile." },
+      { "num": "10", "key": "veneers", "title": "Veneers", "desc": "Thin porcelain shells that transform the look of your front teeth." },
+      { "num": "11", "key": "root", "title": "Root Canals", "desc": "Endodontic treatment to save a badly decayed or infected tooth." },
+      { "num": "12", "key": "extraction", "title": "Extractions & Wisdom Teeth", "desc": "Routine extractions and wisdom tooth removal, with your comfort first." }
+    ]
   },
   "doctorProfile": {
-    "label": "Meet Your Dentist",
-    "name": "Emerson Vicuña, DDS",
-    "credentials": "Doctor of Dental Surgery · Ohio State University",
-    "bio": "With over 20 years of experience, Dr. Emerson Vicuña is a general dentist who loves helping people in need of dental care. His patients adore his friendly personality, work ethic, and outstanding results. Originally from Lima, Peru, Dr. Vicuña earned his Doctor of Dental Surgery degree from The Ohio State University after completing his BS in Biology and Chemistry at the University of New Mexico. He is a proud member of the American Dental Association and Academy of General Dentistry. Since opening his own practice in 2005, Dr. Vicuña has been the sole dentist, allowing patients to build a personal relationship and receive truly individualized care.",
-    "badge1": "ADA Member",
-    "badge2": "Academy of General Dentistry",
-    "badge3": "Practicing since 2005"
+    "heading": "Over two decades caring for smiles in Albuquerque.",
+    "sub": "Dr. Vicuña is the only dentist at the practice. Every patient knows him personally — and he knows you.",
+    "quote": "My commitment is to treat every patient with the time, respect, and attention they deserve.",
+    "bio": "Dr. Emerson Vicuña earned his BS in Biology and Chemistry at the University of New Mexico and his Doctor of Dental Surgery (DDS) from The Ohio State University. Since 2005 he has run his own practice, combining proven techniques in general, cosmetic, and restorative dentistry to design a personalized plan for each patient. Member of the American Dental Association and Academy of General Dentistry.",
+    "credEduLabel": "Education",
+    "credEduValue": "DDS, The Ohio State University",
+    "credUndergradLabel": "Undergraduate",
+    "credUndergradValue": "BS Biology & Chemistry, UNM",
+    "credMembLabel": "Memberships",
+    "credMembValue": "ADA · Academy of General Dentistry",
+    "credSinceLabel": "Practicing since",
+    "credSinceValue": "2005 · Albuquerque, NM"
   },
   "journey": {
     "label": "New Patients",
     "heading": "Getting Started Is Easy",
     "step1": {
-      "title": "Book Online",
-      "description": "Schedule your visit in seconds using our simple online booking system."
+      "title": "Call or Text Us",
+      "description": "Reach us at (505) 877-1113 to schedule your visit — we're happy to help."
     },
     "step2": {
       "title": "Prepare for Your Visit",
@@ -99,15 +109,22 @@
     "cta": "View Insurance Info"
   },
   "booking": {
-    "title": "Book an Appointment",
-    "fallbackText": "Call us to schedule your visit. We're happy to help find a time that works for you.",
-    "callButton": "Call (505) 877-1113"
+    "title": "Schedule an Appointment",
+    "text": "Call or text us to schedule your visit. We're happy to help find a time that works for you.",
+    "callButton": "Call (505) 877-1113",
+    "textButton": "Text (505) 877-1113"
   },
   "finalCta": {
     "heading": "Ready to Get Started?",
-    "subtitle": "Book your appointment today — new patients are always welcome.",
-    "bookCta": "Book Your Visit",
-    "callCta": "Call (505) 877-1113"
+    "subtitle": "New patients are always welcome — call or text to schedule.",
+    "callCta": "Call or Text (505) 877-1113"
+  },
+  "ctaBand": {
+    "heading": "Call or text us today.",
+    "sub": "Monday – Thursday, 9am – 5pm. 3200 Coors Blvd NW, Suite F, Albuquerque.",
+    "callButton": "(505) 877-1113",
+    "textButton": "Text us",
+    "emailButton": "Send email"
   },
   "insuranceProviders": {
     "unitedHealthcare": "United Healthcare",
@@ -248,8 +265,42 @@
       "dentalEmergencyAnswer": "If unable to reach your dentist, visit the nearest urgent care or emergency room for assistance."
     }
   },
+  "homeFaq": {
+    "heading": "Everything you want to know before your first visit.",
+    "sub": "Have another question that's not here? Give us a call.",
+    "items": [
+      { "q": "Are you accepting new patients?", "a": "Yes — we're welcoming new patients of all ages. You can schedule your first visit by phone or text. We set aside extra time for first appointments so we can get to know you and review your history without rushing." },
+      { "q": "What insurance do you accept? Do you take Medicaid?", "a": "Yes, we accept Medicaid as well as United Healthcare, Delta Dental, MetLife, Guardian, Ameritas, Cigna, Principal, and United Concordia. If you don't see your plan, give us a call — we can often help verify coverage." },
+      { "q": "What should I bring to my first appointment?", "a": "Your ID (driver's license, military or state ID), your dental insurance card if you have one, and your completed medical history and registration forms (or arrive 10–15 minutes early to fill them out)." },
+      { "q": "How often should I visit the dentist?", "a": "Most people should see their dentist every six months for a cleaning and checkup. Patients with specific concerns may need more frequent visits." },
+      { "q": "When should I bring my child for their first visit?", "a": "We recommend the first visit between 6–9 months old, no later than their first birthday. We want kids to grow up comfortable at the dentist from an early age." },
+      { "q": "What if a tooth gets knocked out in an accident?", "a": "Find the tooth, rinse it gently (don't scrub it), and place it in milk or your saliva. Call us immediately — time is critical. After hours, go to an urgent care or ER." }
+    ]
+  },
+  "reviews": {
+    "title": "Patient Reviews",
+    "label": "Patient Reviews",
+    "heading": "Families who've trusted us with their smiles.",
+    "sub": "Verified reviews from patients across Albuquerque.",
+    "shareExperience": "We'd love to hear about your experience! Leave us a review on Google.",
+    "pageDescription": "Read what our patients have to say about their experience with Dr. Vicuña and the Rio Grande Smiles team.",
+    "review1": "Very professional and following the safest measures for dental care. Friendly staff, without a doubt it was a great experience.",
+    "review1Author": "Rafael Contreras",
+    "review1Meta": "Google · Patient since 2019",
+    "review2": "I love Dr. Vicuña! He is so gentle and so good at what he does. I've been with him for at least 7 years and I wouldn't go anywhere else.",
+    "review2Author": "Clorinda Olguín",
+    "review2Meta": "Google · Patient since 2017",
+    "review3": "Very helpful and professional work. They walked me through the procedure clearly and I felt completely at ease.",
+    "review3Author": "Carlos Álvarez",
+    "review3Meta": "Google · Patient since 2022"
+  },
   "location": {
-    "title": "Find Us Here"
+    "heading": "Come visit us on Albuquerque's west side.",
+    "sub": "",
+    "addressLabel": "Address",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "hoursLabel": "Hours"
   },
   "footer": {
     "contact": "Contact",
@@ -261,9 +312,15 @@
       "description": "Mon-Thu 9am - 5pm"
     },
     "brand": "Rio Grande Smiles",
+    "brandSub": "Dr. Vicuña · DDS",
     "brandDescription": "Exceptional dental care in Albuquerque, NM. Serving the community with general, cosmetic, and restorative dentistry for over 20 years.",
+    "tagline": "Family dentistry in Albuquerque, New Mexico — caring for our community since 2005.",
     "servicesHeading": "Services",
     "patientsHeading": "Patients",
+    "navigate": "Navigate",
+    "formsCol": "Forms",
+    "medHistory": "Medical history",
+    "registration": "Patient registration",
     "generalDentistry": "General Dentistry",
     "cosmetic": "Cosmetic Dentistry",
     "implants": "Dental Implants",
@@ -278,19 +335,13 @@
     "addressLine1": "1630 Coors Blvd NW",
     "addressLine2": "Albuquerque, NM 87121",
     "langSwitch": "Español",
-    "copyright": "2026 Rio Grande Smiles. All rights reserved."
+    "copyright": "2026 Rio Grande Smiles. All rights reserved.",
+    "madeWith": "Albuquerque, NM · Made with care"
   },
   "button": {
     "learnMore": "Learn More",
     "downloadForm": "Download Form",
     "showLess": "Show Less"
-  },
-  "reviews": {
-    "title": "Patient Reviews",
-    "label": "Patient Reviews",
-    "heading": "What Our Patients Say",
-    "shareExperience": "We'd love to hear about your experience! Leave us a review on Google.",
-    "pageDescription": "Read what our patients have to say about their experience with Dr. Vicuña and the Rio Grande Smiles team."
   },
   "newPatients": {
     "title": "New Patient Information",
