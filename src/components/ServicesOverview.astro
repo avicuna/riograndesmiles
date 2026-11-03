@@ -8,7 +8,7 @@ const { locale } = Astro.props;
 const t = useTranslations(locale);
 
 // Service items are stored as an array in i18n
-const items = t('servicesOverview.items') as unknown as Array<{num: string; key: string; title: string; desc: string}>;
+const items = t.list<{ num: string; key: string; title: string; desc: string }>('servicesOverview.items');
 
 // Map service keys to their URL slugs
 const slugMap: Record<string, string> = {

@@ -107,6 +107,8 @@ src/
 
 ## Development
 
+Requires **Node 24** (pinned in `.nvmrc` and `netlify.toml`).
+
 ```bash
 # Install dependencies
 npm install
@@ -117,7 +119,8 @@ npm run dev
 # Type check
 npx astro check
 
-# Build (outputs to dist/)
+# Build (outputs to dist/). Runs the type check first and stops on any type error,
+# so a broken build fails on Netlify instead of deploying.
 npm run build
 
 # Preview build locally
@@ -143,11 +146,12 @@ DNS records and Netlify site name are managed via the Netlify and Squarespace da
 
 ## Photos
 
-Only two photos currently in use:
+Two photos are in use, plus icons, logos, and the social share image:
 - `public/img/doctor-headshot.png` — Dr. Vicuña's headshot (hero + about page)
 - `public/img/albuquerque-skyline.jpg` — Albuquerque skyline (hero background)
 - `public/img/services/` — Service icon images (used on service detail pages)
 - `public/img/*.png` — Insurance provider logos (not currently used — switched to text grid)
+- `public/og-image.jpg` — 1200×630 link-preview image for social media and messaging apps (built from the two photos above)
 
 ## Contact Info (hardcoded)
 

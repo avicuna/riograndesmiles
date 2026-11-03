@@ -9,6 +9,9 @@ interface Props {
 const { locale = 'en' } = Astro.props;
 const t = useTranslations(locale);
 
+// Evaluated at build time, so the year rolls over on the first deploy of each new year.
+const year = new Date().getFullYear();
+
 const prefix = locale === 'es' ? '/es' : '';
 
 const navLinks = [
@@ -105,7 +108,7 @@ const patientLinks = [
 
     {/* Bottom bar */}
     <div class="mt-14 pt-6 border-t border-line flex justify-between items-center text-[0.82rem] text-ink-3">
-      <span>&copy; {t('footer.copyright')}</span>
+      <span>&copy; {year} {t('footer.copyright')}</span>
       <span>{t('footer.madeWith')}</span>
     </div>
   </div>
