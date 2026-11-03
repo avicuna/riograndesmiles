@@ -1,6 +1,6 @@
 # /services/veneers/ and /es/services/veneers/
 order: 10
-icon: "✨"
+icon: "veneers"
 en:
   title: "Veneers"
   summary: "Thin porcelain shells that transform the look of your front teeth."

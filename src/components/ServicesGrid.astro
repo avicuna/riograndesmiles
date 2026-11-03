@@ -2,6 +2,8 @@
 // Card grid for the /services and /es/services pages.
 import type { Locale } from '../i18n/utils';
 import { getServices, servicePath } from '../lib/services';
+import ServiceIcon from './ServiceIcon.astro';
+import type { ServiceIconName } from '../lib/service-icons';
 
 interface Props {
   locale: Locale;
@@ -28,8 +30,8 @@ const learnMore = locale === 'es' ? 'Ver más' : 'Learn more';
             : 'text-center',
         ]}
       >
-        <div class:list={['inline-flex items-center justify-center w-14 h-14 bg-primary-100 rounded-lg text-2xl shrink-0', !lead && 'mb-4']}>
-          {service.data.icon}
+        <div class:list={['inline-flex items-center justify-center w-14 h-14 bg-primary-100 rounded-lg text-primary-600 shrink-0', !lead && 'mb-4']}>
+          <ServiceIcon name={service.data.icon as ServiceIconName} class="w-7 h-7" />
         </div>
         <div class:list={[lead && 'md:flex-1']}>
           <h2 class:list={['font-display font-medium text-ink mb-2', lead ? 'text-xl' : 'text-lg']}>

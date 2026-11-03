@@ -3,6 +3,8 @@ import type { Locale } from '../i18n/utils';
 import type { Service } from '../lib/services';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BookingSection from './BookingSection.astro';
+import ServiceIcon from './ServiceIcon.astro';
+import type { ServiceIconName } from '../lib/service-icons';
 
 interface Props {
   service: Service;
@@ -38,8 +40,8 @@ const subtitleText = locale === 'es' ? 'en Albuquerque, NM' : 'in Albuquerque, N
   {/* Hero Header */}
   <section class="bg-bg-warm py-14 text-center border-b border-line">
     <div class="max-w-content mx-auto px-7">
-      <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4 text-4xl">
-        {service.data.icon}
+      <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4 text-primary-600">
+        <ServiceIcon name={service.data.icon as ServiceIconName} class="w-9 h-9" />
       </div>
       <h1 class="font-display text-ink">{title}</h1>
       <p class="text-ink-3 mt-2 text-lg">{subtitleText}</p>

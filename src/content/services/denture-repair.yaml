@@ -1,6 +1,6 @@
 # /services/denture-repair/ and /es/services/denture-repair/
 order: 8
-icon: "🔨"
+icon: "denture-repair"
 en:
   title: "Denture Repair"
   summary: "We fix broken or damaged dentures so they keep working comfortably."

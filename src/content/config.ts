@@ -1,4 +1,5 @@
 import { defineCollection, z } from 'astro:content';
+import { serviceIconNames } from '../lib/service-icons';
 
 // Each service is one YAML file in src/content/services/. The filename is the URL slug
 // (cleanings.yaml → /services/cleanings/). Both languages live side by side so a missing
@@ -15,7 +16,9 @@ const services = defineCollection({
   type: 'data',
   schema: z.object({
     order: z.number().int().positive(), // position on the homepage and /services
-    icon: z.string(),
+    icon: z.string().refine((name) => (serviceIconNames as string[]).includes(name), {
+      message: `Unknown icon. Use one of: ${serviceIconNames.join(', ')} (src/lib/service-icons.ts)`,
+    }),
     en: serviceText,
     es: serviceText,
   }),

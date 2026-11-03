@@ -1,6 +1,6 @@
 # /services/bleaching/ and /es/services/bleaching/
 order: 9
-icon: "💎"
+icon: "bleaching"
 en:
   title: "Teeth Whitening"
   summary: "Safe cosmetic treatment that brightens and whitens your smile."

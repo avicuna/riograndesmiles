@@ -1,6 +1,6 @@
 # /services/bridges/ and /es/services/bridges/
 order: 4
-icon: "🌉"
+icon: "bridges"
 en:
   title: "Bridges"
   summary: "Replace missing teeth by anchoring to adjacent healthy teeth."

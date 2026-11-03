@@ -1,6 +1,6 @@
 # /services/cleanings/ and /es/services/cleanings/
 order: 1
-icon: "🪥"
+icon: "cleanings"
 en:
   title: "Cleanings & Checkups"
   summary: "Preventive care to keep your smile strong — for you and your whole family."

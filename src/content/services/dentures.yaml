@@ -1,6 +1,6 @@
 # /services/dentures/ and /es/services/dentures/
 order: 6
-icon: "🦿"
+icon: "dentures"
 en:
   title: "Dentures"
   summary: "Full or partial removable prosthetics, custom-fit to your mouth."
