@@ -1,6 +1,7 @@
 ---
 import type { Locale } from '../i18n/utils';
 import { useTranslations } from '../i18n/utils';
+import { getServices } from '../lib/services';
 
 interface Props {
   locale?: Locale;
@@ -8,11 +9,13 @@ interface Props {
 
 const { locale = 'en' } = Astro.props;
 const t = useTranslations(locale);
+// Counted from src/content/services/, so adding or removing a service keeps this number right.
+const serviceCount = (await getServices()).length;
 
 const stats = [
   { num: t('trustBar.yearsNum'), label: t('trustBar.yearsLabel') },
   { num: t('trustBar.patientsNum'), label: t('trustBar.patientsLabel') },
-  { num: t('trustBar.servicesNum'), label: t('trustBar.servicesLabel') },
+  { num: String(serviceCount), label: t('trustBar.servicesLabel') },
   { num: t('trustBar.insuranceNum'), label: t('trustBar.insuranceLabel') },
 ];
 ---

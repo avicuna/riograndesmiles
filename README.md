@@ -1,174 +1,199 @@
 # Rio Grande Smiles
 
 Website for **Dr. Emerson Vicuña's dental practice** in Albuquerque, NM.
-Live at **[riograndesmiles.com](https://riograndesmiles.com)**
+Live at **[riograndesmiles.com](https://riograndesmiles.com)**, in English and Spanish.
 
 ---
 
+## Quick Reference: How Do I…
+
+| I want to… | Edit this | Notes |
+|---|---|---|
+| Change wording on any page | `src/i18n/en.json` **and** `src/i18n/es.json` | Almost all visible text lives here. Change both languages. |
+| Add, remove, or reword a service | `src/content/services/<slug>.yaml` | One file per service, both languages inside. See [Services](#services). |
+| Change a review | `reviews.items` in both i18n files | Used on the homepage and `/reviews`. Keep them short, quoted word for word. |
+| Change a homepage or New Patients FAQ | `homeFaq.items` / `faq.*` in both i18n files | The FAQ page builds its questions from `faq.*` keys. |
+| Replace a patient form | `public/forms/*.pdf` | Keep the same file name. See [Patient Forms](#patient-forms). |
+| Change phone, email, address, or hours | Several files | See [Contact Info](#contact-info-hardcoded). |
+| Change a page's layout | `src/pages/<page>.astro` **and** `src/pages/es/<page>.astro` | Spanish pages are separate copies. See [Bilingual](#bilingual-enes). |
+| Publish a change | Open a PR, then merge it into `main` | Netlify deploys `main` automatically. See [Deployment](#deployment). |
+
 ## Tech Stack
 
-- **Astro 4** — static site generator (zero JS by default, island hydration)
-- **React 18** — interactive components (FAQ accordion, review carousel, Google Map, mobile CTA bar)
-- **Tailwind CSS 3** — utility-first styling with custom design tokens
-- **TypeScript** — type checking
-- **Netlify** — hosting, SSL, deploy previews
+- **Astro 4**: static site generator. Every page is plain HTML at build time.
+- **React 18**: only for the two interactive pieces, the FAQ accordion and the review carousel. They load as "islands" when scrolled into view (`client:visible`).
+- **Tailwind CSS 3**: styling, with the site's colors and fonts as custom tokens.
+- **TypeScript**: type checking, run as part of every build.
+- **Netlify**: hosting, SSL, the contact form, and preview deploys for pull requests.
 
-## Fonts (self-hosted)
+## Development
 
-- **Newsreader** — display/heading font (serif, via `@fontsource-variable/newsreader`)
-- **Inter Tight** — body font (sans, via `@fontsource-variable/inter-tight`)
-- **JetBrains Mono** — decorative labels (mono, via `@fontsource/jetbrains-mono`)
+Requires **Node 24** (pinned in `.nvmrc` and `netlify.toml`). With nvm: `nvm install && nvm use`.
 
-No Google Fonts CDN dependency — all fonts are bundled in the build.
+```bash
+npm install        # install dependencies
+npm run dev        # dev server at http://localhost:4321
+npx astro check    # type check only
+npm run build      # type check, then build to dist/ (stops on any type error)
+npm run preview    # serve the built dist/ locally
+```
 
-## Color System
+The build runs the type check first, so a broken change fails on Netlify instead of deploying.
 
-Colors are defined in two places:
-- **`tailwind.config.mjs`** — hex/rgb values for Tailwind utility classes (`bg-primary-500`, `text-ink`, etc.)
-- **`src/styles/global.css`** — oklch CSS custom properties for gradients and `color-mix()` effects
+## Deployment
 
-Primary blue palette, teal accent, navy ink text, warm neutral backgrounds.
+**Hosted on Netlify.** Netlify builds and deploys automatically when `main` changes. Every pull request also gets its own **Deploy Preview** link, posted as a comment on the PR, for checking changes before they go live.
+
+- **Custom domain:** `riograndesmiles.com` (primary) + `www.riograndesmiles.com` (redirects)
+- **SSL:** Let's Encrypt, auto-renewing
+- **Build config:** `netlify.toml` (Node version, build command, and the 404 page rules)
+- **DNS registrar:** Squarespace Domains, with an A record + CNAME pointing to Netlify. DNS records and the Netlify site name are managed in the Netlify and Squarespace dashboards; see the Netlify project's Domain Management page for current values.
+
+**Netlify plan limits:** newer Netlify accounts use a credit-based free plan. Each deploy (including every PR preview) and every GB served spends credits, and the site pauses if the month's credits run out. Check the Netlify billing page if you make a lot of changes in one month, and batch small edits into one PR when you can.
+
+## Contact Form
+
+The form on `/contact/` (and `/es/contact/`) uses **Netlify Forms**: there's no server code. Netlify reads the form from the built HTML and stores submissions. The English form is named `contact` and the Spanish one `contact-es`.
+
+It only works if form detection is turned on in Netlify:
+
+1. In the Netlify dashboard, open the project → **Forms** → **Enable form detection**.
+2. Trigger a new deploy (Deploys → Trigger deploy), because Netlify only finds forms during a deploy.
+3. Check that the **Forms** page lists `contact` and `contact-es`.
+4. Add an email notification for new submissions (Project configuration → Notifications → **Form submission notifications**), so the office actually sees new messages. Otherwise they only appear in the dashboard.
+5. Send a test message from the live site and confirm it arrives.
+
+**How to tell it's working:** on the live site, Netlify removes the `data-netlify="true"` attribute from the `<form>` tag. If you view the page source and still see that attribute, form detection is off and submissions fail with a 404.
 
 ## Bilingual (EN/ES)
 
-- English pages at `/` (e.g., `/about`, `/services/crowns/`)
-- Spanish pages at `/es/` (e.g., `/es/about`, `/es/services/crowns/`)
-- Translation files: `src/i18n/en.json` and `src/i18n/es.json`
-- Translation utility: `src/i18n/utils.ts` — `useTranslations(locale)` returns a `t(key)` function
-- `hreflang` alternate links in `<head>` for SEO
-- Language toggle in nav links to the alternate URL (real navigation, not client-side swap)
+- English pages at `/` (e.g. `/about/`, `/services/crowns/`)
+- Spanish pages at `/es/` (e.g. `/es/about/`, `/es/services/crowns/`)
+- **Text:** `src/i18n/en.json` and `src/i18n/es.json`, which must have the same keys.
+- **Lookup:** `useTranslations(locale)` in `src/i18n/utils.ts` returns `t('some.key')` for text, and `t.list('some.key')` for lists such as reviews and FAQs. A missing key shows up on the page as the key itself, so look for stray `something.like.this` text after editing.
+- **Page files:** every page in `src/pages/` has a Spanish copy in `src/pages/es/`. They share components, but layout changes to a page must be made in both files.
+- `hreflang` links (including `x-default` → English) tell search engines which pages are translations of each other.
+- The language toggle in the nav links to the same page in the other language.
+
+## Services
+
+Each service is one YAML file in `src/content/services/`. The file name is the URL (`crowns.yaml` → `/services/crowns/`).
+
+```yaml
+order: 3          # position on the homepage and /services (must be unique)
+icon: crowns      # an icon name from src/lib/service-icons.ts
+en:
+  title: ...
+  summary: ...      # one line, shown on the service cards
+  description: ...  # intro paragraph on the service page
+  expect: ...       # "What to Expect" paragraph
+  benefits: [...]
+es:
+  ...same fields in Spanish...
+```
+
+- Adding a file adds the service everywhere: homepage grid, `/services`, its own page in both languages, the sitemap, and the homepage's service count.
+- The build fails if a language is missing, the icon name is unknown, or two services share an `order`.
+- The first service (Cleanings & Checkups) spans a full row on the grids, which keeps the remaining 12 cards in even rows. With a different number of services, check the grids at a few screen widths.
+- Icons are hand-drawn SVG line icons in `src/lib/service-icons.ts`, matching the style of Lucide icons.
 
 ## Project Structure
 
 ```
 src/
-├── components/       # Astro + React components
-│   ├── Nav.astro           # Sticky nav with blurred backdrop
-│   ├── Hero.astro          # Split hero — text left, doctor portrait right
-│   ├── TrustBar.astro      # Numeric stats strip (20+, 1200+, 12, 9)
-│   ├── DoctorProfile.astro # Editorial section — quote, bio, credentials
-│   ├── ServicesOverview.astro  # 12-card numbered grid
-│   ├── ReviewsSection.astro    # Dark bg, 3-column review cards
-│   ├── InsuranceGrid.astro     # Split layout, 3x3 provider grid
-│   ├── CtaBand.astro           # Full-width CTA — call/text/email
-│   ├── MapSection.astro        # Google Map + detail card
-│   ├── SectionTag.astro        # Reusable § label component
-│   ├── BookingSection.astro    # Call/text card (used on inner pages)
-│   ├── FinalCta.astro          # Simple CTA (used on financial-policy)
-│   ├── Footer.astro            # 4-column light footer
-│   ├── FAQAccordion.tsx        # React — collapsible FAQ
-│   ├── ReviewCarousel.tsx      # React — auto-rotating reviews (reviews page only)
-│   ├── GoogleMap.tsx           # React — embedded Google Maps iframe
-│   ├── MobileCtaBar.tsx        # React — sticky call/text bar (mobile)
-│   └── ...
-├── content/          # Astro content collections
-│   └── services/     # 12 service markdown files (extractions, fillings, etc.)
-├── i18n/             # Translation system
-│   ├── en.json
-│   ├── es.json
-│   └── utils.ts
+├── components/            # Shared pieces (.astro = static HTML, .tsx = React island)
+│   ├── Nav.astro               # Sticky nav; menu button below 1024px wide
+│   ├── Hero.astro              # Homepage hero with Dr. Vicuña's portrait
+│   ├── TrustBar.astro          # Homepage stats strip
+│   ├── ServicesOverview.astro  # Homepage services grid
+│   ├── ServicesGrid.astro      # /services grid
+│   ├── ServicePageLayout.astro # Layout for each service page
+│   ├── ServiceIcon.astro       # Renders an icon from lib/service-icons.ts
+│   ├── ReviewsSection.astro    # Homepage reviews
+│   ├── FAQAccordion.tsx        # React: collapsible FAQ
+│   ├── ReviewCarousel.tsx      # React: rotating reviews on /reviews
+│   ├── GoogleMap.astro         # Embedded map (no API key needed)
+│   ├── MobileCtaBar.astro      # Call/Text bar fixed to the bottom on phones
+│   ├── Footer.astro
+│   └── ...                     # Booking, CTA, insurance, and callout sections
+├── content/
+│   ├── config.ts          # Rules for the service files
+│   └── services/          # One YAML file per service (13)
+├── i18n/                  # en.json, es.json, utils.ts
 ├── layouts/
-│   └── BaseLayout.astro  # HTML shell — meta, fonts, nav, footer, mobile bar
-├── pages/            # File-based routing
-│   ├── index.astro        # EN homepage
-│   ├── about.astro
-│   ├── services/
-│   │   ├── index.astro    # Services grid
-│   │   └── [...slug].astro  # Dynamic service detail pages
-│   ├── insurance.astro
-│   ├── reviews.astro
-│   ├── contact.astro
-│   ├── faq.astro
-│   ├── new-patients.astro
-│   ├── affordable-care.astro
-│   ├── financial-policy.astro
-│   ├── 404.astro
-│   └── es/            # Spanish mirrors of all pages
+│   └── BaseLayout.astro   # HTML shell: SEO tags, nav, footer, mobile call bar
+├── lib/
+│   ├── services.ts        # getServices() and servicePath(); every service list uses these
+│   └── service-icons.ts   # The service icon set
+├── pages/                 # One file per page; es/ holds the Spanish copies
 └── styles/
-    └── global.css     # Font imports, oklch tokens, base styles, a11y
+    └── global.css         # Fonts, color variables, base styles
+public/                    # Copied to the site as is (images, forms, robots.txt)
+docs/                      # The original March 2026 redesign spec and plan (historical)
 ```
 
-## Pages (45 total)
+`docs/` records the original redesign. Some planned features, such as online scheduling through Weave, were never built, so treat it as history rather than a description of the current site.
+
+## Pages (48 built)
 
 | Page | EN | ES | Description |
 |------|----|----|-------------|
-| Homepage | `/` | `/es/` | Hero, trust strip, doctor, services, reviews, insurance, FAQ, CTA, map |
-| About | `/about` | `/es/about` | Doctor profile, credentials, practice story |
-| Services index | `/services/` | `/es/services/` | Grid of all 12 services |
-| Service detail (×12) | `/services/[slug]` | `/es/services/[slug]` | Individual service pages |
-| Insurance | `/insurance` | `/es/insurance` | How insurance works, provider grid |
-| Reviews | `/reviews` | `/es/reviews` | Review carousel + Google CTA |
-| Contact | `/contact` | `/es/contact` | Map, form, directions |
-| FAQ | `/faq` | `/es/faq` | 6 categories of questions |
-| New Patients | `/new-patients` | `/es/new-patients` | Forms, what to bring, first visit |
-| Affordable Care | `/affordable-care` | `/es/affordable-care` | Medicaid, pricing, resources |
-| Financial Policy | `/financial-policy` | `/es/financial-policy` | Payment, billing, cancellation |
-| 404 | `/404` | — | Error page |
+| Homepage | `/` | `/es/` | Hero, stats, doctor, services, reviews, insurance, FAQ, CTA, map |
+| About | `/about/` | `/es/about/` | Doctor profile, credentials, practice story |
+| Services index | `/services/` | `/es/services/` | Grid of all services |
+| Service pages (×13) | `/services/<slug>/` | `/es/services/<slug>/` | One per file in `src/content/services/` |
+| Insurance | `/insurance/` | `/es/insurance/` | How insurance works, accepted plans |
+| Reviews | `/reviews/` | `/es/reviews/` | Review carousel + link to Google reviews |
+| Contact | `/contact/` | `/es/contact/` | Contact form, map, directions |
+| FAQ | `/faq/` | `/es/faq/` | Six categories of questions |
+| New Patients | `/new-patients/` | `/es/new-patients/` | Forms, what to bring, first visit |
+| Affordable Care | `/affordable-care/` | `/es/affordable-care/` | Medicaid, pricing, resources |
+| Financial Policy | `/financial-policy/` | `/es/financial-policy/` | Payment, billing, cancellation |
+| Not found (404) | `/404` | `/es/404/` | Shown for any missing page; kept out of search results |
 
-## Development
+A sitemap (`/sitemap-index.xml`) is generated on every build. `@astrojs/sitemap` is pinned to `~3.2.1`, because newer versions require Astro 5.
 
-Requires **Node 24** (pinned in `.nvmrc` and `netlify.toml`).
+## Fonts (self-hosted)
 
-```bash
-# Install dependencies
-npm install
+- **Newsreader**: headings (serif, `@fontsource-variable/newsreader`)
+- **Inter Tight**: body text (sans, `@fontsource-variable/inter-tight`)
+- **JetBrains Mono**: small decorative labels (`@fontsource/jetbrains-mono`)
 
-# Dev server (http://localhost:4321)
-npm run dev
+All fonts are bundled in the build; nothing loads from Google Fonts.
 
-# Type check
-npx astro check
+## Color System
 
-# Build (outputs to dist/). Runs the type check first and stops on any type error,
-# so a broken build fails on Netlify instead of deploying.
-npm run build
+Colors are defined in two places, so change both:
+- **`tailwind.config.mjs`**: values for Tailwind classes (`bg-primary-500`, `text-ink`, etc.)
+- **`src/styles/global.css`**: OKLCH CSS variables for gradients and `color-mix()` effects
 
-# Preview build locally
-npx serve dist -l 4000
-```
+The palette is a primary blue, a teal accent, navy text, and warm neutral backgrounds. The main blue (`#186db9`) and the light gray text (`ink-3`) were darkened so text meets the WCAG AA contrast standard. Check contrast before lightening them.
 
-## Deployment
+## Photos and Images
 
-**Hosted on Netlify** (free tier). Deploys automatically on push to `main`.
-
-- **Custom domain:** `riograndesmiles.com` (primary) + `www.riograndesmiles.com` (redirects)
-- **SSL:** Let's Encrypt, auto-renewing
-- **Build config:** `netlify.toml` in repo root
-- **DNS registrar:** Squarespace Domains — A record + CNAME pointing to Netlify
-
-### To redeploy
-
-Push to `main` — Netlify auto-builds. Or trigger manually in the Netlify dashboard under Deploys.
-
-### DNS / domain changes
-
-DNS records and Netlify site name are managed via the Netlify and Squarespace dashboards. See your Netlify project's Domain Management page for current values.
-
-## Photos
-
-Two photos are in use, plus icons, logos, and the social share image:
-- `public/img/doctor-headshot.png` — Dr. Vicuña's headshot (hero + about page)
-- `public/img/albuquerque-skyline.jpg` — Albuquerque skyline (hero background)
-- `public/img/services/` — Old service images (not currently used — replaced by the line icons in `src/lib/service-icons.ts`)
-- `public/img/*.png` — Insurance provider logos (not currently used — switched to text grid)
-- `public/og-image.jpg` — 1200×630 link-preview image for social media and messaging apps (built from the two photos above)
+- `public/img/doctor-headshot.png`: Dr. Vicuña's headshot (homepage hero + about page)
+- `public/img/albuquerque-skyline.jpg`: Albuquerque skyline (hero background)
+- `public/og-image.jpg`: the 1200×630 preview image shown when a link is shared in texts or social media (built from the two photos above)
+- `public/img/services/`: old service images (not used; replaced by the line icons)
+- `public/img/*.png`: insurance logos (not used; the site lists insurers as text)
 
 ## Patient Forms
 
 The blank forms linked from the New Patients page (English and Spanish) are served from the site itself:
-- `public/forms/medical-history.pdf` — Medical History
-- `public/forms/patient-registration.pdf` — Patient Registration
+- `public/forms/medical-history.pdf`: Medical History
+- `public/forms/patient-registration.pdf`: Patient Registration
 
-To update a form, replace the PDF and keep the same file name, so the links keep working. Only post blank forms.
+To update a form, replace the PDF and keep the same file name, so the links keep working. Only post blank forms. (These used to be hosted on Firebase Storage, which stopped working when Firebase ended free-plan storage.)
 
 ## Contact Info (hardcoded)
 
-- **Phone:** (505) 877-1113 — used in `tel:+15058771113` and `sms:+15058771113` links
+- **Phone:** (505) 877-1113, used in `tel:+15058771113` and `sms:+15058771113` links
 - **Email:** emersonvicunadds@gmail.com
 - **Address:** 3200 Coors Blvd NW Suite F, Albuquerque, NM 87120
 - **Hours:** Mon–Thu 9am–5pm, Fri–Sun closed
 
 If any of these change, update:
 1. `src/i18n/en.json` and `es.json` (display text)
-2. Component files that hardcode `tel:` / `sms:` / `mailto:` links
-3. `src/pages/index.astro` JSON-LD structured data
+2. The `tel:` / `sms:` / `mailto:` links. To find every one: `grep -rn "tel:\|sms:\|mailto:" src`
+3. The structured data for Google (`application/ld+json`) in `src/pages/index.astro` and `src/pages/es/index.astro`
+4. The map address in `src/components/GoogleMap.astro`, if the office moves
