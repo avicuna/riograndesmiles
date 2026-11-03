@@ -12,7 +12,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.12",
     "@astrojs/react": "^3.0.0",
-    "@astrojs/sitemap": "^3.1.0",
+    "@astrojs/sitemap": "~3.2.1",
     "@astrojs/tailwind": "^5.0.0",
     "@fontsource-variable/inter-tight": "^5.2.7",
     "@fontsource-variable/newsreader": "^5.2.10",
