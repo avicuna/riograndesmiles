@@ -58,7 +58,7 @@ The form on `/contact/` and `/es/contact/` (`src/components/ContactForm.astro`) 
 
 - **Account:** the Web3Forms account belongs to the office email. Sign in at [app.web3forms.com](https://app.web3forms.com) with that address (it emails a one-time code) to change settings or see the last 30 days of messages. The emails in the office inbox are the permanent record.
 - **Access key:** written in `ContactForm.astro`. It's public by design: it can only send messages to the office inbox. If you ever need a new one, create it in the Web3Forms dashboard and replace it there.
-- **Subject line:** messages arrive as "New message from riograndesmiles.com", with "(Spanish page)" added for the Spanish form. Replies go straight to the patient's email address.
+- **Subject line:** messages arrive as "New message from riograndesmiles.com", with "(Spanish page)" added for the Spanish form. The patient's email address is in the message; reply to that address.
 - **Spam:** a hidden `botcheck` checkbox catches simple bots, and Web3Forms filters the rest.
 - **Limit:** the free plan allows 250 messages a month. Web3Forms emails a warning at 90%, and stops accepting messages at 100% until the next month.
 - **Privacy:** the note under the message box asks patients not to include medical details, because messages pass through Web3Forms and Gmail.
