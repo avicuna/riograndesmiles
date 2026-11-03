@@ -10,10 +10,16 @@ const tooth = (transform = '', scale = 1) =>
   `<path d="${TOOTH}"${transform ? ` transform="${transform}" stroke-width="${+(1.6 / scale).toFixed(2)}"` : ''}/>`;
 const sparkle = (x: number, y: number, r: number) =>
   `<path d="M${x} ${y - r}l${r * 0.3} ${r * 0.7} ${r * 0.7} ${r * 0.3}-${r * 0.7} ${r * 0.3}-${r * 0.3} ${r * 0.7}-${r * 0.3}-${r * 0.7}-${r * 0.7}-${r * 0.3} ${r * 0.7}-${r * 0.3}Z" fill="currentColor"/>`;
-// Upper denture seen from the front: gum band with a row of teeth.
-const DENTURE_GUM = '<path d="M3 7.5c3.5-2.7 14.5-2.7 18 0V10c-3.5 1.4-14.5 1.4-18 0Z"/>';
-const DENTURE_TEETH =
-  '<path d="M4.6 10.8v3.4a1.6 1.6 0 0 0 3.2 0v-2.9M7.8 11.3v4.3a1.6 1.6 0 0 0 3.2 0v-4.1M11 11.5v4.6a1.6 1.6 0 0 0 3.2 0v-4.6M14.2 11.5v4.1a1.6 1.6 0 0 0 3.2 0v-4.3M17.4 11.3v2.9a1.6 1.6 0 0 0 3.2 0v-3.4"/>';
+// Full denture, front view (the usual way false teeth are drawn): upper gum and teeth,
+// a bite gap, then lower teeth and gum.
+const DENTURES =
+  '<path d="M2.5 7.2V5.3c0-.8.5-1.4 1.3-1.6C5.6 3.3 8.4 3 12 3s6.4.3 8.2.7c.8.2 1.3.8 1.3 1.6v1.9Z"/>' +
+  '<path d="M3.6 7.2v1.5a2.1 2.1 0 0 0 4.2 0V7.2M7.8 7.2v1.5a2.1 2.1 0 0 0 4.2 0V7.2M12.0 7.2v1.5a2.1 2.1 0 0 0 4.2 0V7.2M16.2 7.2v1.5a2.1 2.1 0 0 0 4.2 0V7.2"/>' +
+  '<path d="M3.6 16.8v-1.5a2.1 2.1 0 0 1 4.2 0v1.5M7.8 16.8v-1.5a2.1 2.1 0 0 1 4.2 0v1.5M12.0 16.8v-1.5a2.1 2.1 0 0 1 4.2 0v1.5M16.2 16.8v-1.5a2.1 2.1 0 0 1 4.2 0v1.5"/>' +
+  '<path d="M2.5 16.8v1.9c0 .8.5 1.4 1.3 1.6 1.8.4 4.6.7 8.2.7s6.4-.3 8.2-.7c.8-.2 1.3-.8 1.3-1.6v-1.9Z"/>';
+// Wrench adapted from Lucide (https://lucide.dev), ISC License, Copyright (c) Lucide Contributors.
+const WRENCH =
+  '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z"/>';
 
 export const serviceIcons = {
   cleanings:
@@ -25,10 +31,13 @@ export const serviceIcons = {
     '<rect x="3" y="4.5" width="6" height="7" rx="2.2"/><rect x="9" y="4.5" width="6" height="7" rx="2.2"/><rect x="15" y="4.5" width="6" height="7" rx="2.2"/><path d="M4.8 11.5l.9 7.3M7.3 11.5l-.4 7.3M16.7 11.5l.4 7.3M19.2 11.5l-.9 7.3"/>',
   implants:
     '<path d="M7.2 3.2h9.6a1.7 1.7 0 0 1 1.7 1.7v2.2a2.6 2.6 0 0 1-2.6 2.6H8.1a2.6 2.6 0 0 1-2.6-2.6V4.9a1.7 1.7 0 0 1 1.7-1.7Z"/><path d="M10.2 9.7v2.1h3.6V9.7M10 11.8h4l-.6 9h-2.8Z"/><path d="M9.2 14.6h5.6M9.5 17.5h5"/>',
-  dentures: DENTURE_GUM + DENTURE_TEETH,
-  partials:
-    '<path d="M7 8h10v2.8H7Z"/><path d="M8.2 10.8v4a1.9 1.9 0 0 0 3.8 0v-4M12 10.8v4a1.9 1.9 0 0 0 3.8 0v-4"/><path d="M7 9.4H4.4a1.9 1.9 0 0 0 0 3.8M17 9.4h2.6a1.9 1.9 0 0 1 0 3.8"/>',
-  'denture-repair': DENTURE_GUM + DENTURE_TEETH + '<path d="M12.6 4.6l-1.2 2.1 1.4 1.5-1.1 2.4" stroke-width="1.4"/>',
+  dentures: DENTURES,
+  partials: '<g transform="translate(12 12) scale(1.15) translate(-12 -11.4)" stroke-width="1.39">' +
+    '<path d="M2.5 11.2V9.3c0-.8.5-1.4 1.3-1.6C5.6 7.3 8.4 7 12 7s6.4.3 8.2.7c.8.2 1.3.8 1.3 1.6v1.9Z"/>' +
+    '<path d="M7.8 11.2v1.5a2.1 2.1 0 0 0 4.2 0v-1.5M12.0 11.2v1.5a2.1 2.1 0 0 0 4.2 0v-1.5"/>' +
+    '<path d="M4.6 11.2v2.3a1.3 1.3 0 0 0 2.6 0M19.4 11.2v2.3a1.3 1.3 0 0 1-2.6 0"/></g>',
+  'denture-repair': `<g transform="translate(0 6.2) scale(.74)" stroke-width="2.16">${DENTURES}</g>` +
+    `<g transform="translate(12.6 0) scale(.5)" stroke-width="3.2">${WRENCH}</g>`,
   bleaching: tooth('translate(-1.4 1.6) scale(.9)', 0.9) + sparkle(19.2, 4.2, 2.6) + sparkle(15.5, 2.4, 1.3),
   veneers: tooth() + '<path d="M6.1 8.3c0-1.9 1.2-3 2.9-3 1.2 0 1.9.6 3 .6s1.8-.6 3-.6c1.7 0 2.9 1.1 2.9 3"/>',
   'root-canals': tooth() + '<path d="M9.4 9.4c1.7 1 3.5 1 5.2 0M10 10.2l.6 7.8M14 10.2l-.6 7.8"/>',
