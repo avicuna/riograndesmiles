@@ -7,20 +7,8 @@ import BookingSection from '../../components/BookingSection.astro';
 const locale = 'es';
 const t = useTranslations(locale);
 
-const reviews = [
-  {
-    text: "Muy profesional y siguiendo las medidas más seguras. Recomendaría este lugar dental a cualquiera. ¡El Dr. Vicuña y su personal son número 1!",
-    author: "Rafael Contreras",
-  },
-  {
-    text: "Muy útil y trabajo profesional.",
-    author: "Carlos Alvarez",
-  },
-  {
-    text: "¡Me encanta el Dr. Vicuña! Es tan gentil y su personal es tan amable. ¡He estado viniendo aquí por años y no iría a ningún otro lugar!",
-    author: "Clorinda Olguin",
-  },
-];
+// Same reviews as the homepage section (src/i18n/*.json → reviews.items)
+const reviews = t.list<{ text: string; author: string; meta: string }>('reviews.items');
 ---
 
 <BaseLayout

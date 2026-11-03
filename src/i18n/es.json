@@ -267,18 +267,14 @@
     "title": "Reseñas de Pacientes",
     "label": "Reseñas de Pacientes",
     "heading": "Familias que nos han confiado su sonrisa.",
-    "sub": "Reseñas verificadas de pacientes en Albuquerque.",
+    "sub": "Reseñas de nuestros pacientes en Google, traducidas del inglés.",
     "shareExperience": "¡Nos encantaría saber sobre su experiencia! Déjenos una reseña en Google.",
     "pageDescription": "Lea lo que nuestros pacientes tienen que decir sobre su experiencia con el Dr. Vicuña y el equipo de Rio Grande Smiles.",
-    "review1": "Muy profesional y siguiendo las medidas más seguras para el cuidado dental. Personal amable, sin duda fue una gran experiencia.",
-    "review1Author": "Rafael Contreras",
-    "review1Meta": "Google · Paciente desde 2019",
-    "review2": "¡Me encanta el Dr. Vicuña! Es muy gentil y muy bueno en lo que hace. He sido su paciente por al menos 7 años y no iría a ningún otro lugar.",
-    "review2Author": "Clorinda Olguín",
-    "review2Meta": "Google · Paciente desde 2017",
-    "review3": "Trabajo muy útil y profesional. Me explicaron el procedimiento claramente y me sentí completamente a gusto.",
-    "review3Author": "Carlos Álvarez",
-    "review3Meta": "Google · Paciente desde 2022"
+    "items": [
+      { "text": "Muy profesional y siguiendo las medidas más seguras para el cuidado dental. Personal amable. Sin duda, fue una gran experiencia.", "author": "Rafael Contreras", "meta": "Google · Paciente desde 2019" },
+      { "text": "¡Me encanta el Dr. Vicuña! Es tan gentil y tan bueno en lo que hace. Llevo al menos 7 años con él y no iría a ningún otro lugar.", "author": "Clorinda Olguin", "meta": "Google · Paciente desde 2017" },
+      { "text": "Trabajo muy útil y profesional.", "author": "Carlos Alvarez", "meta": "Google · Paciente desde 2022" }
+    ]
   },
   "location": {
     "heading": "Venga a vernos en el oeste de Albuquerque.",
