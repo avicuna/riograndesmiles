@@ -15,7 +15,7 @@
   },
   "header": {
     "location": "Albuquerque, New Mexico",
-    "description": "Dr. Vicuña and his team provide exceptional dental care to keep your smile healthy and strong for life. For over 20 years we have established trusting relationships with our patients where we can contribute to the overall well-being of all our patients. Using proven techniques for general, cosmetic, and restorative dentistry, we'll personalize a treatment plan that meets your unique goals. From checkups, to aesthetic enhancements, to comprehensive restorations, Dr. Vicuna will perform your dental work with skill and precision."
+    "description": "Dr. Vicuña and his team provide exceptional dental care to keep your smile healthy and strong for life. For over 20 years we have established trusting relationships with our patients where we can contribute to the overall well-being of all our patients. Using proven techniques for general, cosmetic, and restorative dentistry, we'll personalize a treatment plan that meets your unique goals. From checkups, to aesthetic enhancements, to comprehensive restorations, Dr. Vicuña will perform your dental work with skill and precision."
   },
   "hero": {
     "eyebrow": "Family dentistry · Albuquerque, NM",
@@ -54,21 +54,7 @@
   },
   "servicesOverview": {
     "heading": "Everything your family needs, under one roof.",
-    "sub": "From a routine cleaning to a complete restoration — with clear explanations and honest pricing, before we begin.",
-    "items": [
-      { "num": "01", "key": "cleanings", "title": "Cleanings & Checkups", "desc": "Preventive care to keep your smile strong — for you and your whole family." },
-      { "num": "02", "key": "fillings", "title": "Fillings", "desc": "Restore decayed teeth with tooth-colored, natural-looking materials." },
-      { "num": "03", "key": "crowns", "title": "Crowns", "desc": "Custom caps that restore shape, size, and strength to a damaged tooth." },
-      { "num": "04", "key": "bridges", "title": "Bridges", "desc": "Replace missing teeth by anchoring to adjacent healthy teeth." },
-      { "num": "05", "key": "implants", "title": "Implants", "desc": "Titanium roots placed in the jaw — a permanent solution for missing teeth." },
-      { "num": "06", "key": "dentures", "title": "Dentures", "desc": "Full or partial removable prosthetics, custom-fit to your mouth." },
-      { "num": "07", "key": "partials", "title": "Partials", "desc": "When you still have natural teeth, partials fill in the gaps comfortably." },
-      { "num": "08", "key": "repair", "title": "Denture Repair", "desc": "We fix broken or damaged dentures so they keep working comfortably." },
-      { "num": "09", "key": "whitening", "title": "Whitening", "desc": "Safe cosmetic treatment that brightens and whitens your smile." },
-      { "num": "10", "key": "veneers", "title": "Veneers", "desc": "Thin porcelain shells that transform the look of your front teeth." },
-      { "num": "11", "key": "root", "title": "Root Canals", "desc": "Endodontic treatment to save a badly decayed or infected tooth." },
-      { "num": "12", "key": "extraction", "title": "Extractions & Wisdom Teeth", "desc": "Routine extractions and wisdom tooth removal, with your comfort first." }
-    ]
+    "sub": "From a routine cleaning to a complete restoration — with clear explanations and honest pricing, before we begin."
   },
   "doctorProfile": {
     "heading": "Over two decades caring for smiles in Albuquerque.",

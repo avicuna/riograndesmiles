@@ -1,0 +1,23 @@
+# /services/bleaching/ and /es/services/bleaching/
+order: 9
+icon: "💎"
+en:
+  title: "Teeth Whitening"
+  summary: "Safe cosmetic treatment that brightens and whitens your smile."
+  description: "Teeth whitening or bleaching is a cosmetic procedure that brightens teeth using safe bleaching agents to enhance your smile."
+  expect: "Professional teeth whitening delivers dramatic results in a single visit. Dr. Vicuña will apply a professional-grade whitening gel to your teeth and monitor the process carefully. You can expect your teeth to brighten several shades in about an hour, with results that last for months."
+  benefits:
+    - "Noticeably whiter teeth in just one office visit"
+    - "Safe, professionally monitored treatment"
+    - "Boosts confidence and enhances your overall appearance"
+    - "Long-lasting results with proper maintenance"
+es:
+  title: "Blanqueamiento dental"
+  summary: "Tratamiento estético seguro que aclara y blanquea su sonrisa."
+  description: "El blanqueamiento dental es un procedimiento estético que aclara los dientes con agentes blanqueadores seguros para mejorar su sonrisa."
+  expect: "El blanqueamiento dental profesional ofrece resultados notables en una sola visita. El Dr. Vicuña aplicará un gel blanqueador de uso profesional en sus dientes y vigilará el proceso con cuidado. Puede esperar que sus dientes se aclaren varios tonos en aproximadamente una hora, con resultados que duran meses."
+  benefits:
+    - "Dientes notablemente más blancos en una sola visita"
+    - "Tratamiento seguro y supervisado por un profesional"
+    - "Aumenta su confianza y mejora su apariencia"
+    - "Resultados duraderos con el cuidado adecuado"

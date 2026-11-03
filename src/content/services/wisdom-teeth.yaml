@@ -1,0 +1,23 @@
+# /services/wisdom-teeth/ and /es/services/wisdom-teeth/
+order: 13
+icon: "🦷"
+en:
+  title: "Wisdom Teeth"
+  summary: "Removal of wisdom teeth that cause pain, crowding, or infection."
+  description: "Wisdom teeth extraction is a common procedure to remove one or more of the four third molars, which can cause pain or dental issues."
+  expect: "Wisdom teeth removal is a routine procedure that prevents future dental problems. Dr. Vicuña will take X-rays to assess the position of your wisdom teeth and plan the extraction. The area is numbed completely, and the teeth are carefully removed. Most patients recover within a few days with the help of our detailed aftercare instructions."
+  benefits:
+    - "Prevents crowding and shifting of existing teeth"
+    - "Eliminates pain and discomfort from impacted wisdom teeth"
+    - "Reduces the risk of infection and cysts in the jaw"
+    - "Common, well-established procedure with predictable recovery"
+es:
+  title: "Muelas del juicio"
+  summary: "Extracción de muelas del juicio que causan dolor, apiñamiento o infección."
+  description: "La extracción de muelas del juicio es un procedimiento común para retirar uno o más de los cuatro terceros molares, que pueden causar dolor u otros problemas dentales."
+  expect: "La extracción de muelas del juicio es un procedimiento de rutina que previene problemas dentales en el futuro. El Dr. Vicuña tomará radiografías para evaluar la posición de sus muelas del juicio y planear la extracción. La zona se anestesia por completo y las muelas se retiran con cuidado. La mayoría de los pacientes se recupera en pocos días con la ayuda de nuestras instrucciones detalladas de cuidado posterior."
+  benefits:
+    - "Evita el apiñamiento y el desplazamiento de los demás dientes"
+    - "Elimina el dolor y las molestias de las muelas del juicio impactadas"
+    - "Reduce el riesgo de infección y de quistes en la mandíbula"
+    - "Procedimiento común y bien establecido, con una recuperación predecible"

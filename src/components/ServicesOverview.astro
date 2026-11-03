@@ -2,22 +2,13 @@
 import type { Locale } from '../i18n/utils';
 import { useTranslations } from '../i18n/utils';
 import SectionTag from './SectionTag.astro';
+import { getServices, servicePath } from '../lib/services';
 
 interface Props { locale: Locale; }
 const { locale } = Astro.props;
 const t = useTranslations(locale);
 
-// Service items are stored as an array in i18n
-const items = t.list<{ num: string; key: string; title: string; desc: string }>('servicesOverview.items');
-
-// Map service keys to their URL slugs
-const slugMap: Record<string, string> = {
-  cleanings: 'extractions', fillings: 'fillings', crowns: 'crowns',
-  bridges: 'bridges', implants: 'implants', dentures: 'dentures',
-  partials: 'partials', repair: 'denture-repair', whitening: 'bleaching',
-  veneers: 'veneers', root: 'root-canals', extraction: 'extractions'
-};
-const prefix = locale === 'es' ? '/es' : '';
+const services = await getServices();
 ---
 
 <section class="bg-bg-warm py-[100px]">
@@ -35,30 +26,38 @@ const prefix = locale === 'es' ? '/es' : '';
       </p>
     </div>
 
-    {/* Services grid — bg-line acts as the 1px gap color */}
+    {/* Services grid — bg-line acts as the 1px gap color. The first service (Cleanings & Checkups)
+        spans the full row, leaving 12 cards that fill 2- and 3-column rows evenly. */}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-line gap-px border border-line rounded-lg overflow-hidden">
-      {items.map((item) => (
-        <a
-          href={`${prefix}/services/${slugMap[item.key] || item.key}/`}
-          class="group bg-bg-card p-8 flex flex-col gap-3 min-h-[220px] transition-colors hover:bg-primary-50 cursor-pointer no-underline"
-        >
-          {/* Title with number */}
-          <h3 class="font-display text-[1.4rem] font-medium text-ink">
-            <span class="font-mono text-[0.72rem] text-primary-500 tracking-wide mr-2">{item.num}</span>
-            {item.title}
-          </h3>
+      {services.map((service, i) => {
+        const text = service.data[locale];
+        const lead = i === 0;
+        return (
+          <a
+            href={servicePath(service, locale)}
+            class:list={[
+              'group bg-bg-card p-8 flex gap-3 transition-colors hover:bg-primary-50 cursor-pointer no-underline',
+              lead ? 'md:col-span-2 lg:col-span-3 flex-col md:flex-row md:items-center md:gap-10' : 'flex-col min-h-[220px]',
+            ]}
+          >
+            {/* Title with number */}
+            <h3 class:list={['font-display font-medium text-ink', lead ? 'text-[1.75rem] md:w-[22rem] md:shrink-0' : 'text-[1.4rem]']}>
+              <span class="font-mono text-[0.72rem] text-primary-500 tracking-wide mr-2">{String(i + 1).padStart(2, '0')}</span>
+              {text.title}
+            </h3>
 
-          {/* Description */}
-          <p class="text-[0.93rem] text-ink-3 leading-relaxed">
-            {item.desc}
-          </p>
+            {/* Description */}
+            <p class:list={['text-ink-3 leading-relaxed', lead ? 'text-[1rem] md:flex-1' : 'text-[0.93rem]']}>
+              {text.summary}
+            </p>
 
-          {/* Arrow button — always visible */}
-          <div class="mt-auto w-8 h-8 rounded-full bg-bg-warm grid place-items-center text-ink-2 group-hover:bg-primary-500 group-hover:text-white group-hover:translate-x-[3px] group-hover:-translate-y-[3px] transition-all">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
-          </div>
-        </a>
-      ))}
+            {/* Arrow button — always visible */}
+            <div class:list={['w-8 h-8 rounded-full bg-bg-warm grid place-items-center text-ink-2 group-hover:bg-primary-500 group-hover:text-white group-hover:translate-x-[3px] group-hover:-translate-y-[3px] transition-all', lead ? 'mt-auto md:mt-0 shrink-0' : 'mt-auto']}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </div>
+          </a>
+        );
+      })}
     </div>
   </div>
 </section>

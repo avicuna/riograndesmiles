@@ -1,0 +1,23 @@
+# /services/fillings/ and /es/services/fillings/
+order: 2
+icon: "✨"
+en:
+  title: "Fillings"
+  summary: "Restore decayed teeth with tooth-colored, natural-looking materials."
+  description: "Fillings are used to restore a tooth damaged by decay. The dentist removes the decayed portion of the tooth and fills it with a material that matches your tooth color."
+  expect: "Getting a filling is one of the most common dental procedures. Dr. Vicuña will gently numb the area, remove any decay, and place a tooth-colored composite filling that blends naturally with your smile. The entire process typically takes 30–45 minutes."
+  benefits:
+    - "Stops decay from progressing further into the tooth"
+    - "Restores tooth strength and normal chewing function"
+    - "Tooth-colored materials blend seamlessly with your natural teeth"
+    - "Prevents the need for more extensive treatment later"
+es:
+  title: "Rellenos"
+  summary: "Restaure dientes con caries usando materiales del color natural del diente."
+  description: "Los rellenos se utilizan para restaurar un diente dañado por caries. El dentista elimina la parte afectada del diente y la rellena con un material del mismo color que su diente."
+  expect: "Un relleno es uno de los procedimientos dentales más comunes. El Dr. Vicuña anestesiará la zona con cuidado, eliminará la caries y colocará un relleno de resina del color del diente que se integra de forma natural con su sonrisa. Todo el proceso suele durar entre 30 y 45 minutos."
+  benefits:
+    - "Detiene el avance de la caries dentro del diente"
+    - "Devuelve la resistencia al diente y la función normal al masticar"
+    - "Los materiales del color del diente se integran con sus dientes naturales"
+    - "Evita tratamientos más complejos en el futuro"
