@@ -3,7 +3,7 @@ import type { Locale } from '../i18n/utils';
 import { getAlternatePath } from '../i18n/utils';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import MobileCtaBar from '../components/MobileCtaBar';
+import MobileCtaBar from '../components/MobileCtaBar.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -11,13 +11,20 @@ interface Props {
   description: string;
   locale?: Locale;
   canonicalPath: string;
+  /** Keep the page out of search results (the 404 pages). */
+  noindex?: boolean;
 }
 
-const { title, description, locale = 'en', canonicalPath } = Astro.props;
+const { title, description, locale = 'en', canonicalPath, noindex = false } = Astro.props;
 const site = Astro.site?.toString().replace(/\/$/, '') ?? 'https://riograndesmiles.com';
-const canonicalUrl = `${site}${canonicalPath}`;
-const alternatePath = getAlternatePath(canonicalPath, locale);
-const alternateUrl = `${site}${alternatePath}`;
+// Pages are served with a trailing slash: /about redirects to /about/. Canonical and hreflang
+// URLs must name the final address (as the sitemap does), not one that redirects.
+const withSlash = (path: string) => (path.endsWith('/') || path.endsWith('.html') ? path : `${path}/`);
+const canonicalUrl = `${site}${withSlash(canonicalPath)}`;
+const alternateUrl = `${site}${withSlash(getAlternatePath(canonicalPath, locale))}`;
+const englishUrl = locale === 'en' ? canonicalUrl : alternateUrl;
+const skipLabel = locale === 'es' ? 'Saltar al contenido principal' : 'Skip to main content';
+// <body> gets bottom padding on phones so the fixed call bar never covers the end of the footer.
 const ogImage = `${site}/og-image.jpg`; // public/og-image.jpg, 1200×630
 const ogImageAlt = 'Rio Grande Smiles: Dr. Emerson Vicuña, DDS, Albuquerque, NM';
 ---
@@ -30,14 +37,21 @@ const ogImageAlt = 'Rio Grande Smiles: Dr. Emerson Vicuña, DDS, Albuquerque, NM
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
     {/* Fonts — self-hosted via @fontsource (imported in global.css) */}
-    <meta name="theme-color" content="#2b7cc9" />
+    <meta name="theme-color" content="#186db9" />
 
     {/* SEO */}
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonicalUrl} />
-    <link rel="alternate" hreflang={locale === 'en' ? 'es' : 'en'} href={alternateUrl} />
-    <link rel="alternate" hreflang={locale} href={canonicalUrl} />
+    {noindex ? (
+      <meta name="robots" content="noindex" />
+    ) : (
+      <>
+        <link rel="canonical" href={canonicalUrl} />
+        <link rel="alternate" hreflang={locale === 'en' ? 'es' : 'en'} href={alternateUrl} />
+        <link rel="alternate" hreflang={locale} href={canonicalUrl} />
+        <link rel="alternate" hreflang="x-default" href={englishUrl} />
+      </>
+    )}
 
     {/* Open Graph */}
     <meta property="og:type" content="website" />
@@ -56,15 +70,15 @@ const ogImageAlt = 'Rio Grande Smiles: Dr. Emerson Vicuña, DDS, Albuquerque, NM
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content={ogImageAlt} />
   </head>
-  <body class="font-sans text-ink-2 bg-bg">
+  <body class="font-sans text-ink-2 bg-bg pb-[70px] md:pb-0">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-primary-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-semibold">
-      Skip to main content
+      {skipLabel}
     </a>
     <Nav locale={locale} />
-    <main id="main-content" class="pb-[70px] md:pb-0">
+    <main id="main-content">
       <slot />
     </main>
     <Footer locale={locale} />
-    <MobileCtaBar client:media="(max-width: 768px)" />
+    <MobileCtaBar locale={locale} />
   </body>
 </html>

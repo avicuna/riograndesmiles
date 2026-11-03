@@ -5,11 +5,20 @@ interface Review {
   author: string;
 }
 
-interface Props {
-  reviews: Review[];
+interface Labels {
+  previous: string;
+  next: string;
+  goTo: string; // "{n}" is replaced with the review number
 }
 
-export default function ReviewCarousel({ reviews }: Props) {
+interface Props {
+  reviews: Review[];
+  labels?: Labels;
+}
+
+const englishLabels: Labels = { previous: 'Previous review', next: 'Next review', goTo: 'Go to review {n}' };
+
+export default function ReviewCarousel({ reviews, labels = englishLabels }: Props) {
   const [current, setCurrent] = useState(0);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const pausedRef = useRef(false);
@@ -79,7 +88,7 @@ export default function ReviewCarousel({ reviews }: Props) {
       {/* Prev button */}
       <button
         onClick={prev}
-        aria-label="Previous review"
+        aria-label={labels.previous}
         className="absolute left-3 top-1/2 -translate-y-1/2 bg-primary-500/90 hover:bg-primary-700 text-white w-10 h-10 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center z-10 cursor-pointer transition-colors"
       >
         ❮
@@ -88,7 +97,7 @@ export default function ReviewCarousel({ reviews }: Props) {
       {/* Next button */}
       <button
         onClick={next}
-        aria-label="Next review"
+        aria-label={labels.next}
         className="absolute right-3 top-1/2 -translate-y-1/2 bg-primary-500/90 hover:bg-primary-700 text-white w-10 h-10 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center z-10 cursor-pointer transition-colors"
       >
         ❯
@@ -111,7 +120,7 @@ export default function ReviewCarousel({ reviews }: Props) {
           <button
             key={index}
             onClick={() => goTo(index)}
-            aria-label={`Go to review ${index + 1}`}
+            aria-label={labels.goTo.replace('{n}', String(index + 1))}
             className={`w-2.5 h-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center cursor-pointer bg-transparent border-0 p-0`}
           >
             <span

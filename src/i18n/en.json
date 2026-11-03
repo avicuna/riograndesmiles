@@ -6,7 +6,11 @@
     "insurance": "Insurance",
     "contact": "Contact",
     "langSwitch": "Español",
-    "brandSub": "Dr. Vicuña · DDS"
+    "brandSub": "Dr. Vicuña · DDS",
+    "newPatients": "New Patients",
+    "menu": "Menu",
+    "callAria": "Call (505) 877-1113",
+    "switchLangAria": "Ver esta página en español"
   },
   "formsCallout": {
     "heading": "Download Your Patient Forms",

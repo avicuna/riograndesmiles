@@ -1,0 +1,23 @@
+---
+// Embedded Google Map of the office. A plain iframe: no JavaScript needed.
+import type { Locale } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const es = locale === 'es';
+const src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3263.5!2d-106.7256!3d35.1095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87220b8edfa2b0f1%3A0x5c7b0ea8c8f1a0a!2s3200+Coors+Blvd+NW+%23F%2C+Albuquerque%2C+NM+87120!5e0!3m2!1sen!2sus'.replace('!1sen!2sus', es ? '!1ses!2sus' : '!1sen!2sus');
+---
+
+<iframe
+  src={src}
+  width="100%"
+  height="100%"
+  style="border: 0; min-height: 380px"
+  allowfullscreen
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"
+  title={es ? 'Mapa de la ubicación de Rio Grande Smiles' : 'Rio Grande Smiles office location map'}
+></iframe>

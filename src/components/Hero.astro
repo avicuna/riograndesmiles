@@ -80,7 +80,7 @@ const chips = [
       </div>
 
       {/* Right — portrait */}
-      <div class="relative aspect-[4/5] max-w-[520px] mx-auto lg:mx-0">
+      <div class="relative w-full aspect-[4/5] max-w-[520px] mx-auto lg:mx-0">
         {/* Portrait card */}
         <div class="absolute inset-0 rounded-md overflow-hidden bg-bg-warm border border-line-2">
           <img
@@ -92,11 +92,10 @@ const chips = [
         </div>
 
         {/* 20+ years badge */}
-        <div class="absolute -bottom-5 -left-5 w-[130px] h-[130px] rounded-full bg-ink grid place-items-center text-center font-display shadow-[0_20px_40px_-10px_rgba(26,35,50,0.25)]"
-             aria-label={`20+ ${t('hero.chipExperience')}`}>
+        <div class="absolute -bottom-5 -left-5 w-[130px] h-[130px] rounded-full bg-ink grid place-items-center text-center font-display shadow-[0_20px_40px_-10px_rgba(26,35,50,0.25)]">
           <div>
             <div class="text-[2.8rem] leading-none font-normal italic text-bg-card">20<sup class="text-[0.5em] font-normal">+</sup></div>
-            <div class="text-[0.62rem] uppercase tracking-[0.12em] font-sans mt-1 text-bg-card/80 whitespace-nowrap">
+            <div class="text-[0.6rem] leading-tight uppercase tracking-[0.1em] font-sans mt-1 px-4 text-bg-card/80">
               {locale === 'es' ? 'Años de práctica' : 'Years of practice'}
             </div>
           </div>

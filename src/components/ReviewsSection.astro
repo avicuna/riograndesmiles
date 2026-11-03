@@ -29,7 +29,7 @@ const reviews = t.list<{ text: string; author: string; meta: string }>('reviews.
     {/* Review cards grid */}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {reviews.map(({ text, author, meta }) => (
-        <div class="review-card bg-white/[0.06] border border-white/[0.15] rounded-lg p-8 flex flex-col gap-5">
+        <div class="review-card md:last:col-span-2 lg:last:col-span-1 bg-white/[0.06] border border-white/[0.15] rounded-lg p-8 flex flex-col gap-5">
           {/* Stars */}
           <div class="text-gold tracking-wider text-[0.95rem]">★★★★★</div>
 

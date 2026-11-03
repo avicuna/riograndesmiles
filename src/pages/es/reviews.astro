@@ -32,7 +32,11 @@ const reviews = t.list<{ text: string; author: string; meta: string }>('reviews.
   {/* Reviews Carousel */}
   <section class="py-16 md:py-20 bg-bg-card">
     <div class="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-      <ReviewCarousel reviews={reviews} client:visible />
+      <ReviewCarousel
+        reviews={reviews}
+        labels={{ previous: 'Reseña anterior', next: 'Reseña siguiente', goTo: 'Ir a la reseña {n}' }}
+        client:visible
+      />
     </div>
   </section>
 

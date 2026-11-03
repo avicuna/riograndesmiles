@@ -5,7 +5,13 @@
 [build.environment]
   NODE_VERSION = "24"
 
-# Custom 404 page
+# Custom 404 pages. Rules only apply when no file matches, and the first match wins,
+# so missing pages under /es/ get the Spanish 404 and everything else the English one.
+[[redirects]]
+  from = "/es/*"
+  to = "/es/404/index.html"
+  status = 404
+
 [[redirects]]
   from = "/*"
   to = "/404.html"

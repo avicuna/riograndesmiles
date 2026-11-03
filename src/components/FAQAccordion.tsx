@@ -9,7 +9,12 @@ interface Props {
   items: FAQItem[];
 }
 
+// IDs must be unique on the page, and the FAQ page has six accordions. Each Astro island is its own
+// React root, so useId() would repeat across them; derive a stable prefix from the first question instead.
+const slug = (text: string) => text.toLowerCase().normalize('NFD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40);
+
 export default function FAQAccordion({ items }: Props) {
+  const idPrefix = `faq-${slug(items[0]?.question ?? 'list')}`;
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggle = useCallback((index: number) => {
@@ -20,8 +25,8 @@ export default function FAQAccordion({ items }: Props) {
     <div className="max-w-[900px] mx-auto">
       {items.map((item, index) => {
         const isOpen = openIndex === index;
-        const contentId = `faq-content-${index}`;
-        const headerId = `faq-header-${index}`;
+        const contentId = `${idPrefix}-answer-${index}`;
+        const headerId = `${idPrefix}-question-${index}`;
 
         return (
           <div
@@ -40,7 +45,7 @@ export default function FAQAccordion({ items }: Props) {
                 {item.question}
               </span>
               <span
-                className={`w-8 h-8 rounded-full border flex-shrink-0 grid place-items-center transition-all duration-[250ms] ${
+                className={`w-8 h-8 rounded-full border flex-shrink-0 grid place-items-center transition-all duration-[250ms] motion-reduce:transition-none ${
                   isOpen
                     ? 'bg-primary-500 text-white border-primary-500 rotate-45'
                     : 'bg-bg-card text-ink-2 border-line-2 rotate-0'
@@ -52,19 +57,21 @@ export default function FAQAccordion({ items }: Props) {
                 </svg>
               </span>
             </button>
+            {/* Animates between 0fr and 1fr grid rows, so an open answer is always its full height
+                (a fixed max-height cut long answers off on narrow phones). */}
             <div
               id={contentId}
               role="region"
               aria-labelledby={headerId}
-              className="overflow-hidden transition-[max-height,padding] duration-[350ms] ease-in-out"
-              style={{
-                maxHeight: isOpen ? '400px' : '0px',
-                paddingTop: isOpen ? '16px' : '0px',
-              }}
+              aria-hidden={!isOpen}
+              className="grid transition-[grid-template-rows] duration-[350ms] ease-in-out motion-reduce:transition-none"
+              style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
             >
-              <p className="text-ink-2 text-base leading-[1.7]">
-                {item.answer}
-              </p>
+              <div className="overflow-hidden min-h-0">
+                <p className="pt-4 text-ink-2 text-base leading-[1.7]">
+                  {item.answer}
+                </p>
+              </div>
             </div>
           </div>
         );
