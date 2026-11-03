@@ -24,7 +24,8 @@ Live at **[riograndesmiles.com](https://riograndesmiles.com)**, in English and S
 - **React 18**: only for the two interactive pieces, the FAQ accordion and the review carousel. They load as "islands" when scrolled into view (`client:visible`).
 - **Tailwind CSS 3**: styling, with the site's colors and fonts as custom tokens.
 - **TypeScript**: type checking, run as part of every build.
-- **Netlify**: hosting, SSL, the contact form, and preview deploys for pull requests.
+- **Netlify**: hosting, SSL, and preview deploys for pull requests.
+- **Web3Forms**: emails contact form messages to the office (free plan).
 
 ## Development
 
@@ -53,17 +54,18 @@ The build runs the type check first, so a broken change fails on Netlify instead
 
 ## Contact Form
 
-The form on `/contact/` (and `/es/contact/`) uses **Netlify Forms**: there's no server code. Netlify reads the form from the built HTML and stores submissions. The English form is named `contact` and the Spanish one `contact-es`.
+The form on `/contact/` and `/es/contact/` (`src/components/ContactForm.astro`) sends messages through **[Web3Forms](https://web3forms.com)**, which emails each one to the office at **emersonvicunadds@gmail.com**. There's no server code.
 
-It only works if form detection is turned on in Netlify:
+- **Account:** the Web3Forms account belongs to the office email. Sign in at [app.web3forms.com](https://app.web3forms.com) with that address (it emails a one-time code) to change settings or see the last 30 days of messages. The emails in the office inbox are the permanent record.
+- **Access key:** written in `ContactForm.astro`. It's public by design: it can only send messages to the office inbox. If you ever need a new one, create it in the Web3Forms dashboard and replace it there.
+- **Subject line:** messages arrive as "New message from riograndesmiles.com", with "(Spanish page)" added for the Spanish form. The patient's email address is in the message; reply to that address.
+- **Spam:** a hidden `botcheck` checkbox catches simple bots, and Web3Forms filters the rest.
+- **Limit:** the free plan allows 250 messages a month. Web3Forms emails a warning at 90%, and stops accepting messages at 100% until the next month.
+- **Privacy:** the note under the message box asks patients not to include medical details, because messages pass through Web3Forms and Gmail.
 
-1. In the Netlify dashboard, open the project → **Forms** → **Enable form detection**.
-2. Trigger a new deploy (Deploys → Trigger deploy), because Netlify only finds forms during a deploy.
-3. Check that the **Forms** page lists `contact` and `contact-es`.
-4. Add an email notification for new submissions (Project configuration → Notifications → **Form submission notifications**), so the office actually sees new messages. Otherwise they only appear in the dashboard.
-5. Send a test message from the live site and confirm it arrives.
+**How to test it:** send a short test message from the live site and check that it arrives in the office inbox. If sending fails, patients see a message asking them to call or text instead.
 
-**How to tell it's working:** on the live site, Netlify removes the `data-netlify="true"` attribute from the `<form>` tag. If you view the page source and still see that attribute, form detection is off and submissions fail with a 404.
+**Why not Netlify Forms?** Netlify only emails form notifications to members of the Netlify team. On the free plan that's only the account owner, so it can't notify the office address.
 
 ## Bilingual (EN/ES)
 
