@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { useTranslations } from '../../i18n/utils';
 import MapSection from '../../components/MapSection.astro';
+import ContactForm from '../../components/ContactForm.astro';
 
 const locale = 'es';
 const t = useTranslations(locale);
@@ -35,87 +36,7 @@ const t = useTranslations(locale);
         {t('contact.formHeading')}
       </h2>
 
-      <form
-        name="contact-es"
-        method="POST"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        class="space-y-6"
-      >
-        {/* Hidden fields for Netlify */}
-        <input type="hidden" name="form-name" value="contact-es" />
-        <p class="hidden">
-          <label>
-            No llene esto si es humano: <input name="bot-field" />
-          </label>
-        </p>
-
-        {/* Name */}
-        <div>
-          <label for="name" class="block text-sm font-medium text-ink mb-2">
-            {t('contact.nameLabel')} <span class="text-red-500">*</span>
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            required
-            aria-required="true"
-            class="w-full px-4 py-3 border border-line rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
-          />
-        </div>
-
-        {/* Phone */}
-        <div>
-          <label for="phone" class="block text-sm font-medium text-ink mb-2">
-            {t('contact.phoneLabel')}
-          </label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            class="w-full px-4 py-3 border border-line rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
-          />
-        </div>
-
-        {/* Email */}
-        <div>
-          <label for="email" class="block text-sm font-medium text-ink mb-2">
-            {t('contact.emailLabel')} <span class="text-red-500">*</span>
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            aria-required="true"
-            class="w-full px-4 py-3 border border-line rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
-          />
-        </div>
-
-        {/* Message */}
-        <div>
-          <label for="message" class="block text-sm font-medium text-ink mb-2">
-            {t('contact.messageLabel')} <span class="text-red-500">*</span>
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            rows="5"
-            required
-            aria-required="true"
-            class="w-full px-4 py-3 border border-line rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors resize-none"
-          ></textarea>
-        </div>
-
-        {/* Submit Button */}
-        <button
-          type="submit"
-          class="w-full px-8 py-4 bg-primary-500 text-white font-medium rounded-full hover:bg-primary-700 transition-colors"
-        >
-          {t('contact.submitButton')}
-        </button>
-      </form>
+      <ContactForm locale={locale} />
     </div>
   </section>
 

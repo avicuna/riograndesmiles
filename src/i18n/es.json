@@ -358,6 +358,10 @@
     "emailLabel": "Correo Electrónico",
     "messageLabel": "Mensaje",
     "submitButton": "Enviar Mensaje",
+    "privacyNote": "Por favor, no incluya información médica. Le responderemos por teléfono o correo electrónico.",
+    "sending": "Enviando…",
+    "success": "¡Gracias! Su mensaje fue enviado. Le responderemos pronto.",
+    "error": "Lo sentimos, no se pudo enviar su mensaje. Llámenos o envíenos un mensaje de texto al (505) 877-1113.",
     "directionsHeading": "Direcciones y Estacionamiento",
     "directionsText": "Estamos ubicados en Coors Boulevard, justo al sur de Montaño Road. Hay estacionamiento gratuito disponible frente al edificio."
   },
