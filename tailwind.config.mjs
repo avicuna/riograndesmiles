@@ -13,7 +13,7 @@ export default {
           200: '#bcdeff',
           300: '#8ec8ff',
           400: '#58a6ff',
-          500: '#2b7cc9',   // oklch(48% 0.14 245) ≈ main
+          500: '#186db9',   // main; darkened from #2b7cc9 so text and white-on-blue pass WCAG AA (4.5:1)
           600: '#1d6ab5',
           700: '#165694',   // oklch(36% 0.13 250) ≈ deep
           800: '#174a78',
@@ -37,7 +37,7 @@ export default {
         ink: {
           DEFAULT: '#1a2332', // oklch(22% 0.03 250)
           2: '#3d4b5c',      // oklch(38% 0.03 250)
-          3: '#6b7a8d',      // oklch(55% 0.02 245)
+          3: '#5d6c7f',      // secondary text; darkened from #6b7a8d to pass WCAG AA (4.5:1)
         },
         // Gold — oklch(75% 0.13 85)
         gold: '#c9a227',
