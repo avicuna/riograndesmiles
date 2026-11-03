@@ -1,0 +1,48 @@
+---
+// Card grid for the /services and /es/services pages.
+import type { Locale } from '../i18n/utils';
+import { getServices, servicePath } from '../lib/services';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const services = await getServices();
+const learnMore = locale === 'es' ? 'Ver más' : 'Learn more';
+---
+
+{/* The first service (Cleanings & Checkups) spans the full row. That leaves 12 cards,
+    which fill 2- and 3-column rows evenly. */}
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  {services.map((service, i) => {
+    const text = service.data[locale];
+    const lead = i === 0;
+    return (
+      <a
+        href={servicePath(service, locale)}
+        class:list={[
+          'group bg-bg-card border border-line rounded-lg p-8 motion-safe:hover:-translate-y-1 hover:border-primary-500 transition-all duration-200 no-underline',
+          lead
+            ? 'md:col-span-2 lg:col-span-3 flex flex-col md:flex-row items-center gap-6 text-center md:text-left'
+            : 'text-center',
+        ]}
+      >
+        <div class:list={['inline-flex items-center justify-center w-14 h-14 bg-primary-100 rounded-lg text-2xl shrink-0', !lead && 'mb-4']}>
+          {service.data.icon}
+        </div>
+        <div class:list={[lead && 'md:flex-1']}>
+          <h2 class:list={['font-display font-medium text-ink mb-2', lead ? 'text-xl' : 'text-lg']}>
+            {text.title}
+          </h2>
+          <p class:list={['text-sm text-ink-2', !lead && 'mb-4']}>
+            {text.summary}
+          </p>
+        </div>
+        <span class="text-sm font-medium text-primary-500 group-hover:text-primary-700 transition-colors shrink-0">
+          {learnMore} &rarr;
+        </span>
+      </a>
+    );
+  })}
+</div>

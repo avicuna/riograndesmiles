@@ -1,0 +1,23 @@
+# /services/veneers/ and /es/services/veneers/
+order: 10
+icon: "✨"
+en:
+  title: "Veneers"
+  summary: "Thin porcelain shells that transform the look of your front teeth."
+  description: "Veneers are thin shells of porcelain or composite resin that cover the front surface of teeth to improve their appearance."
+  expect: "Veneers are a popular cosmetic option for transforming your smile. Dr. Vicuña will prepare your teeth by removing a thin layer of enamel, take precise impressions, and place temporary veneers while your custom set is crafted. Once ready, the permanent veneers are bonded to your teeth for a beautiful, lasting result."
+  benefits:
+    - "Dramatically improves the appearance of chipped, stained, or uneven teeth"
+    - "Porcelain veneers resist staining better than natural teeth"
+    - "Minimally invasive procedure with stunning results"
+    - "Long-lasting with proper care, often 10–15 years or more"
+es:
+  title: "Carillas"
+  summary: "Láminas delgadas de porcelana que transforman la apariencia de sus dientes frontales."
+  description: "Las carillas son láminas delgadas de porcelana o resina compuesta que cubren la superficie frontal de los dientes para mejorar su apariencia."
+  expect: "Las carillas son una opción estética popular para transformar su sonrisa. El Dr. Vicuña preparará sus dientes retirando una capa delgada de esmalte, tomará impresiones precisas y colocará carillas temporales mientras se fabrican las definitivas. Cuando estén listas, las carillas definitivas se adhieren a sus dientes para un resultado bonito y duradero."
+  benefits:
+    - "Mejora notablemente la apariencia de dientes astillados, manchados o disparejos"
+    - "Las carillas de porcelana resisten las manchas mejor que los dientes naturales"
+    - "Procedimiento mínimamente invasivo con resultados excelentes"
+    - "Duraderas con el cuidado adecuado, a menudo de 10 a 15 años o más"

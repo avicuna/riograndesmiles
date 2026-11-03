@@ -1,0 +1,23 @@
+# /services/crowns/ and /es/services/crowns/
+order: 3
+icon: "👑"
+en:
+  title: "Crowns"
+  summary: "Custom caps that restore shape, size, and strength to a damaged tooth."
+  description: "Crowns are custom-made caps placed over damaged teeth to restore their shape, size, and strength while improving appearance."
+  expect: "A dental crown restores a damaged tooth to its full strength and appearance. During your first visit, Dr. Vicuña will prepare the tooth and take impressions for a custom crown. A temporary crown is placed while your permanent one is crafted. At the follow-up visit, the permanent crown is cemented in place for a perfect, long-lasting fit."
+  benefits:
+    - "Restores strength to cracked, weakened, or heavily filled teeth"
+    - "Custom-made to match the color and shape of your natural teeth"
+    - "Protects teeth after root canal treatment"
+    - "Durable and long-lasting, typically 10–15 years or more"
+es:
+  title: "Coronas"
+  summary: "Tapas hechas a la medida que restauran la forma, el tamaño y la resistencia de un diente dañado."
+  description: "Las coronas son tapas hechas a la medida que se colocan sobre dientes dañados para restaurar su forma, tamaño y resistencia, y mejorar su apariencia."
+  expect: "Una corona dental devuelve a un diente dañado toda su resistencia y apariencia. En su primera visita, el Dr. Vicuña preparará el diente y tomará impresiones para una corona hecha a la medida. Se coloca una corona temporal mientras se fabrica la definitiva. En la cita de seguimiento, la corona definitiva se cementa en su lugar para un ajuste perfecto y duradero."
+  benefits:
+    - "Devuelve la resistencia a dientes agrietados, debilitados o con rellenos grandes"
+    - "Hecha a la medida para igualar el color y la forma de sus dientes naturales"
+    - "Protege el diente después de un tratamiento de conducto"
+    - "Resistente y duradera, normalmente de 10 a 15 años o más"

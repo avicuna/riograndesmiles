@@ -1,0 +1,23 @@
+# /services/dentures/ and /es/services/dentures/
+order: 6
+icon: "🦿"
+en:
+  title: "Dentures"
+  summary: "Full or partial removable prosthetics, custom-fit to your mouth."
+  description: "Dentures are removable replacements for missing teeth and surrounding tissues, available as complete or partial dentures."
+  expect: "Getting dentures is a collaborative process. Dr. Vicuña will take precise impressions of your mouth and work with a dental lab to create dentures that fit comfortably and look natural. You'll have follow-up appointments to fine-tune the fit, and we'll teach you how to care for your new dentures."
+  benefits:
+    - "Restores your ability to eat and speak with confidence"
+    - "Custom-fitted for comfort and a natural appearance"
+    - "Supports facial structure and prevents sagging"
+    - "Available as full or partial options to suit your needs"
+es:
+  title: "Dentaduras"
+  summary: "Prótesis removibles completas o parciales, ajustadas a su boca."
+  description: "Las dentaduras son prótesis removibles que reemplazan los dientes perdidos y los tejidos que los rodean. Pueden ser completas o parciales."
+  expect: "Obtener una dentadura es un proceso en equipo. El Dr. Vicuña tomará impresiones precisas de su boca y trabajará con un laboratorio dental para crear una dentadura cómoda y de aspecto natural. Tendrá citas de seguimiento para afinar el ajuste, y le enseñaremos a cuidar su nueva dentadura."
+  benefits:
+    - "Le permite volver a comer y hablar con confianza"
+    - "Ajustada a la medida para mayor comodidad y un aspecto natural"
+    - "Da soporte a la estructura facial y evita la flacidez"
+    - "Disponible en versión completa o parcial, según sus necesidades"

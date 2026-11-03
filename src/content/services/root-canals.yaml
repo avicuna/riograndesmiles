@@ -1,0 +1,23 @@
+# /services/root-canals/ and /es/services/root-canals/
+order: 11
+icon: "💪"
+en:
+  title: "Root Canals"
+  summary: "Endodontic treatment to save a badly decayed or infected tooth."
+  description: "A root canal is a treatment used to repair and save a tooth that is badly decayed or infected. It involves removing the damaged tissue inside the tooth."
+  expect: "Modern root canals are much more comfortable than you might expect. Dr. Vicuña will thoroughly numb the area, then carefully remove the infected tissue from inside the tooth. The tooth is cleaned, sealed, and typically fitted with a crown for lasting protection. Most patients report feeling immediate relief from the pain that brought them in."
+  benefits:
+    - "Saves your natural tooth from extraction"
+    - "Eliminates pain caused by infection or deep decay"
+    - "Modern techniques make the procedure comfortable and efficient"
+    - "Protects surrounding teeth from the spread of infection"
+es:
+  title: "Tratamientos de conducto"
+  summary: "Tratamiento endodóntico para salvar un diente con caries profunda o infectado."
+  description: "Un tratamiento de conducto sirve para reparar y salvar un diente con caries profunda o infectado. Consiste en eliminar el tejido dañado del interior del diente."
+  expect: "Los tratamientos de conducto modernos son mucho más cómodos de lo que imagina. El Dr. Vicuña anestesiará bien la zona y luego retirará con cuidado el tejido infectado del interior del diente. El diente se limpia, se sella y normalmente se protege con una corona. La mayoría de los pacientes siente alivio inmediato del dolor que los trajo a la consulta."
+  benefits:
+    - "Salva su diente natural de la extracción"
+    - "Elimina el dolor causado por una infección o una caries profunda"
+    - "Las técnicas modernas hacen que el procedimiento sea cómodo y eficiente"
+    - "Evita que la infección se extienda a los dientes vecinos"

@@ -15,7 +15,7 @@
   },
   "header": {
     "location": "Albuquerque, Nuevo México",
-    "description": "El Dr. Vicuña y su equipo brindan atención dental excepcional para mantener su sonrisa saludable y fuerte de por vida. Durante más de 20 años hemos establecido relaciones de confianza con nuestros pacientes donde podemos contribuir al bienestar general de todos nuestros pacientes. Usando técnicas probadas para la odontología general, estética y restaurativa, personalizaremos un plan de tratamiento que se adapte a sus objetivos únicos. Desde chequeos hasta mejoras estéticas y restauraciones integrales, el Dr. Vicuna realizará su trabajo dental con habilidad y precisión."
+    "description": "El Dr. Vicuña y su equipo brindan atención dental excepcional para mantener su sonrisa saludable y fuerte de por vida. Durante más de 20 años hemos establecido relaciones de confianza con nuestros pacientes donde podemos contribuir al bienestar general de todos nuestros pacientes. Usando técnicas probadas para la odontología general, estética y restaurativa, personalizaremos un plan de tratamiento que se adapte a sus objetivos únicos. Desde chequeos hasta mejoras estéticas y restauraciones integrales, el Dr. Vicuña realizará su trabajo dental con habilidad y precisión."
   },
   "hero": {
     "eyebrow": "Odontología familiar · Albuquerque, NM",
@@ -54,21 +54,7 @@
   },
   "servicesOverview": {
     "heading": "Todo lo que su familia necesita, bajo un mismo techo.",
-    "sub": "De una limpieza rutinaria a una restauración completa — con explicaciones claras y precios honestos, antes de comenzar.",
-    "items": [
-      { "num": "01", "key": "cleanings", "title": "Limpiezas y chequeos", "desc": "Cuidado preventivo para mantener su sonrisa fuerte — para usted y toda su familia." },
-      { "num": "02", "key": "fillings", "title": "Rellenos", "desc": "Restaure dientes con caries usando materiales del color natural del diente." },
-      { "num": "03", "key": "crowns", "title": "Coronas", "desc": "Tapas personalizadas que restauran la forma, el tamaño y la resistencia de un diente dañado." },
-      { "num": "04", "key": "bridges", "title": "Puentes", "desc": "Reemplace dientes faltantes anclándolos a dientes sanos adyacentes." },
-      { "num": "05", "key": "implants", "title": "Implantes", "desc": "Raíces de titanio colocadas en la mandíbula — una solución permanente para dientes perdidos." },
-      { "num": "06", "key": "dentures", "title": "Dentaduras", "desc": "Prótesis removibles completas o parciales, ajustadas a su boca." },
-      { "num": "07", "key": "partials", "title": "Parciales", "desc": "Cuando aún tiene dientes naturales, las parciales llenan los espacios cómodamente." },
-      { "num": "08", "key": "repair", "title": "Reparación de dentaduras", "desc": "Reparamos dentaduras rotas o dañadas para que sigan funcionando cómodamente." },
-      { "num": "09", "key": "whitening", "title": "Blanqueamiento", "desc": "Tratamiento cosmético seguro que aclara y blanquea su sonrisa." },
-      { "num": "10", "key": "veneers", "title": "Carillas", "desc": "Delgadas capas de porcelana que transforman la apariencia de sus dientes frontales." },
-      { "num": "11", "key": "root", "title": "Tratamientos de conducto", "desc": "Tratamiento endodóntico para salvar un diente gravemente dañado o infectado." },
-      { "num": "12", "key": "extraction", "title": "Extracciones y muelas del juicio", "desc": "Extracciones de rutina y remoción de muelas del juicio, con su comodidad primero." }
-    ]
+    "sub": "De una limpieza rutinaria a una restauración completa — con explicaciones claras y precios honestos, antes de comenzar."
   },
   "doctorProfile": {
     "heading": "Más de dos décadas cuidando sonrisas en Albuquerque.",
@@ -281,18 +267,14 @@
     "title": "Reseñas de Pacientes",
     "label": "Reseñas de Pacientes",
     "heading": "Familias que nos han confiado su sonrisa.",
-    "sub": "Reseñas verificadas de pacientes en Albuquerque.",
+    "sub": "Reseñas de nuestros pacientes en Google, traducidas del inglés.",
     "shareExperience": "¡Nos encantaría saber sobre su experiencia! Déjenos una reseña en Google.",
     "pageDescription": "Lea lo que nuestros pacientes tienen que decir sobre su experiencia con el Dr. Vicuña y el equipo de Rio Grande Smiles.",
-    "review1": "Muy profesional y siguiendo las medidas más seguras para el cuidado dental. Personal amable, sin duda fue una gran experiencia.",
-    "review1Author": "Rafael Contreras",
-    "review1Meta": "Google · Paciente desde 2019",
-    "review2": "¡Me encanta el Dr. Vicuña! Es muy gentil y muy bueno en lo que hace. He sido su paciente por al menos 7 años y no iría a ningún otro lugar.",
-    "review2Author": "Clorinda Olguín",
-    "review2Meta": "Google · Paciente desde 2017",
-    "review3": "Trabajo muy útil y profesional. Me explicaron el procedimiento claramente y me sentí completamente a gusto.",
-    "review3Author": "Carlos Álvarez",
-    "review3Meta": "Google · Paciente desde 2022"
+    "items": [
+      { "text": "Muy profesional y siguiendo las medidas más seguras para el cuidado dental. Personal amable. Sin duda, fue una gran experiencia.", "author": "Rafael Contreras", "meta": "Google · Paciente desde 2019" },
+      { "text": "¡Me encanta el Dr. Vicuña! Es tan gentil y tan bueno en lo que hace. Llevo al menos 7 años con él y no iría a ningún otro lugar.", "author": "Clorinda Olguin", "meta": "Google · Paciente desde 2017" },
+      { "text": "Trabajo muy útil y profesional.", "author": "Carlos Alvarez", "meta": "Google · Paciente desde 2022" }
+    ]
   },
   "location": {
     "heading": "Venga a vernos en el oeste de Albuquerque.",

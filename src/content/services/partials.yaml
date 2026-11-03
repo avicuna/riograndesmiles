@@ -1,0 +1,23 @@
+# /services/partials/ and /es/services/partials/
+order: 7
+icon: "🔧"
+en:
+  title: "Partials"
+  summary: "When you still have natural teeth, partials fill in the gaps comfortably."
+  description: "Partial dentures are used when some natural teeth remain. They help fill in the spaces created by missing teeth and prevent other teeth from shifting."
+  expect: "Partial dentures are designed to work with your remaining natural teeth. Dr. Vicuña will take impressions and design a partial that clasps securely to your existing teeth while filling in the gaps. The process involves a few visits for fitting and adjustments to ensure a perfect, comfortable fit."
+  benefits:
+    - "Fills gaps from missing teeth for a complete smile"
+    - "Prevents remaining teeth from shifting out of position"
+    - "Removable for easy cleaning and maintenance"
+    - "More affordable alternative to implants or bridges"
+es:
+  title: "Dentaduras parciales"
+  summary: "Si aún conserva dientes naturales, una dentadura parcial llena los espacios con comodidad."
+  description: "Las dentaduras parciales se usan cuando aún quedan algunos dientes naturales. Llenan los espacios que dejan los dientes perdidos y evitan que los demás dientes se desplacen."
+  expect: "Las dentaduras parciales están diseñadas para funcionar junto con sus dientes naturales. El Dr. Vicuña tomará impresiones y diseñará una parcial que se sujeta firmemente a sus dientes mientras llena los espacios. El proceso incluye algunas visitas de prueba y ajuste para lograr un ajuste perfecto y cómodo."
+  benefits:
+    - "Llena los espacios de los dientes perdidos para una sonrisa completa"
+    - "Evita que los dientes restantes se muevan de su lugar"
+    - "Removible para una limpieza y un mantenimiento fáciles"
+    - "Alternativa más económica que los implantes o los puentes"

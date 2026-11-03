@@ -1,0 +1,23 @@
+# /services/implants/ and /es/services/implants/
+order: 5
+icon: "🔩"
+en:
+  title: "Implants"
+  summary: "Titanium roots placed in the jaw — a permanent solution for missing teeth."
+  description: "Dental implants are artificial tooth roots placed into the jawbone to support replacement teeth, providing a permanent solution for missing teeth."
+  expect: "Dental implants are the gold standard for replacing missing teeth. The process begins with placing a titanium post into the jawbone, which serves as a sturdy foundation. After a healing period of a few months, Dr. Vicuña will attach a custom-made crown that looks and functions like a natural tooth."
+  benefits:
+    - "Permanent solution that can last a lifetime with proper care"
+    - "Looks, feels, and functions like a natural tooth"
+    - "Preserves jawbone health and prevents bone loss"
+    - "No impact on adjacent healthy teeth, unlike bridges"
+es:
+  title: "Implantes"
+  summary: "Raíces de titanio colocadas en la mandíbula — una solución permanente para dientes perdidos."
+  description: "Los implantes dentales son raíces dentales artificiales que se colocan en el hueso de la mandíbula para sostener dientes de reemplazo. Son una solución permanente para los dientes perdidos."
+  expect: "Los implantes dentales son la mejor opción para reemplazar dientes perdidos. El proceso comienza con la colocación de un poste de titanio en el hueso de la mandíbula, que sirve como base firme. Después de un periodo de cicatrización de unos meses, el Dr. Vicuña colocará una corona hecha a la medida que se ve y funciona como un diente natural."
+  benefits:
+    - "Solución permanente que puede durar toda la vida con el cuidado adecuado"
+    - "Se ve, se siente y funciona como un diente natural"
+    - "Conserva la salud del hueso de la mandíbula y evita su pérdida"
+    - "No afecta a los dientes sanos vecinos, a diferencia de los puentes"

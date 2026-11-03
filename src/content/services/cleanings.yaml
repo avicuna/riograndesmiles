@@ -1,0 +1,23 @@
+# /services/cleanings/ and /es/services/cleanings/
+order: 1
+icon: "🪥"
+en:
+  title: "Cleanings & Checkups"
+  summary: "Preventive care to keep your smile strong — for you and your whole family."
+  description: "Regular cleanings and checkups are the foundation of a healthy smile. They keep your teeth and gums healthy and catch small problems before they become bigger ones."
+  expect: "Your visit includes a professional cleaning to remove plaque and tartar, followed by an exam of your teeth and gums. X-rays are taken when needed. Dr. Vicuña will explain anything he finds and answer your questions before recommending any treatment."
+  benefits:
+    - "Removes plaque and tartar that brushing and flossing can miss"
+    - "Catches cavities and gum disease early, when they are easiest to treat"
+    - "Keeps your teeth and gums healthy for the long term"
+    - "Care for every member of your family"
+es:
+  title: "Limpiezas y chequeos"
+  summary: "Cuidado preventivo para mantener su sonrisa fuerte — para usted y toda su familia."
+  description: "Las limpiezas y los chequeos regulares son la base de una sonrisa sana. Mantienen sus dientes y encías saludables y detectan pequeños problemas antes de que se vuelvan mayores."
+  expect: "Su visita incluye una limpieza profesional para eliminar la placa y el sarro, seguida de un examen de sus dientes y encías. Se toman radiografías cuando es necesario. El Dr. Vicuña le explicará lo que encuentre y responderá sus preguntas antes de recomendar cualquier tratamiento."
+  benefits:
+    - "Elimina la placa y el sarro que el cepillado y el hilo dental pueden pasar por alto"
+    - "Detecta las caries y la enfermedad de las encías a tiempo, cuando son más fáciles de tratar"
+    - "Mantiene sus dientes y encías sanos a largo plazo"
+    - "Atención para todos los miembros de su familia"

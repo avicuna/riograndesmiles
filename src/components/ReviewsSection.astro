@@ -10,11 +10,7 @@ interface Props {
 const { locale } = Astro.props;
 const t = useTranslations(locale);
 
-const reviews = [
-  { key: '1', initial: 'R' },
-  { key: '2', initial: 'C' },
-  { key: '3', initial: 'C' },
-];
+const reviews = t.list<{ text: string; author: string; meta: string }>('reviews.items');
 ---
 
 <section class="bg-ink py-[100px]">
@@ -32,27 +28,27 @@ const reviews = [
 
     {/* Review cards grid */}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {reviews.map(({ key, initial }) => (
+      {reviews.map(({ text, author, meta }) => (
         <div class="review-card bg-white/[0.06] border border-white/[0.15] rounded-lg p-8 flex flex-col gap-5">
           {/* Stars */}
           <div class="text-gold tracking-wider text-[0.95rem]">★★★★★</div>
 
           {/* Quote */}
           <div class="font-display text-[1.15rem] leading-[1.5] text-white/95 font-normal flex-1">
-            "{t(`reviews.review${key}`)}"
+            "{text}"
           </div>
 
           {/* Author */}
           <div class="flex items-center gap-3 mt-auto pt-5 border-t border-white/[0.15]">
             <div class="w-[38px] h-[38px] rounded-full bg-primary-500 grid place-items-center font-display font-medium text-white text-[0.95rem]">
-              {initial}
+              {author.charAt(0)}
             </div>
             <div>
               <div class="text-[0.92rem] text-white font-medium">
-                {t(`reviews.review${key}Author`)}
+                {author}
               </div>
               <div class="text-[0.78rem] text-white/50">
-                {t(`reviews.review${key}Meta`)}
+                {meta}
               </div>
             </div>
           </div>

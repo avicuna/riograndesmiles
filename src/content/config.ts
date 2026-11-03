@@ -1,15 +1,23 @@
 import { defineCollection, z } from 'astro:content';
 
+// Each service is one YAML file in src/content/services/. The filename is the URL slug
+// (cleanings.yaml → /services/cleanings/). Both languages live side by side so a missing
+// translation fails the build instead of showing English on a Spanish page.
+const serviceText = z.object({
+  title: z.string(),
+  summary: z.string(), // one line, shown on the service cards
+  description: z.string(), // intro paragraph at the top of the service page
+  expect: z.string(), // "What to expect" paragraph
+  benefits: z.array(z.string()).min(1),
+});
+
 const services = defineCollection({
-  type: 'content',
+  type: 'data',
   schema: z.object({
-    serviceSlug: z.string(),
+    order: z.number().int().positive(), // position on the homepage and /services
     icon: z.string(),
-    titleEn: z.string(),
-    titleEs: z.string(),
-    descriptionEn: z.string(),
-    descriptionEs: z.string(),
-    order: z.number(),
+    en: serviceText,
+    es: serviceText,
   }),
 });
 

@@ -1,0 +1,23 @@
+# /services/denture-repair/ and /es/services/denture-repair/
+order: 8
+icon: "🔨"
+en:
+  title: "Denture Repair"
+  summary: "We fix broken or damaged dentures so they keep working comfortably."
+  description: "Denture repair services fix broken or damaged dentures, restoring functionality and appearance for comfortable use."
+  expect: "If your dentures are cracked, chipped, or have a broken clasp, we can often repair them quickly. Bring your damaged dentures to our office, and Dr. Vicuña will assess the damage and determine the best repair approach. Many repairs can be completed the same day, so you won't be without your dentures for long."
+  benefits:
+    - "Fast turnaround, often same-day repairs"
+    - "Restores proper fit and function of your dentures"
+    - "More cost-effective than full replacement"
+    - "Extends the lifespan of your existing dentures"
+es:
+  title: "Reparación de dentaduras"
+  summary: "Reparamos dentaduras rotas o dañadas para que sigan funcionando cómodamente."
+  description: "El servicio de reparación de dentaduras arregla dentaduras rotas o dañadas y les devuelve su función y apariencia para que pueda usarlas con comodidad."
+  expect: "Si su dentadura está agrietada, astillada o tiene un gancho roto, a menudo podemos repararla rápidamente. Traiga su dentadura dañada a nuestro consultorio, y el Dr. Vicuña evaluará el daño y decidirá la mejor manera de repararla. Muchas reparaciones se pueden hacer el mismo día, así que no estará sin su dentadura por mucho tiempo."
+  benefits:
+    - "Servicio rápido, a menudo el mismo día"
+    - "Devuelve el ajuste y la función correctos a su dentadura"
+    - "Más económico que reemplazarla por completo"
+    - "Prolonga la vida útil de su dentadura actual"

@@ -1,0 +1,23 @@
+# /services/extractions/ and /es/services/extractions/
+order: 12
+icon: "🦷"
+en:
+  title: "Extractions"
+  summary: "Routine tooth extractions, with your comfort first."
+  description: "Extractions involve the removal of a tooth from its socket in the bone. This procedure may be necessary due to tooth decay, damage, or overcrowding."
+  expect: "Your comfort is our priority during any extraction. Dr. Vicuña will ensure the area is completely numb before beginning. Most simple extractions take 20–30 minutes, and you'll receive detailed aftercare instructions to ensure smooth healing."
+  benefits:
+    - "Relieves pain from severely decayed or damaged teeth"
+    - "Prevents infection from spreading to surrounding teeth"
+    - "Creates space for orthodontic treatment when needed"
+    - "Quick procedure with straightforward recovery"
+es:
+  title: "Extracciones"
+  summary: "Extracciones dentales de rutina, con su comodidad primero."
+  description: "Una extracción consiste en retirar un diente de su alvéolo en el hueso. Puede ser necesaria por caries, daño o apiñamiento."
+  expect: "Su comodidad es nuestra prioridad en cualquier extracción. El Dr. Vicuña se asegurará de que la zona esté completamente anestesiada antes de comenzar. La mayoría de las extracciones simples duran entre 20 y 30 minutos, y recibirá instrucciones detalladas de cuidado posterior para una buena recuperación."
+  benefits:
+    - "Alivia el dolor de dientes muy dañados o con caries profunda"
+    - "Evita que la infección se extienda a los dientes vecinos"
+    - "Crea espacio para un tratamiento de ortodoncia cuando es necesario"
+    - "Procedimiento rápido con una recuperación sencilla"
