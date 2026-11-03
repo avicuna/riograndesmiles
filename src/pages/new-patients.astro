@@ -61,7 +61,7 @@ const firstAppointmentFaq = [
         {t('newPatients.whatToBringHeading')}
       </h2>
       <div class="grid sm:grid-cols-2 gap-4">
-        {t('newPatients.whatToBringItems').map((item: string) => (
+        {t.list('newPatients.whatToBringItems').map((item) => (
           <div class="flex items-start bg-bg-card p-5 rounded-lg border border-line">
             <svg class="w-6 h-6 text-primary-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />

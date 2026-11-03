@@ -13,7 +13,7 @@ import MapSection from '../components/MapSection.astro';
 import { useTranslations } from '../i18n/utils';
 
 const t = useTranslations('en');
-const faqItems = t('homeFaq.items') as unknown as Array<{q: string; a: string}>;
+const faqItems = t.list<{ q: string; a: string }>('homeFaq.items');
 ---
 
 <BaseLayout title="Rio Grande Smiles | Dentist in Albuquerque, NM" description="Exceptional dental care in Albuquerque, NM. Dr. Emerson Vicuña provides general, cosmetic, and restorative dentistry." canonicalPath="/">

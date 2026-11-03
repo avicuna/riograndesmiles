@@ -111,7 +111,7 @@ const t = useTranslations('en');
         {t('insurancePage.whatToBringHeading')}
       </h2>
       <div class="space-y-4">
-        {t('insurancePage.whatToBringItems').map((item: string) => (
+        {t.list('insurancePage.whatToBringItems').map((item) => (
           <div class="flex items-start gap-4 bg-bg-card border border-line rounded-lg p-4">
             <svg class="w-6 h-6 text-primary-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
