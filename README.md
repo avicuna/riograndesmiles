@@ -149,9 +149,17 @@ DNS records and Netlify site name are managed via the Netlify and Squarespace da
 Two photos are in use, plus icons, logos, and the social share image:
 - `public/img/doctor-headshot.png` — Dr. Vicuña's headshot (hero + about page)
 - `public/img/albuquerque-skyline.jpg` — Albuquerque skyline (hero background)
-- `public/img/services/` — Service icon images (used on service detail pages)
+- `public/img/services/` — Old service images (not currently used — replaced by the line icons in `src/lib/service-icons.ts`)
 - `public/img/*.png` — Insurance provider logos (not currently used — switched to text grid)
 - `public/og-image.jpg` — 1200×630 link-preview image for social media and messaging apps (built from the two photos above)
+
+## Patient Forms
+
+The blank forms linked from the New Patients page (English and Spanish) are served from the site itself:
+- `public/forms/medical-history.pdf` — Medical History
+- `public/forms/patient-registration.pdf` — Patient Registration
+
+To update a form, replace the PDF and keep the same file name, so the links keep working. Only post blank forms.
 
 ## Contact Info (hardcoded)
 
