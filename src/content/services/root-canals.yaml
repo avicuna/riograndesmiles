@@ -1,6 +1,6 @@
 # /services/root-canals/ and /es/services/root-canals/
 order: 11
-icon: "💪"
+icon: "root-canals"
 en:
   title: "Root Canals"
   summary: "Endodontic treatment to save a badly decayed or infected tooth."

@@ -1,6 +1,6 @@
 # /services/partials/ and /es/services/partials/
 order: 7
-icon: "🔧"
+icon: "partials"
 en:
   title: "Partials"
   summary: "When you still have natural teeth, partials fill in the gaps comfortably."

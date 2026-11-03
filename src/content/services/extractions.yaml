@@ -1,6 +1,6 @@
 # /services/extractions/ and /es/services/extractions/
 order: 12
-icon: "🦷"
+icon: "extractions"
 en:
   title: "Extractions"
   summary: "Routine tooth extractions, with your comfort first."

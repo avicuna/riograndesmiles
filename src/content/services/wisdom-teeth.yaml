@@ -1,6 +1,6 @@
 # /services/wisdom-teeth/ and /es/services/wisdom-teeth/
 order: 13
-icon: "🦷"
+icon: "wisdom-teeth"
 en:
   title: "Wisdom Teeth"
   summary: "Removal of wisdom teeth that cause pain, crowding, or infection."

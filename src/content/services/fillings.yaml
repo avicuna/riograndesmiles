@@ -1,6 +1,6 @@
 # /services/fillings/ and /es/services/fillings/
 order: 2
-icon: "✨"
+icon: "fillings"
 en:
   title: "Fillings"
   summary: "Restore decayed teeth with tooth-colored, natural-looking materials."

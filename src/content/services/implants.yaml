@@ -1,6 +1,6 @@
 # /services/implants/ and /es/services/implants/
 order: 5
-icon: "🔩"
+icon: "implants"
 en:
   title: "Implants"
   summary: "Titanium roots placed in the jaw — a permanent solution for missing teeth."

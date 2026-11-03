@@ -1,6 +1,6 @@
 # /services/crowns/ and /es/services/crowns/
 order: 3
-icon: "👑"
+icon: "crowns"
 en:
   title: "Crowns"
   summary: "Custom caps that restore shape, size, and strength to a damaged tooth."
