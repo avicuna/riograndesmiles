@@ -1,5 +1,6 @@
 # /services/implants/ and /es/services/implants/
 order: 5
+homepage: true
 icon: "implants"
 en:
   title: "Implants"

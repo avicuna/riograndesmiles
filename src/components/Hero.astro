@@ -1,6 +1,11 @@
 ---
+// Homepage hero, plus the quick-action bar (Call, Text, Directions, Insurance) that overlaps its
+// bottom edge. The bar's negative bottom margin tucks it into the top of the doctor band below,
+// which leaves room for it with extra top padding (DoctorProfile.astro).
 import type { Locale } from '../i18n/utils';
 import { useTranslations } from '../i18n/utils';
+import { PHONE_TEL, PHONE_SMS, DIRECTIONS_URL } from '../lib/contact';
+import Icon from './Icon.astro';
 
 interface Props {
   locale: Locale;
@@ -8,124 +13,131 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = useTranslations(locale);
+const prefix = locale === 'es' ? '/es' : '';
 
-const chips = [
-  t('hero.chipExperience'),
-  t('hero.chipFamily'),
-  t('hero.chipMedicaid'),
-  t('hero.chipInsurance'),
-];
+const checks = [t('hero.chipExperience'), t('hero.chipFamily'), t('hero.chipInsurance')];
+
+const actions = [
+  { href: PHONE_TEL, icon: 'phone', small: t('quickActions.callSmall'), big: t('footer.phone'), primary: true },
+  { href: PHONE_SMS, icon: 'chat', small: t('quickActions.textSmall'), big: t('quickActions.textBig') },
+  { href: DIRECTIONS_URL, icon: 'pin', small: t('quickActions.directionsSmall'), big: t('quickActions.directionsBig') },
+  { href: `${prefix}/insurance/`, icon: 'shield', small: t('quickActions.insuranceSmall'), big: t('quickActions.insuranceBig') },
+] as const;
 ---
 
-<section class="hero-section relative overflow-hidden py-20 md:py-[100px]">
-  {/* Skyline background with gradient overlay */}
-  <div class="absolute inset-0 z-0">
-    <img
-      src="/img/albuquerque-skyline.jpg"
-      alt=""
-      class="w-full h-full object-cover opacity-[0.07]"
-      loading="eager"
-    />
-  </div>
-  <div class="hero-gradient absolute inset-0 z-0 pointer-events-none"></div>
+<section class="relative overflow-hidden bg-bg" aria-labelledby="hero-title">
+  {/* Albuquerque skyline along the bottom edge, fading into the page at the top */}
+  <div class="hero-sky absolute inset-x-0 bottom-0 h-[200px] md:h-[260px]" role="img" aria-label={t('hero.skylineAlt')}></div>
 
-  {/* Content grid */}
-  <div class="relative z-10 max-w-content mx-auto px-7">
-    <div class="hero-grid grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-16 items-center">
-      {/* Left — text */}
-      <div>
-        {/* Eyebrow */}
-        <div class="flex items-center gap-2.5 mb-5 font-sans text-[0.78rem] font-medium text-primary-500 uppercase tracking-[0.14em]">
-          <span class="w-7 h-px bg-primary-500"></span>
-          {t('hero.eyebrow')}
-        </div>
+  <div class="relative max-w-content mx-auto px-5 sm:px-7 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-2 lg:gap-10 items-end pt-9 lg:pt-14">
+    <div class="lg:pb-44">
+      <p class="inline-flex items-center gap-2.5 bg-white border border-line rounded-full py-1.5 pl-1.5 pr-4 text-[0.875rem] font-medium text-ink mb-5">
+        <span class="grid place-items-center w-[30px] h-[30px] rounded-full bg-primary-500 text-white">
+          <Icon name="check" class="w-4 h-4" strokeWidth={2.6} />
+        </span>
+        {t('hero.pill')}
+      </p>
 
-        {/* Headline */}
-        <h1>
-          <span>{t('hero.title1')}</span><em class="italic text-primary-500 font-normal">{t('hero.titleEm')}</em>.
-        </h1>
+      <h1 id="hero-title" class="font-semibold text-[2.6rem] sm:text-[3.4rem] lg:text-[4.1rem] leading-[1.04]">
+        {t('hero.title1')}<span class="text-primary-500">{t('hero.titleEm')}</span>{t('hero.title2')}
+      </h1>
 
-        {/* Lede */}
-        <p class="mt-6 text-[1.15rem] text-ink-2 leading-relaxed max-w-[48ch]">
-          {t('hero.lede')}
-        </p>
+      <p class="mt-5 text-[1.06rem] sm:text-[1.125rem] text-ink-2 leading-relaxed max-w-[540px]">
+        {t('hero.lede')}
+      </p>
 
-        {/* Chips */}
-        <div class="flex flex-wrap gap-2.5 mt-7">
-          {chips.map((chip) => (
-            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-bg-card border border-line text-[0.82rem] text-ink-2 whitespace-nowrap">
-              <span class="w-1.5 h-1.5 rounded-full bg-accent-500"></span>
-              {chip}
+      <ul class="mt-5 grid gap-2.5" role="list">
+        {checks.map((item) => (
+          <li class="flex items-center gap-3 font-medium text-ink">
+            <span class="grid place-items-center shrink-0 w-6 h-6 rounded-full bg-accent-700 text-white">
+              <Icon name="check" class="w-3.5 h-3.5" strokeWidth={2.6} />
             </span>
-          ))}
-        </div>
+            {item}
+          </li>
+        ))}
+      </ul>
 
-        {/* CTAs */}
-        <div class="flex flex-wrap gap-3 mt-9">
-          <a
-            href="tel:+15058771113"
-            class="inline-flex items-center gap-2 bg-primary-500 text-white rounded-full px-5 py-[11px] text-[0.92rem] font-medium no-underline hover:bg-primary-700 transition-all hover:-translate-y-px"
-          >
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            {t('hero.ctaCall')}
-          </a>
-          <a
-            href={locale === 'es' ? '/es/services/' : '/services/'}
-            class="inline-flex items-center gap-2 bg-transparent text-ink border border-line-2 rounded-full px-5 py-[11px] text-[0.92rem] font-medium no-underline hover:bg-bg-warm transition-colors"
-          >
-            {t('hero.ctaServices')}
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href={PHONE_TEL} class="btn btn-primary flex-auto sm:flex-none">
+          <Icon name="phone" class="w-[18px] h-[18px]" />
+          {t('hero.callButton')}
+        </a>
+        <a href={PHONE_SMS} class="btn btn-line flex-auto sm:flex-none">
+          <Icon name="chat" class="w-[18px] h-[18px]" />
+          {t('hero.textButton')}
+        </a>
       </div>
+      <p class="mt-3.5 flex flex-wrap gap-x-6">
+        <a href={`${prefix}/services/`} class="inline-flex items-center min-h-[44px] font-semibold text-primary-700 no-underline hover:underline">
+          {t('hero.servicesLink')} →
+        </a>
+        <a href={`${prefix}/new-patients/#forms`} class="inline-flex items-center min-h-[44px] font-semibold text-primary-700 no-underline hover:underline">
+          {t('hero.formsLink')} →
+        </a>
+      </p>
+    </div>
 
-      {/* Right — portrait */}
-      <div class="relative w-full aspect-[4/5] max-w-[520px] mx-auto lg:mx-0">
-        {/* Portrait card */}
-        <div class="absolute inset-0 rounded-md overflow-hidden bg-bg-warm border border-line-2">
-          <img
-            src="/img/doctor-headshot.png"
-            alt="Dr. Emerson Vicuña, DDS"
-            class="w-full h-full object-cover object-top"
-            loading="eager"
-          />
-        </div>
-
-        {/* 20+ years badge */}
-        <div class="absolute -bottom-5 -left-5 w-[130px] h-[130px] rounded-full bg-ink grid place-items-center text-center font-display shadow-[0_20px_40px_-10px_rgba(26,35,50,0.25)]">
-          <div>
-            <div class="text-[2.8rem] leading-none font-normal italic text-bg-card">20<sup class="text-[0.5em] font-normal">+</sup></div>
-            <div class="text-[0.6rem] leading-tight uppercase tracking-[0.1em] font-sans mt-1 px-4 text-bg-card/80">
-              {locale === 'es' ? 'Años de práctica' : 'Years of practice'}
-            </div>
-          </div>
-        </div>
-
-        {/* Accepting new patients pill */}
-        <div class="absolute top-6 -right-4 bg-bg-card border border-line-2 px-4 py-2.5 rounded-full text-[0.78rem] font-medium shadow-[0_8px_24px_-8px_rgba(26,35,50,0.15)] flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-accent-500 shadow-[0_0_0_3px_rgba(42,157,143,0.25)]"></span>
-          {locale === 'es' ? 'Aceptando nuevos pacientes' : 'Accepting new patients'}
-        </div>
+    {/* Portrait in an arch, over a blue shape */}
+    <div class="relative h-[420px] lg:h-[560px] flex justify-center items-end">
+      <div class="hero-blob absolute left-1/2 -translate-x-1/2 bottom-10 lg:bottom-[70px] w-[320px] h-[320px] lg:w-[440px] lg:h-[440px] bg-primary-500" aria-hidden="true"></div>
+      <div class="hidden lg:block absolute top-9 right-6 w-[120px] h-[120px] rounded-full border-2 border-dashed border-accent-400" aria-hidden="true"></div>
+      <div class="relative w-[290px] h-[380px] lg:w-[400px] lg:h-[510px] rounded-t-full overflow-hidden border-8 border-b-0 border-white bg-primary-100">
+        <img
+          src="/img/doctor-headshot.jpg"
+          alt={t('hero.photoAlt')}
+          width="1100"
+          height="766"
+          class="w-full h-full object-cover object-[50%_25%]"
+          loading="eager"
+          fetchpriority="high"
+        />
       </div>
+      <p class="absolute right-1 lg:right-0 bottom-[110px] lg:bottom-[170px] bg-white rounded-2xl px-[18px] py-3.5 shadow-[0_14px_34px_rgba(15,48,84,0.16)] text-[0.875rem] leading-snug text-ink-2">
+        <b class="block text-[0.97rem] text-ink">{t('hero.doctorName')}</b>
+        {t('hero.doctorSince')}
+      </p>
     </div>
   </div>
 </section>
 
+{/* Quick actions, overlapping the bottom of the hero */}
+<div class="relative z-10 max-w-content mx-auto px-5 sm:px-7 -mt-10 lg:-mt-20 -mb-10 lg:-mb-[72px]">
+  <nav aria-label={t('quickActions.label')} class="grid grid-cols-2 lg:grid-cols-4 bg-white rounded-[20px] shadow-[0_20px_50px_rgba(15,48,84,0.14)] overflow-hidden">
+    {actions.map((action, i) => (
+      <a
+        href={action.href}
+        class:list={[
+          'flex flex-col lg:flex-row items-start lg:items-center gap-2.5 lg:gap-3.5 p-[18px] lg:px-[26px] lg:py-6 min-h-[88px] lg:min-h-[100px] no-underline transition-colors',
+          'border-bg-warm',
+          i % 2 === 0 && 'border-r',
+          i === 1 && 'lg:border-r',
+          i < 2 && 'border-b lg:border-b-0',
+          'primary' in action ? 'bg-primary-500 text-white hover:bg-primary-700' : 'text-ink hover:bg-primary-50',
+        ]}
+      >
+        <span class:list={[
+          'grid place-items-center shrink-0 w-12 h-12 rounded-xl',
+          'primary' in action ? 'bg-white/15 text-white' : 'bg-primary-50 text-primary-500',
+        ]}>
+          <Icon name={action.icon} class="w-[22px] h-[22px]" />
+        </span>
+        <span>
+          <small class:list={['block text-[0.8rem] leading-snug', 'primary' in action ? 'text-white' : 'text-ink-3']}>{action.small}</small>
+          <b class="block text-[1rem] lg:text-[1.06rem] font-semibold">{action.big}</b>
+        </span>
+      </a>
+    ))}
+  </nav>
+</div>
+
 <style>
-  .hero-gradient {
-    background:
-      radial-gradient(circle at 12% 20%, oklch(94% 0.03 245 / 0.6), transparent 45%),
-      radial-gradient(circle at 88% 85%, oklch(94% 0.04 200 / 0.5), transparent 50%);
+  /* The photo fades in from the top, so there's no hard edge where it starts. */
+  .hero-sky {
+    background: url('/img/albuquerque-skyline.jpg') center 60% / cover no-repeat;
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgb(0 0 0 / 0.1) 30%, rgb(0 0 0 / 0.75) 70%, #000 100%);
+    mask-image: linear-gradient(180deg, transparent 0%, rgb(0 0 0 / 0.1) 30%, rgb(0 0 0 / 0.75) 70%, #000 100%);
   }
-  @media (max-width: 560px) {
-    .hero-section :global(.absolute.-bottom-5.-left-5) {
-      width: 100px;
-      height: 100px;
-      bottom: -10px;
-      left: -10px;
-    }
-    .hero-section :global(.absolute.-bottom-5.-left-5 .text-\[2\.8rem\]) {
-      font-size: 2.2rem;
-    }
+  .hero-blob {
+    border-radius: 46% 54% 42% 58% / 52% 44% 56% 48%;
   }
 </style>

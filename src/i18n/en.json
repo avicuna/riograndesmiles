@@ -22,16 +22,42 @@
     "description": "Dr. Vicuña and his team provide exceptional dental care to keep your smile healthy and strong for life. For over 20 years we have established trusting relationships with our patients where we can contribute to the overall well-being of all our patients. Using proven techniques for general, cosmetic, and restorative dentistry, we'll personalize a treatment plan that meets your unique goals. From checkups, to aesthetic enhancements, to comprehensive restorations, Dr. Vicuña will perform your dental work with skill and precision."
   },
   "hero": {
-    "eyebrow": "Family dentistry · Albuquerque, NM",
-    "title1": "Dental care ",
-    "titleEm": "for every smile in the family",
-    "lede": "Dr. Emerson Vicuña has built his practice on unhurried visits, honest answers, and personalized treatment — over twenty years of caring for patients across the Rio Grande Valley.",
+    "title1": "Dental care for ",
+    "titleEm": "every smile",
+    "lede": "Dr. Emerson Vicuña has built his practice on unhurried visits, honest answers, and personalized treatment — over twenty years of caring for patients across Albuquerque.",
     "chipExperience": "20+ years of experience",
     "chipFamily": "Family-friendly",
     "chipMedicaid": "Medicaid welcome",
     "chipInsurance": "Most insurance accepted",
-    "ctaCall": "Call or Text (505) 877-1113",
-    "ctaServices": "See services"
+    "title2": " in the family.",
+    "pill": "Accepting new patients · Medicaid welcome",
+    "callButton": "Call (505) 877-1113",
+    "textButton": "Text us",
+    "servicesLink": "See our services",
+    "formsLink": "New patient forms",
+    "doctorName": "Dr. Emerson Vicuña",
+    "doctorSince": "DDS · practicing since 2005",
+    "photoAlt": "Dr. Emerson Vicuña, smiling, in blue scrubs",
+    "skylineAlt": "Albuquerque skyline with the Sandia Mountains"
+  },
+  "utilityBar": {
+    "hours": "Mon–Thu 9am–5pm"
+  },
+  "quickActions": {
+    "label": "Quick actions",
+    "callSmall": "Call · Mon–Thu 9am–5pm",
+    "textSmall": "Prefer texting?",
+    "textBig": "Text us",
+    "directionsSmall": "3200 Coors Blvd NW",
+    "directionsBig": "Get directions",
+    "insuranceSmall": "Medicaid + 8 more plans",
+    "insuranceBig": "Check insurance"
+  },
+  "marquee": {
+    "label": "Services we offer",
+    "pause": "Pause",
+    "play": "Play",
+    "controlSuffix": " the scrolling list of services"
   },
   "trustBar": {
     "yearsNum": "20+",
@@ -53,25 +79,25 @@
   },
   "insurance": {
     "heading": "We accept Medicaid and all major insurance plans.",
-    "sub": "Don't see your plan? Call us — we work with many providers and can help verify your coverage before your visit."
+    "sub": "Don't see your plan? Call us — we work with many providers and can help verify your coverage before your visit.",
+    "askButton": "Ask about your plan"
   },
   "servicesOverview": {
     "heading": "Everything your family needs, under one roof.",
-    "sub": "From a routine cleaning to a complete restoration — with clear explanations and honest pricing, before we begin."
+    "sub": "From a routine cleaning to a complete restoration — with clear explanations and honest pricing, before we begin.",
+    "learnMore": "Learn more",
+    "seeAll": "See all {count} services"
   },
   "doctorProfile": {
     "heading": "Over two decades caring for smiles in Albuquerque.",
     "sub": "Dr. Vicuña is the only dentist at the practice. Every patient knows him personally — and he knows you.",
     "quote": "My commitment is to treat every patient with the time, respect, and attention they deserve.",
-    "bio": "Dr. Emerson Vicuña earned his BS in Biology and Chemistry at the University of New Mexico and his Doctor of Dental Surgery (DDS) from The Ohio State University. Since 2005 he has run his own practice, combining proven techniques in general, cosmetic, and restorative dentistry to design a personalized plan for each patient. Member of the American Dental Association and Academy of General Dentistry.",
-    "credEduLabel": "Education",
     "credEduValue": "DDS, The Ohio State University",
-    "credUndergradLabel": "Undergraduate",
     "credUndergradValue": "BS Biology & Chemistry, UNM",
-    "credMembLabel": "Memberships",
-    "credMembValue": "ADA · Academy of General Dentistry",
-    "credSinceLabel": "Practicing since",
-    "credSinceValue": "2005 · Albuquerque, NM"
+    "practice": "Since 2005 he has combined proven general, cosmetic, and restorative techniques to design a personalized plan for each patient.",
+    "credMembLong": "Member, American Dental Association & Academy of General Dentistry",
+    "meetButton": "Meet Dr. Vicuña",
+    "quoteBy": "Dr. Emerson Vicuña"
   },
   "journey": {
     "label": "New Patients",
@@ -264,7 +290,8 @@
       { "q": "How often should I visit the dentist?", "a": "Most people should see their dentist every six months for a cleaning and checkup. Patients with specific concerns may need more frequent visits." },
       { "q": "When should I bring my child for their first visit?", "a": "We recommend the first visit between 6–9 months old, no later than their first birthday. We want kids to grow up comfortable at the dentist from an early age." },
       { "q": "What if a tooth gets knocked out in an accident?", "a": "Find the tooth, rinse it gently (don't scrub it), and place it in milk or your saliva. Call us immediately — time is critical. After hours, go to an urgent care or ER." }
-    ]
+    ],
+    "seeAll": "See all FAQs"
   },
   "reviews": {
     "title": "Patient Reviews",
@@ -277,7 +304,8 @@
       { "text": "Very professional and following the safest measures for dental care. Amiable staff. Without a doubt, it was a great experience.", "author": "Rafael Contreras", "meta": "Google · Patient since 2019" },
       { "text": "Love Dr. Vicuña! He is so gentle and so good at what he does. I've been with him for at least 7 years, and I wouldn't go anywhere else.", "author": "Clorinda Olguin", "meta": "Google · Patient since 2017" },
       { "text": "Very helpful and professional work.", "author": "Carlos Alvarez", "meta": "Google · Patient since 2022" }
-    ]
+    ],
+    "moreOnGoogle": "Read reviews on Google"
   },
   "location": {
     "heading": "Come visit us on Albuquerque's west side.",
@@ -285,7 +313,11 @@
     "addressLabel": "Address",
     "phoneLabel": "Phone",
     "emailLabel": "Email",
-    "hoursLabel": "Hours"
+    "hoursLabel": "Hours",
+    "weekdays": "Monday – Thursday",
+    "weekdaysHours": "9:00 AM – 5:00 PM",
+    "weekend": "Friday – Sunday",
+    "closed": "Closed"
   },
   "footer": {
     "contact": "Contact",
@@ -320,8 +352,7 @@
     "addressLine1": "3200 Coors Blvd NW, Suite F",
     "addressLine2": "Albuquerque, NM 87120",
     "langSwitch": "Español",
-    "copyright": "Rio Grande Smiles. All rights reserved.",
-    "madeWith": "Albuquerque, NM · Made with care"
+    "copyright": "Rio Grande Smiles. All rights reserved."
   },
   "button": {
     "learnMore": "Learn More",

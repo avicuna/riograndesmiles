@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
-import TrustBar from '../components/TrustBar.astro';
 import DoctorProfile from '../components/DoctorProfile.astro';
+import ServiceMarquee from '../components/ServiceMarquee.astro';
 import ServicesOverview from '../components/ServicesOverview.astro';
 import ReviewsSection from '../components/ReviewsSection.astro';
 import InsuranceGrid from '../components/InsuranceGrid.astro';
@@ -56,26 +56,23 @@ const faqItems = t.list<{ q: string; a: string }>('homeFaq.items');
   })} />
 
   <Hero locale="en" />
-  <TrustBar locale="en" />
   <DoctorProfile locale="en" />
+  <ServiceMarquee locale="en" />
   <ServicesOverview locale="en" />
   <ReviewsSection locale="en" />
   <InsuranceGrid locale="en" />
 
   {/* FAQ */}
-  <section class="bg-bg-warm py-[100px]">
-    <div class="max-w-content mx-auto px-7">
-      <div class="grid grid-cols-1 md:grid-cols-[1fr_1.3fr] gap-16 mb-14 items-end">
-        <div>
-          <SectionTag label={t('sectionTags.faq')} />
-          <h2>{t('homeFaq.heading')}</h2>
-        </div>
-        <p class="text-ink-3 max-w-[56ch] text-[1.05rem]">
-          {t('homeFaq.sub')}
-        </p>
+  <section id="faq" class="bg-white py-20 lg:py-28" aria-labelledby="faq-title">
+    <div class="max-w-content mx-auto px-5 sm:px-7 grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-16 items-start">
+      <div>
+        <SectionTag label={t('sectionTags.faq')} />
+        <h2 id="faq-title" class="font-semibold text-[2.375rem] lg:text-[2.75rem] leading-[1.1]">{t('homeFaq.heading')}</h2>
+        <p class="mt-4 mb-7 text-[1.06rem] text-ink-2">{t('homeFaq.sub')}</p>
+        <a href="/faq/" class="btn btn-line">{t('homeFaq.seeAll')}</a>
       </div>
       <FAQAccordion
-        items={faqItems.map(item => ({ question: item.q, answer: item.a }))}
+        items={faqItems.map((item) => ({ question: item.q, answer: item.a }))}
         client:visible
       />
     </div>

@@ -11,6 +11,7 @@ Live at **[riograndesmiles.com](https://riograndesmiles.com)**, in English and S
 |---|---|---|
 | Change wording on any page | `src/i18n/en.json` **and** `src/i18n/es.json` | Almost all visible text lives here. Change both languages. |
 | Add, remove, or reword a service | `src/content/services/<slug>.yaml` | One file per service, both languages inside. See [Services](#services). |
+| Choose which services the homepage shows | `homepage: true` in a service's `.yaml` | The first one (by `order`) gets the wide card. |
 | Change a review | `reviews.items` in both i18n files | Used on the homepage and `/reviews`. Keep them short, quoted word for word. |
 | Change a homepage or New Patients FAQ | `homeFaq.items` / `faq.*` in both i18n files | The FAQ page builds its questions from `faq.*` keys. |
 | Replace a patient form | `public/forms/*.pdf` | Keep the same file name. See [Patient Forms](#patient-forms). |
@@ -83,6 +84,7 @@ Each service is one YAML file in `src/content/services/`. The file name is the U
 
 ```yaml
 order: 3          # position on the homepage and /services (must be unique)
+homepage: true    # optional: show it in the homepage's services section
 icon: crowns      # an icon name from src/lib/service-icons.ts
 en:
   title: ...
@@ -94,9 +96,9 @@ es:
   ...same fields in Spanish...
 ```
 
-- Adding a file adds the service everywhere: homepage grid, `/services`, its own page in both languages, the sitemap, and the homepage's service count.
+- Adding a file adds the service everywhere: `/services`, its own page in both languages, the sitemap, the homepage's scrolling list of services, and its service count. It shows in the homepage's services section only with `homepage: true` (seven do now: the wide Cleanings card plus six tiles).
 - The build fails if a language is missing, the icon name is unknown, or two services share an `order`.
-- The first service (Cleanings & Checkups) spans a full row on the grids, which keeps the remaining 12 cards in even rows. With a different number of services, check the grids at a few screen widths.
+- On `/services`, the first service (Cleanings & Checkups) spans a full row, which keeps the remaining 12 cards in even rows. With a different number of services, check the grid at a few screen widths. On the homepage, keep the `homepage: true` tiles (after the first) to a multiple of 3 so the rows stay even.
 - Icons are hand-drawn SVG line icons in `src/lib/service-icons.ts`, matching the style of Lucide icons.
 
 ## Project Structure
@@ -104,13 +106,16 @@ es:
 ```
 src/
 ├── components/            # Shared pieces (.astro = static HTML, .tsx = React island)
-│   ├── Nav.astro               # Sticky nav; menu button below 1024px wide
-│   ├── Hero.astro              # Homepage hero with Dr. Vicuña's portrait
-│   ├── TrustBar.astro          # Homepage stats strip
-│   ├── ServicesOverview.astro  # Homepage services grid
+│   ├── UtilityBar.astro        # Dark bar above the header: phone, address, hours
+│   ├── Nav.astro               # Sticky header; links from 1280px, Menu button below that
+│   ├── Hero.astro              # Homepage hero, plus the Call/Text/Directions/Insurance bar under it
+│   ├── DoctorProfile.astro     # Homepage blue "About the doctor" band with the practice's numbers
+│   ├── ServiceMarquee.astro    # Homepage scrolling list of services, with Pause/Play
+│   ├── ServicesOverview.astro  # Homepage services (the ones marked homepage: true)
 │   ├── ServicesGrid.astro      # /services grid
 │   ├── ServicePageLayout.astro # Layout for each service page
 │   ├── ServiceIcon.astro       # Renders an icon from lib/service-icons.ts
+│   ├── Icon.astro              # Small interface icons (phone, chat, map pin, …)
 │   ├── ReviewsSection.astro    # Homepage reviews
 │   ├── FAQAccordion.tsx        # React: collapsible FAQ
 │   ├── ReviewCarousel.tsx      # React: rotating reviews on /reviews
@@ -126,10 +131,11 @@ src/
 │   └── BaseLayout.astro   # HTML shell: SEO tags, nav, footer, mobile call bar
 ├── lib/
 │   ├── services.ts        # getServices() and servicePath(); every service list uses these
+│   ├── contact.ts         # Phone, text, email, and Google Maps links
 │   └── service-icons.ts   # The service icon set
 ├── pages/                 # One file per page; es/ holds the Spanish copies
 └── styles/
-    └── global.css         # Fonts, color variables, base styles
+    └── global.css         # Fonts, color variables, base styles, buttons (.btn)
 public/                    # Copied to the site as is (images, forms, robots.txt)
 docs/                      # The original March 2026 redesign spec and plan (historical)
 ```
@@ -140,7 +146,7 @@ docs/                      # The original March 2026 redesign spec and plan (his
 
 | Page | EN | ES | Description |
 |------|----|----|-------------|
-| Homepage | `/` | `/es/` | Hero, stats, doctor, services, reviews, insurance, FAQ, CTA, map |
+| Homepage | `/` | `/es/` | Hero with quick actions, doctor band with stats, scrolling services, services, reviews, insurance, FAQ, call band, map |
 | About | `/about/` | `/es/about/` | Doctor profile, credentials, practice story |
 | Services index | `/services/` | `/es/services/` | Grid of all services |
 | Service pages (×13) | `/services/<slug>/` | `/es/services/<slug>/` | One per file in `src/content/services/` |
@@ -171,10 +177,13 @@ Colors are defined in two places, so change both:
 
 The palette is a primary blue, a teal accent, navy text, and warm neutral backgrounds. The main blue (`#186db9`) and the light gray text (`ink-3`) were darkened so text meets the WCAG AA contrast standard. Check contrast before lightening them.
 
+**Buttons** are shared classes in `global.css`: `.btn` plus one color, `.btn-primary` (solid blue), `.btn-line` (blue outline), `.btn-white` (on blue or dark bands), or `.btn-glass` (outline over a photo). The homepage, header, and footer use them; the other pages still have their older rounded buttons. The keyboard focus ring is a navy outline with a white halo, so it shows on light and blue backgrounds alike.
+
 ## Photos and Images
 
-- `public/img/doctor-headshot.png`: Dr. Vicuña's headshot (homepage hero + about page)
-- `public/img/albuquerque-skyline.jpg`: Albuquerque skyline (hero background)
+- `public/img/doctor-headshot.jpg`: Dr. Vicuña's headshot, as shown on the homepage and the About page (1100px wide, about 220 KB)
+- `public/img/doctor-headshot.png`: the full-size original (2.2 MB). Not shown on the site; make new crops from it
+- `public/img/albuquerque-skyline.jpg`: Albuquerque skyline (bottom of the homepage hero, and behind "Call or text us today")
 - `public/og-image.jpg`: the 1200×630 preview image shown when a link is shared in texts or social media (built from the two photos above)
 - `public/img/services/`: old service images (not used; replaced by the line icons)
 - `public/img/*.png`: insurance logos (not used; the site lists insurers as text)
@@ -196,6 +205,6 @@ To update a form, replace the PDF and keep the same file name, so the links keep
 
 If any of these change, update:
 1. `src/i18n/en.json` and `es.json` (display text)
-2. The `tel:` / `sms:` / `mailto:` links. To find every one: `grep -rn "tel:\|sms:\|mailto:" src`
+2. The links in `src/lib/contact.ts` (phone, text, email, Google Maps), plus any `tel:` / `sms:` / `mailto:` links left in pages. To find them: `grep -rn "tel:\|sms:\|mailto:\|+1505" src`
 3. The structured data for Google (`application/ld+json`) in `src/pages/index.astro` and `src/pages/es/index.astro`
 4. The map address in `src/components/GoogleMap.astro`, if the office moves

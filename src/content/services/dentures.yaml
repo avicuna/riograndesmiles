@@ -1,5 +1,6 @@
 # /services/dentures/ and /es/services/dentures/
 order: 6
+homepage: true
 icon: "dentures"
 en:
   title: "Dentures"

@@ -1,5 +1,6 @@
 # /services/bleaching/ and /es/services/bleaching/
 order: 9
+homepage: true
 icon: "bleaching"
 en:
   title: "Teeth Whitening"

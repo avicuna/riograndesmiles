@@ -1,6 +1,8 @@
 ---
 import type { Locale } from '../i18n/utils';
-import { useTranslations } from '../i18n/utils';
+import { useTranslations, getAlternatePath } from '../i18n/utils';
+import { PHONE_TEL, EMAIL, DIRECTIONS_URL } from '../lib/contact';
+import ServiceIcon from './ServiceIcon.astro';
 
 interface Props {
   locale?: Locale;
@@ -13,117 +15,84 @@ const t = useTranslations(locale);
 const year = new Date().getFullYear();
 
 const prefix = locale === 'es' ? '/es' : '';
+const homePath = locale === 'es' ? '/es/' : '/';
+const currentPath = Astro.url.pathname;
+// A 404 has no translated twin at the same address, so its link goes to the other homepage.
+const isNotFound = /^\/(es\/)?404(\/|\.html)?$/.test(currentPath);
+const alternatePath = isNotFound ? (locale === 'es' ? '/' : '/es/') : getAlternatePath(currentPath, locale);
+const alternateLang = locale === 'es' ? 'en' : 'es';
 
-const navLinks = [
-  { label: t('navbar.about'), href: `${prefix}/about/` },
-  { label: t('navbar.services'), href: `${prefix}/services/` },
-  { label: t('navbar.insurance'), href: `${prefix}/insurance/` },
-  { label: t('navbar.reviews'), href: `${prefix}/reviews/` },
-  { label: t('navbar.contact'), href: `${prefix}/contact/` },
+const columns = [
+  {
+    heading: t('footer.navigate'),
+    links: [
+      { label: t('navbar.about'), href: `${prefix}/about/` },
+      { label: t('navbar.services'), href: `${prefix}/services/` },
+      { label: t('navbar.insurance'), href: `${prefix}/insurance/` },
+      { label: t('navbar.reviews'), href: `${prefix}/reviews/` },
+      { label: t('navbar.contact'), href: `${prefix}/contact/` },
+    ],
+  },
+  {
+    heading: t('footer.patientsHeading'),
+    links: [
+      { label: t('navbar.newPatients'), href: `${prefix}/new-patients/` },
+      { label: locale === 'es' ? 'Atención Accesible' : 'Affordable Care', href: `${prefix}/affordable-care/` },
+      { label: locale === 'es' ? 'Política Financiera' : 'Financial Policy', href: `${prefix}/financial-policy/` },
+      { label: t('footer.faq'), href: `${prefix}/faq/` },
+      { label: t('footer.medHistory'), href: `${prefix}/new-patients/#forms` },
+    ],
+  },
 ];
-
-const patientLinks = [
-  { label: locale === 'es' ? 'Nuevos Pacientes' : 'New Patients', href: `${prefix}/new-patients/` },
-  { label: locale === 'es' ? 'Atención Accesible' : 'Affordable Care', href: `${prefix}/affordable-care/` },
-  { label: locale === 'es' ? 'Política Financiera' : 'Financial Policy', href: `${prefix}/financial-policy/` },
-  { label: t('footer.faq'), href: `${prefix}/faq/` },
-  { label: t('footer.medHistory'), href: `${prefix}/new-patients/#forms` },
-];
+const link = 'inline-flex items-center min-h-[40px] text-primary-100 no-underline hover:text-white hover:underline';
 ---
 
-<footer class="bg-bg border-t border-line py-[60px] pb-10">
-  <div class="footer-grid max-w-content mx-auto px-7">
-    <div class="grid grid-cols-[2fr_1fr_1fr_1fr] gap-12">
-      {/* Col 1: Brand */}
-      <div>
-        <span class="font-display text-[1.15rem] font-medium text-ink">
-          {t('footer.brand')}
+<footer class="bg-primary-900 text-primary-200 text-[0.94rem] pt-[72px]">
+  <div class="max-w-content mx-auto px-5 sm:px-7 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr] gap-10">
+    <div>
+      <a href={homePath} class="inline-flex items-center gap-3 no-underline text-white">
+        <span class="grid place-items-center shrink-0 w-[42px] h-[42px] rounded-xl bg-white text-primary-500">
+          <ServiceIcon name="fillings" class="w-[22px] h-[22px]" />
         </span>
-        <div class="font-sans text-[0.7rem] uppercase tracking-widest text-ink-3">
-          {t('footer.brandSub')}
-        </div>
-        <p class="text-ink-3 text-[0.92rem] mt-3.5 leading-relaxed">
-          {t('footer.tagline')}
-        </p>
-      </div>
-
-      {/* Col 2: Navigate */}
-      <div>
-        <h4 class="font-sans text-[0.78rem] uppercase tracking-[0.12em] text-ink-3 font-medium mb-4">
-          {t('footer.navigate')}
-        </h4>
-        <nav>
-          {navLinks.map((link) => (
-            <a
-              href={link.href}
-              class="block text-ink-2 text-[0.95rem] py-1 hover:text-primary-500 transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-      </div>
-
-      {/* Col 3: Patients */}
-      <div>
-        <h4 class="font-sans text-[0.78rem] uppercase tracking-[0.12em] text-ink-3 font-medium mb-4">
-          {locale === 'es' ? 'Pacientes' : 'Patients'}
-        </h4>
-        <nav>
-          {patientLinks.map((link) => (
-            <a
-              href={link.href}
-              class="block text-ink-2 text-[0.95rem] py-1 hover:text-primary-500 transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-      </div>
-
-      {/* Col 4: Contact */}
-      <div>
-        <h4 class="font-sans text-[0.78rem] uppercase tracking-[0.12em] text-ink-3 font-medium mb-4">
-          {t('footer.contact')}
-        </h4>
-        <nav>
-          <a
-            href="tel:+15058771113"
-            class="block text-ink-2 text-[0.95rem] py-1 hover:text-primary-500 transition-colors"
-          >
-            {t('footer.phone')}
-          </a>
-          <a
-            href="mailto:emersonvicunadds@gmail.com"
-            class="block text-ink-2 text-[0.95rem] py-1 hover:text-primary-500 transition-colors"
-          >
-            {t('footer.email')}
-          </a>
-          <span class="block text-ink-2 text-[0.95rem] py-1">
-            {t('footer.addressLine1')}<br />{t('footer.addressLine2')}
-          </span>
-        </nav>
-      </div>
+        <span>
+          <span class="block font-display text-[1.375rem] font-semibold leading-[1.05]">{t('footer.brand')}</span>
+          <span class="block text-[0.78rem] text-primary-200">{t('footer.brandSub')}</span>
+        </span>
+      </a>
+      <p class="mt-4 max-w-[300px] leading-relaxed">{t('footer.tagline')}</p>
     </div>
 
-    {/* Bottom bar */}
-    <div class="mt-14 pt-6 border-t border-line flex justify-between items-center text-[0.82rem] text-ink-3">
+    {columns.map((column) => (
+      <nav aria-label={column.heading}>
+        <h2 class="mb-3 font-sans !text-white text-[0.8rem] font-bold uppercase tracking-[0.14em]">{column.heading}</h2>
+        <ul role="list">
+          {column.links.map((item) => (
+            <li><a href={item.href} class={link}>{item.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+    ))}
+
+    <div>
+      <h2 class="mb-3 font-sans !text-white text-[0.8rem] font-bold uppercase tracking-[0.14em]">{t('footer.contact')}</h2>
+      <ul role="list">
+        <li><a href={PHONE_TEL} class={link}>{t('footer.phone')}</a></li>
+        <li><a href={`mailto:${EMAIL}`} class={link}>{EMAIL}</a></li>
+        <li>
+          <a href={DIRECTIONS_URL} class="inline-block py-1.5 leading-relaxed text-primary-100 no-underline hover:text-white hover:underline">
+            {t('footer.addressLine1')}<br />{t('footer.addressLine2')}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="max-w-content mx-auto px-5 sm:px-7 mt-14">
+    <div class="flex flex-col sm:flex-row sm:justify-between gap-2 py-5 border-t border-white/15 text-[0.875rem]">
       <span>&copy; {year} {t('footer.copyright')}</span>
-      <span>{t('footer.madeWith')}</span>
+      <a href={alternatePath} lang={alternateLang} hreflang={alternateLang} class="text-primary-100 underline hover:text-white">
+        {t('navbar.switchLangAria')}
+      </a>
     </div>
   </div>
 </footer>
-
-<style>
-  @media (max-width: 900px) {
-    .footer-grid .grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (max-width: 560px) {
-    .footer-grid .grid {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
