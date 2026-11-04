@@ -1,0 +1,33 @@
+---
+// Thin dark bar above the header on every page: phone, address, and hours. It scrolls away;
+// the header below it stays at the top.
+import type { Locale } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+import { PHONE_TEL, DIRECTIONS_URL } from '../lib/contact';
+import Icon from './Icon.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const link = 'inline-flex items-center gap-2 min-h-[44px] text-primary-100 no-underline hover:text-white hover:underline';
+---
+
+<div class="bg-primary-900 text-[0.875rem]">
+  <div class="max-w-content mx-auto px-5 sm:px-7 flex items-center gap-4 sm:gap-7">
+    <a href={PHONE_TEL} class={link}>
+      <Icon name="phone" class="w-[15px] h-[15px]" />
+      {t('footer.phone')}
+    </a>
+    <a href={DIRECTIONS_URL} class:list={[link, 'hidden md:inline-flex']}>
+      <Icon name="pin" class="w-[15px] h-[15px]" />
+      {t('footer.addressLine1')}, Albuquerque
+    </a>
+    <span class="inline-flex items-center gap-2 min-h-[44px] text-accent-200">
+      <Icon name="clock" class="w-[15px] h-[15px]" />
+      {t('utilityBar.hours')}
+    </span>
+  </div>
+</div>

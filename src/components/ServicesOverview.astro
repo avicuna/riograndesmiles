@@ -1,63 +1,85 @@
 ---
+// Homepage services: the services marked `homepage: true` in src/content/services/. The first one
+// gets a wide card; the rest are tiles. A button links to the full list.
 import type { Locale } from '../i18n/utils';
 import { useTranslations } from '../i18n/utils';
-import SectionTag from './SectionTag.astro';
 import { getServices, servicePath } from '../lib/services';
+import type { ServiceIconName } from '../lib/service-icons';
+import SectionTag from './SectionTag.astro';
+import ServiceIcon from './ServiceIcon.astro';
 
-interface Props { locale: Locale; }
+interface Props {
+  locale: Locale;
+}
+
 const { locale } = Astro.props;
 const t = useTranslations(locale);
+const prefix = locale === 'es' ? '/es' : '';
 
 const services = await getServices();
+const featured = services.filter((service) => service.data.homepage);
+if (featured.length === 0) {
+  throw new Error('[services] Mark at least one service with "homepage: true" to show it on the homepage.');
+}
+const [lead, ...tiles] = featured;
+const leadText = lead.data[locale];
 ---
 
-<section class="bg-bg-warm py-[100px]">
-  <div class="max-w-content mx-auto px-7">
-    {/* Section header */}
-    <div class="grid grid-cols-1 md:grid-cols-[1fr_1.3fr] gap-16 mb-14 items-end">
-      <div>
-        <SectionTag label={t('sectionTags.services')} />
-        <h2 class="font-display text-[2.2rem] leading-[1.15] font-medium text-ink">
-          {t('servicesOverview.heading')}
-        </h2>
-      </div>
-      <p class="text-ink-3 max-w-[56ch] text-[1.05rem]">
-        {t('servicesOverview.sub')}
-      </p>
+<section id="services" class="bg-bg py-20 lg:py-28" aria-labelledby="services-title">
+  <div class="max-w-content mx-auto px-5 sm:px-7">
+    <div class="mb-11 max-w-[640px]">
+      <SectionTag label={t('sectionTags.services')} />
+      <h2 id="services-title" class="font-semibold text-[2.375rem] lg:text-[2.875rem] leading-[1.1]">
+        {t('servicesOverview.heading')}
+      </h2>
+      <p class="mt-4 text-[1.06rem] text-ink-2 max-w-[560px]">{t('servicesOverview.sub')}</p>
     </div>
 
-    {/* Services grid — bg-line acts as the 1px gap color. The first service (Cleanings & Checkups)
-        spans the full row, leaving 12 cards that fill 2- and 3-column rows evenly. */}
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-line gap-px border border-line rounded-lg overflow-hidden">
-      {services.map((service, i) => {
+    {/* Wide card for the first service */}
+    <a
+      href={servicePath(lead, locale)}
+      class="group grid grid-cols-1 sm:grid-cols-[auto_1fr] lg:grid-cols-[auto_1fr_auto] gap-4 sm:gap-7 items-center mb-3 sm:mb-5 p-6 sm:px-8 sm:py-7 bg-white border border-bg-warm rounded-3xl no-underline text-ink transition-[border-color,box-shadow] hover:border-primary-300 hover:shadow-[0_12px_30px_rgba(15,48,84,0.08)]"
+    >
+      <span class="grid place-items-center w-[72px] h-[72px] rounded-[20px] bg-primary-500 text-white">
+        <ServiceIcon name={lead.data.icon as ServiceIconName} class="w-[34px] h-[34px]" />
+      </span>
+      <div>
+        <h3 class="font-semibold text-[1.75rem]">{leadText.title}</h3>
+        <p class="mt-1 text-[1.03rem] text-ink-2">{leadText.summary}</p>
+      </div>
+      <span class="hidden lg:inline font-semibold text-primary-700 whitespace-nowrap">{t('servicesOverview.learnMore')} →</span>
+    </a>
+
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">
+      {tiles.map((service, i) => {
         const text = service.data[locale];
-        const lead = i === 0;
+        const teal = i % 2 === 1;
         return (
           <a
             href={servicePath(service, locale)}
             class:list={[
-              'group bg-bg-card p-8 flex gap-3 transition-colors hover:bg-primary-50 cursor-pointer no-underline',
-              lead ? 'md:col-span-2 lg:col-span-3 flex-col md:flex-row md:items-center md:gap-10' : 'flex-col min-h-[220px]',
+              'flex flex-col p-[18px] sm:p-[26px] rounded-[22px] border no-underline text-ink transition-[border-color,box-shadow,transform]',
+              'hover:border-primary-300 hover:shadow-[0_12px_30px_rgba(15,48,84,0.08)] hover:-translate-y-0.5 motion-reduce:hover:translate-y-0',
+              teal ? 'bg-accent-50 border-accent-100' : 'bg-primary-50 border-primary-100',
             ]}
           >
-            {/* Title with number */}
-            <h3 class:list={['font-display font-medium text-ink', lead ? 'text-[1.75rem] md:w-[22rem] md:shrink-0' : 'text-[1.4rem]']}>
-              <span class="font-mono text-[0.72rem] text-primary-500 tracking-wide mr-2">{String(i + 1).padStart(2, '0')}</span>
-              {text.title}
-            </h3>
-
-            {/* Description */}
-            <p class:list={['text-ink-3 leading-relaxed', lead ? 'text-[1rem] md:flex-1' : 'text-[0.93rem]']}>
-              {text.summary}
-            </p>
-
-            {/* Arrow button — always visible */}
-            <div class:list={['w-8 h-8 rounded-full bg-bg-warm grid place-items-center text-ink-2 group-hover:bg-primary-500 group-hover:text-white group-hover:translate-x-[3px] group-hover:-translate-y-[3px] transition-all', lead ? 'mt-auto md:mt-0 shrink-0' : 'mt-auto']}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
-            </div>
+            <span class="grid place-items-center w-11 h-11 sm:w-[52px] sm:h-[52px] mb-3.5 sm:mb-5 rounded-2xl bg-white text-primary-500">
+              <ServiceIcon name={service.data.icon as ServiceIconName} class="w-6 h-6 sm:w-[26px] sm:h-[26px]" />
+            </span>
+            <h3 class="font-semibold text-[1.125rem] sm:text-[1.375rem] sm:mb-1.5">{text.title}</h3>
+            <p class="hidden sm:block flex-1 mb-[18px] text-[0.94rem] text-ink-2 leading-normal">{text.summary}</p>
+            <span class="hidden sm:inline text-[0.9rem] font-semibold text-primary-700">
+              {t('servicesOverview.learnMore')} →
+            </span>
           </a>
         );
       })}
     </div>
+
+    <p class="mt-9 text-center">
+      <a href={`${prefix}/services/`} class="btn btn-line">
+        {t('servicesOverview.seeAll').replace('{count}', String(services.length))} →
+      </a>
+    </p>
   </div>
 </section>

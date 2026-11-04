@@ -22,7 +22,6 @@
     "description": "El Dr. Vicuña y su equipo brindan atención dental excepcional para mantener su sonrisa saludable y fuerte de por vida. Durante más de 20 años hemos establecido relaciones de confianza con nuestros pacientes donde podemos contribuir al bienestar general de todos nuestros pacientes. Usando técnicas probadas para la odontología general, estética y restaurativa, personalizaremos un plan de tratamiento que se adapte a sus objetivos únicos. Desde chequeos hasta mejoras estéticas y restauraciones integrales, el Dr. Vicuña realizará su trabajo dental con habilidad y precisión."
   },
   "hero": {
-    "eyebrow": "Odontología familiar · Albuquerque, NM",
     "title1": "Atención dental ",
     "titleEm": "para toda la familia",
     "lede": "Dr. Emerson Vicuña ofrece visitas sin prisa, respuestas honestas y planes de tratamiento personalizados — más de veinte años cuidando a pacientes en el Valle del Río Grande.",
@@ -30,8 +29,35 @@
     "chipFamily": "Ambiente familiar",
     "chipMedicaid": "Medicaid bienvenido",
     "chipInsurance": "Aceptamos la mayoría de seguros",
-    "ctaCall": "Llame o envíe texto al (505) 877-1113",
-    "ctaServices": "Ver servicios"
+    "title2": ".",
+    "pill": "Aceptando nuevos pacientes · Medicaid bienvenido",
+    "callButton": "Llamar al (505) 877-1113",
+    "textButton": "Enviar texto",
+    "servicesLink": "Ver nuestros servicios",
+    "formsLink": "Formularios para nuevos pacientes",
+    "doctorName": "Dr. Emerson Vicuña",
+    "doctorSince": "DDS · ejerciendo desde 2005",
+    "photoAlt": "El Dr. Emerson Vicuña, sonriendo, con uniforme azul",
+    "skylineAlt": "Vista de Albuquerque con las montañas Sandía"
+  },
+  "utilityBar": {
+    "hours": "Lun–Jue 9am–5pm"
+  },
+  "quickActions": {
+    "label": "Acciones rápidas",
+    "callSmall": "Llame · Lun–Jue 9am–5pm",
+    "textSmall": "¿Prefiere mensajes de texto?",
+    "textBig": "Envíenos un texto",
+    "directionsSmall": "3200 Coors Blvd NW",
+    "directionsBig": "Cómo llegar",
+    "insuranceSmall": "Medicaid y 8 planes más",
+    "insuranceBig": "Ver seguros"
+  },
+  "marquee": {
+    "label": "Servicios que ofrecemos",
+    "pause": "Pausar",
+    "play": "Reanudar",
+    "controlSuffix": " la lista de servicios en movimiento"
   },
   "trustBar": {
     "yearsNum": "20+",
@@ -53,25 +79,25 @@
   },
   "insurance": {
     "heading": "Aceptamos Medicaid y los principales seguros.",
-    "sub": "¿No ve su plan? Llámenos — trabajamos con muchos proveedores y podemos ayudar a verificar su cobertura antes de su visita."
+    "sub": "¿No ve su plan? Llámenos — trabajamos con muchos proveedores y podemos ayudar a verificar su cobertura antes de su visita.",
+    "askButton": "Pregunte por su plan"
   },
   "servicesOverview": {
     "heading": "Todo lo que su familia necesita, bajo un mismo techo.",
-    "sub": "De una limpieza rutinaria a una restauración completa — con explicaciones claras y precios honestos, antes de comenzar."
+    "sub": "De una limpieza rutinaria a una restauración completa — con explicaciones claras y precios honestos, antes de comenzar.",
+    "learnMore": "Ver más",
+    "seeAll": "Ver los {count} servicios"
   },
   "doctorProfile": {
     "heading": "Más de dos décadas cuidando sonrisas en Albuquerque.",
     "sub": "Dr. Vicuña es el único dentista de la clínica. Cada paciente lo conoce en persona — y él a usted.",
     "quote": "Mi compromiso es tratar a cada paciente con el tiempo, el respeto y la atención que merece.",
-    "bio": "El Dr. Emerson Vicuña obtuvo su licenciatura en Biología y Química en la Universidad de Nuevo México y su título de Doctor en Cirugía Dental (DDS) de la Universidad Estatal de Ohio. Desde 2005 dirige su propia clínica, combinando técnicas probadas en odontología general, cosmética y restaurativa para diseñar un plan personalizado para cada paciente. Miembro de la Asociación Dental Americana y la Academia de Odontología General.",
-    "credEduLabel": "Educación",
     "credEduValue": "DDS, Universidad Estatal de Ohio",
-    "credUndergradLabel": "Licenciatura",
     "credUndergradValue": "Biología y Química, UNM",
-    "credMembLabel": "Membresías",
-    "credMembValue": "ADA · Academia de Odontología General",
-    "credSinceLabel": "Ejerciendo desde",
-    "credSinceValue": "2005 · Albuquerque, NM"
+    "practice": "Desde 2005 combina técnicas probadas de odontología general, cosmética y restaurativa para diseñar un plan personalizado para cada paciente.",
+    "credMembLong": "Miembro de la Asociación Dental Americana y la Academia de Odontología General",
+    "meetButton": "Conozca al Dr. Vicuña",
+    "quoteBy": "Dr. Emerson Vicuña"
   },
   "journey": {
     "label": "Nuevos Pacientes",
@@ -264,7 +290,8 @@
       { "q": "¿Con qué frecuencia debo visitar al dentista?", "a": "La mayoría de las personas deben ver a su dentista cada seis meses para una limpieza y chequeo. Los pacientes con preocupaciones específicas pueden necesitar visitas más frecuentes." },
       { "q": "¿Cuándo debo traer a mi hijo a su primera visita?", "a": "Recomendamos la primera visita entre los 6–9 meses de edad, a más tardar en su primer cumpleaños. Queremos que los niños crezcan sintiéndose cómodos en el dentista desde temprana edad." },
       { "q": "¿Qué pasa si un diente se cae en un accidente?", "a": "Encuentre el diente, enjuáguelo suavemente (no lo frote) y colóquelo en leche o su saliva. Llámenos de inmediato — el tiempo es crítico. Fuera de horario, acuda a un centro de atención urgente o emergencias." }
-    ]
+    ],
+    "seeAll": "Ver todas las preguntas"
   },
   "reviews": {
     "title": "Reseñas de Pacientes",
@@ -277,7 +304,8 @@
       { "text": "Muy profesional y siguiendo las medidas más seguras para el cuidado dental. Personal amable. Sin duda, fue una gran experiencia.", "author": "Rafael Contreras", "meta": "Google · Paciente desde 2019" },
       { "text": "¡Me encanta el Dr. Vicuña! Es tan gentil y tan bueno en lo que hace. Llevo al menos 7 años con él y no iría a ningún otro lugar.", "author": "Clorinda Olguin", "meta": "Google · Paciente desde 2017" },
       { "text": "Trabajo muy útil y profesional.", "author": "Carlos Alvarez", "meta": "Google · Paciente desde 2022" }
-    ]
+    ],
+    "moreOnGoogle": "Lea las reseñas en Google"
   },
   "location": {
     "heading": "Venga a vernos en el oeste de Albuquerque.",
@@ -285,7 +313,11 @@
     "addressLabel": "Dirección",
     "phoneLabel": "Teléfono",
     "emailLabel": "Correo electrónico",
-    "hoursLabel": "Horario"
+    "hoursLabel": "Horario",
+    "weekdays": "Lunes – Jueves",
+    "weekdaysHours": "9:00 – 17:00",
+    "weekend": "Viernes – Domingo",
+    "closed": "Cerrado"
   },
   "footer": {
     "contact": "Contacto",
@@ -320,8 +352,7 @@
     "addressLine1": "3200 Coors Blvd NW, Suite F",
     "addressLine2": "Albuquerque, NM 87120",
     "langSwitch": "English",
-    "copyright": "Rio Grande Smiles. Todos los derechos reservados.",
-    "madeWith": "Albuquerque, NM · Hecho con cariño"
+    "copyright": "Rio Grande Smiles. Todos los derechos reservados."
   },
   "button": {
     "learnMore": "Aprende Más",

@@ -1,0 +1,88 @@
+---
+// Blue band of service names that scrolls slowly across the homepage. The list is drawn twice so
+// the loop is seamless; screen readers get it once. A Pause/Play control (a styled checkbox, so it
+// works without JavaScript) stops it, and it stays still for anyone who asks for reduced motion.
+import type { Locale } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+import { getServices } from '../lib/services';
+import Icon from './Icon.astro';
+import ServiceIcon from './ServiceIcon.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const names = (await getServices()).map((service) => service.data[locale].title);
+---
+
+<div class="marquee-wrap">
+  <input id="marquee-pause" type="checkbox" class="marquee-toggle sr-only" />
+  <div class="marquee relative overflow-hidden bg-primary-500 text-white py-[22px] border-t border-white/20">
+    <label for="marquee-pause" class="marquee-btn absolute right-2.5 sm:right-4 top-1/2 -translate-y-1/2 z-[1] inline-flex items-center min-h-[44px] px-3 sm:px-4 rounded-full bg-primary-900 hover:bg-primary-950 text-white text-[0.875rem] font-semibold cursor-pointer select-none">
+      <span class="when-running inline-flex items-center gap-2"><Icon name="pause" class="w-4 h-4" />{t('marquee.pause')}</span>
+      <span class="when-paused items-center gap-2"><Icon name="play" class="w-4 h-4" />{t('marquee.play')}</span>
+      <span class="sr-only">{t('marquee.controlSuffix')}</span>
+    </label>
+    <div class="marquee-track flex w-max">
+      {[false, true].map((copy) => (
+        <ul
+          class="marquee-group flex items-center gap-6 sm:gap-9 pr-6 sm:pr-9 m-0 p-0 list-none whitespace-nowrap font-display text-[1.5rem] sm:text-[1.875rem] font-medium"
+          aria-label={copy ? undefined : t('marquee.label')}
+          aria-hidden={copy ? 'true' : undefined}
+        >
+          {names.map((name) => (
+            <li class="flex items-center gap-6 sm:gap-9">
+              {name}
+              <ServiceIcon name="fillings" class="w-[22px] h-[22px] opacity-75" />
+            </li>
+          ))}
+        </ul>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  .marquee-track {
+    animation: marquee-scroll 50s linear infinite;
+  }
+  .marquee:hover .marquee-track,
+  .marquee-toggle:checked + .marquee .marquee-track {
+    animation-play-state: paused;
+  }
+  @keyframes marquee-scroll {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* The label shows "Pause" while it runs and "Play" once paused. */
+  .when-paused {
+    display: none;
+  }
+  .marquee-toggle:checked + .marquee .when-running {
+    display: none;
+  }
+  .marquee-toggle:checked + .marquee .when-paused {
+    display: inline-flex;
+  }
+  .marquee-btn {
+    box-shadow: 0 0 0 6px #186db9; /* primary-500: a gap between the button and the names */
+  }
+  /* The checkbox itself is hidden, so show the keyboard focus ring on its label. */
+  .marquee-toggle:focus-visible + .marquee .marquee-btn {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+    }
+    .marquee-btn {
+      display: none;
+    }
+  }
+</style>

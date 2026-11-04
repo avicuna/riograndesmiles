@@ -1,5 +1,6 @@
 # /services/fillings/ and /es/services/fillings/
 order: 2
+homepage: true
 icon: "fillings"
 en:
   title: "Fillings"

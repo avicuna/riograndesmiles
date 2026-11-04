@@ -1,5 +1,6 @@
 # /services/root-canals/ and /es/services/root-canals/
 order: 11
+homepage: true
 icon: "root-canals"
 en:
   title: "Root Canals"

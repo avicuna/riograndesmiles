@@ -1,5 +1,6 @@
 # /services/cleanings/ and /es/services/cleanings/
 order: 1
+homepage: true
 icon: "cleanings"
 en:
   title: "Cleanings & Checkups"

@@ -1,5 +1,6 @@
 # /services/crowns/ and /es/services/crowns/
 order: 3
+homepage: true
 icon: "crowns"
 en:
   title: "Crowns"

@@ -1,6 +1,8 @@
 ---
+// Homepage reviews: three short Google reviews (reviews.items in the i18n files).
 import type { Locale } from '../i18n/utils';
 import { useTranslations } from '../i18n/utils';
+import { GOOGLE_LISTING_URL } from '../lib/contact';
 import SectionTag from './SectionTag.astro';
 
 interface Props {
@@ -9,51 +11,44 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = useTranslations(locale);
-
 const reviews = t.list<{ text: string; author: string; meta: string }>('reviews.items');
+const starsLabel = locale === 'es' ? '5 de 5 estrellas' : '5 out of 5 stars';
 ---
 
-<section class="bg-ink py-[100px]">
-  <div class="max-w-content mx-auto px-7">
-    {/* Section header */}
-    <div class="grid grid-cols-1 md:grid-cols-[1fr_1.3fr] gap-16 mb-14 items-end">
-      <div>
-        <SectionTag label={t('sectionTags.reviews')} dark />
-        <h2 class="text-bg-card">{t('reviews.heading')}</h2>
-      </div>
-      <p class="text-bg-card/70 max-w-[56ch] text-[1.05rem]">
-        {t('reviews.sub')}
-      </p>
+<section id="reviews" class="bg-white py-20 lg:py-28" aria-labelledby="reviews-title">
+  <div class="max-w-content mx-auto px-5 sm:px-7">
+    <div class="mb-11 max-w-[720px] md:mx-auto md:text-center">
+      <SectionTag label={t('sectionTags.reviews')} />
+      <h2 id="reviews-title" class="font-semibold text-[2.375rem] lg:text-[2.875rem] leading-[1.1]">{t('reviews.heading')}</h2>
+      <p class="mt-4 text-[1.06rem] text-ink-2">{t('reviews.sub')}</p>
     </div>
 
-    {/* Review cards grid */}
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
       {reviews.map(({ text, author, meta }) => (
-        <div class="review-card md:last:col-span-2 lg:last:col-span-1 bg-white/[0.06] border border-white/[0.15] rounded-lg p-8 flex flex-col gap-5">
-          {/* Stars */}
-          <div class="text-gold tracking-wider text-[0.95rem]">★★★★★</div>
-
-          {/* Quote */}
-          <div class="font-display text-[1.15rem] leading-[1.5] text-white/95 font-normal flex-1">
-            "{text}"
+        <figure class="m-0 flex flex-col p-[30px] bg-white border border-bg-warm rounded-[22px] md:last:col-span-2 lg:last:col-span-1">
+          <div class="flex gap-0.5 mb-4 text-gold" role="img" aria-label={starsLabel}>
+            {[0, 1, 2, 3, 4].map(() => (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="m12 2 3 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.8 5.7 21.4l1.5-7.1L1.8 9.4 9 8.6z" />
+              </svg>
+            ))}
           </div>
-
-          {/* Author */}
-          <div class="flex items-center gap-3 mt-auto pt-5 border-t border-white/[0.15]">
-            <div class="w-[38px] h-[38px] rounded-full bg-primary-500 grid place-items-center font-display font-medium text-white text-[0.95rem]">
+          <blockquote class="flex-1 mb-6 font-display font-medium text-[1.3rem] leading-[1.4] text-ink">“{text}”</blockquote>
+          <figcaption class="flex items-center gap-3 pt-[18px] border-t border-bg-warm">
+            <span class="grid place-items-center w-[42px] h-[42px] rounded-full bg-primary-500 text-white font-semibold" aria-hidden="true">
               {author.charAt(0)}
-            </div>
-            <div>
-              <div class="text-[0.92rem] text-white font-medium">
-                {author}
-              </div>
-              <div class="text-[0.78rem] text-white/50">
-                {meta}
-              </div>
-            </div>
-          </div>
-        </div>
+            </span>
+            <span>
+              <b class="block text-[0.94rem] text-ink">{author}</b>
+              <span class="text-[0.84rem] text-ink-3">{meta}</span>
+            </span>
+          </figcaption>
+        </figure>
       ))}
     </div>
+
+    <p class="mt-9 text-center">
+      <a href={GOOGLE_LISTING_URL} class="btn btn-line">{t('reviews.moreOnGoogle')} →</a>
+    </p>
   </div>
 </section>

@@ -1,6 +1,8 @@
 ---
+// Map and contact details in one card. Used on the homepage and the Contact page.
 import type { Locale } from '../i18n/utils';
 import { useTranslations } from '../i18n/utils';
+import { PHONE_TEL, EMAIL } from '../lib/contact';
 import SectionTag from './SectionTag.astro';
 import GoogleMap from './GoogleMap.astro';
 
@@ -10,86 +12,47 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = useTranslations(locale);
-
-const days = locale === 'es'
-  ? [
-      { day: 'Lunes', time: '9:00 – 17:00' },
-      { day: 'Martes', time: '9:00 – 17:00' },
-      { day: 'Miércoles', time: '9:00 – 17:00' },
-      { day: 'Jueves', time: '9:00 – 17:00' },
-      { day: 'Viernes', time: 'Cerrado', closed: true },
-      { day: 'Sábado – Domingo', time: 'Cerrado', closed: true },
-    ]
-  : [
-      { day: 'Monday', time: '9:00 AM – 5:00 PM' },
-      { day: 'Tuesday', time: '9:00 AM – 5:00 PM' },
-      { day: 'Wednesday', time: '9:00 AM – 5:00 PM' },
-      { day: 'Thursday', time: '9:00 AM – 5:00 PM' },
-      { day: 'Friday', time: 'Closed', closed: true },
-      { day: 'Saturday – Sunday', time: 'Closed', closed: true },
-    ];
+const label = 'mb-1.5 text-[0.78rem] font-bold uppercase tracking-[0.14em] text-ink-3';
 ---
 
-<section class="py-[100px]">
-  <div class="max-w-content mx-auto px-7">
-    {/* Section header */}
-    <div class="mb-14">
+<section id="location" class="py-20 lg:py-28" aria-labelledby="location-title">
+  <div class="max-w-content mx-auto px-5 sm:px-7">
+    <div class="mb-11">
       <SectionTag label={t('sectionTags.location')} />
-      <h2>{t('location.heading')}</h2>
+      <h2 id="location-title" class="font-semibold text-[2.375rem] lg:text-[2.875rem] leading-[1.1] max-w-[640px]">{t('location.heading')}</h2>
     </div>
 
-    {/* Map + Detail grid */}
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
-      {/* Google Map */}
-      <div class="rounded-lg overflow-hidden border border-line-2 aspect-[4/3]">
+    <div class="grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] bg-white border border-bg-warm rounded-3xl overflow-hidden">
+      <div class="min-h-[300px] lg:min-h-[460px]">
         <GoogleMap locale={locale} />
       </div>
-
-      {/* Detail card */}
-      <div class="bg-bg-card border border-line rounded-lg p-10 flex flex-col">
-        {/* Address */}
-        <div class="py-5 border-b border-line">
-          <div class="font-mono text-[0.72rem] uppercase tracking-[0.1em] text-ink-3 mb-1.5">
-            {t('location.addressLabel')}
-          </div>
-          <div class="text-[1.05rem] text-ink">
-            3200 Coors Boulevard NW, Suite F<br />Albuquerque, NM 87120
-          </div>
+      <div class="grid gap-[22px] content-start p-7 sm:p-9">
+        <div>
+          <p class={label}>{t('location.addressLabel')}</p>
+          <p class="text-[1.03rem] text-ink">{t('footer.addressLine1')}<br />{t('footer.addressLine2')}</p>
         </div>
-
-        {/* Phone */}
-        <div class="py-5 border-b border-line">
-          <div class="font-mono text-[0.72rem] uppercase tracking-[0.1em] text-ink-3 mb-1.5">
-            {t('location.phoneLabel')}
-          </div>
-          <div class="text-[1.05rem]">
-            <a href="tel:+15058771113" class="inline-block py-1.5 text-primary-500 no-underline">(505) 877-1113</a>
-          </div>
+        <div>
+          <p class={label}>{t('location.phoneLabel')}</p>
+          <a href={PHONE_TEL} class="inline-flex items-center min-h-[44px] text-[1.03rem] font-semibold text-primary-700">{t('footer.phone')}</a>
         </div>
-
-        {/* Email */}
-        <div class="py-5 border-b border-line">
-          <div class="font-mono text-[0.72rem] uppercase tracking-[0.1em] text-ink-3 mb-1.5">
-            {t('location.emailLabel')}
-          </div>
-          <div class="text-[1.05rem]">
-            <a href="mailto:emersonvicunadds@gmail.com" class="inline-block py-1.5 text-primary-500 no-underline break-all">emersonvicunadds@gmail.com</a>
-          </div>
+        <div>
+          <p class={label}>{t('location.emailLabel')}</p>
+          <a href={`mailto:${EMAIL}`} class="inline-flex items-center min-h-[44px] text-[1.03rem] font-semibold text-primary-700 break-all">{EMAIL}</a>
         </div>
-
-        {/* Hours */}
-        <div class="py-5">
-          <div class="font-mono text-[0.72rem] uppercase tracking-[0.1em] text-ink-3 mb-1.5">
-            {t('location.hoursLabel')}
-          </div>
-          <div class="flex flex-col gap-1 mt-1">
-            {days.map(({ day, time, closed }) => (
-              <div class:list={["flex justify-between gap-4 text-[0.95rem]", closed ? "text-ink-3" : "text-ink-2"]}>
-                <span class="flex-1 min-w-0 whitespace-nowrap">{day}</span>
-                <span class="whitespace-nowrap">{time}</span>
-              </div>
-            ))}
-          </div>
+        <div>
+          <p class={label}>{t('location.hoursLabel')}</p>
+          <table class="w-full text-[0.94rem]">
+            <tbody>
+              <tr class="border-b border-dashed border-bg-warm">
+                <th scope="row" class="py-1.5 text-left font-normal text-ink-2">{t('location.weekdays')}</th>
+                <td class="py-1.5 text-right text-ink-2">{t('location.weekdaysHours')}</td>
+              </tr>
+              <tr>
+                <th scope="row" class="py-1.5 text-left font-normal text-ink-3">{t('location.weekend')}</th>
+                <td class="py-1.5 text-right text-ink-3">{t('location.closed')}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
