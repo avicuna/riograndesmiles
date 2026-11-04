@@ -28,6 +28,9 @@ const skipLabel = locale === 'es' ? 'Saltar al contenido principal' : 'Skip to m
 // <body> gets bottom padding on phones so the fixed call bar never covers the end of the footer.
 const ogImage = `${site}/og-image.jpg`; // public/og-image.jpg, 1200×630
 const ogImageAlt = 'Rio Grande Smiles: Dr. Emerson Vicuña, DDS, Albuquerque, NM';
+// Cloudflare Web Analytics (see "Analytics" in the README). Netlify sets CONTEXT to "production" only
+// when it builds the live site, so deploy previews and local builds don't count as visits.
+const loadAnalytics = process.env.CONTEXT === 'production';
 ---
 
 <!DOCTYPE html>
@@ -70,6 +73,10 @@ const ogImageAlt = 'Rio Grande Smiles: Dr. Emerson Vicuña, DDS, Albuquerque, NM
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content={ogImageAlt} />
+
+    {loadAnalytics && (
+      <script is:inline type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "cff4d76671a843a5bc0b7029eaadaa9a"}'></script>
+    )}
   </head>
   <body class="font-sans text-ink-2 bg-bg pb-[74px] md:pb-0">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-primary-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-semibold">
