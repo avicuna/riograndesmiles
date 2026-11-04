@@ -27,6 +27,7 @@ Live at **[riograndesmiles.com](https://riograndesmiles.com)**, in English and S
 - **TypeScript**: type checking, run as part of every build.
 - **Netlify**: hosting, SSL, and preview deploys for pull requests.
 - **Web3Forms**: emails contact form messages to the office (free plan).
+- **Cloudflare Web Analytics**: counts visitors (free, no cookies).
 
 ## Development
 
@@ -67,6 +68,16 @@ The form on `/contact/` and `/es/contact/` (`src/components/ContactForm.astro`) 
 **How to test it:** send a short test message from the live site and check that it arrives in the office inbox. If sending fails, patients see a message asking them to call or text instead.
 
 **Why not Netlify Forms?** Netlify only emails form notifications to members of the Netlify team. On the free plan that's only the account owner, so it can't notify the office address.
+
+## Analytics
+
+**Cloudflare Web Analytics** counts visits: visitors and page views over time, top pages, where visitors came from (Google, Facebook, direct), their country and device, and page load speed. It's free and sets no cookies, so the site needs no cookie banner.
+
+- **Dashboard:** the site lives in Alejandro's Cloudflare account. Sign in at [dash.cloudflare.com](https://dash.cloudflare.com), go to **Web Analytics**, and pick riograndesmiles.com.
+- **Office access:** invite emersonvicunadds@gmail.com on the account's **Members** page with the read-only **Analytics** role. That role also sees analytics for the account's other sites.
+- **Script:** `src/layouts/BaseLayout.astro` adds Cloudflare's script to every page. Its token is public by design: all it does is report visits to this dashboard.
+- **Live site only:** the script is added only when Netlify builds the live site (`CONTEXT=production`), so deploy previews and local builds don't count as visits.
+- **Numbers run a bit low:** ad blockers and some browsers' privacy settings block the script, so some visits never show up.
 
 ## Bilingual (EN/ES)
 
@@ -128,7 +139,7 @@ src/
 │   └── services/          # One YAML file per service (13)
 ├── i18n/                  # en.json, es.json, utils.ts
 ├── layouts/
-│   └── BaseLayout.astro   # HTML shell: SEO tags, nav, footer, mobile call bar
+│   └── BaseLayout.astro   # HTML shell: SEO tags, analytics script, nav, footer, mobile call bar
 ├── lib/
 │   ├── services.ts        # getServices() and servicePath(); every service list uses these
 │   ├── contact.ts         # Phone, text, email, and Google Maps links
