@@ -15,6 +15,7 @@ Live at **[riograndesmiles.com](https://riograndesmiles.com)**, in English and S
 | Change a review | `reviews.items` in both i18n files | Used on the homepage and `/reviews`. Keep them short, quoted word for word. |
 | Change a homepage or New Patients FAQ | `homeFaq.items` / `faq.*` in both i18n files | The FAQ page builds its questions from `faq.*` keys. |
 | Replace a patient form | `public/forms/*.pdf` | Keep the same file name. See [Patient Forms](#patient-forms). |
+| Change the site icon | `public/icon.svg`, `brand-tile.svg`, `favicon.svg` and their PNG/ICO copies | Update every file together. See [Site Icon](#site-icon). |
 | Change phone, email, address, or hours | Several files | See [Contact Info](#contact-info-hardcoded). |
 | Change a page's layout | `src/pages/<page>.astro` **and** `src/pages/es/<page>.astro` | Spanish pages are separate copies. See [Bilingual](#bilingual-enes). |
 | Publish a change | Open a PR, then merge it into `main` | Netlify deploys `main` automatically. See [Deployment](#deployment). |
@@ -139,7 +140,7 @@ src/
 │   └── services/          # One YAML file per service (13)
 ├── i18n/                  # en.json, es.json, utils.ts
 ├── layouts/
-│   └── BaseLayout.astro   # HTML shell: SEO tags, analytics script, nav, footer, mobile call bar
+│   └── BaseLayout.astro   # HTML shell: SEO and icon tags, analytics script, nav, footer, mobile call bar
 ├── lib/
 │   ├── services.ts        # getServices() and servicePath(); every service list uses these
 │   ├── contact.ts         # Phone, text, email, and Google Maps links
@@ -147,7 +148,7 @@ src/
 ├── pages/                 # One file per page; es/ holds the Spanish copies
 └── styles/
     └── global.css         # Fonts, color variables, base styles, buttons (.btn)
-public/                    # Copied to the site as is (images, forms, robots.txt)
+public/                    # Copied to the site as is (images, forms, site icons, robots.txt)
 docs/                      # The original March 2026 redesign spec and plan (historical)
 ```
 
@@ -198,6 +199,19 @@ The palette is a primary blue, a teal accent, navy text, and warm neutral backgr
 - `public/og-image.jpg`: the 1200×630 preview image shown when a link is shared in texts or social media (built from the two photos above)
 - `public/img/services/`: old service images (not used; replaced by the line icons)
 - `public/img/*.png`: insurance logos (not used; the site lists insurers as text)
+
+## Site Icon
+
+The icon is a smiling tooth on the site's blue tile, with the Rio Grande curving under it like a second smile. Small icons lose detail, so it's drawn three times, each for a range of sizes:
+
+- **Full drawing** (64 px and up): `public/icon.svg`. These PNGs are copies of it:
+  - `public/apple-touch-icon.png`: 180 px, square. iPhones and iPads use it when someone saves the site to their home screen, and round the corners themselves.
+  - `public/icon-192.png`, `public/icon-512.png`: on the rounded tile, the manifest's "any" icons.
+  - `public/icon-maskable-192.png`, `public/icon-maskable-512.png`: the drawing at 80% on a full blue square, so Android can cut it into its own shapes without clipping it.
+- **Middle drawing** (40–63 px): `public/brand-tile.svg`, the 42 px tile beside "Rio Grande Smiles" in the header and footer. It leaves out the glints on the water and the highlights in the eyes.
+- **Small drawing** (16 and 32 px): `public/favicon.svg` and `public/favicon.ico`, for browser tabs and bookmarks. The tooth is bigger, the face sits on whole pixels, and the river is thicker.
+
+`public/site.webmanifest` gives Android the name and icons, and `BaseLayout.astro` links all of them. If the icon changes, replace every file above, so no place shows the old one.
 
 ## Patient Forms
 
