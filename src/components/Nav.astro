@@ -3,7 +3,6 @@ import type { Locale } from '../i18n/utils';
 import { useTranslations, getAlternatePath } from '../i18n/utils';
 import { PHONE_TEL } from '../lib/contact';
 import Icon from './Icon.astro';
-import ServiceIcon from './ServiceIcon.astro';
 
 interface Props {
   locale: Locale;
@@ -36,9 +35,7 @@ const navLinks = [
     <div class="flex items-center justify-between gap-3 h-[68px] md:h-20">
       {/* Brand */}
       <a href={homePath} class="flex items-center gap-3 no-underline text-ink min-w-0">
-        <span class="hidden sm:grid shrink-0 w-[42px] h-[42px] rounded-xl bg-primary-500 text-white place-items-center">
-          <ServiceIcon name="fillings" class="w-[22px] h-[22px]" />
-        </span>
+        <img src="/brand-tile.svg" alt="" width="42" height="42" class="hidden sm:block shrink-0 w-[42px] h-[42px]" />
         <span class="min-w-0">
           <span class="block font-display text-[1.2rem] sm:text-[1.375rem] font-semibold leading-[1.05] tracking-tight whitespace-nowrap">
             Rio Grande Smiles
