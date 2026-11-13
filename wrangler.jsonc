@@ -1,0 +1,13 @@
+{
+  "name": "riograndesmiles",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./dist",
+    // Unknown URLs get the nearest 404.html: /es/... gets dist/es/404.html, everything else dist/404.html.
+    "not_found_handling": "404-page"
+  },
+  // PR preview links live on workers.dev.
+  "workers_dev": true,
+  "preview_urls": true,
+  "routes": [{ "pattern": "riograndesmiles.com", "custom_domain": true }]
+}

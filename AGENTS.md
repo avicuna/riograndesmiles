@@ -5,7 +5,7 @@ The website for a dental practice in Albuquerque. This repo is public, so keep p
 ## Build and deploy
 
 - Node version is in `.nvmrc`. `npm install`, then `npm run dev` (http://localhost:4321) or `npm run build`, which runs `astro check` and stops on any type error.
-- Netlify deploys production from `main` and builds a preview for every PR. The account may be on Netlify's credit-based plan, where each deploy spends credits and the site pauses at the limit. Batch related changes into one PR, not a string of small ones.
+- Cloudflare Workers Builds deploys production from `main` and posts a preview link on every PR. Config is in `wrangler.jsonc`. Builds are free within a 3,000-minute monthly allowance, so there's no need to batch PRs.
 
 ## Privacy and tracking
 

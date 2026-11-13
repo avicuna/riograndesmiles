@@ -17,7 +17,7 @@ Live at **[riograndesmiles.com](https://riograndesmiles.com)**, in English and S
 | Replace a patient form | `public/forms/*.pdf` | Keep the same file name. See [Patient Forms](#patient-forms). |
 | Change phone, email, address, or hours | Several files | See [Contact Info](#contact-info-hardcoded). |
 | Change a page's layout | `src/pages/<page>.astro` **and** `src/pages/es/<page>.astro` | Spanish pages are separate copies. See [Bilingual](#bilingual-enes). |
-| Publish a change | Open a PR, then merge it into `main` | Netlify deploys `main` automatically. See [Deployment](#deployment). |
+| Publish a change | Open a PR, then merge it into `main` | Cloudflare deploys `main` automatically. See [Deployment](#deployment). |
 
 ## Tech Stack
 
@@ -25,13 +25,13 @@ Live at **[riograndesmiles.com](https://riograndesmiles.com)**, in English and S
 - **React 18**: only for the two interactive pieces, the FAQ accordion and the review carousel. They load as "islands" when scrolled into view (`client:visible`).
 - **Tailwind CSS 3**: styling, with the site's colors and fonts as custom tokens.
 - **TypeScript**: type checking, run as part of every build.
-- **Netlify**: hosting, SSL, and preview deploys for pull requests.
+- **Cloudflare Workers**: hosting, DNS, SSL, and preview links for pull requests (free plan).
 - **Web3Forms**: emails contact form messages to the office (free plan).
 - **Cloudflare Web Analytics**: counts visitors (free, no cookies).
 
 ## Development
 
-Requires **Node 24** (pinned in `.nvmrc` and `netlify.toml`). With nvm: `nvm install && nvm use`.
+Requires **Node 24** (pinned in `.nvmrc`). With nvm: `nvm install && nvm use`.
 
 ```bash
 npm install        # install dependencies
@@ -41,18 +41,19 @@ npm run build      # type check, then build to dist/ (stops on any type error)
 npm run preview    # serve the built dist/ locally
 ```
 
-The build runs the type check first, so a broken change fails on Netlify instead of deploying.
+The build runs the type check first, so a broken change fails on Cloudflare instead of deploying.
 
 ## Deployment
 
-**Hosted on Netlify.** Netlify builds and deploys automatically when `main` changes. Every pull request also gets its own **Deploy Preview** link, posted as a comment on the PR, for checking changes before they go live.
+**Hosted on Cloudflare** as a static Worker named `riograndesmiles`, in Alejandro's Cloudflare account. Workers Builds builds and deploys automatically when `main` changes. Every pull request also gets a **preview link**, posted as a comment on the PR, for checking changes before they go live.
 
-- **Custom domain:** `riograndesmiles.com` (primary) + `www.riograndesmiles.com` (redirects)
-- **SSL:** Let's Encrypt, auto-renewing
-- **Build config:** `netlify.toml` (Node version, build command, and the 404 page rules)
-- **DNS registrar:** Squarespace Domains, with an A record + CNAME pointing to Netlify. DNS records and the Netlify site name are managed in the Netlify and Squarespace dashboards; see the Netlify project's Domain Management page for current values.
+- **Custom domain:** `riograndesmiles.com`. `www.riograndesmiles.com` redirects to it (a Redirect Rule in the Cloudflare zone).
+- **SSL:** Cloudflare, auto-renewing
+- **Build config:** `wrangler.jsonc` (assets folder, 404 handling, domain). The build command is `npm run build`. Unknown URLs get the nearest `404.html`, so missing pages under `/es/` get the Spanish 404 page (the build copies it to `dist/es/404.html`).
+- **DNS:** the domain is registered at Squarespace Domains, with its nameservers pointed to Cloudflare. DNS records live in the Cloudflare dashboard.
+- **Limits:** the free plan doesn't charge for visits to a static site, and builds use a 3,000-minute monthly allowance (each build takes about a minute). There's no need to ration merges.
 
-**Netlify plan limits:** newer Netlify accounts use a credit-based free plan. Each deploy (including every PR preview) and every GB served spends credits, and the site pauses if the month's credits run out. Check the Netlify billing page if you make a lot of changes in one month, and batch small edits into one PR when you can.
+**Deploying by hand** (rarely needed): `npm run build && npx wrangler deploy`, signed in to the Cloudflare account.
 
 ## Contact Form
 
@@ -67,8 +68,6 @@ The form on `/contact/` and `/es/contact/` (`src/components/ContactForm.astro`) 
 
 **How to test it:** send a short test message from the live site and check that it arrives in the office inbox. If sending fails, patients see a message asking them to call or text instead.
 
-**Why not Netlify Forms?** Netlify only emails form notifications to members of the Netlify team. On the free plan that's only the account owner, so it can't notify the office address.
-
 ## Analytics
 
 **Cloudflare Web Analytics** counts visits: visitors and page views over time, top pages, where visitors came from (Google, Facebook, direct), their country and device, and page load speed. It's free and sets no cookies, so the site needs no cookie banner.
@@ -76,7 +75,7 @@ The form on `/contact/` and `/es/contact/` (`src/components/ContactForm.astro`) 
 - **Dashboard:** the site lives in Alejandro's Cloudflare account. Sign in at [dash.cloudflare.com](https://dash.cloudflare.com), go to **Web Analytics**, and pick riograndesmiles.com.
 - **Office access:** invite emersonvicunadds@gmail.com on the account's **Members** page with the read-only **Analytics** role. That role also sees analytics for the account's other sites.
 - **Script:** `src/layouts/BaseLayout.astro` adds Cloudflare's script to every page. Its token is public by design: all it does is report visits to this dashboard.
-- **Live site only:** the script is added only when Netlify builds the live site (`CONTEXT=production`), so deploy previews and local builds don't count as visits.
+- **Live site only:** the script is added only when Cloudflare builds `main` (`WORKERS_CI_BRANCH=main`), so PR previews and local builds don't count as visits.
 - **Numbers run a bit low:** ad blockers and some browsers' privacy settings block the script, so some visits never show up.
 
 ## Bilingual (EN/ES)
