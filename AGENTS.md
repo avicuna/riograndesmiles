@@ -5,11 +5,11 @@ The website for a dental practice in Albuquerque. This repo is public, so keep p
 ## Build and deploy
 
 - Node version is in `.nvmrc`. `npm install`, then `npm run dev` (http://localhost:4321) or `npm run build`, which runs `astro check` and stops on any type error.
-- Netlify deploys production from `main` and builds a preview for every PR. The account may be on Netlify's credit-based plan, where each deploy spends credits and the site pauses at the limit. Batch related changes into one PR, not a string of small ones.
+- Cloudflare Workers Builds deploys production from `main` and builds a preview for every PR branch at `https://<branch, / as ->-riograndesmiles.avicuna.workers.dev`. Config is in `wrangler.jsonc`. Builds are free within a 3,000-minute monthly allowance, so there's no need to batch PRs.
 
 ## Privacy and tracking
 
-- Healthcare sites draw tracking lawsuits. Don't add Google Analytics, the Meta pixel, Hotjar, Clarity, or any ad pixel or session recording. Cloudflare Web Analytics is the only analytics, loaded in `src/layouts/BaseLayout.astro` only when `process.env.CONTEXT === 'production'`.
+- Healthcare sites draw tracking lawsuits. Don't add Google Analytics, the Meta pixel, Hotjar, Clarity, or any ad pixel or session recording. Cloudflare Web Analytics is the only analytics, loaded in `src/layouts/BaseLayout.astro` only when Workers Builds builds `main` (`WORKERS_CI_BRANCH === 'main'`).
 - The contact form posts to Web3Forms (`src/components/ContactForm.astro`) and goes to the office only. Don't route messages anywhere else.
 - Patient forms in `public/forms/` must be blank. Check PDF metadata before committing, and keep the file names when replacing one.
 

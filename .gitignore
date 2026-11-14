@@ -7,3 +7,6 @@ dist
 
 # Astro
 .astro
+
+# Wrangler
+.wrangler
