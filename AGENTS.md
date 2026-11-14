@@ -9,7 +9,7 @@ The website for a dental practice in Albuquerque. This repo is public, so keep p
 
 ## Privacy and tracking
 
-- Healthcare sites draw tracking lawsuits. Don't add Google Analytics, the Meta pixel, Hotjar, Clarity, or any ad pixel or session recording. Cloudflare Web Analytics is the only analytics, loaded in `src/layouts/BaseLayout.astro` only when `process.env.CONTEXT === 'production'`.
+- Healthcare sites draw tracking lawsuits. Don't add Google Analytics, the Meta pixel, Hotjar, Clarity, or any ad pixel or session recording. Cloudflare Web Analytics is the only analytics, loaded in `src/layouts/BaseLayout.astro` only when Workers Builds builds `main` (`WORKERS_CI_BRANCH === 'main'`).
 - The contact form posts to Web3Forms (`src/components/ContactForm.astro`) and goes to the office only. Don't route messages anywhere else.
 - Patient forms in `public/forms/` must be blank. Check PDF metadata before committing, and keep the file names when replacing one.
 
