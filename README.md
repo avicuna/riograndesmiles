@@ -45,7 +45,7 @@ The build runs the type check first, so a broken change fails on Cloudflare inst
 
 ## Deployment
 
-**Hosted on Cloudflare** as a static Worker named `riograndesmiles`, in Alejandro's Cloudflare account. Workers Builds builds and deploys automatically when `main` changes. Every pull request also gets a **preview link**, posted as a comment on the PR, for checking changes before they go live.
+**Hosted on Cloudflare** as a static Worker named `riograndesmiles`, in Alejandro's Cloudflare account. Workers Builds builds and deploys automatically when `main` changes. Every pull request branch also gets a **preview link** for checking changes before they go live: `https://<branch>-riograndesmiles.avicuna.workers.dev`, with `/` in the branch name turned into `-` (so `fix/footer` → `fix-footer-riograndesmiles.avicuna.workers.dev`). The **Workers Builds** check on the PR links to the build log, which prints the same URL.
 
 - **Custom domain:** `riograndesmiles.com`. `www.riograndesmiles.com` redirects to it (a Redirect Rule in the Cloudflare zone).
 - **SSL:** Cloudflare, auto-renewing
