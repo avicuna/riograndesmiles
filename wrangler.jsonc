@@ -9,5 +9,6 @@
   // PR preview links live on workers.dev.
   "workers_dev": true,
   "preview_urls": true,
+  "previews": {},
   "routes": [{ "pattern": "riograndesmiles.com", "custom_domain": true }]
 }
