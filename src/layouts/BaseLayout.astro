@@ -28,9 +28,9 @@ const skipLabel = locale === 'es' ? 'Saltar al contenido principal' : 'Skip to m
 // <body> gets bottom padding on phones so the fixed call bar never covers the end of the footer.
 const ogImage = `${site}/og-image.jpg`; // public/og-image.jpg, 1200×630
 const ogImageAlt = 'Rio Grande Smiles: Dr. Emerson Vicuña, DDS, Albuquerque, NM';
-// Cloudflare Web Analytics (see "Analytics" in the README). Netlify sets CONTEXT to "production" only
-// when it builds the live site, so deploy previews and local builds don't count as visits.
-const loadAnalytics = process.env.CONTEXT === 'production';
+// Cloudflare Web Analytics (see "Analytics" in the README). Only the Workers Builds run for main loads it,
+// so PR previews and local builds don't count as visits.
+const loadAnalytics = process.env.WORKERS_CI_BRANCH === 'main';
 ---
 
 <!DOCTYPE html>
