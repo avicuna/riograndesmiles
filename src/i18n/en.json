@@ -13,8 +13,6 @@
     "switchLangAria": "Ver esta página en español"
   },
   "formsCallout": {
-    "heading": "Download Your Patient Forms",
-    "body": "Save time at your visit — download and complete your forms before you arrive.",
     "cta": "Get Forms"
   },
   "header": {
@@ -114,14 +112,6 @@
       "title": "Smile with Confidence",
       "description": "Get personalized care from Dr. Vicuña and leave with a healthier smile."
     }
-  },
-  "affordableCare": {
-    "heading": "Everyone Deserves a Healthy Smile",
-    "body": "We believe dental care should be accessible to everyone. Our office works with a wide range of insurance providers and offers transparent pricing so you can focus on your health, not hidden costs.",
-    "check1": "Medicaid Accepted",
-    "check2": "Most Insurance Accepted",
-    "check3": "Transparent Pricing",
-    "cta": "View Insurance Info"
   },
   "booking": {
     "title": "Schedule an Appointment",

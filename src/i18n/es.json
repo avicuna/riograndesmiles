@@ -13,8 +13,6 @@
     "switchLangAria": "View this page in English"
   },
   "formsCallout": {
-    "heading": "Descargue Sus Formularios",
-    "body": "Ahorre tiempo en su visita — descargue y complete sus formularios antes de llegar.",
     "cta": "Ver Formularios"
   },
   "header": {
@@ -114,14 +112,6 @@
       "title": "Sonría con Confianza",
       "description": "Reciba atención personalizada del Dr. Vicuña y salga con una sonrisa más saludable."
     }
-  },
-  "affordableCare": {
-    "heading": "Todos Merecen una Sonrisa Saludable",
-    "body": "Creemos que la atención dental debe ser accesible para todos. Nuestra oficina trabaja con una amplia gama de proveedores de seguros y ofrece precios transparentes para que pueda concentrarse en su salud, no en costos ocultos.",
-    "check1": "Medicaid Aceptado",
-    "check2": "Mayoría de Seguros Aceptados",
-    "check3": "Precios Transparentes",
-    "cta": "Ver Información de Seguros"
   },
   "booking": {
     "title": "Programe una Cita",
