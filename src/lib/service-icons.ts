@@ -32,16 +32,20 @@ export const serviceIcons = {
   implants:
     '<path d="M7.2 3.2h9.6a1.7 1.7 0 0 1 1.7 1.7v2.2a2.6 2.6 0 0 1-2.6 2.6H8.1a2.6 2.6 0 0 1-2.6-2.6V4.9a1.7 1.7 0 0 1 1.7-1.7Z"/><path d="M10.2 9.7v2.1h3.6V9.7M10 11.8h4l-.6 9h-2.8Z"/><path d="M9.2 14.6h5.6M9.5 17.5h5"/>',
   dentures: DENTURES,
-  partials: '<g transform="translate(12 12) scale(1.15) translate(-12 -11.4)" stroke-width="1.39">' +
+  partials: '<g transform="translate(12 12) scale(1.05) translate(-12 -11.4)" stroke-width="1.52">' +
     '<path d="M2.5 11.2V9.3c0-.8.5-1.4 1.3-1.6C5.6 7.3 8.4 7 12 7s6.4.3 8.2.7c.8.2 1.3.8 1.3 1.6v1.9Z"/>' +
     '<path d="M7.8 11.2v1.5a2.1 2.1 0 0 0 4.2 0v-1.5M12.0 11.2v1.5a2.1 2.1 0 0 0 4.2 0v-1.5"/>' +
     '<path d="M4.6 11.2v2.3a1.3 1.3 0 0 0 2.6 0M19.4 11.2v2.3a1.3 1.3 0 0 1-2.6 0"/></g>',
-  'denture-repair': `<g transform="translate(0 6.2) scale(.74)" stroke-width="2.16">${DENTURES}</g>` +
-    `<g transform="translate(12.6 0) scale(.5)" stroke-width="3.2">${WRENCH}</g>`,
-  bleaching: tooth('translate(-1.4 1.6) scale(.9)', 0.9) + sparkle(19.2, 4.2, 2.6) + sparkle(15.5, 2.4, 1.3),
+  // Its own small dentures, not a scaled DENTURES: shrunk, that one's bite gap closes up at 28px.
+  'denture-repair':
+    '<rect x="2" y="4.5" width="12.4" height="3.6" rx="1.6"/><rect x="2" y="15.9" width="12.4" height="3.6" rx="1.6"/>' +
+    '<path d="M3 8.1v.4a1.73 2 0 0 0 3.47 0v-.4M6.47 8.1v.4a1.73 2 0 0 0 3.46 0v-.4M9.93 8.1v.4a1.73 2 0 0 0 3.47 0v-.4"/>' +
+    '<path d="M3 15.9v-.4a1.73 2 0 0 1 3.47 0v.4M6.47 15.9v-.4a1.73 2 0 0 1 3.46 0v.4M9.93 15.9v-.4a1.73 2 0 0 1 3.47 0v.4"/>' +
+    `<g transform="translate(18.6 12) rotate(-45) scale(.5) translate(-12 -12)" stroke-width="3.2">${WRENCH}</g>`,
+  bleaching: tooth('translate(-1.4 2.5) scale(.9)', 0.9) + sparkle(19.2, 4.6, 2.6) + sparkle(15.5, 3.3, 1.3),
   veneers: tooth() + '<path d="M6.1 8.3c0-1.9 1.2-3 2.9-3 1.2 0 1.9.6 3 .6s1.8-.6 3-.6c1.7 0 2.9 1.1 2.9 3"/>',
   'root-canals': tooth() + '<path d="M9.4 9.4c1.7 1 3.5 1 5.2 0M10 10.2l.6 7.8M14 10.2l-.6 7.8"/>',
-  extractions: tooth('translate(2.4 4.4) scale(.8)', 0.8) + '<path d="M12 6.2V1.4M9.8 3.6 12 1.4l2.2 2.2"/>',
+  extractions: tooth('translate(2.4 4.4) scale(.8)', 0.8) + '<path d="M12 6.4V2M9.8 4.2 12 2l2.2 2.2"/>',
   'wisdom-teeth':
     '<path d="M2.5 5c3.2 1.2 6.3 1.2 9.5 0s6.3-1.2 9.5 0"/>' + tooth('translate(12.8 15) rotate(28) scale(.66) translate(-12 -12)', 0.66),
 } as const;
